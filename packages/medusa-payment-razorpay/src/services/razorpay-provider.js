@@ -112,7 +112,6 @@ class RazorpayProviderService extends PaymentService {
       count : customer_limit_per_page,
       skip : 0
     }
-<<<<<<< HEAD
     try {
       do{
         let razorpayCustomers = await this.razorpay_.customers.all( fectchCustomerQueryParams)
@@ -136,27 +135,6 @@ class RazorpayProviderService extends PaymentService {
     {
       return err;
     }
-=======
-  
-    do{
-      let razorpayCustomers = await this.razorpay_.customers.all( fectchCustomerQueryParams)
-      let customers = razorpayCustomers.items;
-      let customer_interest = customers.filter(customer=>{if (customer.email === email|| customer.contact === contact) return true})
-      if (customer_interest.length > 0)
-      {
-        razorpayCustomerOfInterest = await this.razorpay_.customers.fetch( customer_interest[0].id)
-        notFound = false
-        break;
-      }
-      else{
-      fectchCustomerQueryParams = {
-        count : customer_limit_per_page,
-        skip : razorpayCustomers.count
-      }
-    }
-    }while(razorpayCustomers.response<=customer_limit_per_page && notFound && razorpayCustomers.count);
-    
->>>>>>> 395b1e626 (updating to fix issue with existing customer)
     return razorpayCustomerOfInterest
   }
 
@@ -169,6 +147,7 @@ class RazorpayProviderService extends PaymentService {
 
   async createCustomer(customer) {
     try {
+<<<<<<< HEAD
 <<<<<<< HEAD
       let createCustomerQueryParams = {fail_existing:0,email:"startup@medusa.com"}
       let razorpayCustomer =undefined
@@ -203,6 +182,9 @@ class RazorpayProviderService extends PaymentService {
         razorpayCustomer = this._findExistingCustomer(customer.email,customer.contact)  
 =======
       let createCustomerQueryParams = {fail_existing:0}
+=======
+      let createCustomerQueryParams = {fail_existing:0,email:"startup@medusa.com"}
+>>>>>>> ca82885ff (updating to fix intialisation error)
       let razorpayCustomer =undefined
       let razorpayCustomerUpdated = undefined
       let fullname = (customer.first_name??"")+" "+(customer.last_name??"")
