@@ -147,8 +147,6 @@ class RazorpayProviderService extends PaymentService {
 
   async createCustomer(customer) {
     try {
-<<<<<<< HEAD
-<<<<<<< HEAD
       let createCustomerQueryParams = {fail_existing:0,email:"startup@medusa.com"}
       let razorpayCustomer =undefined
       let razorpayCustomerUpdated = undefined
@@ -176,42 +174,6 @@ class RazorpayProviderService extends PaymentService {
             metadata: { razorpay_id: razorpayCustomer.id },
           })
         }
-      }
-      catch (error)
-      {
-        razorpayCustomer = this._findExistingCustomer(customer.email,customer.contact)  
-=======
-      let createCustomerQueryParams = {fail_existing:0}
-=======
-      let createCustomerQueryParams = {fail_existing:0,email:"startup@medusa.com"}
->>>>>>> ca82885ff (updating to fix intialisation error)
-      let razorpayCustomer =undefined
-      let razorpayCustomerUpdated = undefined
-      let fullname = (customer.first_name??"")+" "+(customer.last_name??"")
-      let customerName = customer.name??fullname
-      let notes = {}
-      if (customerName?.length > RazorpayProviderService.RAZORPAY_NAME_LENGTH_LIMIT){
-          createCustomerQueryParams.name = customerName?.substring(0,50)
-      }
-      else {
-        createCustomerQueryParams.name   = customerName??""
-      }
-      createCustomerQueryParams.notes={fullname:customerName} 
-      if (customer.email !=undefined )  {
-        createCustomerQueryParams.email = customer.email
-      }
-      if (customer.contact !=undefined ) {
-        createCustomerQueryParams.contact =customer.contact
-      }
-      createCustomerQueryParams["notes"]["customer_id"]=customer.id
-      try {
-      razorpayCustomer = await this.razorpay_.customers.create( createCustomerQueryParams)
-      if (customer.id) {
-        await this.customerService_.update(customer.id, {
-          metadata: { razorpay_id: razorpayCustomer.id },
-        })
->>>>>>> 0c18020b3 (adding razorpay to repo)
-      }
       }
       catch (error)
       {
@@ -249,12 +211,9 @@ class RazorpayProviderService extends PaymentService {
   try{
     delete updateCustomerQueryParams.id
     delete updateCustomerQueryParams.password_hash
-<<<<<<< HEAD
     let razorpayCustomerOfInterest = await this.razorpay_.customers.fetch( razorpayCustomerId)
     updateCustomerQueryParams.email = razorpayCustomerOfInterest.email;
     updateCustomerQueryParams.contact = razorpayCustomerOfInterest.contact;
-=======
->>>>>>> 0c18020b3 (adding razorpay to repo)
     const razorpayUpdateCustomer = await this.razorpay_.customers.edit(razorpayCustomerId, updateCustomerQueryParams)
     return razorpayUpdateCustomer
   }
@@ -292,51 +251,30 @@ class RazorpayProviderService extends PaymentService {
         const razorpayCustomer = await this.createCustomer({
           email,
           id: customer_id,
-<<<<<<< HEAD
           name:"unknown"
         })
 
         intentRequest.notes["customer_id"] = razorpayCustomer.id
-=======
-        })
-
-<<<<<<< HEAD
-        intentRequest.notes["customer"] = razorpayCustomer.id
->>>>>>> 0c18020b3 (adding razorpay to repo)
-=======
-        intentRequest.notes["customer_id"] = razorpayCustomer.id
->>>>>>> 395b1e626 (updating to fix issue with existing customer)
       }
     } else {
       const razorpayCustomer = await this.createCustomer({
         email,
-<<<<<<< HEAD
         name:"unknown"
       })
 
       intentRequest.notes["customer_id"] = razorpayCustomer.id
     }
     try{
-=======
-      })
-
-      intentRequest.notes["customer_id"] = razorpayCustomer.id
-    }
-
->>>>>>> 0c18020b3 (adding razorpay to repo)
     const orderIntent = await this.razorpay_.orders.create(
       intentRequest
     )
 
     return orderIntent
-<<<<<<< HEAD
     }
     catch (err)
     {
       throw (err)
     }
-=======
->>>>>>> 0c18020b3 (adding razorpay to repo)
   }
 
 
