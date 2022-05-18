@@ -47,7 +47,6 @@ export const RazorpayMock = {
       return Promise.resolve({
          "entity":"collection",
           "count":1,
-<<<<<<< HEAD
           "items":
             [
               {
@@ -72,19 +71,6 @@ export const RazorpayMock = {
               }
             
               ] ,
-=======
-          "items":[
-            {
-              id:"cust_1Aa00000000001",
-              entity:"customer",
-              name:"james lebron",
-              email:"lebron@james.com",
-              contact:"9876543210",
-              gstin:"37AADCS0472N1Z1",
-              notes:{fullname:"james lebron",customer_id:"cust_1Aa00000000001"},
-              created_at :1234567890
-            }],
->>>>>>> 395b1e626 (updating to fix issue with existing customer)
       })
 
     }),
