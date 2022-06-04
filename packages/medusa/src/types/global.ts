@@ -69,7 +69,7 @@ export type ConfigModule = {
     database_password?: string | (() => string) | (() => Promise<string>)
     database_database?: string
 
-    database_url?: string
+    database_url?: string|undefined
     database_type: string
     database_logging?: LoggerOptions
 
