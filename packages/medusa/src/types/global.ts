@@ -37,24 +37,11 @@ export type Logger = _Logger & {
   warn: (msg: string) => void
 }
 
-export type DatabaseTlsOptions = {
-  ca: string | undefined
-  rejectUnauthorized: boolean | undefined
+export type DatabaseTlsOptions =
+{
+  ca:string|undefined
+  rejectUnauthorized:boolean|undefined
 }
-
-export type DatabaseHostConfig =
-  | {
-      database?: string
-      password?: string | (() => string) | (() => Promise<string>)
-      port?: number
-      host?: string
-      ssl?: boolean | DatabaseTlsOptions
-      username?: string
-    }
-  | {
-      database?: string
-      url?: string
-    }
 
 export type ConfigModule = {
   projectConfig: {
@@ -69,7 +56,7 @@ export type ConfigModule = {
     database_password?: string | (() => string) | (() => Promise<string>)
     database_database?: string
 
-    database_url?: string
+    database_url?: string|undefined
     database_type: string
     database_logging?: LoggerOptions
 
