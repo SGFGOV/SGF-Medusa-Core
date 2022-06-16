@@ -19,9 +19,15 @@ import {
   TaxProviderService,
 } from "../services"
 import { CurrencyRepository } from "../repositories/currency"
+<<<<<<< HEAD
 import { FlagRouter } from "../utils/flag-router"
 import SalesChannelFeatureFlag from "./feature-flags/sales-channels"
 import { AbstractPaymentService, AbstractTaxService } from "../interfaces"
+=======
+import { AbstractTaxService } from "../interfaces"
+import { FlagRouter } from "../utils/flag-router";
+import SalesChannelFeatureFlag from "./feature-flags/sales-channels";
+>>>>>>> b22da8cf3 (chore: clean up database host configuration & make config promise resolution single point)
 
 const silentResolution = <T>(
   container: AwilixContainer,
@@ -122,9 +128,17 @@ export default async ({
     await storeService.withTransaction(manager).create()
 
     const payProviders =
+<<<<<<< HEAD
       silentResolution<
         (typeof BasePaymentService | AbstractPaymentService<never>)[]
       >(container, "paymentProviders", logger) || []
+=======
+      silentResolution<typeof BasePaymentService[]>(
+        container,
+        "paymentProviders",
+        logger
+      ) || []
+>>>>>>> b22da8cf3 (chore: clean up database host configuration & make config promise resolution single point)
     const payIds = payProviders.map((p) => p.getIdentifier())
 
     const pProviderService = container.resolve<PaymentProviderService>(
