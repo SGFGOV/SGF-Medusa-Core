@@ -37,11 +37,31 @@ export type Logger = _Logger & {
   warn: (msg: string) => void
 }
 
+<<<<<<< HEAD
 export type DatabaseTlsOptions =
 {
   ca:string|undefined
   rejectUnauthorized:boolean|undefined
+=======
+export type TlsOptions = {
+  ca: string | undefined
+  rejectUnauthorized: boolean | undefined
+>>>>>>> 57c2bc6a5 (chore: clean up database host configuration & make config promise resolution single point)
 }
+
+export type HostConfig =
+  | {
+      database?: string
+      password?: string | (() => string) | (() => Promise<string>)
+      port?: number
+      host?: string
+      ssl?: boolean | TlsOptions
+      username?: string
+    }
+  | {
+      database?: string
+      url?: string
+    }
 
 export type ConfigModule = {
   projectConfig: {
@@ -51,12 +71,18 @@ export type ConfigModule = {
     cookie_secret?: string
     database_host?: string
     database_port?: number
+<<<<<<< HEAD
     database_ssl?: DatabaseTlsOptions
     database_username?: string
     database_password?: string | (() => string) | (() => Promise<string>)
     database_database?: string
+=======
+    database_ssl?: TlsOptions
+    database_username?: string
+    database_password?: string | (() => string) | (() => Promise<string>)
+>>>>>>> 57c2bc6a5 (chore: clean up database host configuration & make config promise resolution single point)
 
-    database_url?: string|undefined
+    database_url?: string
     database_type: string
     database_logging?: LoggerOptions
 

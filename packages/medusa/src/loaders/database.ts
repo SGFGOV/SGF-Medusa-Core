@@ -2,7 +2,7 @@ import { Connection, createConnection } from "typeorm"
 import { ShortenedNamingStrategy } from "../utils/naming-strategy"
 import { AwilixContainer } from "awilix"
 import { ConnectionOptions } from "typeorm/connection/ConnectionOptions"
-import { ConfigModule, DatabaseHostConfig } from "../types/global"
+import { ConfigModule, HostConfig } from "../types/global"
 
 type Options = {
   configModule: ConfigModule
@@ -17,7 +17,7 @@ export default async ({
 
   const isSqlite = configModule.projectConfig.database_type === "sqlite"
 
-  let hostConfig: DatabaseHostConfig = {
+  let hostConfig: HostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
   }
@@ -35,6 +35,7 @@ export default async ({
 
   const connection = await createConnection({
     type: configModule.projectConfig.database_type,
+<<<<<<< HEAD
     url: configModule.projectConfig.database_url
       ? configModule.projectConfig.database_url
       : undefined,
@@ -47,6 +48,11 @@ export default async ({
       password: configModule.projectConfig.database_password ?? "",
     },
     database: configModule.projectConfig.database_database,
+=======
+    /** this gives the option of either using a url or using individual components. 
+    For dynamic passowords one needs to use the individual database url components */
+    ...hostConfig,
+>>>>>>> 57c2bc6a5 (chore: clean up database host configuration & make config promise resolution single point)
     extra: configModule.projectConfig.database_extra || {},
     entities,
     namingStrategy: new ShortenedNamingStrategy(),
