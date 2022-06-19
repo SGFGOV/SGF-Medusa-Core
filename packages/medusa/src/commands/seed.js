@@ -46,18 +46,15 @@ const t = async function ({ directory, migrate, seedFile }) {
     }
   }
 
-<<<<<<< HEAD
   const featureFlagRouter = featureFlagLoader(configModule)
 
-  let configFile =getConfigFile(directory, `medusa-config`)
+  let configFile = getConfigFile(directory, `medusa-config`)
   let configuration = await Promise.resolve( configFile)
   let connection =undefined
  
-=======
->>>>>>> 57c2bc6a5 (chore: clean up database host configuration & make config promise resolution single point)
   const dbType = configModule.projectConfig.database_type
   if (migrate && dbType !== "sqlite") {
-    const migrationDirs = await Promise.resolve(getMigrations(directory))
+    const migrationDirs = await getMigrations(directory)
     const connection = await createConnection({
       type: configModule.projectConfig.database_type,
       ...hostConfig,
