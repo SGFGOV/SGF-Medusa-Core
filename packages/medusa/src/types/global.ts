@@ -37,10 +37,16 @@ export type Logger = _Logger & {
   warn: (msg: string) => void
 }
 
+<<<<<<< HEAD
 export type DatabaseTlsOptions =
 {
   ca:string|undefined
   rejectUnauthorized:boolean|undefined
+=======
+export type DatabaseTlsOptions = {
+  ca: string | undefined
+  rejectUnauthorized: boolean | undefined
+>>>>>>> 80a618eb7 (chore:remove excessive ccomments and checks)
 }
 
 export type DatabaseHostConfig =
@@ -49,7 +55,7 @@ export type DatabaseHostConfig =
       password?: string | (() => string) | (() => Promise<string>)
       port?: number
       host?: string
-      ssl?: boolean | TlsOptions
+      ssl?: boolean | DatabaseTlsOptions
       username?: string
     }
   | {
