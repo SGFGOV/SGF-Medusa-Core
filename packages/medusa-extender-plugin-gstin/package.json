@@ -31,6 +31,7 @@
 <<<<<<< HEAD
     "medusa-core-utils": "^1.1.31",
     "medusa-extender": "^1.7.1",
+<<<<<<< HEAD
     "medusa-interfaces": "^1.2.1",
     "@medusajs/medusa": "^1.3.2",
 =======
@@ -38,6 +39,8 @@
     "awilix": "^4.2.3",
     "@medusajs/medusa": "^1.2.1",
     "medusa-core-utils": "^1.1.31",
+=======
+>>>>>>> 09b549f36 (added support for razorpay and gstin)
     "medusa-interfaces": "^1.2.1",
 >>>>>>> 1b53290d9 (renaming plugin)
     "reflect-metadata": "^0.1.13",
@@ -48,6 +51,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@golevelup/ts-jest": "^0.3.2",
     "@types/jest": "^28.1.2",
+<<<<<<< HEAD
     "@types/node": "^16.11.12",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
@@ -59,12 +63,14 @@
     "@golevelup/ts-jest": "^0.3.2",
     "@medusajs/medusa": "^1.1.62",
     "@types/jest": "^27.0.3",
+=======
+>>>>>>> 09b549f36 (added support for razorpay and gstin)
     "@types/node": "^16.11.12",
     "awilix": "^4.2.3",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.3.1",
+    "jest": "^28.1.2",
     "medusa-core-utils": "^1.1.31",
     "medusa-interfaces": "^1.2.1",
     "medusa-extender": "^1.6.5",
@@ -81,11 +87,17 @@
 <<<<<<< HEAD
   },
   "dependencies": {
+<<<<<<< HEAD
     "sgf-gstin-validator": "^1.0.5",
     "@medusajs/medusa": "^1.3.2"
   }
 }
 =======
+=======
+    "@medusajs/medusa": "^1.3.2",
+    "medusa-extender": "^1.7.1",
+    "sgf-gstin-validator": "^1.0.5"
+>>>>>>> 09b549f36 (added support for razorpay and gstin)
   }
 }
 >>>>>>> 1b53290d9 (renaming plugin)
