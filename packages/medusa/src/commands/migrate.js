@@ -1,5 +1,6 @@
 import { createConnection } from "typeorm"
-import configLoader from "../loaders/config"
+import { getConfigFile } from "medusa-core-utils"
+import featureFlagLoader from "../loaders/feature-flags"
 import Logger from "../loaders/logger"
 
 import getMigrations from "./utils/get-migrations"
@@ -16,22 +17,17 @@ const t = async function ({ directory }) {
     url: configModule.projectConfig.database_url,
   }
 
-  if (configModule.projectConfig.database_host) {
-    hostConfig = {
-      host: configModule.projectConfig.database_host,
-      port: configModule.projectConfig.database_port,
-      database: configModule.projectConfig.database_database,
-      ssl: configModule.projectConfig.database_ssl,
-      username: configModule.projectConfig.database_username,
-      password: configModule.projectConfig.database_password,
-    }
-  }
+  const { configModule } = getConfigFile(directory, `medusa-config`)
+
+  const featureFlagRouter = featureFlagLoader(configModule)
+
+  const enabledMigrations = await getMigrations(directory, featureFlagRouter)
 
   const connection = await createConnection({
     type: configModule.projectConfig.database_type,
-    ...hostConfig,
-    extra: configModule?.projectConfig.database_extra || {},
-    migrations: migrationDirs,
+    url: configModule.projectConfig.database_url,
+    extra: configModule.projectConfig.database_extra || {},
+    migrations: enabledMigrations,
     logging: true,
   })
 

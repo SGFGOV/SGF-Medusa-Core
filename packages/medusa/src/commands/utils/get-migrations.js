@@ -1,3 +1,4 @@
+import glob from "glob"
 import path from "path"
 import fs from "fs"
 import { isString } from "lodash"
@@ -88,13 +89,11 @@ function resolvePlugin(pluginName) {
   }
 }
 
-export default async (directory) => {
-  const migrationDirs = []
-  const configModule = await configLoader(directory)
-  /* return value*/
-  const plugins = configModule?.plugins
+export default async (directory, featureFlagRouter) => {
+  const { configModule } = getConfigFile(directory, `medusa-config`)
+  const { plugins } = configModule
 
-  const resolved = plugins?.map((plugin) => {
+  const resolved = plugins.map((plugin) => {
     if (isString(plugin)) {
       return resolvePlugin(plugin)
     }
@@ -130,5 +129,26 @@ export default async (directory) => {
     }
   }
 
-  return migrationDirs
+  return getEnabledMigrations(migrationDirs, (flag) =>
+    featureFlagRouter.isFeatureEnabled(flag)
+  )
+}
+
+export const getEnabledMigrations = (migrationDirs, isFlagEnabled) => {
+  const allMigrations = migrationDirs.flatMap((dir) => {
+    return glob.sync(dir)
+  })
+  return allMigrations
+    .map((file) => {
+      const loaded = require(file)
+      if (
+        typeof loaded.featureFlag === "undefined" ||
+        isFlagEnabled(loaded.featureFlag)
+      ) {
+        return file
+      }
+
+      return false
+    })
+    .filter(Boolean)
 }

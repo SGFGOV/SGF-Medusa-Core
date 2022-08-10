@@ -9,6 +9,8 @@ import configLoader from "../loaders/config"
 import Logger from "../loaders/logger"
 import loaders from "../loaders"
 
+import featureFlagLoader from "../loaders/feature-flags"
+
 import getMigrations from "./utils/get-migrations"
 
 const t = async function ({ directory, migrate, seedFile }) {
@@ -44,9 +46,13 @@ const t = async function ({ directory, migrate, seedFile }) {
     }
   }
 
+  const { configModule } = getConfigFile(directory, `medusa-config`)
+
+  const featureFlagRouter = featureFlagLoader(configModule)
+
   const dbType = configModule.projectConfig.database_type
   if (migrate && dbType !== "sqlite") {
-    const migrationDirs = await getMigrations(directory)
+    const migrationDirs = await getMigrations(directory, featureFlagRouter)
     const connection = await createConnection({
       type: configModule.projectConfig.database_type,
       ...hostConfig,

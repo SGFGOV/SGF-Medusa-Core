@@ -4,9 +4,15 @@ import { InventoryServiceMock } from "../__mocks__/inventory"
 
 describe("OrderService", () => {
   const totalsService = {
+    withTransaction: function () {
+      return this
+    },
     getLineItemRefund: () => {},
     getTotal: (o) => {
       return o.total || 0
+    },
+    getGiftCardableAmount: (o) => {
+      return o.subtotal || 0
     },
     getRefundedTotal: (o) => {
       return o.refunded_total || 0
@@ -33,7 +39,7 @@ describe("OrderService", () => {
 
   const eventBusService = {
     emit: jest.fn(),
-    withTransaction: function() {
+    withTransaction: function () {
       return this
     },
   }
@@ -42,35 +48,6 @@ describe("OrderService", () => {
     ...InventoryServiceMock,
   }
 
-  describe("create", () => {
-    const orderRepo = MockRepository({ create: (f) => f })
-    const orderService = new OrderService({
-      manager: MockManager,
-      orderRepository: orderRepo,
-      totalsService,
-      eventBusService,
-    })
-
-    beforeEach(async () => {
-      jest.clearAllMocks()
-    })
-
-    it("calls order model functions", async () => {
-      await orderService.create({
-        email: "oliver@test.dk",
-      })
-
-      expect(orderRepo.create).toHaveBeenCalledTimes(1)
-      expect(orderRepo.create).toHaveBeenCalledWith({
-        email: "oliver@test.dk",
-      })
-
-      expect(orderRepo.save).toHaveBeenCalledWith({
-        email: "oliver@test.dk",
-      })
-    })
-  })
-
   describe("createFromCart", () => {
     const orderRepo = MockRepository({
       create: (p) => p,
@@ -78,20 +55,20 @@ describe("OrderService", () => {
     })
     const lineItemService = {
       update: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
     const shippingOptionService = {
       updateShippingMethod: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
     const giftCardService = {
       update: jest.fn(),
       createTransaction: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -103,7 +80,7 @@ describe("OrderService", () => {
       cancelPayment: jest.fn().mockImplementation((payment) => {
         return Promise.resolve({ ...payment, status: "cancelled" })
       }),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -142,7 +119,7 @@ describe("OrderService", () => {
           total: 100,
         })
       }),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -281,6 +258,7 @@ describe("OrderService", () => {
           id: "test",
           currency_code: "eur",
           name: "test",
+          gift_cards_taxable: true,
           tax_rate: 25,
         },
         shipping_address_id: "1234",
@@ -332,13 +310,15 @@ describe("OrderService", () => {
       expect(giftCardService.update).toHaveBeenCalledTimes(1)
       expect(giftCardService.update).toHaveBeenCalledWith("gid", {
         balance: 0,
-        disabled: true,
+        is_disabled: true,
       })
 
       expect(giftCardService.createTransaction).toHaveBeenCalledTimes(1)
       expect(giftCardService.createTransaction).toHaveBeenCalledWith({
         gift_card_id: "gid",
         order_id: "id",
+        is_taxable: true,
+        tax_rate: 25,
         amount: 80,
       })
 
@@ -633,14 +613,14 @@ describe("OrderService", () => {
 
     const fulfillmentService = {
       cancelFulfillment: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
 
     const paymentProviderService = {
       cancelPayment: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -737,7 +717,7 @@ describe("OrderService", () => {
             ? Promise.reject()
             : Promise.resolve({ ...p, captured_at: "notnull" })
         ),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -842,7 +822,7 @@ describe("OrderService", () => {
 
     const lineItemService = {
       update: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -855,7 +835,7 @@ describe("OrderService", () => {
           },
         ])
       }),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1022,7 +1002,7 @@ describe("OrderService", () => {
             })
         }
       }),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1091,7 +1071,7 @@ describe("OrderService", () => {
         .mockImplementation((p) =>
           p.id === "payment_fail" ? Promise.reject() : Promise.resolve()
         ),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1232,7 +1212,7 @@ describe("OrderService", () => {
         .fn()
         .mockImplementation(() => Promise.resolve({})),
 
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1366,7 +1346,7 @@ describe("OrderService", () => {
 
     const lineItemService = {
       update: jest.fn(),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1389,7 +1369,7 @@ describe("OrderService", () => {
             ],
           })
         }),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
@@ -1416,9 +1396,7 @@ describe("OrderService", () => {
       )
 
       expect(fulfillmentService.createShipment).toHaveBeenCalledTimes(1)
-      expect(
-        fulfillmentService.createShipment
-      ).toHaveBeenCalledWith(
+      expect(fulfillmentService.createShipment).toHaveBeenCalledWith(
         IdMap.getId("fulfillment"),
         [{ tracking_number: "1234" }, { tracking_number: "2345" }],
         { metadata: undefined, no_notification: true }
@@ -1510,7 +1488,7 @@ describe("OrderService", () => {
       refundPayment: jest
         .fn()
         .mockImplementation((p) => Promise.resolve({ id: "ref" })),
-      withTransaction: function() {
+      withTransaction: function () {
         return this
       },
     }
