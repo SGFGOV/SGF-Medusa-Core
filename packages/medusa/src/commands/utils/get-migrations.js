@@ -89,13 +89,13 @@ function resolvePlugin(pluginName) {
   }
 }
 
-export default async (directory) => {
+export default async (directory, featureFlagRouter) => {
   const migrationDirs = []
   const configModule = await configLoader(directory)
   /* return value*/
   const plugins = configModule?.plugins
 
-  const resolved = plugins.map((plugin) => {
+  const resolved = plugins?.map((plugin) => {
     if (isString(plugin)) {
       return resolvePlugin(plugin)
     }
