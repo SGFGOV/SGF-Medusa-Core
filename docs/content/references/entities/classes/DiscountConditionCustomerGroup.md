@@ -18,6 +18,7 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
+
 [models/discount-condition-customer-group.ts:20](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L20)
 
 ___
@@ -27,6 +28,7 @@ ___
 • **created\_at**: `Date`
 
 #### Defined in
+
 
 [models/discount-condition-customer-group.ts:31](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L31)
 
@@ -38,6 +40,7 @@ ___
 
 #### Defined in
 
+
 [models/discount-condition-customer-group.ts:24](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L24)
 
 ___
@@ -48,8 +51,8 @@ ___
 
 #### Defined in
 
-[models/discount-condition-customer-group.ts:17](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L17)
 
+[models/discount-condition-customer-group.ts:17](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L17)
 ___
 
 ### discount\_condition
@@ -57,6 +60,7 @@ ___
 • `Optional` **discount\_condition**: [`DiscountCondition`](DiscountCondition.md)
 
 #### Defined in
+
 
 [models/discount-condition-customer-group.ts:28](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L28)
 
@@ -68,8 +72,8 @@ ___
 
 #### Defined in
 
-[models/discount-condition-customer-group.ts:37](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L37)
 
+[models/discount-condition-customer-group.ts:37](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L37)
 ___
 
 ### updated\_at
@@ -77,5 +81,6 @@ ___
 • **updated\_at**: `Date`
 
 #### Defined in
+
 
 [models/discount-condition-customer-group.ts:34](https://github.com/medusajs/medusa/blob/da7ea8c5d/packages/medusa/src/models/discount-condition-customer-group.ts#L34)
