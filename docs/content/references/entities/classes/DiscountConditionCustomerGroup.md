@@ -18,7 +18,11 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:20](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L20)
+=======
+[models/discount-condition-customer-group.ts:20](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L20)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -28,7 +32,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:31](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L31)
+=======
+[models/discount-condition-customer-group.ts:31](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L31)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -38,7 +46,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:24](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L24)
+=======
+[models/discount-condition-customer-group.ts:24](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L24)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -48,7 +60,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:17](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L17)
+=======
+[models/discount-condition-customer-group.ts:17](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L17)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -58,7 +74,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:28](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L28)
+=======
+[models/discount-condition-customer-group.ts:28](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L28)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -68,7 +88,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:37](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L37)
+=======
+[models/discount-condition-customer-group.ts:37](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L37)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
 
 ___
 
@@ -78,4 +102,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [models/discount-condition-customer-group.ts:34](https://github.com/medusajs/medusa/blob/884322447/packages/medusa/src/models/discount-condition-customer-group.ts#L34)
+=======
+[models/discount-condition-customer-group.ts:34](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition-customer-group.ts#L34)
+>>>>>>> b9ed43f7f (chore(docs): Generated Entities Reference (automated) (#2222))
