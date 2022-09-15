@@ -36,6 +36,14 @@ const config = {
     require.resolve("docusaurus-plugin-image-zoom")
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'release-1-4-1',
+      content:
+        'New Release! Version 1.4.1 of Medusa is out now! Read all about it <a href="https://github.com/medusajs/medusa/releases/tag/v1.4.1">here</a>.',
+      backgroundColor: '#7C53FF',
+      textColor: '#fff',
+      isCloseable: false,
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
