@@ -24,7 +24,7 @@ TransactionBaseService.constructor
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:16](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L16)
+[packages/medusa/src/services/product-type.ts:16](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L16)
 
 ## Properties
 
@@ -80,7 +80,7 @@ TransactionBaseService.transactionManager\_
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:12](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L12)
+[packages/medusa/src/services/product-type.ts:14](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L14)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:14](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L14)
+[packages/medusa/src/services/product-type.ts:15](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L15)
 
 ## Methods
 
@@ -154,7 +154,7 @@ the result of the find operation
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:56](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L56)
+[packages/medusa/src/services/product-type.ts:72](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L72)
 
 ___
 
@@ -179,7 +179,7 @@ the result of the find operation
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:72](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L72)
+[packages/medusa/src/services/product-type.ts:88](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L88)
 
 ___
 
@@ -205,31 +205,7 @@ the result of the find one operation.
 
 #### Defined in
 
-[packages/medusa/src/services/product-type.ts:31](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/product-type.ts#L31)
-
-___
-
-### shouldRetryTransaction\_
-
-▸ `Protected` **shouldRetryTransaction_**(`err`): `boolean`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `err` | `Record`<`string`, `unknown`\> \| { `code`: `string`  } |
-
-#### Returns
-
-`boolean`
-
-#### Inherited from
-
-TransactionBaseService.shouldRetryTransaction\_
-
-#### Defined in
-
-[packages/medusa/src/interfaces/transaction-base-service.ts:31](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L31)
+[packages/medusa/src/services/product-type.ts:47](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L47)
 
 ___
 
@@ -253,4 +229,4 @@ TransactionBaseService.withTransaction
 
 #### Defined in
 
-[packages/medusa/src/interfaces/transaction-base-service.ts:13](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L13)
+[packages/medusa/src/services/product-type.ts:23](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-type.ts#L23)
