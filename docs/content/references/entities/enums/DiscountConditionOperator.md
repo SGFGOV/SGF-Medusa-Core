@@ -12,7 +12,7 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
-[models/discount-condition.ts:32](https://github.com/medusajs/medusa/blob/c4c83c971/packages/medusa/src/models/discount-condition.ts#L32)
+[models/discount-condition.ts:32](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/discount-condition.ts#L32)
 
 ___
 

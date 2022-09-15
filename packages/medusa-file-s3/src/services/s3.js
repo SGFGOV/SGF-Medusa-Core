@@ -133,8 +133,6 @@ class S3Service extends AbstractFileService {
     aws.config.setPromisesDependency(null)
     aws.config.update(
       {
-        accessKeyId: this.accessKeyId_,
-        secretAccessKey: this.secretAccessKey_,
         region: this.region_,
         endpoint: this.endpoint_,
         ...additionalConfiguration,

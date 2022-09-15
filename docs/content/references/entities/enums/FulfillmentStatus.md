@@ -12,7 +12,7 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
-[models/order.ts:64](https://github.com/medusajs/medusa/blob/c4c83c971/packages/medusa/src/models/order.ts#L64)
+[models/order.ts:64](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/order.ts#L64)
 
 ___
 

@@ -12,7 +12,7 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
-[models/cart.ts:208](https://github.com/medusajs/medusa/blob/c4c83c971/packages/medusa/src/models/cart.ts#L208)
+[models/cart.ts:208](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/cart.ts#L208)
 
 ___
 
