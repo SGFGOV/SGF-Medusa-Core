@@ -657,6 +657,11 @@ module.exports = {
       id: "contribution-guidelines",
       label: "Contribution Guidelines",
     },
+    {
+      type: "doc",
+      id: "contribution-guidelines",
+      label: "Contribution Guidelines",
+    },
   ],
   userGuideSidebar: [
     {
