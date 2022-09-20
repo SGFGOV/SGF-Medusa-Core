@@ -4,12 +4,7 @@ In this document, you’ll learn how tax-inclusive pricing works in Medusa.
 
 :::note
 
-Tax Inclusive Pricing is currently in beta mode and guarded by a feature flag. To use Tax-Inclusive Pricing either:
-
-1. Enable the `MEDUSA_FF_TAX_INCLUSIVE_PRICING` environment variable;
-2. Or enable the `tax_inclusive_pricing` key in the Medusa server's settings.
-
-You can learn more about enabling it in the [feature flags](../feature-flags/toggle.md) documentation.
+Tax Inclusive Pricing is currently in beta mode and guarded by a feature flag. To enable it, set the environment variable `MEDUSA_FF_TAX_INCLUSIVE_PRICING` to `true`, and [run migrations](../migrations/index.md#run-migration).
 
 :::
 
@@ -23,6 +18,7 @@ Then, Medusa handles calculating the tax amount using the tax rate and the tax-i
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## How is Tax Inclusivity Defined
 =======
 ## How is Tax Inclusivity Defined?
@@ -30,6 +26,9 @@ Then, Medusa handles calculating the tax amount using the tax rate and the tax-i
 =======
 ## How is Tax Inclusivity Defined
 >>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
+=======
+## How is Tax Inclusivity Defined?
+>>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
 
 Tax inclusivity can be toggled for regions, currencies, price lists, and shipping options either during creation or while editing. This is represented by the boolean attribute `includes_tax` available in the entities `Region`, `Currency`, `PriceList`, and `ShippingOption`. By default, this attribute is set to `false`.
 
@@ -39,6 +38,7 @@ The value set for these entities can affect whether line items and shipping meth
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### How is Tax Inclusivity Defined for Line Items
 =======
 ### How is Tax Inclusivity Defined for Line Items?
@@ -46,6 +46,9 @@ The value set for these entities can affect whether line items and shipping meth
 =======
 ### How is Tax Inclusivity Defined for Line Items
 >>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
+=======
+### How is Tax Inclusivity Defined for Line Items?
+>>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
 
 :::info
 
@@ -62,6 +65,7 @@ The `LineItem` entity also has the `includes_tax` attribute. The value of this f
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### How is Tax Inclusivity Defined for Shipping Methods
 =======
 ### How is Tax Inclusivity Defined for Shipping Methods?
@@ -69,6 +73,9 @@ The `LineItem` entity also has the `includes_tax` attribute. The value of this f
 =======
 ### How is Tax Inclusivity Defined for Shipping Methods
 >>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
+=======
+### How is Tax Inclusivity Defined for Shipping Methods?
+>>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
 
 :::info
 
