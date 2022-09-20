@@ -356,6 +356,7 @@ module.exports = {
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
         },
+<<<<<<< HEAD
         {
           type: "doc",
           id: "advanced/backend/price-lists/index"
@@ -368,6 +369,8 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/sales-channels/index"
         },
+=======
+>>>>>>> 27c0dc090 (docs for tax-inclusive pricing (#2159))
       ]
     },
     {
