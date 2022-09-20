@@ -210,25 +210,17 @@ module.exports = {
             {
               type: "doc",
               id: "guides/carts-in-medusa",
-<<<<<<< HEAD
               label: "Implement Cart",
-=======
-              label: "Implement Cart"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
             },
             {
               type: "doc",
               id: "advanced/storefront/how-to-implement-checkout-flow",
-<<<<<<< HEAD
               label: "Implement Checkout",
             },
             {
               type: "doc",
               id: "advanced/storefront/use-sales-channels",
               label: "Use SalesChannels APIs"
-=======
-              label: "Implement Checkout"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
             },
           ]
         },
@@ -239,21 +231,16 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/admin/import-products",
-<<<<<<< HEAD
               label: "Import Products",
             },
             {
               type: "doc",
               id: "advanced/admin/import-prices",
               label: "Import Prices"
-=======
-              label: "Import Products"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
             },
             {
               type: "doc",
               id: "advanced/backend/taxes/manual-calculation",
-<<<<<<< HEAD
               label: "Calculate Taxes Manually",
             },
             {
@@ -272,16 +259,6 @@ module.exports = {
               label: "Use CustomerGroup APIs"
             },
           ],
-=======
-              label: "Calculate Taxes Manually"
-            },
-          ]
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/endpoints/add-storefront",
-          label: "Create Endpoint for Storefront"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
         },
         {
           type: "doc",
@@ -354,9 +331,26 @@ module.exports = {
           label: "Create Batch Job Strategy",
         },
         {
+<<<<<<< HEAD
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
 <<<<<<< HEAD
+=======
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products"
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually"
+            },
+          ]
+>>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
         },
         {
           type: "doc",
