@@ -308,41 +308,14 @@ module.exports = {
           label: "Create Batch Job Strategy"
         },
         {
-
-          type: "category",
-          label: "Storefront",
-          items: [
-            {
-              type: "doc",
-              id: "guides/carts-in-medusa",
-              label: "Implement Cart"
-            },
-            {
-              type: "doc",
-              id: "advanced/storefront/how-to-implement-checkout-flow",
-              label: "Implement Checkout"
-            },
-          ]
+          type: "doc",
+          id: "advanced/backend/batch-jobs/customize-import",
         },
         {
-          type: "category",
-          label: "Admin",
-          items: [
-            {
-              type: "doc",
-              id: "advanced/admin/import-products",
-              label: "Import Products",
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually"
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/batch-jobs/customize-import",
-              label: "Batch Customise Import"
-            },
+          type: "doc",
+          id: "advanced/backend/price-selection-strategy/override",
+          label: "Override Price Selection"
+        },
       ]
     },
     {
@@ -398,6 +371,26 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/price-lists/index"
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/price-selection-strategy/index"
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/sales-channels/index"
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/customer-groups/index"
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/dependency-container/index"
         },
       ]
     },
