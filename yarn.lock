@@ -24660,7 +24660,7 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     jest: ^28.1.2
     medusa-core-utils: ^1.1.31
-    medusa-extender: ^1.7.4
+    medusa-extender: ^1.7.5
     medusa-interfaces: ^1.2.1
     prettier: ^2.5.0
     reflect-metadata: ^0.1.13
@@ -24681,7 +24681,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"medusa-extender@npm:^1.7.4":
+"medusa-extender@npm:^1.7.5":
   version: 1.7.5
   resolution: "medusa-extender@npm:1.7.5"
   dependencies:
