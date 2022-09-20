@@ -31,7 +31,7 @@ module.exports = {
           label: "Quickstart Guide",
         },
         {
-          type:"doc",
+          type: "doc",
           id: "quickstart/quick-start-docker",
         },
         {
