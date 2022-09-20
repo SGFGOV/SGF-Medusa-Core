@@ -423,6 +423,11 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/dependency-container/index"
         },
+        {
+          type: "doc",
+          id: "advanced/backend/taxes/inclusive-pricing",
+          label: "Tax Inclusive Pricing"
+        },
       ]
     },
     {
