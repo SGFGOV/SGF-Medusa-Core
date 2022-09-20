@@ -22,12 +22,15 @@ async function main () {
         per_page: 1
       })
       
-      if (commitResponse.data.length && dateDiffInDays(new Date(commitResponse.data[0].commit.committer.date), new Date()) < 6) {
+      if (commitResponse.data.length && dateDiffInDays(commitResponse.data[0].commit.committer.date, new Date()) < 6) {
+      const fileStat = fs.statSync(path.join(__dirname, '..', 'www', 'docs', 'announcement.json'));
+      if (dateDiffInDays(fileStat.mtime, new Date()) < 6) {
         console.log("File was edited less than 6 days ago. Expiry canceled.");
         return;
       }
-    } catch (e) {
-      //continue as if file doesn't exist
+    } 
+  }catch (e) {
+      //file doesn't exist, continue
     }
   } else {
     //retrieve the latest release
