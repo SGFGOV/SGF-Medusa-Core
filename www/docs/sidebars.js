@@ -31,7 +31,7 @@ module.exports = {
           label: "Quickstart Guide",
         },
         {
-          type:"doc",
+          type: "doc",
           id: "quickstart/quick-start-docker",
         },
         {
@@ -201,24 +201,14 @@ module.exports = {
             {
               type: "doc",
               id: "guides/carts-in-medusa",
-<<<<<<< HEAD
               label: "Implement Cart",
-=======
-              label: "Implement Cart"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
             },
             {
               type: "doc",
               id: "advanced/storefront/how-to-implement-checkout-flow",
-<<<<<<< HEAD
               label: "Implement Checkout",
             },
           ],
-=======
-              label: "Implement Checkout"
-            },
-          ]
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
         },
         {
           type: "category",
@@ -227,16 +217,11 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/admin/import-products",
-<<<<<<< HEAD
               label: "Import Products",
-=======
-              label: "Import Products"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
             },
             {
               type: "doc",
               id: "advanced/backend/taxes/manual-calculation",
-<<<<<<< HEAD
               label: "Calculate Taxes Manually",
             },
             {
@@ -244,11 +229,6 @@ module.exports = {
               id: "advanced/backend/price-lists/use-api",
             },
           ],
-=======
-              label: "Calculate Taxes Manually"
-            },
-          ]
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
         },
         {
           type: "doc",
@@ -323,14 +303,27 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
-<<<<<<< HEAD
         },
         {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
           label: "Override Price Selection",
-=======
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
+        },
+        {
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products",
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+          ],
         },
       ],
     },
