@@ -328,9 +328,9 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually",
+              label: "Calculate Taxes Manually"
             },
-          ],
+          ]
         },
       ]
     },
@@ -387,26 +387,6 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/price-lists/index"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/price-selection-strategy/index"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/sales-channels/index"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/customer-groups/index"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/dependency-container/index"
         },
       ]
     },
