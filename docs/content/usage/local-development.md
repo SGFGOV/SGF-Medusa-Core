@@ -178,7 +178,7 @@ medusa-dev -q
 medusa-dev --packages @medusajs/medusa-cli medusa-file-minio
 ```
 
-## What’s Next
+## What’s Next 🚀
 
 - Check out our [contribution guidelines](https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md).
 - Learn how to [create a plugin](../advanced/backend/plugins/create.md).
