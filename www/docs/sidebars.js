@@ -332,6 +332,7 @@ module.exports = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
 <<<<<<< HEAD
@@ -351,6 +352,10 @@ module.exports = {
             },
           ]
 >>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
+=======
+          type: "doc",
+          id: "advanced/backend/batch-jobs/customize-import",
+>>>>>>> 957583aa8 (docs: added feature flags docs (#2236))
         },
         {
           type: "doc",
