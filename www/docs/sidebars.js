@@ -296,20 +296,8 @@ module.exports = {
           label: "Create Batch Job Strategy",
         },
         {
-          type: "category",
-          label: "Admin",
-          items: [
-            {
-              type: "doc",
-              id: "advanced/admin/import-products",
-              label: "Import Products"
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually"
-            },
-          ]
+          type: "doc",
+          id: "advanced/backend/batch-jobs/customize-import",
         },
         {
           type: "doc",
