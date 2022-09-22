@@ -22,10 +22,14 @@ This can be useful when some countries have the same currency but have different
 Then, Medusa handles calculating the tax amount using the tax rate and the tax-inclusive price. This is managed in the backend and relayed to accounting and analytics tools.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## How is Tax Inclusivity Defined
 =======
 ## How is Tax Inclusivity Defined?
 >>>>>>> 27c0dc090 (docs for tax-inclusive pricing (#2159))
+=======
+## How is Tax Inclusivity Defined
+>>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
 
 Tax inclusivity can be toggled for regions, currencies, price lists, and shipping options either during creation or while editing. This is represented by the boolean attribute `includes_tax` available in the entities `Region`, `Currency`, `PriceList`, and `ShippingOption`. By default, this attribute is set to `false`.
 
@@ -34,10 +38,14 @@ If you want to enable or disable this attribute for any of these entities, you c
 The value set for these entities can affect whether line items and shipping methods are tax inclusive or not.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### How is Tax Inclusivity Defined for Line Items
 =======
 ### How is Tax Inclusivity Defined for Line Items?
 >>>>>>> 27c0dc090 (docs for tax-inclusive pricing (#2159))
+=======
+### How is Tax Inclusivity Defined for Line Items
+>>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
 
 :::info
 
@@ -53,10 +61,14 @@ The `LineItem` entity also has the `includes_tax` attribute. The value of this f
 - Or one of the variant’s prices in the price list uses a currency or region that has the `includes_tax` attribute set to `true`, and the tax-inclusive amount of the price is less than the original price of the variant.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### How is Tax Inclusivity Defined for Shipping Methods
 =======
 ### How is Tax Inclusivity Defined for Shipping Methods?
 >>>>>>> 27c0dc090 (docs for tax-inclusive pricing (#2159))
+=======
+### How is Tax Inclusivity Defined for Shipping Methods
+>>>>>>> 59a785c80 (docs: integrate Vale for documentation linting (#2242))
 
 :::info
 
