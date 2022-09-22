@@ -138,9 +138,7 @@ The code snippet must be written using NPM, and the `npm2yarn` plugin will autom
 
 <!-- vale off -->
 
-Don't use commands in their abbreviated terms. For example, instead of `npm i` use `npm install`.
-
-<!-- vale on -->
+Don't use commands in their abbrivated terms. For example, instead of `npm i` use `npm install`.
 
 <!-- vale on -->
 

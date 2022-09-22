@@ -123,7 +123,7 @@ heroku buildpacks:set heroku/nodejs
 
 Stackhero Redis adds the Redis URL under the environment variable `STACKHERO_REDIS_URL_TLS`. However, Medusa looks for the `REDIS_URL` environment variable when initializing the connection with Redis.
 
-Retrieve the value of `STACKHERO_REDIS_URL_TLS` with the following command:
+Retrieve the value of `UPSTASH_REDIS_URL` with the following command:
 
 ```bash
 heroku config:get STACKHERO_REDIS_URL_TLS
