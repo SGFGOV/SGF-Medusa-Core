@@ -142,6 +142,8 @@ Don't use commands in their abbreviated terms. For example, instead of `npm i` u
 
 <!-- vale on -->
 
+<!-- vale on -->
+
 ### Run Command
 
 Make sure to always use the `run` command when the command runs a script.
