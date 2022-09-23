@@ -184,15 +184,7 @@ module.exports = {
           type: "doc",
           id: "usage/local-development",
         },
-<<<<<<< HEAD
       ],
-=======
-        {
-          type: "doc",
-          id: "usage/local-development",
-        },
-      ]
->>>>>>> 2f34276c6 (docs: added documentation necessary for local dev (#2237))
     },
     {
       type: "category",
@@ -308,7 +300,7 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/feature-flags/toggle",
-          label: "Toggle Feature Flags"
+          label: "Toggle Feature Flags",
         },
         {
           type: "doc",
