@@ -308,6 +308,7 @@ module.exports = {
           label: "Create Batch Job Strategy"
         },
         {
+<<<<<<< HEAD
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
         },
@@ -315,6 +316,22 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
           label: "Override Price Selection"
+=======
+          type: "category",
+          label: "Storefront",
+          items: [
+            {
+              type: "doc",
+              id: "guides/carts-in-medusa",
+              label: "Implement Cart"
+            },
+            {
+              type: "doc",
+              id: "advanced/storefront/how-to-implement-checkout-flow",
+              label: "Implement Checkout"
+            },
+          ]
+>>>>>>> ca9701d70 (docs: added how to create batch job strategy (#2247))
         },
         {
           type: "category",
