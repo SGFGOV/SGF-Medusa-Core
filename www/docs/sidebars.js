@@ -267,6 +267,15 @@ module.exports = {
             },
             {
               type: "doc",
+<<<<<<< HEAD
+=======
+              id: "advanced/backend/taxes/manual-calculation",
+<<<<<<< HEAD
+              label: "Calculate Taxes Manually",
+            },
+            {
+              type: "doc",
+>>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -280,12 +289,26 @@ module.exports = {
               id: "advanced/admin/use-customergroups-api",
               label: "Use CustomerGroup APIs"
             },
+<<<<<<< HEAD
             {
               type: "doc",
               id: "advanced/admin/manage-discounts",
               label: "Use Discount APIs"
             },
           ]
+=======
+          ],
+=======
+              label: "Calculate Taxes Manually"
+            },
+          ]
+        },
+        {
+          type: "doc",
+          id: "advanced/backend/endpoints/add-storefront",
+          label: "Create Endpoint for Storefront"
+>>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
+>>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
         },
         {
           type: "doc",
@@ -360,6 +383,7 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
+<<<<<<< HEAD
         },
         {
           type: "doc",
@@ -367,9 +391,28 @@ module.exports = {
           label: "Override Price Selection",
         },
         {
+<<<<<<< HEAD
           type: "doc",
           id: "advanced/ecommerce/handle-order-claim-event",
           label: "Handle Order Claim Event"
+=======
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products",
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+          ],
+=======
+>>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
+>>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
         },
       ]
     },
