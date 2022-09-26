@@ -197,11 +197,12 @@ module.exports = {
             {
               type: "doc",
               id: "guides/carts-in-medusa",
-              label: "Implement Cart",
+              label: "Implement Cart"
             },
             {
               type: "doc",
               id: "advanced/storefront/how-to-implement-checkout-flow",
+
               label: "Implement Checkout",
             },
             {
@@ -218,7 +219,7 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/admin/import-products",
-              label: "Import Products",
+              label: "Import Products"
             },
             {
               type: "doc",
