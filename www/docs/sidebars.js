@@ -308,15 +308,7 @@ module.exports = {
           label: "Create Batch Job Strategy"
         },
         {
-<<<<<<< HEAD
-          type: "doc",
-          id: "advanced/backend/batch-jobs/customize-import",
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/price-selection-strategy/override",
-          label: "Override Price Selection"
-=======
+
           type: "category",
           label: "Storefront",
           items: [
@@ -331,7 +323,6 @@ module.exports = {
               label: "Implement Checkout"
             },
           ]
->>>>>>> ca9701d70 (docs: added how to create batch job strategy (#2247))
         },
         {
           type: "category",
@@ -347,8 +338,11 @@ module.exports = {
               id: "advanced/backend/taxes/manual-calculation",
               label: "Calculate Taxes Manually"
             },
-          ]
-        },
+            {
+              type: "doc",
+              id: "advanced/backend/batch-jobs/customize-import",
+              label: "Batch Customise Import"
+            },
       ]
     },
     {
