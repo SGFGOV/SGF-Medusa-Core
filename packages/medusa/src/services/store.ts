@@ -1,4 +1,5 @@
 import { MedusaError } from "medusa-core-utils"
+import { Store as MedusaStore } from '@medusajs/medusa';
 import { EntityManager } from "typeorm"
 import { TransactionBaseService } from "../interfaces"
 import { Currency, Store } from "../models"
