@@ -1,5 +1,4 @@
 import { FlagRouter } from "../utils/flag-router"
-
 import { MedusaError } from "medusa-core-utils"
 import { EntityManager } from "typeorm"
 import { ProductVariantService, SearchService } from "."
