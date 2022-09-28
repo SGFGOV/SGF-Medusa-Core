@@ -2,7 +2,6 @@ import { createConnection } from "typeorm"
 import configLoader from "../loaders/config"
 import featureFlagLoader from "../loaders/feature-flags"
 import Logger from "../loaders/logger"
-import configLoader from "../loaders/config"
 import getMigrations from "./utils/get-migrations"
 
 const t = async function ({ directory }) {
@@ -11,7 +10,7 @@ const t = async function ({ directory }) {
   args.shift()
   args.shift()
   const configModule = await configLoader(directory)
-  let hostConfig = {
+  const hostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
   }
