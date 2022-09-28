@@ -1,7 +1,6 @@
 // validator = require( '../modules/address/sgf-gstin-validator')
 // /<reference path = "../types/sgf-gstin-validator.d.ts" />
-import * as validator from "sgf-gstin-validator/dist"
-
+import * as validator from "sgf-gstin-validator"
 
 describe("@IsGstin", function () {
   it("validator.isValidGSTNumber::Should return false when length is not 15 digits", function () {
