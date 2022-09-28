@@ -1,5 +1,4 @@
 module.exports = {
-
   moduleFileExtensions: ["js", "json", "ts", "d.ts"],
   preset: "ts-jest",
   rootDir: "src",

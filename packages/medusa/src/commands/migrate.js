@@ -10,11 +10,22 @@ const t = async function ({ directory }) {
   args.shift()
   args.shift()
   const configModule = await configLoader(directory)
-  const hostConfig = {
+  let hostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
   }
 
+  if (configModule.projectConfig.database_host) {
+    hostConfig = {
+      host: configModule.projectConfig.database_host,
+      port: configModule.projectConfig.database_port,
+      database: configModule.projectConfig.database_database,
+      ssl: configModule.projectConfig.database_ssl,
+      username: configModule.projectConfig.database_username,
+      password: configModule.projectConfig.database_password,
+    }
+  }
+  // const { configModule } = getConfigFile(directory, `medusa-config`)
 
   const featureFlagRouter = featureFlagLoader(configModule)
 
