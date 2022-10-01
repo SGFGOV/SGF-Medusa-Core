@@ -1,6 +1,6 @@
 module.exports = {
   moduleFileExtensions: ["js", "json", "ts", "d.ts"],
-  preset: "ts-jest",
+  //preset: "babel",
   rootDir: "src",
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
   verbose: true,
