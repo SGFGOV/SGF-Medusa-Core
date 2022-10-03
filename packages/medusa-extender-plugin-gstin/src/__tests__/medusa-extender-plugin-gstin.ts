@@ -1,5 +1,3 @@
-// validator = require( '../modules/address/sgf-gstin-validator')
-// /<reference path = "../types/sgf-gstin-validator.d.ts" />
 import * as validator from "sgf-gstin-validator/dist"
 
 
