@@ -1,6 +1,6 @@
 {
   "name": "medusa-extender-plugin-gstin",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "",
   "author": "SGFGOV <sgf0@sourcegoodfood.com>",
   "homepage": "https://github.com/SGFGOV/medusa",
@@ -23,21 +23,15 @@
   "peerDependencies": {
     "@medusajs/medusa": "^1.3.2",
     "medusa-core-utils": "^1.1.31",
-    "medusa-extender": "^1.7.1",
     "medusa-interfaces": "^1.2.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
-    "@babel/preset-env": "^7.19.3",
-    "@babel/preset-typescript": "^7.18.6",
     "@golevelup/ts-jest": "^0.3.2",
-    "@types/jest": "^29.1.1",
+    "@types/jest": "^28.1.2",
     "@types/node": "^16.11.12",
-    "awilix": "^4.2.3",
-    "babel-jest": "^29.1.2",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -47,6 +41,7 @@
     "prettier": "^2.5.0",
     "reflect-metadata": "^0.1.13",
     "supertest": "^6.1.6",
+    "ts-jest": "^29.0.3",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
@@ -55,7 +50,7 @@
   },
   "dependencies": {
     "@medusajs/medusa": "^1.3.2",
-    "medusa-extender": "^1.7.5",
-    "sgf-gstin-validator": "^2.0.3"
+    "medusa-extender": "^1.7.4",
+    "sgf-gstin-validator": "^1.0.5"
   }
 }
