@@ -6796,8 +6796,11 @@ __metadata:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 595c783a5 (feat: rolebased s3)
+=======
+>>>>>>> 79c68caf5 (feat: rolebased s3)
 "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3"
@@ -6828,12 +6831,15 @@ __metadata:
   linkType: soft
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4ea4d82c4 (build: fixed merge)
 =======
 >>>>>>> 595c783a5 (feat: rolebased s3)
 =======
 >>>>>>> 2f5f6b71f (build: fixed merge)
+=======
+>>>>>>> 79c68caf5 (feat: rolebased s3)
 "@sgftech/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa@workspace:packages/medusa"
@@ -25709,6 +25715,7 @@ __metadata:
   linkType: soft
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "medusa-file-s3@workspace:packages/medusa-file-s3":
   version: 0.0.0-use.local
   resolution: "medusa-file-s3@workspace:packages/medusa-file-s3"
@@ -25738,6 +25745,8 @@ __metadata:
 
 =======
 >>>>>>> 595c783a5 (feat: rolebased s3)
+=======
+>>>>>>> 79c68caf5 (feat: rolebased s3)
 "medusa-file-spaces@workspace:packages/medusa-file-spaces":
   version: 0.0.0-use.local
   resolution: "medusa-file-spaces@workspace:packages/medusa-file-spaces"
