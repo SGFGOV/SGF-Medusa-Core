@@ -6774,6 +6774,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 79c68caf5 (feat: rolebased s3)
 "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3"
@@ -6803,8 +6806,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+<<<<<<< HEAD
 =======
 >>>>>>> 2f5f6b71f (build: fixed merge)
+=======
+>>>>>>> 79c68caf5 (feat: rolebased s3)
 "@sgftech/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa@workspace:packages/medusa"
