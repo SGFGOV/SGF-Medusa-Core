@@ -33,6 +33,7 @@ import taxRateRoutes from "./tax-rates"
 import uploadRoutes from "./uploads"
 import userRoutes, { unauthenticatedUserRoutes } from "./users"
 import variantRoutes from "./variants"
+import { parseCorsOrigins } from "../../../utils"
 
 const route = Router()
 
@@ -42,7 +43,7 @@ export default (app, container, config) => {
   const adminCors = config.admin_cors || ""
   route.use(
     cors({
-      origin: adminCors.split(","),
+      origin: parseCorsOrigins(adminCors),
       credentials: true,
     })
   )
