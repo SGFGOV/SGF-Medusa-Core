@@ -13,7 +13,7 @@ async function main () {
   let announcement = {};
 
   if (shouldExpire) {
-    //check if the file was last updated 6 days ago
+    // check if the file was last updated 6 days ago
     try {
       const commitResponse = await octokit.request('GET /repos/{owner}/{repo}/commits', {
         owner: 'medusajs',
