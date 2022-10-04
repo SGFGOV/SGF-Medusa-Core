@@ -5522,9 +5522,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/medusa@^1.3.2, @medusajs/medusa@^1.3.3, @medusajs/medusa@^1.4.0, @medusajs/medusa@workspace:packages/medusa":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/medusa@workspace:packages/medusa"
+"@medusajs/medusa@npm:^1.3.2, @medusajs/medusa@npm:^1.3.3, @medusajs/medusa@npm:^1.4.0":
+  version: 1.4.1
+  resolution: "@medusajs/medusa@npm:1.4.1"
   dependencies:
     "@medusajs/medusa-cli": ^1.3.3
     "@types/ioredis": ^4.28.10
@@ -6773,6 +6773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3"
@@ -6802,6 +6803,8 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+=======
+>>>>>>> 2f5f6b71f (build: fixed merge)
 "@sgftech/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa@workspace:packages/medusa"
