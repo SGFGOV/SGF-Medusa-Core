@@ -13,7 +13,7 @@ async function main () {
   let announcement = {};
 
   if (shouldExpire) {
-    //check if the file was last updated 6 days ago
+    // check if the file was last updated 6 days ago
     try {
       const fileStat = fs.statSync(path.join(__dirname, '..', 'www', 'docs', 'announcement.json'));
       if (dateDiffInDays(fileStat.mtime, new Date()) < 6) {
