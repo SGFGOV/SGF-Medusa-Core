@@ -1,7 +1,7 @@
 {
-  "name": "@medusajs/medusa",
-  "version": "1.4.1",
-  "description": "E-commerce for JAMstack",
+  "name": "@sgftech/medusa",
+  "version": "1.4.3",
+  "description": "E-commerce for JAMstack with AWS extensions",
   "main": "dist/index.js",
   "bin": "./cli.js",
   "repository": {
@@ -12,7 +12,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Sebastian Rindom",
+  "author": "Govind Diwakar",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.14.3",
