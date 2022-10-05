@@ -12,7 +12,7 @@ const t = async function ({ directory }) {
   args.shift()
   args.shift()
   const configModule = await configLoader(directory)
-  const migrationDirs = await getMigrations(directory)
+  //  const migrationDirs = await getMigrations(directory)
   let hostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
@@ -21,7 +21,6 @@ const t = async function ({ directory }) {
   //  const { configModule } = getConfigFile(directory, `medusa-config`)
 
   const featureFlagRouter = featureFlagLoader(configModule)
-
   const enabledMigrations = await getMigrations(directory, featureFlagRouter)
   if (configModule.projectConfig.database_host) {
     hostConfig = {
@@ -38,7 +37,7 @@ const t = async function ({ directory }) {
     type: configModule.projectConfig.database_type,
     ...hostConfig,
     extra: configModule?.projectConfig.database_extra || {},
-    migrations: migrationDirs,
+    migrations: enabledMigrations,
     logging: true,
   })
 
