@@ -40,6 +40,10 @@ module.exports = {
         },
         {
           type: "doc",
+          id: "quickstart/quick-start-docker",
+        },
+        {
+          type: "doc",
           id: "usage",
         },
       ],
@@ -310,7 +314,6 @@ module.exports = {
           label: "Override Price Selection",
         },
         {
-<<<<<<< HEAD
           type: "category",
           label: "Admin",
           items: [
@@ -325,10 +328,6 @@ module.exports = {
               label: "Calculate Taxes Manually",
             },
           ],
-=======
-          type: "doc",
-          id: "advanced/backend/batch-jobs/customize-import",
->>>>>>> 957583aa8 (docs: added feature flags docs (#2236))
         },
       ],
     },
