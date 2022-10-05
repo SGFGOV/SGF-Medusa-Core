@@ -36,6 +36,10 @@ module.exports = {
         },
         {
           type: "doc",
+          id: "quickstart/quick-start-docker",
+        },
+        {
+          type: "doc",
           id: "usage",
         },
       ]
@@ -314,7 +318,23 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
-          label: "Override Price Selection"
+          label: "Override Price Selection",
+        },
+        {
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products",
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+          ],
         },
       ]
     },

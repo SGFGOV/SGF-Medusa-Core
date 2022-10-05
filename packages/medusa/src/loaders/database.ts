@@ -7,7 +7,7 @@ import {
 import { ShortenedNamingStrategy } from "../utils/naming-strategy"
 import { AwilixContainer } from "awilix"
 import { ConnectionOptions } from "typeorm/connection/ConnectionOptions"
-import { ConfigModule } from "../types/global"
+import { ConfigModule, DatabaseHostConfig } from "../types/global"
 
 type Options = {
   configModule: ConfigModule
@@ -25,12 +25,25 @@ export default async ({
   const cnnManager = getConnectionManager()
   if (cnnManager.has("default") && getConnection().isConnected) {
     await getConnection().close()
+  let hostConfig: DatabaseHostConfig = {
+    database: configModule.projectConfig.database_database,
+    url: configModule.projectConfig.database_url,
+  }
+
+  if (configModule.projectConfig.database_host) {
+    hostConfig = {
+      host: configModule.projectConfig.database_host,
+      port: configModule.projectConfig.database_port,
+      database: configModule.projectConfig.database_database,
+      ssl: configModule.projectConfig.database_ssl,
+      username: configModule.projectConfig.database_username,
+      password: configModule.projectConfig.database_password,
+    }
   }
 
   const connection = await createConnection({
     type: configModule.projectConfig.database_type,
-    url: configModule.projectConfig.database_url,
-    database: configModule.projectConfig.database_database,
+    ...hostConfig,
     extra: configModule.projectConfig.database_extra || {},
     entities,
     namingStrategy: new ShortenedNamingStrategy(),
