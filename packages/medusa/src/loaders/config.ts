@@ -10,7 +10,6 @@ const errorHandler = isProduction
       throw new Error(msg)
     }
   : console.log
-
 export const handleConfigError = (error: Error): void => {
   logger.error(`Error in loading config: ${error.message}`)
   if (error.stack) {
@@ -19,15 +18,28 @@ export const handleConfigError = (error: Error): void => {
   process.exit(1)
 }
 
-export default (rootDirectory: string): ConfigModule => {
-  const { configModule, error } = getConfigFile<ConfigModule>(
-    rootDirectory,
-    `medusa-config`
-  )
-
+export default async (rootDirectory: string): Promise<ConfigModule> => {
+  const configuration = getConfigFile(rootDirectory, `medusa-config`) as {
+    configModule: ConfigModule
+    configFilePath: string
+  }
+  const error = undefined
   if (error) {
     handleConfigError(error)
   }
+
+  const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
+    for (const key of Object.keys(obj)) {
+      if (typeof obj[key] === "object" && obj[key] !== null) {
+        await resolveConfigProperties(obj[key])
+      }
+      if (typeof obj[key] === "function") {
+        obj[key] = await obj[key]()
+      }
+    }
+    return obj
+  }
+  const configModule = await resolveConfigProperties(configuration.configModule)
 
   if (!configModule?.projectConfig?.redis_url) {
     console.log(

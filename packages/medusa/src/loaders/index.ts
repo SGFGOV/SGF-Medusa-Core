@@ -37,16 +37,14 @@ type Options = {
   isTest: boolean
 }
 
-export default async ({
-  directory: rootDirectory,
-  expressApp,
-  isTest,
-}: Options): Promise<{
-  container: MedusaContainer
-  dbConnection: Connection
-  app: Express
-}> => {
-  const configModule = loadConfig(rootDirectory)
+export default async (
+  {
+    directory: rootDirectory,
+    expressApp,
+    isTest
+  }: Options
+): Promise<{ container: MedusaContainer; dbConnection: Connection; app: Express }> => {
+  const configModule = await loadConfig(rootDirectory)
 
   const container = createContainer() as MedusaContainer
   container.register("configModule", asValue(configModule))

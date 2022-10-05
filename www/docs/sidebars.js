@@ -271,6 +271,14 @@ module.exports = {
             },
             {
               type: "doc",
+<<<<<<< HEAD
+=======
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+            {
+              type: "doc",
+>>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -380,7 +388,6 @@ module.exports = {
         },
         {
 <<<<<<< HEAD
-<<<<<<< HEAD
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
 <<<<<<< HEAD
@@ -400,10 +407,6 @@ module.exports = {
             },
           ]
 >>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
-=======
-          type: "doc",
-          id: "advanced/backend/batch-jobs/customize-import",
->>>>>>> 957583aa8 (docs: added feature flags docs (#2236))
         },
         {
           type: "doc",
