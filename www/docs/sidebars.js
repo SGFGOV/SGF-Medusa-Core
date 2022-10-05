@@ -44,6 +44,10 @@ module.exports = {
         },
         {
           type: "doc",
+          id: "quickstart/quick-start-docker",
+        },
+        {
+          type: "doc",
           id: "usage",
         },
       ],
@@ -378,8 +382,11 @@ module.exports = {
               label: "Calculate Taxes Manually",
             },
           ],
+<<<<<<< HEAD
 =======
 >>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
+=======
+>>>>>>> 0139047da (build: updated libraries)
         },
       ],
     },

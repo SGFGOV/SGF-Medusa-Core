@@ -1,7 +1,7 @@
 import { createConnection } from "typeorm"
 import { getConfigFile } from "medusa-core-utils"
 import featureFlagLoader from "../loaders/feature-flags"
-import { handleConfigError } from "../loaders/config"
+import configLoader from "../loaders/config"
 import Logger from "../loaders/logger"
 
 import getMigrations from "./utils/get-migrations"
@@ -11,22 +11,34 @@ const t = async function ({ directory }) {
   args.shift()
   args.shift()
   args.shift()
-
-  const { configModule, error } = getConfigFile(directory, `medusa-config`)
-
-  if (error) {
-    handleConfigError(error)
+  const configModule = await configLoader(directory)
+  const migrationDirs = await getMigrations(directory)
+  let hostConfig = {
+    database: configModule.projectConfig.database_database,
+    url: configModule.projectConfig.database_url,
   }
+
+//  const { configModule } = getConfigFile(directory, `medusa-config`)
 
   const featureFlagRouter = featureFlagLoader(configModule)
 
   const enabledMigrations = await getMigrations(directory, featureFlagRouter)
+  if (configModule.projectConfig.database_host) {
+    hostConfig = {
+      host: configModule.projectConfig.database_host,
+      port: configModule.projectConfig.database_port,
+      database: configModule.projectConfig.database_database,
+      ssl: configModule.projectConfig.database_ssl,
+      username: configModule.projectConfig.database_username,
+      password: configModule.projectConfig.database_password,
+    }
+  }
 
   const connection = await createConnection({
     type: configModule.projectConfig.database_type,
-    url: configModule.projectConfig.database_url,
-    extra: configModule.projectConfig.database_extra || {},
-    migrations: enabledMigrations,
+    ...hostConfig,
+    extra: configModule?.projectConfig.database_extra || {},
+    migrations: migrationDirs,
     logging: true,
   })
 
