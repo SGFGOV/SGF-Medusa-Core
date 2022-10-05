@@ -18,7 +18,7 @@ const t = async function ({ directory }) {
     url: configModule.projectConfig.database_url,
   }
 
-//  const { configModule } = getConfigFile(directory, `medusa-config`)
+  //  const { configModule } = getConfigFile(directory, `medusa-config`)
 
   const featureFlagRouter = featureFlagLoader(configModule)
 
