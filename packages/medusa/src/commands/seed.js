@@ -56,7 +56,7 @@ const t = async function ({ directory, migrate, seedFile }) {
       ...hostConfig,
       extra: configModule.projectConfig.database_extra || {},
       migrations: migrationDirs,
-      logging: true,
+      logging: configModule?.projectConfig.database_logging,
     })
 
     await connection.runMigrations()

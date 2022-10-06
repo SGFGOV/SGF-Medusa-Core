@@ -38,7 +38,7 @@ const t = async function ({ directory }) {
     ...hostConfig,
     extra: configModule?.projectConfig.database_extra || {},
     migrations: enabledMigrations,
-    logging: true,
+    logging: configModule?.projectConfig.database_logging,
   })
 
   if (args[0] === "run") {
