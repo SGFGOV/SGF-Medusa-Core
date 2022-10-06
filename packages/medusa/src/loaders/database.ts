@@ -39,7 +39,7 @@ export default async ({
     extra: configModule.projectConfig.database_extra || {},
     entities,
     namingStrategy: new ShortenedNamingStrategy(),
-    logging: configModule.projectConfig.database_logging || false,
+    logging: configModule?.projectConfig.database_logging,
   } as ConnectionOptions)
 
   if (isSqlite) {
