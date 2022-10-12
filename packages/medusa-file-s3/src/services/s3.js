@@ -3,6 +3,7 @@ import aws from "aws-sdk"
 import { AbstractFileService } from "@medusajs/medusa"
 const { getDefaultRoleAssumerWithWebIdentity } = require("@aws-sdk/client-sts")
 const { defaultProvider } = require("@aws-sdk/credential-provider-node")
+import stream from "stream"
 class S3Service extends AbstractFileService {
   constructor(x, options) {
     super(x, options)
@@ -35,6 +36,7 @@ class S3Service extends AbstractFileService {
       },
       true
     )
+    this.updateAwsConfig()
 
     const s3 = new aws.S3()
     const params = {
@@ -51,7 +53,7 @@ class S3Service extends AbstractFileService {
           return
         }
 
-        resolve({ url: data.Location })
+        resolve({ url: data.Location, key: data.Key })
       })
     })
   }
@@ -66,6 +68,7 @@ class S3Service extends AbstractFileService {
       },
       true
     )
+    this.updateAwsConfig()
 
     const s3 = new aws.S3()
     const params = {
@@ -85,34 +88,67 @@ class S3Service extends AbstractFileService {
   }
 
   async getUploadStreamDescriptor(fileData) {
-    throw new Error("Method not implemented.")
+    this.updateAwsConfig()
+
+    const pass = new stream.PassThrough()
+
+    const fileKey = `${fileData.name}.${fileData.ext}`
+    const params = {
+      ACL: fileData.acl ?? "private",
+      Bucket: this.bucket_,
+      Body: pass,
+      Key: fileKey,
+    }
+
+    const s3 = new aws.S3()
+    return {
+      writeStream: pass,
+      promise: s3.upload(params).promise(),
+      url: `${this.s3Url_}/${fileKey}`,
+      fileKey,
+    }
   }
 
   async getDownloadStream(fileData) {
+    this.updateAwsConfig()
+
+    const s3 = new aws.S3()
+
+    const params = {
+      Bucket: this.bucket_,
+      Key: `${fileData.fileKey}`,
+    }
+
+    return s3.getObject(params).createReadStream()
+  }
+
+  async getPresignedDownloadUrl(fileData) {
+    this.updateAwsConfig({
+      signatureVersion: "v4",
+    })
+
+    const s3 = new aws.S3()
+
+    const params = {
+      Bucket: this.bucket_,
+      Key: `${fileData.fileKey}`,
+      Expires: this.downloadUrlDuration,
+    }
+
+    return await s3.getSignedUrlPromise("getObject", params)
+  }
+
+  updateAwsConfig(additionalConfiguration = {}) {
     aws.config.setPromisesDependency(null)
     aws.config.update(
       {
         ...this.auth,
         region: this.region_,
         endpoint: this.endpoint_,
+        ...additionalConfiguration,
       },
       true
     )
-    const s3 = new aws.S3()
-    const file = await s3
-      .getObject({ Bucket: this.bucket_, Key: fileData.fileKey })
-      .promise()
-    const value = file.Body.toString()
-    const Readable = require("stream").Readable
-    const s = new Readable()
-    s._read = () => {} // redundant? see update below
-    s.push(value)
-    s.push(null)
-    return s
-  }
-
-  async getPresignedDownloadUrl(fileData) {
-    throw new Error("Method not implemented.")
   }
 }
 

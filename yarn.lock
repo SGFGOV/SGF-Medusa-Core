@@ -5506,11 +5506,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/medusa-js@^1.3.0, @medusajs/medusa-js@workspace:packages/medusa-js":
+"@medusajs/medusa-js@^1.3.1, @medusajs/medusa-js@workspace:packages/medusa-js":
   version: 0.0.0-use.local
   resolution: "@medusajs/medusa-js@workspace:packages/medusa-js"
   dependencies:
-    "@medusajs/medusa": ^1.4.0
+    "@medusajs/medusa": ^1.5.0
     "@types/jest": ^26.0.19
     axios: ^0.24.0
     cross-env: ^7.0.3
@@ -5522,9 +5522,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/medusa@npm:^1.3.2, @medusajs/medusa@npm:^1.3.3, @medusajs/medusa@npm:^1.4.0":
-  version: 1.4.1
-  resolution: "@medusajs/medusa@npm:1.4.1"
+"@medusajs/medusa@npm:^1.3.2, @medusajs/medusa@npm:^1.3.3, @medusajs/medusa@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@medusajs/medusa@npm:1.5.0"
   dependencies:
     "@medusajs/medusa-cli": ^1.3.3
     "@types/ioredis": ^4.28.10
@@ -5548,7 +5548,7 @@ __metadata:
     ioredis-mock: ^5.6.0
     iso8601-duration: ^1.3.0
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
     multer: ^1.4.2
@@ -5574,7 +5574,7 @@ __metadata:
     typeorm: 0.2.x
   bin:
     medusa: cli.js
-  checksum: 3b680f12f7b1a7b519e182f71994519811fb3995125233d2a37aba388b011f9a4ffee5dd904a255789dad3f786fa2e24e7d715493e3e587f9f065bafc77cefd5
+  checksum: 14d9e5ef9db5fbf5b874931f530b43542fc6719e1543843c97a50ace6344ecec6fe3027d96dccc04734da1c0b0146f5fced2b39616361ef9e8e7dfeb80aaf2e8
   languageName: node
   linkType: hard
 
@@ -6795,8 +6795,9 @@ __metadata:
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.2
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-test-utils: ^1.1.37
+    stream: ^0.0.2
   peerDependencies:
     medusa-interfaces: 1.3.3
   languageName: unknown
@@ -6838,7 +6839,7 @@ __metadata:
     iso8601-duration: ^1.3.0
     jest: ^25.5.2
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-interfaces: ^1.3.3
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
@@ -15959,6 +15960,13 @@ __metadata:
     minimalistic-assert: ^1.0.1
     minimalistic-crypto-utils: ^1.0.1
   checksum: 5f361270292c3b27cf0843e84526d11dec31652f03c2763c6c2b8178548175ff5eba95341dd62baff92b2265d1af076526915d8af6cc9cb7559c44a62f8ca6e2
+  languageName: node
+  linkType: hard
+
+"emitter-component@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "emitter-component@npm:1.1.1"
+  checksum: dfe379e5444c7313b3dfad4e62cc0ac4d3be523ab527fe5b0e18649088d9012f2247b53af7b7dc6a3d7de958c0bad6f211117bc579895ccd2d623882a9ceb7a3
   languageName: node
   linkType: hard
 
@@ -25530,7 +25538,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"medusa-core-utils@^1.1.31, medusa-core-utils@workspace:packages/medusa-core-utils":
+"medusa-core-utils@npm:^0.1.27":
+  version: 0.1.39
+  resolution: "medusa-core-utils@npm:0.1.39"
+  dependencies:
+    "@hapi/joi": ^16.1.8
+    joi-objectid: ^3.0.1
+  checksum: 7c5d51de35e96312fd34e7c7b3b23cdcce197bbdad672234d766a44abe1b22cfccb28855d496b5e422558d72e87808e826ef2ef80189eaa45bdfba84942f2c8c
+  languageName: node
+  linkType: hard
+
+"medusa-core-utils@npm:^1.1.31, medusa-core-utils@npm:^1.1.32":
+  version: 1.1.33
+  resolution: "medusa-core-utils@npm:1.1.33"
+  dependencies:
+    joi: ^17.3.0
+    joi-objectid: ^3.0.1
+  checksum: 451572903926b5f7a8d11cd477b2834af37f5215c8fc27cf0c62b8807b24e8945d47cbf62cad5f68c86e984e3910c8fe258fc92e0058072d7553f4febfb973f5
+  languageName: node
+  linkType: hard
+
+"medusa-core-utils@workspace:packages/medusa-core-utils":
   version: 0.0.0-use.local
   resolution: "medusa-core-utils@workspace:packages/medusa-core-utils"
   dependencies:
@@ -25551,16 +25579,6 @@ __metadata:
     typescript: ^4.4.4
   languageName: unknown
   linkType: soft
-
-"medusa-core-utils@npm:^0.1.27":
-  version: 0.1.39
-  resolution: "medusa-core-utils@npm:0.1.39"
-  dependencies:
-    "@hapi/joi": ^16.1.8
-    joi-objectid: ^3.0.1
-  checksum: 7c5d51de35e96312fd34e7c7b3b23cdcce197bbdad672234d766a44abe1b22cfccb28855d496b5e422558d72e87808e826ef2ef80189eaa45bdfba84942f2c8c
-  languageName: node
-  linkType: hard
 
 "medusa-dev-cli@workspace:packages/medusa-dev-cli":
   version: 0.0.0-use.local
@@ -25826,7 +25844,7 @@ __metadata:
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.2
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-test-utils: ^1.1.37
   peerDependencies:
     medusa-interfaces: 1.3.3
@@ -25877,7 +25895,7 @@ __metadata:
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.2
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-interfaces: ^1.3.3
     medusa-test-utils: ^1.1.37
   peerDependencies:
@@ -25905,7 +25923,7 @@ __metadata:
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.2
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.32
     medusa-test-utils: ^1.1.37
     stripe: ^8.50.0
   peerDependencies:
@@ -26289,7 +26307,7 @@ __metadata:
   resolution: "medusa-react@workspace:packages/medusa-react"
   dependencies:
     "@babel/core": ^7.16.0
-    "@medusajs/medusa-js": ^1.3.0
+    "@medusajs/medusa-js": ^1.3.1
     "@size-limit/preset-small-lib": ^6.0.4
     "@storybook/addon-contexts": ^5.3.21
     "@storybook/addon-essentials": ^6.3.12
@@ -26320,7 +26338,7 @@ __metadata:
     ts-jest: ^27.1.4
     tslib: ^2.3.1
   peerDependencies:
-    "@medusajs/medusa": ^1.4.0
+    "@medusajs/medusa": ^1.5.0
     react: ">=16"
     react-query: ">= 3.29.0"
   languageName: unknown
@@ -33607,6 +33625,15 @@ __metadata:
   dependencies:
     mixme: ^0.5.1
   checksum: 8a4b40e1ee952869358c12bbb3da3aa9ca30c8964f8f8eef2058a3b6b2202d7a856657ef458a5f2402a464310d177f92d2e4a119667854fce4b17c05e3c180bd
+  languageName: node
+  linkType: hard
+
+"stream@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "stream@npm:0.0.2"
+  dependencies:
+    emitter-component: ^1.1.1
+  checksum: 2b2a196218afcd61fa48366318cdbc4a496d7141ec21f616e5f75290428daff9d0e1ac109a39e63c6d07f1187db055ca2b04e188232cca21595b85f282d7ad28
   languageName: node
   linkType: hard
 
