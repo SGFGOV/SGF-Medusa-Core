@@ -1,12 +1,12 @@
 import fs from "fs"
 import aws from "aws-sdk"
 import { AbstractFileService } from "@medusajs/medusa"
+const { getDefaultRoleAssumerWithWebIdentity } = require("@aws-sdk/client-sts")
+const { defaultProvider } = require("@aws-sdk/credential-provider-node")
 import stream from "stream"
-
 class S3Service extends AbstractFileService {
-  // eslint-disable-next-line no-empty-pattern
-  constructor({}, options) {
-    super({}, options)
+  constructor(x, options) {
+    super(x, options)
 
     this.bucket_ = options.bucket
     this.s3Url_ = options.s3_url
@@ -14,9 +14,28 @@ class S3Service extends AbstractFileService {
     this.secretAccessKey_ = options.secret_access_key
     this.region_ = options.region
     this.endpoint_ = options.endpoint
+    this.auth = this.accessKeyId_
+      ? {
+          accessKeyId: this.accessKeyId_,
+          secretAccessKey: this.secretAccessKey_,
+        }
+      : {
+          credentialDefaultProvider: defaultProvider({
+            roleAssumerWithWebIdentity: getDefaultRoleAssumerWithWebIdentity,
+          }),
+        }
   }
 
   upload(file) {
+    aws.config.setPromisesDependency(null)
+    aws.config.update(
+      {
+        ...this.auth,
+        region: this.region_,
+        endpoint: this.endpoint_,
+      },
+      true
+    )
     this.updateAwsConfig()
 
     const s3 = new aws.S3()
@@ -40,6 +59,15 @@ class S3Service extends AbstractFileService {
   }
 
   async delete(file) {
+    aws.config.setPromisesDependency(null)
+    aws.config.update(
+      {
+        ...this.auth,
+        region: this.region_,
+        endpoint: this.endpoint_,
+      },
+      true
+    )
     this.updateAwsConfig()
 
     const s3 = new aws.S3()
@@ -114,8 +142,7 @@ class S3Service extends AbstractFileService {
     aws.config.setPromisesDependency(null)
     aws.config.update(
       {
-        accessKeyId: this.accessKeyId_,
-        secretAccessKey: this.secretAccessKey_,
+        ...this.auth,
         region: this.region_,
         endpoint: this.endpoint_,
         ...additionalConfiguration,

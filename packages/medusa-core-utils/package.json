@@ -1,13 +1,8 @@
 {
   "name": "medusa-core-utils",
-  "version": "1.1.33",
   "description": "Core utils for Medusa",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/medusajs/medusa",
-    "directory": "packages/medusa-core-utils"
-  },
+  "url": "https://github.com/medusajs/medusa",
+  "directory": "packages/medusa-core-utils",
   "scripts": {
     "test": "jest",
     "build": "tsc --build",
