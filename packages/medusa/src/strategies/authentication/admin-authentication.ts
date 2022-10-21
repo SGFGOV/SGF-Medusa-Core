@@ -1,6 +1,9 @@
 import passport from "passport"
 import { Strategy as BearerStrategy } from "passport-http-bearer"
 import { Strategy as JWTStrategy } from "passport-jwt"
+import { Strategy as SaasformStrategy } from "passport-saasform"
+import { Strategy as SaasformOidcStrategy } from "passport-saasform"
+
 import { Strategy as LocalStrategy } from "passport-local"
 import { Express, NextFunction, Request, Response } from "express"
 import { EntityManager } from "typeorm"
@@ -12,12 +15,13 @@ import AbstractAuthStrategy from "../../interfaces/authentication-strategy"
 import { AuthService } from "../../services"
 import { ConfigModule, MedusaContainer } from "../../types/global"
 import { validator } from "../../utils/validator"
-import { AdminPostAuthReq } from "../../api/routes/admin/auth"
+import auth, { AdminPostAuthReq } from "../../api/routes/admin/auth"
 
 type InjectedDependencies = {
   manager: EntityManager
 }
 
+// eslint-disable-next-line max-len
 export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStrategy {
   static identifier = "core-admin-default-auth"
 
@@ -25,6 +29,7 @@ export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStra
   protected transactionManager_: EntityManager | undefined
 
   protected readonly configModule_: ConfigModule
+  static authStrategy: any
 
   constructor({ manager }: InjectedDependencies, configModule: ConfigModule) {
     super({ manager }, configModule)
@@ -93,6 +98,32 @@ export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStra
       })
     )
 
+    if (configModule.projectConfig.externalAuth) {
+      this.authStrategy = new SaasformStrategy(
+        {
+          // this is overridden by docker to connect to Saasform API
+          saasformServerUrl:
+            configModule.projectConfig.externalAuth.externaAuthServerUrl,
+          saasformUrl: configModule.projectConfig.externalAuth.signUpUrl,
+          appBaseUrl: configModule.projectConfig.externalAuth.redirectionUrl,
+        },
+        async (token: string, done): Promise<any> => {
+          const auth = await passport.authenticate("  ", {
+            // failureRedirect: "/login",
+            failureMessage: true,
+            session: true,
+            keepSessionInfo: true,
+          })
+          if (auth.success) {
+            done(null, auth.user)
+          } else {
+            done(auth.error)
+          }
+          return auth.user
+        }
+      )
+      passport.use(this.authStrategy)
+    }
     app.use(passport.initialize())
     app.use(passport.session())
   }
@@ -145,6 +176,14 @@ export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStra
     res: Response,
     next: NextFunction
   ): Promise<void> {
-    passport.authenticate(["jwt", "bearer"], { session: false })(req, res, next)
+    const standardAuthMethods = ["jwt", "bearer"]
+    const externalAuthMethods =
+      this.configModule_.projectConfig.externalAuth?.authMethod
+    const authMethods = externalAuthMethods
+      ? standardAuthMethods.concat(externalAuthMethods)
+      : standardAuthMethods
+    passport.authenticate(authMethods, {
+      session: false,
+    })(req, res, next)
   }
 }

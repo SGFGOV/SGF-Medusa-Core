@@ -17,6 +17,7 @@ type InjectedDependencies = {
   manager: EntityManager
 }
 
+// eslint-disable-next-line max-len
 export default class StoreDefaultAuthenticationStrategy extends AbstractAuthStrategy {
   static identifier = "core-store-default-auth"
 

@@ -6896,7 +6896,7 @@ __metadata:
     iso8601-duration: ^1.3.0
     jest: ^25.5.2
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.32
+    medusa-core-utils: ^1.1.33
     medusa-interfaces: ^1.3.3
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
@@ -6908,6 +6908,7 @@ __metadata:
     passport-http-bearer: ^1.0.1
     passport-jwt: ^4.0.0
     passport-local: ^1.0.0
+    passport-saasform: ^0.3.3
     pg: ^8.5.1
     randomatic: ^3.1.1
     redis: ^3.0.2
@@ -28881,6 +28882,18 @@ __metadata:
   dependencies:
     passport-strategy: 1.x.x
   checksum: 59becb988014921a5d6056470d9373c41db452fcf113323064f39d53baa6f184e72151bf269ca6770511f7f0260e13632dacc7b6afdbf60ebf63e90327e186d4
+  languageName: node
+  linkType: hard
+
+"passport-saasform@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "passport-saasform@npm:0.3.3"
+  dependencies:
+    cookie: ^0.4.1
+    node-fetch: ^2.6.1
+    passport-jwt: ^4.0.0
+    passport-strategy: 1.x.x
+  checksum: ee8ee621b651abf5d69699b7cb69484297eaa014125212fb643a9f60bd9a6d8fa787ab233c5cfed84982531b643c9258ee7240481ddd5aa6ce4aaec9406145d1
   languageName: node
   linkType: hard
 

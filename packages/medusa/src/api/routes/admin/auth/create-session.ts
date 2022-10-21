@@ -9,7 +9,6 @@ import jwt from "jsonwebtoken"
 import { validator } from "../../../../utils/validator"
 import _ from "lodash"
 
-
 /**
  * @oas [post] /auth
  * operationId: "PostAuth"
@@ -80,7 +79,7 @@ import _ from "lodash"
  *  "500":
  *    $ref: "#/components/responses/500_error"
  */
- export class AdminPostAuthReq {
+export class AdminPostAuthReq {
   @IsEmail()
   @IsNotEmpty()
   email: string
@@ -89,8 +88,6 @@ import _ from "lodash"
   @IsNotEmpty()
   password: string
 }
-
-
 
 export default async (req, res) => {
   const {
@@ -112,27 +109,27 @@ export default async (req, res) => {
       .authenticate(validated.email, validated.password)
   })
 
-  //const authService = req.scope.resolve("authService") as AuthService
-  const authStrategy = await authService.retrieveAuthenticationStrategy(
+  //  let authService = req.scope.resolve("authService") as AuthService
+  let authStrategy = await authService.retrieveAuthenticationStrategy(
     req,
     "admin"
   )
-  await authStrategy.authenticate(req, res)
-
+  // await authStrategy.authenticate(req, res)
   if (result.success && result.user) {
     // Add JWT to cookie
     req.session.jwt = jwt.sign({ userId: result.user.id }, jwt_secret, {
       expiresIn: "24h",
     })
 
-  const strategyResolver = req.scope.resolve(
-    "strategyResolverService"
-  ) as StrategyResolverService
+    const strategyResolver = req.scope.resolve(
+      "strategyResolverService"
+    ) as StrategyResolverService
 
-  const authStrategyType = (req.headers["X-medusa-auth-strategy"] ??
-    "core-admin-default-auth") as string
-
-  const authStrategy = strategyResolver.resolveAuthByType(authStrategyType)
-  await authStrategy.authenticate(req, res)
-}
+    const authStrategyType = (req.headers["X-medusa-auth-strategy"] ??
+      "core-admin-default-auth") as string
+    if (strategyResolver) {
+      authStrategy = strategyResolver.resolveAuthByType(authStrategyType)
+    }
+    await authStrategy.authenticate(req, res)
+  }
 }

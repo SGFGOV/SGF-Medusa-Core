@@ -34,13 +34,15 @@ type Options = {
   isTest: boolean
 }
 
-export default async (
-  {
-    directory: rootDirectory,
-    expressApp,
-    isTest
-  }: Options
-): Promise<{ container: MedusaContainer; dbConnection: Connection; app: Express }> => {
+export default async ({
+  directory: rootDirectory,
+  expressApp,
+  isTest,
+}: Options): Promise<{
+  container: MedusaContainer
+  dbConnection: Connection
+  app: Express
+}> => {
   const configModule = await loadConfig(rootDirectory)
 
   const container = createContainer() as MedusaContainer
@@ -139,7 +141,8 @@ export default async (
   const authStratActivity = Logger.activity("Initializing auth strategies")
   track("STRATEGIES_INIT_STARTED")
   await authStrategies({ container, configModule, app: expressApp })
-  const authStratAct = Logger.success(authStratActivity, "Auth strategies initialized") || {}
+  const authStratAct =
+    Logger.success(authStratActivity, "Auth strategies initialized") || {}
   track("STRATEGIES_INIT_COMPLETED", { duration: authStratAct.duration })
 
   // Add the registered services to the request scope

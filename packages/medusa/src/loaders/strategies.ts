@@ -4,14 +4,15 @@ import { asFunction, aliasTo } from "awilix"
 
 import formatRegistrationName from "../utils/format-registration-name"
 import { isBatchJobStrategy } from "../interfaces"
-import { MedusaContainer } from "../types/global"
+import { ConfigModule, MedusaContainer } from "../types/global"
 import { isDefined } from "../utils"
 import { isAuthStrategy } from "../interfaces/authentication-strategy"
 import { Express } from "express"
+import { Config } from "winston/lib/winston/config"
 
 type LoaderOptions = {
   container: MedusaContainer
-  configModule: object
+  configModule: ConfigModule
   isTest?: boolean
 }
 
@@ -70,7 +71,7 @@ export default ({ container, configModule, isTest }: LoaderOptions): void => {
 
 type AuthLoaderOptions = {
   container: MedusaContainer
-  configModule: object
+  configModule: ConfigModule
   app: Express
 }
 

@@ -57,6 +57,13 @@ export type DatabaseHostConfig =
       url?: string
     }
 
+export type externalAuthentication = {
+  authMethod: string
+  externaAuthServerUrl: string
+  signUpUrl: string
+  redirectionUrl: string
+}
+
 export type ConfigModule = {
   projectConfig: {
     redis_url?: string
@@ -79,6 +86,7 @@ export type ConfigModule = {
     }
     store_cors?: string
     admin_cors?: string
+    externalAuth?: externalAuthentication
   }
   featureFlags: Record<string, boolean | string>
   plugins: (
