@@ -107,7 +107,22 @@ export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStra
           saasformUrl: configModule.projectConfig.externalAuth.signUpUrl,
           appBaseUrl: configModule.projectConfig.externalAuth.redirectionUrl,
         },
-        async (token: string, done): Promise<any> => {
+        async (token, done) => {
+          {
+            const name = token?.name as string
+            if (token.id && token.email) {
+              const first_name = ""
+              const last_name = ""
+              return done(
+                null,
+                { ...token, first_name, last_name },
+                { scope: "read" }
+              )
+            }
+          }
+          return done(null, false)
+        }
+        /* async (token: string, done): Promise<any> => {
           const auth = await passport.authenticate("  ", {
             // failureRedirect: "/login",
             failureMessage: true,
@@ -120,7 +135,7 @@ export default class AdminDefaultAuthenticationStrategy extends AbstractAuthStra
             done(auth.error)
           }
           return auth.user
-        }
+        }*/
       )
       passport.use(this.authStrategy)
     }
