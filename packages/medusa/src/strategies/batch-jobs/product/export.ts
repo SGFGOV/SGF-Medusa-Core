@@ -11,7 +11,7 @@ import {
   ProductExportBatchJobContext,
   ProductExportInjectedDependencies,
   ProductExportPriceData,
-} from "./types"
+} from "./types/index"
 import { FindProductConfig } from "../../../types/product"
 import { FlagRouter } from "../../../utils/flag-router"
 import SalesChannelFeatureFlag from "../../../loaders/feature-flags/sales-channels"

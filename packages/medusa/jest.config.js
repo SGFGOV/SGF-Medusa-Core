@@ -15,6 +15,8 @@ module.exports = {
       isolatedModules: false,
     },
   },
+  testTimeout: 10 * 1000,
+
   transform: {
     "^.+\\.[jt]s?$": "ts-jest",
   },

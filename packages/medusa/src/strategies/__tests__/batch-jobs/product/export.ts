@@ -7,7 +7,7 @@ import {
   AdminPostBatchesReq,
   defaultAdminProductRelations,
 } from "../../../../api"
-import { ProductExportBatchJob } from "../../../batch-jobs/product/types"
+import { ProductExportBatchJob } from "../../../batch-jobs/product/types/index"
 import { Request } from "express"
 import { FlagRouter } from "../../../../utils/flag-router"
 import SalesChannelFeatureFlag from "../../../../loaders/feature-flags/sales-channels"
