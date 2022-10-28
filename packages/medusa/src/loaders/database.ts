@@ -1,4 +1,9 @@
-import { Connection, createConnection } from "typeorm"
+import {
+  Connection,
+  createConnection,
+  getConnectionManager,
+  getConnection,
+} from "typeorm"
 import { ShortenedNamingStrategy } from "../utils/naming-strategy"
 import { AwilixContainer } from "awilix"
 import { ConnectionOptions } from "typeorm/connection/ConnectionOptions"
@@ -17,6 +22,10 @@ export default async ({
 
   const isSqlite = configModule.projectConfig.database_type === "sqlite"
 
+  const cnnManager = getConnectionManager()
+  if (cnnManager.has("default") && getConnection().isConnected) {
+    await getConnection().close()
+  }
   let hostConfig: DatabaseHostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,

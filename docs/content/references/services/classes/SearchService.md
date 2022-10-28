@@ -143,7 +143,7 @@ AbstractSearchService.options
 
 ### addDocuments
 
-▸ **addDocuments**(`indexName`, `documents`, `type`): `void`
+▸ **addDocuments**(`indexName`, `documents`, `type`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -155,7 +155,7 @@ AbstractSearchService.options
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -208,7 +208,7 @@ ___
 
 ### createIndex
 
-▸ **createIndex**(`indexName`, `options`): `void`
+▸ **createIndex**(`indexName`, `options`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -219,7 +219,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -233,7 +233,7 @@ ___
 
 ### deleteAllDocuments
 
-▸ **deleteAllDocuments**(`indexName`): `void`
+▸ **deleteAllDocuments**(`indexName`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -243,7 +243,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -257,7 +257,7 @@ ___
 
 ### deleteDocument
 
-▸ **deleteDocument**(`indexName`, `document_id`): `void`
+▸ **deleteDocument**(`indexName`, `document_id`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -268,7 +268,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -282,7 +282,7 @@ ___
 
 ### getIndex
 
-▸ **getIndex**(`indexName`): `void`
+▸ **getIndex**(`indexName`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -292,7 +292,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -306,7 +306,7 @@ ___
 
 ### replaceDocuments
 
-▸ **replaceDocuments**(`indexName`, `documents`, `type`): `void`
+▸ **replaceDocuments**(`indexName`, `documents`, `type`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -318,7 +318,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 
@@ -332,7 +332,7 @@ ___
 
 ### search
 
-▸ **search**(`indexName`, `query`, `options`): `Object`
+▸ **search**(`indexName`, `query`, `options`): `Promise`<{ `hits`: `unknown`[]  }\>
 
 #### Parameters
 
@@ -344,11 +344,7 @@ ___
 
 #### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `hits` | `unknown`[] |
+`Promise`<{ `hits`: `unknown`[]  }\>
 
 #### Overrides
 
@@ -386,7 +382,7 @@ ___
 
 ### updateSettings
 
-▸ **updateSettings**(`indexName`, `settings`): `void`
+▸ **updateSettings**(`indexName`, `settings`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -397,7 +393,7 @@ ___
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Overrides
 

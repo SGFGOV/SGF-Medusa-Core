@@ -332,7 +332,7 @@ ___
 
 ### retrieveProvider
 
-▸ **retrieveProvider**(`providerId`): `BaseFulfillmentService`
+▸ **retrieveProvider**(`providerId`): `any`
 
 #### Parameters
 
@@ -342,7 +342,7 @@ ___
 
 #### Returns
 
-`BaseFulfillmentService`
+`any`
 
 the payment fulfillment provider
 

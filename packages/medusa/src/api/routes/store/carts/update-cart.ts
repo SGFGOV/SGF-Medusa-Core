@@ -7,14 +7,13 @@ import {
 } from "class-validator"
 import { defaultStoreCartFields, defaultStoreCartRelations } from "."
 
-import { AddressPayload } from "../../../../types/common"
-import { CartService } from "../../../../services"
+import { Type } from "class-transformer"
 import { EntityManager } from "typeorm"
+import SalesChannelFeatureFlag from "../../../../loaders/feature-flags/sales-channels"
+import { CartService } from "../../../../services"
+import { AddressPayload } from "../../../../types/common"
 import { FeatureFlagDecorators } from "../../../../utils/feature-flag-decorators"
 import { IsType } from "../../../../utils/validators/is-type"
-import SalesChannelFeatureFlag from "../../../../loaders/feature-flags/sales-channels"
-import { Type } from "class-transformer"
-import { decorateLineItemsWithTotals } from "./decorate-line-items-with-totals"
 
 /**
  * @oas [post] /carts/{id}
@@ -152,12 +151,10 @@ export default async (req, res) => {
     }
   })
 
-  const cart = await cartService.retrieve(id, {
+  const data = await cartService.retrieveWithTotals(id, {
     select: defaultStoreCartFields,
     relations: defaultStoreCartRelations,
   })
-  const data = await decorateLineItemsWithTotals(cart, req)
-
   res.json({ cart: data })
 }
 

@@ -26,19 +26,21 @@ class S3Service extends AbstractFileService {
   }
 
   upload(file) {
-    aws.config.setPromisesDependency(null)
-    aws.config.update(
-      {
-        ...this.auth,
-        region: this.region_,
-        endpoint: this.endpoint_,
-      },
-      true
-    )
+    this.updateAwsConfig()
 
+    return this.uploadFile(file)
+  }
+
+  uploadProtected(file) {
+    this.updateAwsConfig()
+
+    return this.uploadFile(file, { acl: "private" })
+  }
+
+  uploadFile(file, options = { isProtected: false, acl: undefined }) {
     const s3 = new aws.S3()
     const params = {
-      ACL: "public-read",
+      ACL: options.acl ?? (options.isProtected ? "private" : "public-read"),
       Bucket: this.bucket_,
       Body: fs.createReadStream(file.path),
       Key: `${file.originalname}`,
@@ -51,21 +53,13 @@ class S3Service extends AbstractFileService {
           return
         }
 
-        resolve({ url: data.Location })
+        resolve({ url: data.Location, key: data.Key })
       })
     })
   }
 
   async delete(file) {
-    aws.config.setPromisesDependency(null)
-    aws.config.update(
-      {
-        ...this.auth,
-        region: this.region_,
-        endpoint: this.endpoint_,
-      },
-      true
-    )
+    this.updateAwsConfig()
 
     const s3 = new aws.S3()
     const params = {
@@ -85,34 +79,67 @@ class S3Service extends AbstractFileService {
   }
 
   async getUploadStreamDescriptor(fileData) {
-    throw new Error("Method not implemented.")
+    this.updateAwsConfig()
+
+    const pass = new stream.PassThrough()
+
+    const fileKey = `${fileData.name}.${fileData.ext}`
+    const params = {
+      ACL: fileData.acl ?? "private",
+      Bucket: this.bucket_,
+      Body: pass,
+      Key: fileKey,
+    }
+
+    const s3 = new aws.S3()
+    return {
+      writeStream: pass,
+      promise: s3.upload(params).promise(),
+      url: `${this.s3Url_}/${fileKey}`,
+      fileKey,
+    }
   }
 
   async getDownloadStream(fileData) {
-    aws.config.setPromisesDependency(null)
-    aws.config.update(
-      {
-        ...this.auth,
-        region: this.region_,
-        endpoint: this.endpoint_,
-      },
-      true
-    )
+    this.updateAwsConfig()
+
     const s3 = new aws.S3()
-    const file = await s3
-      .getObject({ Bucket: this.bucket_, Key: fileData.fileKey })
-      .promise()
-    const value = file.Body.toString()
-    const Readable = require("stream").Readable
-    const s = new Readable()
-    s._read = () => {} // redundant? see update below
-    s.push(value)
-    s.push(null)
-    return s
+
+    const params = {
+      Bucket: this.bucket_,
+      Key: `${fileData.fileKey}`,
+    }
+
+    return s3.getObject(params).createReadStream()
   }
 
   async getPresignedDownloadUrl(fileData) {
-    throw new Error("Method not implemented.")
+    this.updateAwsConfig({
+      signatureVersion: "v4",
+    })
+
+    const s3 = new aws.S3()
+
+    const params = {
+      Bucket: this.bucket_,
+      Key: `${fileData.fileKey}`,
+      Expires: this.downloadUrlDuration,
+    }
+
+    return await s3.getSignedUrlPromise("getObject", params)
+  }
+
+  updateAwsConfig(additionalConfiguration = {}) {
+    aws.config.setPromisesDependency(null)
+    aws.config.update(
+      {
+        region: this.region_,
+        endpoint: this.endpoint_,
+        ...additionalConfiguration,
+        ...this.auth,
+      },
+      true
+    )
   }
 }
 

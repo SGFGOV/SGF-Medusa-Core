@@ -1,12 +1,8 @@
 # Class: CustomerGroupService
 
-Provides layer to manipulate discounts.
-
-**`Implements`**
-
 ## Hierarchy
 
-- `"medusa-interfaces"`
+- `TransactionBaseService`
 
   ↳ **`CustomerGroupService`**
 
@@ -24,7 +20,7 @@ Provides layer to manipulate discounts.
 
 #### Overrides
 
-BaseService.constructor
+TransactionBaseService.constructor
 
 #### Defined in
 
@@ -32,9 +28,37 @@ BaseService.constructor
 
 ## Properties
 
+### \_\_configModule\_\_
+
+• `Protected` `Optional` `Readonly` **\_\_configModule\_\_**: `Record`<`string`, `unknown`\>
+
+#### Inherited from
+
+TransactionBaseService.\_\_configModule\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:10](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L10)
+
+___
+
+### \_\_container\_\_
+
+• `Protected` `Readonly` **\_\_container\_\_**: `any`
+
+#### Inherited from
+
+TransactionBaseService.\_\_container\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:9](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L9)
+
+___
+
 ### customerGroupRepository\_
 
-• `Private` **customerGroupRepository\_**: typeof `CustomerGroupRepository`
+• `Protected` `Readonly` **customerGroupRepository\_**: typeof `CustomerGroupRepository`
 
 #### Defined in
 
@@ -44,7 +68,7 @@ ___
 
 ### customerService\_
 
-• `Private` **customerService\_**: [`CustomerService`](CustomerService.md)
+• `Protected` `Readonly` **customerService\_**: [`CustomerService`](CustomerService.md)
 
 #### Defined in
 
@@ -54,7 +78,11 @@ ___
 
 ### manager\_
 
-• `Private` **manager\_**: `EntityManager`
+• `Protected` **manager\_**: `EntityManager`
+
+#### Overrides
+
+TransactionBaseService.manager\_
 
 #### Defined in
 
@@ -241,7 +269,7 @@ ___
 
 ### update
 
-▸ **update**(`customerGroupId`, `update`): `Promise`<`CustomerGroup`[]\>
+▸ **update**(`customerGroupId`, `update`): `Promise`<`CustomerGroup`\>
 
 Update a customer group.
 
@@ -254,7 +282,7 @@ Update a customer group.
 
 #### Returns
 
-`Promise`<`CustomerGroup`[]\>
+`Promise`<`CustomerGroup`\>
 
 resulting customer group
 
@@ -266,17 +294,21 @@ ___
 
 ### withTransaction
 
-▸ **withTransaction**(`transactionManager`): [`CustomerGroupService`](CustomerGroupService.md)
+▸ **withTransaction**(`transactionManager?`): [`CustomerGroupService`](CustomerGroupService.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `transactionManager` | `EntityManager` |
+| `transactionManager?` | `EntityManager` |
 
 #### Returns
 
 [`CustomerGroupService`](CustomerGroupService.md)
+
+#### Inherited from
+
+TransactionBaseService.withTransaction
 
 #### Defined in
 

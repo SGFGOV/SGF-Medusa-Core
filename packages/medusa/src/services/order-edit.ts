@@ -1,8 +1,8 @@
-import { DeepPartial, EntityManager, IsNull } from "typeorm"
+import { DeepPartial, EntityManager, ILike, IsNull } from "typeorm"
 import { MedusaError } from "medusa-core-utils"
 
-import { FindConfig } from "../types/common"
-import { buildQuery, isDefined } from "../utils"
+import { FindConfig, Selector } from "../types/common"
+import { buildQuery, isDefined, isString } from "../utils"
 import { OrderEditRepository } from "../repositories/order-edit"
 import {
   Cart,
@@ -109,6 +109,38 @@ export default class OrderEditService extends TransactionBaseService {
     return orderEdit
   }
 
+  async listAndCount(
+    selector: Selector<OrderEdit> & { q?: string },
+    config?: FindConfig<OrderEdit>
+  ): Promise<[OrderEdit[], number]> {
+    const manager = this.transactionManager_ ?? this.manager_
+    const orderEditRepository = manager.getCustomRepository(
+      this.orderEditRepository_
+    )
+
+    let q
+    if (isString(selector.q)) {
+      q = selector.q
+      delete selector.q
+    }
+
+    const query = buildQuery(selector, config)
+
+    if (q) {
+      query.where.internal_note = ILike(`%${q}%`)
+    }
+
+    return await orderEditRepository.findAndCount(query)
+  }
+
+  async list(
+    selector: Selector<OrderEdit>,
+    config?: FindConfig<OrderEdit>
+  ): Promise<OrderEdit[]> {
+    const [orderEdits] = await this.listAndCount(selector, config)
+    return orderEdits
+  }
+
   /**
    * Compute and return the different totals from the order edit id
    * @param orderEditId
@@ -120,6 +152,7 @@ export default class OrderEditService extends TransactionBaseService {
     discount_total: number
     tax_total: number | null
     subtotal: number
+    difference_due: number
     total: number
   }> {
     const manager = this.transactionManager_ ?? this.manager_
@@ -127,6 +160,7 @@ export default class OrderEditService extends TransactionBaseService {
       select: ["id", "order_id", "items"],
       relations: ["items", "items.tax_lines", "items.adjustments"],
     })
+
     const order = await this.orderService_
       .withTransaction(manager)
       .retrieve(order_id, {
@@ -135,6 +169,9 @@ export default class OrderEditService extends TransactionBaseService {
           "discounts.rule",
           "gift_cards",
           "region",
+          "items",
+          "items.tax_lines",
+          "items.adjustments",
           "region.tax_rates",
           "shipping_methods",
           "shipping_methods.tax_lines",
@@ -152,6 +189,9 @@ export default class OrderEditService extends TransactionBaseService {
     const subtotal = await totalsServiceTx.getSubtotal(computedOrder)
     const total = await totalsServiceTx.getTotal(computedOrder)
 
+    const orderTotal = await totalsServiceTx.getTotal(order)
+    const difference_due = total - orderTotal
+
     return {
       shipping_total,
       gift_card_total,
@@ -160,6 +200,7 @@ export default class OrderEditService extends TransactionBaseService {
       tax_total,
       subtotal,
       total,
+      difference_due,
     }
   }
 
@@ -498,6 +539,7 @@ export default class OrderEditService extends TransactionBaseService {
     orderEdit.subtotal = totals.subtotal
     orderEdit.tax_total = totals.tax_total
     orderEdit.total = totals.total
+    orderEdit.difference_due = totals.difference_due
 
     return orderEdit
   }
@@ -776,6 +818,15 @@ export default class OrderEditService extends TransactionBaseService {
       }
     )
     const clonedItemIds = clonedLineItems.map((item) => item.id)
+
+    const orderEdit = await this.retrieve(orderEditId, {
+      select: ["id", "changes"],
+      relations: ["changes"],
+    })
+
+    await this.orderEditItemChangeService_.delete(
+      orderEdit.changes.map((change) => change.id)
+    )
 
     await Promise.all(
       [

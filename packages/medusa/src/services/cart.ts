@@ -2,6 +2,7 @@ import { isEmpty, isEqual } from "lodash"
 import { MedusaError } from "medusa-core-utils"
 import { DeepPartial, EntityManager, In } from "typeorm"
 import { IPriceSelectionStrategy, TransactionBaseService } from "../interfaces"
+import SalesChannelFeatureFlag from "../loaders/feature-flags/sales-channels"
 import {
   Address,
   Cart,
@@ -26,7 +27,7 @@ import {
   LineItemUpdate,
 } from "../types/cart"
 import { AddressPayload, FindConfig, TotalField } from "../types/common"
-import { buildQuery, isDefined, setMetadata, validateId } from "../utils"
+import { buildQuery, isDefined, setMetadata } from "../utils"
 import { FlagRouter } from "../utils/flag-router"
 import { validateEmail } from "../utils/is-email"
 import CustomShippingOptionService from "./custom-shipping-option"
@@ -34,6 +35,7 @@ import CustomerService from "./customer"
 import DiscountService from "./discount"
 import EventBusService from "./event-bus"
 import GiftCardService from "./gift-card"
+import { SalesChannelService } from "./index"
 import InventoryService from "./inventory"
 import LineItemService from "./line-item"
 import LineItemAdjustmentService from "./line-item-adjustment"
@@ -42,11 +44,9 @@ import ProductService from "./product"
 import ProductVariantService from "./product-variant"
 import RegionService from "./region"
 import ShippingOptionService from "./shipping-option"
+import StoreService from "./store"
 import TaxProviderService from "./tax-provider"
 import TotalsService from "./totals"
-import SalesChannelFeatureFlag from "../loaders/feature-flags/sales-channels"
-import StoreService from "./store"
-import { SalesChannelService } from "./index"
 
 type InjectedDependencies = {
   manager: EntityManager
@@ -175,6 +175,24 @@ class CartService extends TransactionBaseService {
     this.storeService_ = storeService
   }
 
+  private getTotalsRelations(config: FindConfig<Cart>): string[] {
+    const relationSet = new Set(config.relations)
+
+    relationSet.add("items")
+    relationSet.add("items.tax_lines")
+    relationSet.add("items.adjustments")
+    relationSet.add("gift_cards")
+    relationSet.add("discounts")
+    relationSet.add("discounts.rule")
+    relationSet.add("shipping_methods")
+    relationSet.add("shipping_methods.tax_lines")
+    relationSet.add("shipping_address")
+    relationSet.add("region")
+    relationSet.add("region.tax_rates")
+
+    return Array.from(relationSet.values())
+  }
+
   protected transformQueryForTotals_(
     config: FindConfig<Cart>
   ): FindConfig<Cart> & { totalsToSelect: TotalField[] } {
@@ -297,7 +315,6 @@ class CartService extends TransactionBaseService {
    * Gets a cart by id.
    * @param cartId - the id of the cart to get.
    * @param options - the options to get a cart
-   * @param totalsConfig - configuration for retrieval of totals
    * @return the cart document.
    */
   async retrieve(
@@ -307,23 +324,41 @@ class CartService extends TransactionBaseService {
   ): Promise<Cart> {
     const manager = this.manager_
     const cartRepo = manager.getCustomRepository(this.cartRepository_)
-    const validatedId = validateId(cartId)
 
     const { select, relations, totalsToSelect } =
       this.transformQueryForTotals_(options)
 
-    const query = buildQuery(
-      { id: validatedId },
-      { ...options, select, relations }
-    )
+    const query = buildQuery({ id: cartId }, { ...options, select, relations })
 
     if (relations && relations.length > 0) {
       query.relations = relations
     }
 
-    if (select && select.length > 0) {
-      query.select = select
-    } else {
+    query.select = select?.length ? select : undefined
+
+    const queryRelations = query.relations
+    query.relations = undefined
+    const raw = await cartRepo.findOneWithRelations(queryRelations, query)
+    if (!raw) {
+      throw new MedusaError(
+        MedusaError.Types.NOT_FOUND,
+        `Cart with ${cartId} was not found`
+      )
+    }
+
+    return await this.decorateTotals_(raw, totalsToSelect, totalsConfig)
+  }
+
+  private async retrieveNew(
+    cartId: string,
+    options: FindConfig<Cart> = {}
+  ): Promise<Cart> {
+    const manager = this.manager_
+    const cartRepo = manager.getCustomRepository(this.cartRepository_)
+
+    const query = buildQuery({ id: cartId }, options)
+
+    if ((options.select || []).length <= 0) {
       query.select = undefined
     }
 
@@ -339,7 +374,22 @@ class CartService extends TransactionBaseService {
       )
     }
 
-    return await this.decorateTotals_(raw, totalsToSelect, totalsConfig)
+    return raw
+  }
+
+  async retrieveWithTotals(
+    cartId: string,
+    options: FindConfig<Cart> = {},
+    totalsConfig: TotalsConfig = {}
+  ): Promise<Cart> {
+    const relations = this.getTotalsRelations(options)
+
+    const cart = await this.retrieveNew(cartId, {
+      ...options,
+      relations,
+    })
+
+    return await this.decorateTotals(cart, totalsConfig)
   }
 
   /**
@@ -422,8 +472,27 @@ class CartService extends TransactionBaseService {
           }
         }
 
+        if (data.billing_address) {
+          if (!regCountries.includes(data.billing_address.country_code!)) {
+            throw new MedusaError(
+              MedusaError.Types.NOT_ALLOWED,
+              "Billing country not in region"
+            )
+          }
+          rawCart.billing_address = data.billing_address
+        }
+        if (data.billing_address_id) {
+          const addr = await addressRepo.findOne(data.billing_address_id)
+          if (addr?.country_code && !regCountries.includes(addr.country_code)) {
+            throw new MedusaError(
+              MedusaError.Types.NOT_ALLOWED,
+              "Billing country not in region"
+            )
+          }
+          rawCart.billing_address_id = data.billing_address_id
+        }
+
         const remainingFields: (keyof Cart)[] = [
-          "billing_address_id",
           "context",
           "type",
           "metadata",
@@ -1008,7 +1077,7 @@ class CartService extends TransactionBaseService {
     const productsToKeep = await this.productService_
       .withTransaction(this.manager_)
       .filterProductsBySalesChannel(productIds, newSalesChannelId, {
-        select: ["id", "sales_channels"],
+        select: ["id"],
         take: productIds.length,
       })
     const productIdsToKeep = new Set<string>(
@@ -1427,14 +1496,7 @@ class CartService extends TransactionBaseService {
           this.paymentSessionRepository_
         )
 
-        const cart = await this.retrieve(cartId, {
-          select: [
-            "total",
-            "subtotal",
-            "tax_total",
-            "discount_total",
-            "gift_card_total",
-          ],
+        const cart = await this.retrieveWithTotals(cartId, {
           relations: ["region", "region.payment_providers", "payment_sessions"],
         })
 
@@ -1503,17 +1565,9 @@ class CartService extends TransactionBaseService {
         const cartId =
           typeof cartOrCartId === `string` ? cartOrCartId : cartOrCartId.id
 
-        const cart = await this.retrieve(
+        const cart = await this.retrieveWithTotals(
           cartId,
           {
-            select: [
-              "total",
-              "subtotal",
-              "tax_total",
-              "discount_total",
-              "shipping_total",
-              "gift_card_total",
-            ],
             relations: [
               "items",
               "items.adjustments",
@@ -2069,7 +2123,6 @@ class CartService extends TransactionBaseService {
           this.cartRepository_
         )
 
-        const validatedId = validateId(cartId)
         if (typeof key !== "string") {
           throw new MedusaError(
             MedusaError.Types.INVALID_ARGUMENT,
@@ -2077,7 +2130,7 @@ class CartService extends TransactionBaseService {
           )
         }
 
-        const cart = await cartRepo.findOne(validatedId)
+        const cart = await cartRepo.findOne(cartId)
         if (!cart) {
           throw new MedusaError(
             MedusaError.Types.NOT_FOUND,
@@ -2149,6 +2202,77 @@ class CartService extends TransactionBaseService {
         )
       }
     )
+  }
+
+  async decorateTotals(cart: Cart, totalsConfig?: TotalsConfig): Promise<Cart> {
+    const totalsService = this.totalsService_
+
+    const calculationContext = await totalsService.getCalculationContext(cart, {
+      exclude_shipping: true,
+    })
+
+    cart.items = await Promise.all(
+      (cart.items || []).map(async (item) => {
+        const itemTotals = await totalsService.getLineItemTotals(item, cart, {
+          include_tax: totalsConfig?.force_taxes || cart.region.automatic_taxes,
+          calculation_context: calculationContext,
+        })
+
+        return Object.assign(item, itemTotals)
+      })
+    )
+
+    cart.shipping_methods = await Promise.all(
+      (cart.shipping_methods || []).map(async (shippingMethod) => {
+        const shippingTotals = await totalsService.getShippingMethodTotals(
+          shippingMethod,
+          cart,
+          {
+            include_tax:
+              totalsConfig?.force_taxes || cart.region.automatic_taxes,
+            calculation_context: calculationContext,
+          }
+        )
+
+        return Object.assign(shippingMethod, shippingTotals)
+      })
+    )
+
+    cart.shipping_total = cart.shipping_methods.reduce((acc, method) => {
+      return acc + (method.subtotal ?? 0)
+    }, 0)
+
+    cart.subtotal = cart.items.reduce((acc, item) => {
+      return acc + (item.subtotal ?? 0)
+    }, 0)
+
+    cart.discount_total = cart.items.reduce((acc, item) => {
+      return acc + (item.discount_total ?? 0)
+    }, 0)
+
+    cart.item_tax_total = cart.items.reduce((acc, item) => {
+      return acc + (item.tax_total ?? 0)
+    }, 0)
+
+    cart.shipping_tax_total = cart.shipping_methods.reduce((acc, method) => {
+      return acc + (method.tax_total ?? 0)
+    }, 0)
+
+    const giftCardTotal = await totalsService.getGiftCardTotal(cart, {
+      gift_cardable: cart.subtotal - cart.discount_total,
+    })
+    cart.gift_card_total = giftCardTotal.total || 0
+    cart.gift_card_tax_total = giftCardTotal.tax_total || 0
+
+    cart.tax_total = cart.item_tax_total + cart.shipping_tax_total
+
+    cart.total =
+      cart.subtotal +
+      cart.shipping_total +
+      cart.tax_total -
+      (cart.gift_card_total + cart.discount_total + cart.gift_card_tax_total)
+
+    return cart
   }
 
   protected async refreshAdjustments_(cart: Cart): Promise<void> {

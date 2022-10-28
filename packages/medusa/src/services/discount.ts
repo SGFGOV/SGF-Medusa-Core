@@ -37,7 +37,6 @@ import {
 } from "../types/discount"
 import { buildQuery, setMetadata } from "../utils"
 import { isFuture, isPast } from "../utils/date-helpers"
-import { formatException } from "../utils/exception-formatter"
 import { FlagRouter } from "../utils/flag-router"
 import CustomerService from "./customer"
 import DiscountConditionService from "./discount-condition"
@@ -200,41 +199,35 @@ class DiscountService extends TransactionBaseService {
           "Fixed discounts can have one region"
         )
       }
-      try {
-        if (discount.regions) {
-          discount.regions = (await Promise.all(
-            discount.regions.map(async (regionId) =>
-              this.regionService_.withTransaction(manager).retrieve(regionId)
-            )
-          )) as Region[]
-        }
-
-        const discountRule = ruleRepo.create(validatedRule)
-        const createdDiscountRule = await ruleRepo.save(discountRule)
-
-        discount.code = discount.code!.toUpperCase()
-
-        const created: Discount = discountRepo.create(
-          discount as DeepPartial<Discount>
-        )
-        created.rule = createdDiscountRule
-
-        const result = await discountRepo.save(created)
-
-        if (conditions?.length) {
-          await Promise.all(
-            conditions.map(async (cond) => {
-              await this.discountConditionService_
-                .withTransaction(manager)
-                .upsertCondition({ rule_id: result.rule_id, ...cond })
-            })
+      if (discount.regions) {
+        discount.regions = (await Promise.all(
+          discount.regions.map(async (regionId) =>
+            this.regionService_.withTransaction(manager).retrieve(regionId)
           )
-        }
-
-        return result
-      } catch (error) {
-        throw formatException(error)
+        )) as Region[]
       }
+
+      const discountRule = ruleRepo.create(validatedRule)
+      const createdDiscountRule = await ruleRepo.save(discountRule)
+
+      const created: Discount = discountRepo.create(
+        discount as DeepPartial<Discount>
+      )
+      created.rule = createdDiscountRule
+
+      const result = await discountRepo.save(created)
+
+      if (conditions?.length) {
+        await Promise.all(
+          conditions.map(async (cond) => {
+            await this.discountConditionService_
+              .withTransaction(manager)
+              .upsertCondition({ rule_id: result.rule_id, ...cond })
+          })
+        )
+      }
+
+      return result
     })
   }
 
@@ -257,7 +250,7 @@ class DiscountService extends TransactionBaseService {
     if (!discount) {
       throw new MedusaError(
         MedusaError.Types.NOT_FOUND,
-        `Discount with ${discountId} was not found`
+        `Discount with id ${discountId} was not found`
       )
     }
 
@@ -277,7 +270,7 @@ class DiscountService extends TransactionBaseService {
     const manager = this.manager_
     const discountRepo = manager.getCustomRepository(this.discountRepository_)
 
-    const normalizedCode = discountCode.toUpperCase()
+    const normalizedCode = discountCode.toUpperCase().trim()
 
     let query = buildQuery({ code: normalizedCode, is_dynamic: false }, config)
     let discount = await discountRepo.findOne(query)

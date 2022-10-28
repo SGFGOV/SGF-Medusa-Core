@@ -1,10 +1,8 @@
 # Class: ProductVariantService
 
-Provides layer to manipulate product variants.
-
 ## Hierarchy
 
-- `"medusa-interfaces"`
+- `TransactionBaseService`
 
   ↳ **`ProductVariantService`**
 
@@ -22,7 +20,7 @@ Provides layer to manipulate product variants.
 
 #### Overrides
 
-BaseService.constructor
+TransactionBaseService.constructor
 
 #### Defined in
 
@@ -30,9 +28,37 @@ BaseService.constructor
 
 ## Properties
 
+### \_\_configModule\_\_
+
+• `Protected` `Optional` `Readonly` **\_\_configModule\_\_**: `Record`<`string`, `unknown`\>
+
+#### Inherited from
+
+TransactionBaseService.\_\_configModule\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:10](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L10)
+
+___
+
+### \_\_container\_\_
+
+• `Protected` `Readonly` **\_\_container\_\_**: `any`
+
+#### Inherited from
+
+TransactionBaseService.\_\_container\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:9](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L9)
+
+___
+
 ### cartRepository\_
 
-• `Private` **cartRepository\_**: typeof `CartRepository`
+• `Protected` `Readonly` **cartRepository\_**: typeof `CartRepository`
 
 #### Defined in
 
@@ -42,7 +68,7 @@ ___
 
 ### eventBus\_
 
-• `Private` **eventBus\_**: [`EventBusService`](EventBusService.md)
+• `Protected` `Readonly` **eventBus\_**: [`EventBusService`](EventBusService.md)
 
 #### Defined in
 
@@ -52,7 +78,11 @@ ___
 
 ### manager\_
 
-• `Private` **manager\_**: `EntityManager`
+• `Protected` **manager\_**: `EntityManager`
+
+#### Overrides
+
+TransactionBaseService.manager\_
 
 #### Defined in
 
@@ -62,7 +92,7 @@ ___
 
 ### moneyAmountRepository\_
 
-• `Private` **moneyAmountRepository\_**: typeof `MoneyAmountRepository`
+• `Protected` `Readonly` **moneyAmountRepository\_**: typeof `MoneyAmountRepository`
 
 #### Defined in
 
@@ -72,7 +102,7 @@ ___
 
 ### priceSelectionStrategy\_
 
-• `Private` **priceSelectionStrategy\_**: `IPriceSelectionStrategy`
+• `Protected` `Readonly` **priceSelectionStrategy\_**: `IPriceSelectionStrategy`
 
 #### Defined in
 
@@ -82,7 +112,7 @@ ___
 
 ### productOptionValueRepository\_
 
-• `Private` **productOptionValueRepository\_**: typeof `ProductOptionValueRepository`
+• `Protected` `Readonly` **productOptionValueRepository\_**: typeof `ProductOptionValueRepository`
 
 #### Defined in
 
@@ -92,7 +122,7 @@ ___
 
 ### productRepository\_
 
-• `Private` **productRepository\_**: typeof `ProductRepository`
+• `Protected` `Readonly` **productRepository\_**: typeof `ProductRepository`
 
 #### Defined in
 
@@ -102,7 +132,7 @@ ___
 
 ### productVariantRepository\_
 
-• `Private` **productVariantRepository\_**: typeof `ProductVariantRepository`
+• `Protected` `Readonly` **productVariantRepository\_**: typeof `ProductVariantRepository`
 
 #### Defined in
 
@@ -112,7 +142,7 @@ ___
 
 ### regionService\_
 
-• `Private` **regionService\_**: [`RegionService`](RegionService.md)
+• `Protected` `Readonly` **regionService\_**: [`RegionService`](RegionService.md)
 
 #### Defined in
 
@@ -275,7 +305,7 @@ ___
 
 ### getRegionPrice
 
-▸ **getRegionPrice**(`variantId`, `context`): `Promise`<`number`\>
+▸ **getRegionPrice**(`variantId`, `context`): `Promise`<``null`` \| `number`\>
 
 Gets the price specific to a region. If no region specific money amount
 exists the function will try to use a currency price. If no default
@@ -290,7 +320,7 @@ currency price exists the function will throw an error.
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`<``null`` \| `number`\>
 
 the price specific to the region
 
@@ -453,31 +483,6 @@ the result of the update operation
 
 ___
 
-### setMetadata\_
-
-▸ **setMetadata_**(`variant`, `metadata`): `Record`<`string`, `unknown`\>
-
-Dedicated method to set metadata for a variant.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `variant` | `ProductVariant` | the variant to set metadata for. |
-| `metadata` | `object` | the metadata to set |
-
-#### Returns
-
-`Record`<`string`, `unknown`\>
-
-updated metadata object
-
-#### Defined in
-
-[packages/medusa/src/services/product-variant.ts:724](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-variant.ts#L724)
-
-___
-
 ### setRegionPrice
 
 ▸ **setRegionPrice**(`variantId`, `price`): `Promise`<`MoneyAmount`\>
@@ -496,6 +501,30 @@ Sets the default price of a specific region
 `Promise`<`MoneyAmount`\>
 
 the result of the update operation
+
+#### Defined in
+
+[packages/medusa/src/services/product-variant.ts:724](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/services/product-variant.ts#L724)
+
+___
+
+### shouldRetryTransaction\_
+
+▸ `Protected` **shouldRetryTransaction_**(`err`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `err` | `Record`<`string`, `unknown`\> \| { `code`: `string`  } |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+TransactionBaseService.shouldRetryTransaction\_
 
 #### Defined in
 
@@ -585,17 +614,21 @@ ___
 
 ### withTransaction
 
-▸ **withTransaction**(`transactionManager`): [`ProductVariantService`](ProductVariantService.md)
+▸ **withTransaction**(`transactionManager?`): [`ProductVariantService`](ProductVariantService.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `transactionManager` | `EntityManager` |
+| `transactionManager?` | `EntityManager` |
 
 #### Returns
 
 [`ProductVariantService`](ProductVariantService.md)
+
+#### Inherited from
+
+TransactionBaseService.withTransaction
 
 #### Defined in
 

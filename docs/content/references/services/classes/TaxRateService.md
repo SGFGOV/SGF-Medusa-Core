@@ -2,7 +2,7 @@
 
 ## Hierarchy
 
-- `"medusa-interfaces"`
+- `TransactionBaseService`
 
   ↳ **`TaxRateService`**
 
@@ -20,7 +20,7 @@
 
 #### Overrides
 
-BaseService.constructor
+TransactionBaseService.constructor
 
 #### Defined in
 
@@ -28,9 +28,41 @@ BaseService.constructor
 
 ## Properties
 
+### \_\_configModule\_\_
+
+• `Protected` `Optional` `Readonly` **\_\_configModule\_\_**: `Record`<`string`, `unknown`\>
+
+#### Inherited from
+
+TransactionBaseService.\_\_configModule\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:10](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L10)
+
+___
+
+### \_\_container\_\_
+
+• `Protected` `Readonly` **\_\_container\_\_**: `any`
+
+#### Inherited from
+
+TransactionBaseService.\_\_container\_\_
+
+#### Defined in
+
+[packages/medusa/src/interfaces/transaction-base-service.ts:9](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/interfaces/transaction-base-service.ts#L9)
+
+___
+
 ### manager\_
 
-• `Private` **manager\_**: `EntityManager`
+• `Protected` **manager\_**: `EntityManager`
+
+#### Overrides
+
+TransactionBaseService.manager\_
 
 #### Defined in
 
@@ -40,7 +72,7 @@ ___
 
 ### productService\_
 
-• `Private` **productService\_**: [`ProductService`](ProductService.md)
+• `Protected` `Readonly` **productService\_**: [`ProductService`](ProductService.md)
 
 #### Defined in
 
@@ -50,7 +82,7 @@ ___
 
 ### productTypeService\_
 
-• `Private` **productTypeService\_**: [`ProductTypeService`](ProductTypeService.md)
+• `Protected` `Readonly` **productTypeService\_**: [`ProductTypeService`](ProductTypeService.md)
 
 #### Defined in
 
@@ -60,7 +92,7 @@ ___
 
 ### shippingOptionService\_
 
-• `Private` **shippingOptionService\_**: [`ShippingOptionService`](ShippingOptionService.md)
+• `Protected` `Readonly` **shippingOptionService\_**: [`ShippingOptionService`](ShippingOptionService.md)
 
 #### Defined in
 
@@ -70,7 +102,7 @@ ___
 
 ### taxRateRepository\_
 
-• `Private` **taxRateRepository\_**: typeof `TaxRateRepository`
+• `Protected` `Readonly` **taxRateRepository\_**: typeof `TaxRateRepository`
 
 #### Defined in
 
@@ -124,7 +156,7 @@ ___
 
 ### addToShippingOption
 
-▸ **addToShippingOption**(`id`, `optionIds`, `replace?`): `Promise`<`ShippingTaxRate`\>
+▸ **addToShippingOption**(`id`, `optionIds`, `replace?`): `Promise`<`ShippingTaxRate`[]\>
 
 #### Parameters
 
@@ -136,7 +168,46 @@ ___
 
 #### Returns
 
-`Promise`<`ShippingTaxRate`\>
+`Promise`<`ShippingTaxRate`[]\>
+
+#### Defined in
+
+[packages/medusa/src/services/tax-rate.ts:257](https://github.com/medusajs/medusa/blob/35df4962f/packages/medusa/src/services/tax-rate.ts#L257)
+
+___
+
+### atomicPhase\_
+
+▸ `Protected` **atomicPhase_**<`TResult`, `TError`\>(`work`, `isolationOrErrorHandler?`, `maybeErrorHandlerOrDontFail?`): `Promise`<`TResult`\>
+
+Wraps some work within a transactional block. If the service already has
+a transaction manager attached this will be reused, otherwise a new
+transaction manager is created.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `TResult` |
+| `TError` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `work` | (`transactionManager`: `EntityManager`) => `Promise`<`TResult`\> | the transactional work to be done |
+| `isolationOrErrorHandler?` | `IsolationLevel` \| (`error`: `TError`) => `Promise`<`void` \| `TResult`\> | the isolation level to be used for the work. |
+| `maybeErrorHandlerOrDontFail?` | (`error`: `TError`) => `Promise`<`void` \| `TResult`\> | Potential error handler |
+
+#### Returns
+
+`Promise`<`TResult`\>
+
+the result of the transactional work
+
+#### Inherited from
+
+TransactionBaseService.atomicPhase\_
 
 #### Defined in
 
@@ -374,17 +445,21 @@ ___
 
 ### withTransaction
 
-▸ **withTransaction**(`transactionManager`): [`TaxRateService`](TaxRateService.md)
+▸ **withTransaction**(`transactionManager?`): [`TaxRateService`](TaxRateService.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `transactionManager` | `EntityManager` |
+| `transactionManager?` | `EntityManager` |
 
 #### Returns
 
 [`TaxRateService`](TaxRateService.md)
+
+#### Inherited from
+
+TransactionBaseService.withTransaction
 
 #### Defined in
 

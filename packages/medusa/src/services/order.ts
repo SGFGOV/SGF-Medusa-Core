@@ -1,6 +1,7 @@
 import { MedusaError } from "medusa-core-utils"
 import { Brackets, EntityManager } from "typeorm"
 import { TransactionBaseService } from "../interfaces"
+import SalesChannelFeatureFlag from "../loaders/feature-flags/sales-channels"
 import {
   Address,
   ClaimOrder,
@@ -26,6 +27,7 @@ import {
 import { UpdateOrderInput } from "../types/orders"
 import { CreateShippingMethodDto } from "../types/shipping-options"
 import { buildQuery, setMetadata } from "../utils"
+import { FlagRouter } from "../utils/flag-router"
 import CartService from "./cart"
 import CustomerService from "./customer"
 import DiscountService from "./discount"
@@ -61,6 +63,7 @@ type InjectedDependencies = {
   draftOrderService: DraftOrderService
   inventoryService: InventoryService
   eventBusService: EventBusService
+  featureFlagRouter: FlagRouter
 }
 
 class OrderService extends TransactionBaseService {
@@ -103,6 +106,7 @@ class OrderService extends TransactionBaseService {
   protected readonly draftOrderService_: DraftOrderService
   protected readonly inventoryService_: InventoryService
   protected readonly eventBus_: EventBusService
+  protected readonly featureFlagRouter_: FlagRouter
 
   constructor({
     manager,
@@ -123,6 +127,7 @@ class OrderService extends TransactionBaseService {
     draftOrderService,
     inventoryService,
     eventBusService,
+    featureFlagRouter,
   }: InjectedDependencies) {
     // eslint-disable-next-line prefer-rest-params
     super(arguments[0])
@@ -145,6 +150,7 @@ class OrderService extends TransactionBaseService {
     this.addressRepository_ = addressRepository
     this.draftOrderService_ = draftOrderService
     this.inventoryService_ = inventoryService
+    this.featureFlagRouter_ = featureFlagRouter
   }
 
   /**
@@ -160,25 +166,8 @@ class OrderService extends TransactionBaseService {
       order: { created_at: "DESC" },
     }
   ): Promise<Order[]> {
-    const orderRepo = this.manager_.getCustomRepository(this.orderRepository_)
-    const query = buildQuery(selector, config)
-
-    const { select, relations, totalsToSelect } =
-      this.transformQueryForTotals(config)
-
-    if (select && select.length) {
-      query.select = select
-    }
-
-    if (relations && relations.length) {
-      query.relations = relations
-    }
-
-    const raw = await orderRepo.find(query)
-
-    return await Promise.all(
-      raw.map(async (r) => await this.decorateTotals(r, totalsToSelect))
-    )
+    const [orders] = await this.listAndCount(selector, config)
+    return orders
   }
 
   /**
@@ -235,11 +224,9 @@ class OrderService extends TransactionBaseService {
     const { select, relations, totalsToSelect } =
       this.transformQueryForTotals(config)
 
-    if (select && select.length) {
-      query.select = select
-    }
-
+    query.select = select
     const rels = relations
+
     delete query.relations
 
     const raw = await orderRepo.findWithRelations(rels, query)
@@ -308,14 +295,14 @@ class OrderService extends TransactionBaseService {
       select = select.filter((v) => !totalFields.includes(v))
     }
 
-    const toSelect = [...select]
+    const toSelect = select
     if (toSelect.length > 0 && toSelect.indexOf("tax_rate") === -1) {
       toSelect.push("tax_rate")
     }
 
     return {
       relations,
-      select: toSelect,
+      select: toSelect.length ? toSelect : undefined,
       totalsToSelect,
     }
   }
@@ -343,9 +330,7 @@ class OrderService extends TransactionBaseService {
       query.relations = relations
     }
 
-    if (select && select.length > 0) {
-      query.select = select
-    }
+    query.select = select?.length ? select : undefined
 
     const rels = query.relations
     delete query.relations
@@ -383,9 +368,7 @@ class OrderService extends TransactionBaseService {
       query.relations = relations
     }
 
-    if (select && select.length > 0) {
-      query.select = select
-    }
+    query.select = select?.length ? select : undefined
 
     const raw = await orderRepo.findOne(query)
 
@@ -422,9 +405,7 @@ class OrderService extends TransactionBaseService {
       query.relations = relations
     }
 
-    if (select && select.length > 0) {
-      query.select = select
-    }
+    query.select = select?.length ? select : undefined
 
     const rels = query.relations
     delete query.relations
@@ -486,8 +467,7 @@ class OrderService extends TransactionBaseService {
       const cartServiceTx = this.cartService_.withTransaction(manager)
       const inventoryServiceTx = this.inventoryService_.withTransaction(manager)
 
-      const cart = await cartServiceTx.retrieve(cartId, {
-        select: ["subtotal", "total"],
+      const cart = await cartServiceTx.retrieveWithTotals(cartId, {
         relations: [
           "region",
           "payment",
@@ -573,6 +553,13 @@ class OrderService extends TransactionBaseService {
         currency_code: region.currency_code,
         metadata: cart.metadata || {},
       } as Partial<Order>
+
+      if (
+        cart.sales_channel_id &&
+        this.featureFlagRouter_.isFeatureEnabled(SalesChannelFeatureFlag.key)
+      ) {
+        toCreate.sales_channel_id = cart.sales_channel_id
+      }
 
       if (cart.type === "draft_order") {
         const draft = await this.draftOrderService_

@@ -448,7 +448,7 @@ ___
 
 ### retrieveProvider
 
-▸ **retrieveProvider**<`TProvider`\>(`providerId`): `TProvider` extends `AbstractPaymentService`<`never`\> ? `AbstractPaymentService`<`never`\> : `any`
+▸ **retrieveProvider**<`TProvider`\>(`providerId`): `TProvider` extends `AbstractPaymentService` ? `AbstractPaymentService` : `any`
 
 Finds a provider given an id
 
@@ -466,7 +466,7 @@ Finds a provider given an id
 
 #### Returns
 
-`TProvider` extends `AbstractPaymentService`<`never`\> ? `AbstractPaymentService`<`never`\> : `any`
+`TProvider` extends `AbstractPaymentService` ? `AbstractPaymentService` : `any`
 
 the payment provider
 

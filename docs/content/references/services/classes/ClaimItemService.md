@@ -20,7 +20,7 @@
 
 #### Overrides
 
-BaseService.constructor
+TransactionBaseService.constructor
 
 #### Defined in
 
@@ -34,7 +34,7 @@ BaseService.constructor
 
 #### Inherited from
 
-BaseService.\_\_configModule\_\_
+TransactionBaseService.\_\_configModule\_\_
 
 #### Defined in
 
@@ -48,7 +48,7 @@ ___
 
 #### Inherited from
 
-BaseService.\_\_container\_\_
+TransactionBaseService.\_\_container\_\_
 
 #### Defined in
 
@@ -112,7 +112,7 @@ ___
 
 #### Overrides
 
-BaseService.manager\_
+TransactionBaseService.manager\_
 
 #### Defined in
 
@@ -126,7 +126,7 @@ ___
 
 #### Overrides
 
-BaseService.transactionManager\_
+TransactionBaseService.transactionManager\_
 
 #### Defined in
 
@@ -183,7 +183,7 @@ the result of the transactional work
 
 #### Inherited from
 
-BaseService.atomicPhase\_
+TransactionBaseService.atomicPhase\_
 
 #### Defined in
 
@@ -275,7 +275,7 @@ ___
 
 #### Inherited from
 
-BaseService.shouldRetryTransaction\_
+TransactionBaseService.shouldRetryTransaction\_
 
 #### Defined in
 
@@ -320,7 +320,7 @@ ___
 
 #### Inherited from
 
-BaseService.withTransaction
+TransactionBaseService.withTransaction
 
 #### Defined in
 

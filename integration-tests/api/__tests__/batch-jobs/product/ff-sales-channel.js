@@ -14,6 +14,26 @@ const startServerWithEnvironment =
 
 jest.setTimeout(30000)
 
+function getImportFile() {
+  return path.resolve(
+    "__tests__",
+    "batch-jobs",
+    "product",
+    "product-import-ss.csv"
+  )
+}
+
+function copyTemplateFile() {
+  const csvTemplate = path.resolve(
+    "__tests__",
+    "batch-jobs",
+    "product",
+    "product-import-ss-template.csv"
+  )
+  const destination = getImportFile()
+  fs.copyFileSync(csvTemplate, destination)
+}
+
 const adminReqConfig = {
   headers: {
     Authorization: "Bearer test_token",
@@ -82,6 +102,8 @@ describe("Product import - Sales Channel", () => {
     jest.setTimeout(1000000)
     const api = useApi()
 
+    copyTemplateFile()
+
     const response = await api.post(
       "/admin/batch-jobs",
       {
@@ -118,17 +140,16 @@ describe("Product import - Sales Channel", () => {
 
     const productsResponse = await api.get("/admin/products", adminReqConfig)
 
-    expect(productsResponse.data.count).toBe(2)
+    expect(productsResponse.data.count).toBe(1)
     expect(productsResponse.data.products).toEqual([
       expect.objectContaining({
-        id: "O6S1YQ6mKm",
         title: "Test product",
-        description: "test-product-description-1",
+        description:
+          "Hopper Stripes Bedding, available as duvet cover, pillow sham and sheet.\\n100% organic cotton, soft and crisp to the touch. Made in Portugal.",
         handle: "test-product-product-1",
         variants: [
           expect.objectContaining({
             title: "Test variant",
-            product_id: "O6S1YQ6mKm",
             sku: "test-sku-1",
           }),
         ],
@@ -142,25 +163,6 @@ describe("Product import - Sales Channel", () => {
             is_disabled: false,
           }),
         ],
-      }),
-      expect.objectContaining({
-        id: "5VxiEkmnPV",
-        title: "Test product",
-        description: "test-product-description",
-        handle: "test-product-product-2",
-        variants: [
-          expect.objectContaining({
-            title: "Test variant",
-            product_id: "5VxiEkmnPV",
-            sku: "test-sku-2",
-          }),
-          expect.objectContaining({
-            title: "Test variant",
-            product_id: "5VxiEkmnPV",
-            sku: "test-sku-3",
-          }),
-        ],
-        sales_channels: [],
       }),
     ])
   })

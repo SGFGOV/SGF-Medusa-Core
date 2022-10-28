@@ -293,7 +293,7 @@ ___
 
 ### getGiftCardTotal
 
-▸ **getGiftCardTotal**(`cartOrOrder`): `Promise`<{ `tax_total`: `number` ; `total`: `number`  }\>
+▸ **getGiftCardTotal**(`cartOrOrder`, `opts?`): `Promise`<{ `tax_total`: `number` ; `total`: `number`  }\>
 
 Gets the gift card amount on a cart or order.
 
@@ -302,6 +302,8 @@ Gets the gift card amount on a cart or order.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `cartOrOrder` | `Cart` \| `Order` | the cart or order to get gift card amount for |
+| `opts` | `Object` | - |
+| `opts.gift_cardable?` | `number` | - |
 
 #### Returns
 

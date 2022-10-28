@@ -22,4 +22,4 @@ ___
 
 #### Defined in
 
-[models/claim-order.ts:28](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/claim-order.ts#L28)
+[models/claim-order.ts:28](https://github.com/medusajs/medusa/blob/c4c83c971/packages/medusa/src/models/claim-order.ts#L28)
