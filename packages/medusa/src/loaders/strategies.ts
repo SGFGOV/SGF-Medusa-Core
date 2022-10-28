@@ -93,8 +93,8 @@ export async function authStrategies({
   const isTest = process.env.NODE_ENV === "test"
 
   const corePath = isTest
-    ? "../strategies/authentication/**/[!__]*.{js,ts}"
-    : "../strategies/authentication/**/[!__]*.js"q
+    ? "../strategies/authentication/**/[!__]*.ts"
+    : "../strategies/authentication/**/[!__]*.js"
 
   const coreFull = path.join(__dirname, corePath)
 
@@ -106,6 +106,9 @@ export async function authStrategies({
   for (const fn of core) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const loaded = require(fn).default
+    if (!loaded) {
+      console.log(fn, "unable to load")
+    }
     const name = formatRegistrationName(fn)
 
     if (isAuthStrategy(loaded.prototype)) {

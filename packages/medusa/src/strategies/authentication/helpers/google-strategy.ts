@@ -14,11 +14,14 @@ export class MedusaGooleStrategy {
     const strategy = new GoogleStrategy(
       {
         clientID:
-          this.configModule.projectConfig.secureKeys?.google["cliendID"],
+          this.configModule.projectConfig.secureKeys?.google["cliendID"] ??
+          "dummy",
         clientSecret:
-          this.configModule.projectConfig.secureKeys?.google["clientSecret"],
+          this.configModule.projectConfig.secureKeys?.google["clientSecret"] ??
+          "dummy",
         callbackURL:
-          this.configModule.projectConfig.secureKeys?.google["callbackURL"],
+          this.configModule.projectConfig.secureKeys?.google["callbackURL"] ??
+          "dummy",
       },
       async function (issuer, profile, cb) {
         /** fetch user from user service */
@@ -42,3 +45,4 @@ export class MedusaGooleStrategy {
     return strategy
   }
 }
+export default MedusaGooleStrategy
