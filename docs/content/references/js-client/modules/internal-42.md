@@ -1,13 +1,25 @@
 # Namespace: internal
 
-## Classes
+## Type Aliases
 
 - [StorePaymentCollectionSessionsReq](../classes/internal-42.StorePaymentCollectionSessionsReq.md)
 - [StorePostPaymentCollectionsBatchSessionsAuthorizeReq](../classes/internal-42.StorePostPaymentCollectionsBatchSessionsAuthorizeReq.md)
 - [StorePostPaymentCollectionsBatchSessionsReq](../classes/internal-42.StorePostPaymentCollectionsBatchSessionsReq.md)
 - [StorePostPaymentCollectionsSessionsReq](../classes/internal-42.StorePostPaymentCollectionsSessionsReq.md)
 
-## Type Aliases
+Ƭ **StoreRegionsListRes**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `regions` | [`Region`](../classes/internal.Region.md)[] |
+
+#### Defined in
+
+medusa/dist/api/routes/store/regions/index.d.ts:4
+
+___
 
 ### StorePaymentCollectionsRes
 

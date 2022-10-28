@@ -271,14 +271,6 @@ module.exports = {
             },
             {
               type: "doc",
-<<<<<<< HEAD
-=======
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually",
-            },
-            {
-              type: "doc",
->>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -292,29 +284,13 @@ module.exports = {
               id: "advanced/admin/use-customergroups-api",
               label: "Use CustomerGroup APIs"
             },
-<<<<<<< HEAD
             {
               type: "doc",
               id: "advanced/admin/manage-discounts",
               label: "Use Discount APIs"
             },
           ]
-=======
           ],
-<<<<<<< HEAD
-=======
-              label: "Calculate Taxes Manually"
-            },
-          ]
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/endpoints/add-storefront",
-          label: "Create Endpoint for Storefront"
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
->>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
-=======
->>>>>>> 35b9d4f2d (docs for tax-inclusive pricing (#2159))
         },
         {
           type: "doc",
@@ -437,7 +413,27 @@ module.exports = {
 >>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
 >>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
         },
+<<<<<<< HEAD
       ]
+=======
+        {
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products",
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+          ],
+        },
+      ],
+>>>>>>> ccf687e61 (chore: rebase)
     },
     {
       type: "category",
@@ -517,11 +513,14 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/dependency-container/index"
         },
+<<<<<<< HEAD
         {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
         },
+=======
+>>>>>>> c54694323 (chore: rebase)
       ]
     },
     {
