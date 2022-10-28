@@ -11,7 +11,7 @@ import {
   ProductExportBatchJobContext,
   ProductExportInjectedDependencies,
   ProductExportPriceData,
-} from "./types"
+} from "./types/index"
 import { FindProductConfig } from "../../../types/product"
 import { FlagRouter } from "../../../utils/flag-router"
 import SalesChannelFeatureFlag from "../../../loaders/feature-flags/sales-channels"
@@ -503,7 +503,9 @@ export default class ProductExportStrategy extends AbstractBatchJobStrategy {
       for (const [, { exportDescriptor: columnSchema }] of Object.entries(
         this.columnsDefinition
       )) {
-        if (!columnSchema || "isDynamic" in columnSchema) continue
+        if (!columnSchema || "isDynamic" in columnSchema) {
+          continue
+        }
 
         if (columnSchema.entityName === "product") {
           const formattedContent = csvCellContentFormatter(

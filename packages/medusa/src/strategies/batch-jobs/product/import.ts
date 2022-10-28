@@ -28,7 +28,7 @@ import {
   ProductImportInjectedProps,
   ProductImportJobContext,
   TParsedProductImportRowData,
-} from "./types"
+} from "./types/index"
 import {
   productImportColumnsDefinition,
   productImportSalesChannelsColumnsDefinition,

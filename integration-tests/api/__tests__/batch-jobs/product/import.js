@@ -222,6 +222,7 @@ describe("Product import batch job", () => {
             }),
           ],
         }),
+        // UPDATED PRODUCT
         expect.objectContaining({
           title: "Test product",
           description:

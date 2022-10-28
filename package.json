@@ -72,11 +72,15 @@
     "generate:entities": "typedoc --options typedoc.entities.js",
     "release:snapshot": "changeset publish --no-git-tags --snapshot --tag snapshot",
     "generate:announcement": "node ./scripts/doc-change-release.js",
+<<<<<<< HEAD
     "develop": "NODE_ENV=development ts-node --transpile-only ./integration-tests/development/server.js",
     "develop:create:db": "NODE_ENV=development ts-node --transpile-only ./integration-tests/development/create-database.js",
     "release:staging": "changeset publish --no-git-tags --snapshot --tag staging",
     "version:staging": "changeset version --snapshot staging",
     "check:freshness": "node ./scripts/freshness-check.js"
+=======
+    "version:staging": "yarn changeset pre enter staging && yarn changeset version"
+>>>>>>> 27f885906 (chore: rebased and added google auth)
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.5",

@@ -17,6 +17,7 @@ declare global {
       retrieveConfig: FindConfig<unknown>
       filterableFields: Record<string, unknown>
       errors: string[]
+      session: any
     }
   }
 }
@@ -69,6 +70,13 @@ export type DatabaseHostConfig =
       url?: string
     }
 
+export type externalAuthentication = {
+  authMethod: string
+  externaAuthServerUrl: string
+  signUpUrl: string
+  redirectionUrl: string
+}
+
 export type ConfigModule = {
   projectConfig: {
     redis_url?: string
@@ -91,6 +99,8 @@ export type ConfigModule = {
     }
     store_cors?: string
     admin_cors?: string
+    externalAuth?: externalAuthentication
+    secureKeys?: { [key: string]: string }
   }
   featureFlags: Record<string, boolean | string>
   modules?: Record<string, string>

@@ -35,6 +35,7 @@ import {
 } from "../types/global"
 import formatRegistrationName from "../utils/format-registration-name"
 import logger from "./logger"
+import AbstractAuthStrategy, { isAuthStrategy } from "../interfaces/authentication-strategy"
 
 type Options = {
   rootDirectory: string
@@ -67,7 +68,7 @@ export default async ({
   await Promise.all(
     resolved.map(async (pluginDetails) => {
       registerRepositories(pluginDetails, container)
-      await registerServices(pluginDetails, container)
+      await registerServices(pluginDetails, container, app)
       await registerMedusaApi(pluginDetails, container)
       registerApi(pluginDetails, app, rootDirectory, container, activityId)
       registerCoreRouters(pluginDetails, container)
@@ -351,7 +352,8 @@ function registerApi(
  */
 export async function registerServices(
   pluginDetails: PluginDetails,
-  container: MedusaContainer
+  container: MedusaContainer,
+  app: Express
 ): Promise<void> {
   const files = glob.sync(`${pluginDetails.resolve}/services/[!__]*.js`, {})
   await Promise.all(
@@ -458,6 +460,22 @@ export async function registerServices(
             (cradle) => new loaded(cradle, pluginDetails.options)
           ).singleton(),
           [`tp_${loaded.identifier}`]: aliasTo(name),
+        })
+      } else if (isAuthStrategy(loaded.prototype)) {
+        if (loaded.beforeInit) {
+          await loaded.beforeInit(app, container, pluginDetails.options)
+        }
+
+        container.registerAdd(
+          "authenticationStrategies",
+          asFunction((cradle) => new loaded(cradle, pluginDetails.options))
+        )
+
+        container.register({
+          [name]: asFunction(
+            (cradle) => new loaded(cradle, pluginDetails.options)
+          ).singleton(),
+          [`auth_${loaded.identifier}`]: aliasTo(name),
         })
       } else {
         container.register({
