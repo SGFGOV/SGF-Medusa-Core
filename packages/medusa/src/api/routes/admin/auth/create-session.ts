@@ -1,11 +1,13 @@
 import { IsEmail, IsNotEmpty, IsString } from "class-validator"
 
-import AuthService from "../../../../services/auth"
 import { EntityManager } from "typeorm"
+import { Request, Response } from "express"
+import AbstractAuthStrategy from "../../../../interfaces/authentication-strategy"
 import { MedusaError } from "medusa-core-utils"
-import _ from "lodash"
+import { AuthService, StrategyResolverService } from "../../../../services"
 import jwt from "jsonwebtoken"
 import { validator } from "../../../../utils/validator"
+import _ from "lodash"
 
 /**
  * @oas [post] /auth
@@ -77,6 +79,16 @@ import { validator } from "../../../../utils/validator"
  *  "500":
  *    $ref: "#/components/responses/500_error"
  */
+export class AdminPostAuthReq {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string
+
+  @IsString()
+  @IsNotEmpty()
+  password: string
+}
+
 export default async (req, res) => {
   const {
     projectConfig: { jwt_secret },
@@ -97,26 +109,27 @@ export default async (req, res) => {
       .authenticate(validated.email, validated.password)
   })
 
+  //  let authService = req.scope.resolve("authService") as AuthService
+  let authStrategy = await authService.retrieveAuthenticationStrategy(
+    req,
+    "admin"
+  )
+  // await authStrategy.authenticate(req, res)
   if (result.success && result.user) {
     // Add JWT to cookie
     req.session.jwt = jwt.sign({ userId: result.user.id }, jwt_secret, {
       expiresIn: "24h",
     })
 
-    const cleanRes = _.omit(result.user, ["password_hash"])
+    const strategyResolver = req.scope.resolve(
+      "strategyResolverService"
+    ) as StrategyResolverService
 
-    res.json({ user: cleanRes })
-  } else {
-    res.sendStatus(401)
+    const authStrategyType = (req.headers["X-medusa-auth-strategy"] ??
+      "core-admin-default-auth") as string
+    if (strategyResolver) {
+      authStrategy = strategyResolver.resolveAuthByType(authStrategyType)
+    }
+    await authStrategy.authenticate(req, res)
   }
-}
-
-export class AdminPostAuthReq {
-  @IsEmail()
-  @IsNotEmpty()
-  email: string
-
-  @IsString()
-  @IsNotEmpty()
-  password: string
 }

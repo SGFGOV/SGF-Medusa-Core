@@ -15,7 +15,8 @@ import {
 import { BatchJobStatus } from "../../../../types/batch-job"
 import { FlagRouter } from "../../../../utils/flag-router"
 import ProductImportStrategy from "../../../batch-jobs/product/import"
-import { ProductImportInjectedProps } from "../../../batch-jobs/product/types"
+import { ProductImportInjectedProps } from "../../../batch-jobs/product/types/index"
+
 
 let fakeJob = {
   id: IdMap.getId("product-import-job"),
@@ -138,7 +139,7 @@ describe("Product import strategy", () => {
 
   const productImportStrategy = new ProductImportStrategy({
     manager: managerMock as EntityManager,
-    fileService: fileServiceMock as typeof FileService,
+    fileService: fileServiceMock as unknown as typeof FileService,
     batchJobService: batchJobServiceMock as unknown as BatchJobService,
     productService: productServiceMock as unknown as ProductService,
     shippingProfileService:

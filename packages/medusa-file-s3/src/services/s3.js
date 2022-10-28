@@ -3,6 +3,7 @@ import aws from "aws-sdk"
 import { AbstractFileService } from "@medusajs/medusa"
 const { getDefaultRoleAssumerWithWebIdentity } = require("@aws-sdk/client-sts")
 const { defaultProvider } = require("@aws-sdk/credential-provider-node")
+import stream from "stream"
 class S3Service extends AbstractFileService {
   constructor(x, options) {
     super(x, options)
