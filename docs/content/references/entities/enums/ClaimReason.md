@@ -12,7 +12,7 @@ displayed_sidebar: entitiesSidebar
 
 #### Defined in
 
-[models/claim-item.ts:23](https://github.com/medusajs/medusa/blob/6225aa57b/packages/medusa/src/models/claim-item.ts#L23)
+[models/claim-item.ts:23](https://github.com/medusajs/medusa/blob/c4c83c971/packages/medusa/src/models/claim-item.ts#L23)
 
 ___
 

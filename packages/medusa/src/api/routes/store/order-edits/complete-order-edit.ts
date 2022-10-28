@@ -75,7 +75,7 @@ export default async (req: Request, res: Response) => {
     }
 
     // TODO once payment collection is done
-    /*const paymentCollection = await this.paymentCollectionService_.withTransaction(manager).retrieve(orderEdit.payment_collection_id)
+    /* const paymentCollection = await this.paymentCollectionService_.withTransaction(manager).retrieve(orderEdit.payment_collection_id)
     if (!paymentCollection.authorized_at) {
       throw new MedusaError(
         MedusaError.Types.NOT_ALLOWED,

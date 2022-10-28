@@ -5,6 +5,7 @@ import {
   defaultOrderEditFields,
   defaultOrderEditRelations,
 } from "../../../../types/order-edit"
+import { User } from "../../../../models"
 
 /**
  * @oas [post] /order-edits/{id}/cancel
@@ -62,7 +63,7 @@ export default async (req: Request, res: Response) => {
 
   const manager = req.scope.resolve("manager") as EntityManager
 
-  const userId = req.user?.id ?? req.user?.userId
+  const userId = (req.user as User).id ?? req.user?.userId
 
   await manager.transaction(async (transactionManager) => {
     await orderEditService
