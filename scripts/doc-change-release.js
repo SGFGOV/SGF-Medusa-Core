@@ -15,21 +15,12 @@ async function main () {
   if (shouldExpire) {
     // check if the file was last updated 6 days ago
     try {
-      const commitResponse = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-        owner: 'medusajs',
-        repo: 'medusa',
-        path: path.join('www', 'docs', 'announcement.json'),
-        per_page: 1
-      })
-      
-      if (commitResponse.data.length && dateDiffInDays(commitResponse.data[0].commit.committer.date, new Date()) < 6) {
       const fileStat = fs.statSync(path.join(__dirname, '..', 'www', 'docs', 'announcement.json'));
       if (dateDiffInDays(fileStat.mtime, new Date()) < 6) {
         console.log("File was edited less than 6 days ago. Expiry canceled.");
         return;
       }
-    } 
-  }catch (e) {
+    } catch (e) {
       //file doesn't exist, continue
     }
   } else {

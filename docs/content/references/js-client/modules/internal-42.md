@@ -1,12 +1,24 @@
 # Namespace: internal
 
-## Classes
+## Type Aliases
 
 - [StoreGetProductsPaginationParams](../classes/internal-42.StoreGetProductsPaginationParams.md)
 - [StoreGetProductsParams](../classes/internal-42.StoreGetProductsParams.md)
 - [StorePostSearchReq](../classes/internal-42.StorePostSearchReq.md)
 
-## Type Aliases
+Ƭ **StoreRegionsListRes**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `regions` | [`Region`](../classes/internal.Region.md)[] |
+
+#### Defined in
+
+medusa/dist/api/routes/store/regions/index.d.ts:4
+
+___
 
 ### StorePostSearchRes
 

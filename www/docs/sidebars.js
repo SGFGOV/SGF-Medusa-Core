@@ -48,6 +48,10 @@ module.exports = {
         },
         {
           type: "doc",
+          id: "quickstart/quick-start-docker",
+        },
+        {
+          type: "doc",
           id: "usage",
         },
       ],
@@ -388,6 +392,22 @@ module.exports = {
 =======
 >>>>>>> 0139047da (build: updated libraries)
         },
+        {
+          type: "category",
+          label: "Admin",
+          items: [
+            {
+              type: "doc",
+              id: "advanced/admin/import-products",
+              label: "Import Products",
+            },
+            {
+              type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually",
+            },
+          ],
+        },
       ],
     },
     {
@@ -464,11 +484,14 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/dependency-container/index"
         },
+<<<<<<< HEAD
         {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
         },
+=======
+>>>>>>> c54694323 (chore: rebase)
       ]
     },
     {
