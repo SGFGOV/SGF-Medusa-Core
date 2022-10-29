@@ -6206,7 +6206,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@medusajs/medusa-js@workspace:packages/medusa-js"
   dependencies:
-    "@medusajs/medusa": ^1.5.0
+    "@medusajs/medusa": "*"
     "@types/jest": ^26.0.19
     axios: ^0.24.0
     cross-env: ^7.0.3
@@ -6218,9 +6218,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/medusa@npm:^1.3.2, @medusajs/medusa@npm:^1.3.3, @medusajs/medusa@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@medusajs/medusa@npm:1.5.0"
+"@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
+  version: 1.5.3-alpha-9
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=4103b6&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.3
     "@types/ioredis": ^4.28.10
@@ -6244,17 +6244,18 @@ __metadata:
     ioredis-mock: ^5.6.0
     iso8601-duration: ^1.3.0
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.33
-    medusa-interfaces: ^1.3.3
+    medusa-core-utils: ^1.1.32
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
     multer: ^1.4.2
     node-schedule: ^2.1.0
     papaparse: ^5.3.2
     passport: ^0.4.0
+    passport-google-oidc: ^0.1.0
     passport-http-bearer: ^1.0.1
     passport-jwt: ^4.0.0
     passport-local: ^1.0.0
+    passport-saasform: ^0.3.3
     pg: ^8.5.1
     randomatic: ^3.1.1
     redis: ^3.0.2
@@ -6270,8 +6271,8 @@ __metadata:
     medusa-interfaces: 1.3.3
     typeorm: 0.2.x
   bin:
-    medusa: cli.js
-  checksum: 14d9e5ef9db5fbf5b874931f530b43542fc6719e1543843c97a50ace6344ecec6fe3027d96dccc04734da1c0b0146f5fced2b39616361ef9e8e7dfeb80aaf2e8
+    medusa: ./cli.js
+  checksum: 9f49f1ee51bbe62a750fc241e3b7b73369c78b75c7ad34409ffb3c9c95bae3f2be70aeb793899f5670e398ef9f4d1cfa9a5530a48553fd619842eb18986a4312
   languageName: node
   linkType: hard
 
@@ -26229,7 +26230,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@^1.1.33, medusa-core-utils@workspace:packages/medusa-core-utils":
+"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@workspace:packages/medusa-core-utils":
   version: 0.0.0-use.local
   resolution: "medusa-core-utils@workspace:packages/medusa-core-utils"
   dependencies:
@@ -27019,7 +27020,7 @@ __metadata:
     ts-jest: ^27.1.4
     tslib: ^2.3.1
   peerDependencies:
-    "@medusajs/medusa": ^1.5.0
+    "@medusajs/medusa": "*"
     react: ">=16"
     react-query: ">= 3.29.0"
   languageName: unknown

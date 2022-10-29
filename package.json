@@ -83,6 +83,9 @@
     "oas-normalize": "^5.0.1",
     "swagger-inline": "^3.2.2"
   },
+  "resolutions": {
+    "@medusajs/medusa": "./packages/medusa"
+  },
   "packageManager": "yarn@3.2.1",
   "version": "0.0.2"
 }
