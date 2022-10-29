@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@medusajs/medusa": "^1.7.0",
+    "@medusajs/medusa": "*",
     "react": ">=16",
     "react-query": ">= 3.29.0"
   },
@@ -79,6 +79,9 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "react-query": "^3.31.0"
+  },
+  "resolutions": {
+    "@medusajs/medusa": "npm:@sgftech/medusa"
   },
   "msw": {
     "workerDirectory": "public"

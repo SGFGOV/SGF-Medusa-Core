@@ -6117,6 +6117,7 @@ __metadata:
   version: 1.0.0-beta.105
   resolution: "@redocly/openapi-core@npm:1.0.0-beta.105"
   dependencies:
+<<<<<<< HEAD
     "@redocly/ajv": ^8.6.4
     "@types/node": ^14.11.8
     colorette: ^1.2.0
@@ -6139,6 +6140,100 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: f932771db3c87ccc6008e4d82c89c5a09349c834180a7ca6c3ee4d5dbf086cb27f9ce5f5aee42a66bf556e5fd3094438ffdf47e19f5bb0e15ea3cb1a9f34860d
+=======
+<<<<<<< HEAD
+    "@medusajs/medusa": ^1.5.0
+>>>>>>> c54694323 (chore: rebase)
+=======
+    "@medusajs/medusa": "*"
+>>>>>>> 64fd63a51 (fix: updated to fix build issues)
+    "@types/jest": ^26.0.19
+    axios: ^0.24.0
+    cross-env: ^7.0.3
+    form-data: ^4.0.0
+    jest: ^26.6.3
+    qs: ^6.10.3
+    retry-axios: ^2.6.0
+    typescript: ^4.1.3
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
+  version: 1.5.3-alpha-9
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=4103b6&locator=root%40workspace%3A."
+  dependencies:
+    "@babel/cli": ^7.14.3
+    "@babel/core": ^7.14.3
+    "@babel/preset-typescript": ^7.13.0
+    "@medusajs/medusa-cli": ^1.3.5
+    "@types/express": ^4.17.13
+    "@types/ioredis": ^4.28.10
+    "@types/lodash": ^4.14.168
+    "@types/multer": ^1.4.7
+    awilix: ^8.0.0
+    babel-preset-medusa-package: ^1.1.19
+    body-parser: ^1.19.0
+    bull: ^3.12.1
+    chokidar: ^3.4.2
+    class-transformer: ^0.5.1
+    class-validator: ^0.13.1
+    connect-redis: ^5.0.0
+    cookie-parser: ^1.4.4
+    core-js: ^3.6.5
+    cors: ^2.8.5
+    cross-spawn: ^7.0.3
+    express: ^4.17.1
+    express-session: ^1.17.1
+    fs-exists-cached: ^1.0.0
+    glob: ^7.1.6
+    ioredis: ^4.17.3
+    ioredis-mock: ^5.6.0
+    iso8601-duration: ^1.3.0
+    jsonwebtoken: ^8.5.1
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    medusa-core-utils: ^1.1.35
+    medusa-interfaces: ^1.3.3
+=======
+    medusa-core-utils: ^1.1.32
+>>>>>>> c54694323 (chore: rebase)
+=======
+    medusa-core-utils: ^1.1.33
+    medusa-interfaces: ^1.3.3
+>>>>>>> 27f885906 (chore: rebased and added google auth)
+=======
+    medusa-core-utils: ^1.1.32
+>>>>>>> 64fd63a51 (fix: updated to fix build issues)
+    medusa-test-utils: ^1.1.37
+    morgan: ^1.9.1
+    multer: ^1.4.2
+    node-schedule: ^2.1.0
+    papaparse: ^5.3.2
+    passport: ^0.4.0
+    passport-google-oidc: ^0.1.0
+    passport-http-bearer: ^1.0.1
+    passport-jwt: ^4.0.0
+    passport-local: ^1.0.0
+    passport-saasform: ^0.3.3
+    pg: ^8.5.1
+    randomatic: ^3.1.1
+    redis: ^3.0.2
+    reflect-metadata: ^0.1.13
+    request-ip: ^2.1.3
+    resolve-cwd: ^3.0.0
+    scrypt-kdf: ^2.0.1
+    sqlite3: ^5.0.2
+    ulid: ^2.3.0
+    uuid: ^8.3.1
+    winston: ^3.2.1
+  peerDependencies:
+    medusa-interfaces: 1.3.3
+    typeorm: 0.2.x
+  bin:
+    medusa: ./cli.js
+  checksum: 9f49f1ee51bbe62a750fc241e3b7b73369c78b75c7ad34409ffb3c9c95bae3f2be70aeb793899f5670e398ef9f4d1cfa9a5530a48553fd619842eb18986a4312
+>>>>>>> 551448fca (fix: updated to fix build issues)
   languageName: node
   linkType: hard
 
@@ -53231,10 +53326,24 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 551448fca (fix: updated to fix build issues)
 "medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@^1.1.34, medusa-core-utils@^1.1.35, medusa-core-utils@workspace:packages/medusa-core-utils":
 =======
 "medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@workspace:packages/medusa-core-utils":
 >>>>>>> c54694323 (chore: rebase)
+<<<<<<< HEAD
+=======
+=======
+"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@^1.1.33, medusa-core-utils@workspace:packages/medusa-core-utils":
+>>>>>>> 27f885906 (chore: rebased and added google auth)
+=======
+"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@workspace:packages/medusa-core-utils":
+>>>>>>> 64fd63a51 (fix: updated to fix build issues)
+>>>>>>> 551448fca (fix: updated to fix build issues)
   version: 0.0.0-use.local
   resolution: "medusa-core-utils@workspace:packages/medusa-core-utils"
   dependencies:
@@ -54046,10 +54155,14 @@ __metadata:
     tslib: ^2.3.1
   peerDependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@medusajs/medusa": ^1.6.2
 =======
     "@medusajs/medusa": ^1.5.0
 >>>>>>> c54694323 (chore: rebase)
+=======
+    "@medusajs/medusa": "*"
+>>>>>>> 64fd63a51 (fix: updated to fix build issues)
     react: ">=16"
     react-query: ">= 3.29.0"
   languageName: unknown
