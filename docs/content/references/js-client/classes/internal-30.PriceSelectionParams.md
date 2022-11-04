@@ -2,10 +2,13 @@
 
 [internal](../modules/internal-30.md).PriceSelectionParams
 
+
 ## Hierarchy
 
 - **`PriceSelectionParams`**
 
+
+=======
   ↳ [`AdminPriceSelectionParams`](internal-30.AdminPriceSelectionParams.md)
 
   ↳ [`StoreGetVariantsParams`](internal-40.StoreGetVariantsParams.md)

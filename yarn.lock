@@ -4488,6 +4488,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-typed-document-node/core@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "@graphql-typed-document-node/core@npm:3.1.1"
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: c186e5adceb0dfdaa770856d2f17c831a474f5927d79f984326ecb3d8680ba3c1ee2314f7def1d863692cd9cbe4dffc8bb52fc74ee0aa9b31e9491f24ef59f90
+  languageName: node
+  linkType: hard
+
 "@hapi/address@npm:^2.1.2":
   version: 2.1.4
   resolution: "@hapi/address@npm:2.1.4"
@@ -6027,6 +6036,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@linear/sdk@npm:^1.22.0":
+  version: 1.22.0
+  resolution: "@linear/sdk@npm:1.22.0"
+  dependencies:
+    "@graphql-typed-document-node/core": ^3.1.0
+    graphql: ^15.4.0
+    isomorphic-unfetch: ^3.1.0
+  checksum: 7e8f24f617631d027fd606334a498b04014d4c33603bcb3e08073d14f86260d116597983567f8bc147a935e4557180158175b52b9a9a8a270a234b946894a82b
+  languageName: node
+  linkType: hard
+
 "@lmdb/lmdb-darwin-arm64@npm:2.5.2":
   version: 2.5.2
   resolution: "@lmdb/lmdb-darwin-arm64@npm:2.5.2"
@@ -6219,8 +6239,8 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.5.3-alpha-9
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=4103b6&locator=root%40workspace%3A."
+  version: 1.6.1-alpha-1
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=aa45f4&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.3
     "@types/ioredis": ^4.28.10
@@ -6244,7 +6264,7 @@ __metadata:
     ioredis-mock: ^5.6.0
     iso8601-duration: ^1.3.0
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.32
+    medusa-core-utils: ^1.1.34
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
     multer: ^1.4.2
@@ -6272,7 +6292,7 @@ __metadata:
     typeorm: 0.2.x
   bin:
     medusa: ./cli.js
-  checksum: 9f49f1ee51bbe62a750fc241e3b7b73369c78b75c7ad34409ffb3c9c95bae3f2be70aeb793899f5670e398ef9f4d1cfa9a5530a48553fd619842eb18986a4312
+  checksum: 45a29ef328d57b1eded15ac74d9f43f0451faa96fcd695a40b62a421f478614968c7398f07efb4ee24f7674158f0faee898eccef5d71787835ca45c7f1a569b1
   languageName: node
   linkType: hard
 
@@ -7536,7 +7556,7 @@ __metadata:
     iso8601-duration: ^1.3.0
     jest: ^25.5.2
     jsonwebtoken: ^8.5.1
-    medusa-core-utils: ^1.1.32
+    medusa-core-utils: ^1.1.34
     medusa-interfaces: ^1.3.3
     medusa-test-utils: ^1.1.37
     morgan: ^1.9.1
@@ -7571,6 +7591,21 @@ __metadata:
     medusa: ./cli.js
   languageName: unknown
   linkType: soft
+
+"@sgftech/passport-saasform@npm:^0.0.19":
+  version: 0.0.19
+  resolution: "@sgftech/passport-saasform@npm:0.0.19"
+  dependencies:
+    axios: ^1.1.3
+    cookie: ^0.4.1
+    js-cookie: ^3.0.1
+    node-fetch: ^2.6.1
+    passport: ^0.6.0
+    passport-jwt: ^4.0.0
+    passport-strategy: 1.x.x
+  checksum: d293b36a7e099862d1ea36510eb37ea48ff101fef7dd96790fd69507660f63299397f65c904fe74eee911d494f2a2491230b453c67aac18dfeeb3b7e82489f77
+  languageName: node
+  linkType: hard
 
 "@shopify/network@npm:^1.5.1":
   version: 1.6.4
@@ -12293,6 +12328,17 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.8
   checksum: 77ad7f1e6ca04fcd3fa8af1795b09d8b7c005b71a31f28d99ba40cda0bdcc12a4627801d7fac5efa62b9f667a8402bd54c669039694373bc8d44f6be611f785c
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "axios@npm:1.1.3"
+  dependencies:
+    follow-redirects: ^1.15.0
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: 78aea19cc15019fb0fb86ec737a9dccb88a8f8e8f00b0e6c5024a76d8df523daf88a7abf8c6593b0cdd9a346806be9f41285d793d8b6653c99877de11245bfa4
   languageName: node
   linkType: hard
 
@@ -18913,6 +18959,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.15.0":
+  version: 1.15.2
+  resolution: "follow-redirects@npm:1.15.2"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: da5932b70e63944d38eecaa16954bac4347036f08303c913d166eda74809d8797d38386e3a0eb1d2fe37d2aaff2764cce8e9dbd99459d860cf2cdfa237923b5f
+  languageName: node
+  linkType: hard
+
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -20419,7 +20475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^15.5.1, graphql@npm:^15.7.2":
+"graphql@npm:^15.4.0, graphql@npm:^15.5.1, graphql@npm:^15.7.2":
   version: 15.8.0
   resolution: "graphql@npm:15.8.0"
   checksum: 30cc09b77170a9d1ed68e4c017ec8c5265f69501c96e4f34f8f6613f39a886c96dd9853eac925f212566ed651736334c8fe24ceae6c44e8d7625c95c3009a801
@@ -24442,6 +24498,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-cookie@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "js-cookie@npm:3.0.1"
+  checksum: a7dab91286c49610fb198bcc0d78fbafe9be869cf3cea6f7eaea515abdfdc9d347982fe22316e34666b479a0701119482d46faa3a350a3a3404eb954405edf72
+  languageName: node
+  linkType: hard
+
 "js-levenshtein@npm:^1.1.6":
   version: 1.1.6
   resolution: "js-levenshtein@npm:1.1.6"
@@ -26230,7 +26293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@workspace:packages/medusa-core-utils":
+"medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.32, medusa-core-utils@^1.1.34, medusa-core-utils@workspace:packages/medusa-core-utils":
   version: 0.0.0-use.local
   resolution: "medusa-core-utils@workspace:packages/medusa-core-utils"
   dependencies:
@@ -26600,6 +26663,7 @@ __metadata:
     "@babel/preset-env": ^7.7.5
     "@babel/register": ^7.7.4
     "@babel/runtime": ^7.9.6
+    "@sgftech/passport-saasform": ^0.0.19
     body-parser: ^1.19.0
     client-sessions: ^0.8.0
     cross-env: ^5.2.1
@@ -26662,7 +26726,7 @@ __metadata:
     cross-env: ^7.0.2
     express: ^4.17.1
     jest: ^25.5.2
-    medusa-core-utils: ^1.1.31
+    medusa-core-utils: ^1.1.34
     medusa-interfaces: ^1.3.1
     medusa-test-utils: ^1.1.37
     randomatic: ^3.1.1
@@ -29574,6 +29638,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"passport@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "passport@npm:0.6.0"
+  dependencies:
+    passport-strategy: 1.x.x
+    pause: 0.0.1
+    utils-merge: ^1.0.1
+  checksum: 1d8651a4a1a72b84ea08c498cff9cfc209aebfe18baed4cf93292ded3f8e30a04e30b404fdfce39dfb6aa7247e205f1df43fbfd7bc7c1a67a600884359d46ee6
+  languageName: node
+  linkType: hard
+
 "password-prompt@npm:^1.0.4, password-prompt@npm:^1.1.2":
   version: 1.1.2
   resolution: "password-prompt@npm:1.1.2"
@@ -30968,6 +31043,13 @@ __metadata:
     forwarded: 0.2.0
     ipaddr.js: 1.9.1
   checksum: c3eed999781a35f7fd935f398b6d8920b6fb00bbc14287bc6de78128ccc1a02c89b95b56742bf7cf0362cc333c61d138532049c7dedc7a328ef13343eff81210
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b
   languageName: node
   linkType: hard
 
@@ -32810,6 +32892,7 @@ __metadata:
     "@babel/runtime": ^7.11.2
     "@changesets/changelog-github": ^0.4.5
     "@changesets/cli": ^2.23.0
+    "@linear/sdk": ^1.22.0
     "@octokit/core": ^4.0.5
     "@redocly/cli": latest
     "@typescript-eslint/eslint-plugin": ^5.36.2
@@ -37066,7 +37149,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utils-merge@npm:1.0.1":
+"utils-merge@npm:1.0.1, utils-merge@npm:^1.0.1":
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: 02ba649de1b7ca8854bfe20a82f1dfbdda3fb57a22ab4a8972a63a34553cf7aa51bc9081cf7e001b035b88186d23689d69e71b510e610a09a4c66f68aa95b672
