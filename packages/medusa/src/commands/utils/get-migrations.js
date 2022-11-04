@@ -6,7 +6,7 @@ import { sync as existsSync } from "fs-exists-cached"
 import { createRequireFromPath } from "medusa-core-utils"
 import Logger from "../../loaders/logger"
 import configLoader from "../../loaders/config"
-import { getConfigFile, createRequireFromPath } from "medusa-core-utils"
+import { getConfigFile } from "medusa-core-utils"
 import { handleConfigError } from "../../loaders/config"
 import logger from "../../loaders/logger"
 
