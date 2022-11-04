@@ -97,7 +97,7 @@ export default class StoreDefaultAuthenticationStrategy extends AbstractAuthStra
       })
     )
     passport.use(
-      new MedusaGoogleStrategy(configModule, customerService).getStrategy()
+      new MedusaGoogleStrategy(configModule, customerService, app).getStrategy()
     )
 
     app.use(passport.initialize())
@@ -162,7 +162,7 @@ export default class StoreDefaultAuthenticationStrategy extends AbstractAuthStra
     next: NextFunction
   ): Promise<void> {
     passport.authenticate(
-      ["jwt", "bearer"],
+      ["jwt", "bearer", "google"],
       { session: false },
       (err, user) => {
         if (err) {

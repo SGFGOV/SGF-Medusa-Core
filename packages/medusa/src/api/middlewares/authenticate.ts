@@ -10,7 +10,7 @@ export default (): RequestHandler => {
     const authService = req.scope.resolve("authService") as AuthService
     const authStrategy = await authService.retrieveAuthenticationStrategy(
       req,
-      "admin"
+      req.baseUrl.startsWith("/admin") ? "admin" : "store"
     )
     await authStrategy.validate(req, res, next)
   }
