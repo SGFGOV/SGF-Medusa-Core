@@ -14,13 +14,13 @@ export class MedusaGooleStrategy {
     const strategy = new GoogleStrategy(
       {
         clientID:
-          this.configModule.projectConfig.secureKeys?.google["cliendID"] ??
+          this.configModule.projectConfig.secureKeys?.GOOGLE_CLIENT_ID ??
           "dummy",
         clientSecret:
-          this.configModule.projectConfig.secureKeys?.google["clientSecret"] ??
+          this.configModule.projectConfig.secureKeys?.GOOGLE_CLIENT_SECRET ??
           "dummy",
         callbackURL:
-          this.configModule.projectConfig.secureKeys?.google["callbackURL"] ??
+          this.configModule.projectConfig.secureKeys?.GOOGLE_CLIENT_CALLBACK ??
           "dummy",
       },
       async function (issuer, profile, cb) {
