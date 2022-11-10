@@ -8,3 +8,4 @@ ormconfig.json
 tsconfig.json
 jest.config.md
 *.tgz
+node_modules
