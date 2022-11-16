@@ -7,6 +7,8 @@ node_modules
 yarn.lock
 
 /dist
+services
+subscribers
 
 ./api
 ./services

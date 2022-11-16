@@ -21,9 +21,9 @@ const t = async function ({ directory }) {
 
   // const { configModule, error } = getConfigFile(directory, `medusa-config`)
 
-  /* if (error) {
-    handleConfigError(error)
-  }*/
+  if (configModule.error) {
+    handleConfigError(configModule.error)
+  }
 
   const featureFlagRouter = featureFlagLoader(configModule)
   const enabledMigrations = await getMigrations(directory, featureFlagRouter)

@@ -1,4 +1,4 @@
-import { ConfigModule } from "../types/global"
+import { ConfigModule, ConfigurationType } from "../types/global"
 import { getConfigFile } from "medusa-core-utils/dist"
 import logger from "./logger"
 
@@ -18,19 +18,16 @@ export const handleConfigError = (error: Error): void => {
   process.exit(1)
 }
 
+
+
 export default async (rootDirectory: string): Promise<ConfigModule> => {
-  const {configuration,error} = getConfigFile(rootDirectory, `medusa-config`) as {
-    configuration:{
-    configModule: ConfigModule
-    configFilePath: string
-    }
-    error: Error | null
-  }
+  const configuration = getConfigFile(rootDirectory, `medusa-config`) as ConfigurationType
+  
 
   
   
-  if (error) {
-    handleConfigError(error)
+  if (configuration.error) {
+    handleConfigError(configuration.error)
   }
 
   const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
