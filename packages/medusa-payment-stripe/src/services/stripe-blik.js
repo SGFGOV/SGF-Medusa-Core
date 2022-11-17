@@ -21,7 +21,8 @@ class BlikProviderService extends StripeBase {
         regionService,
         manager,
       },
-      options
+      options,
+      ["blik"]
     )
   }
 

@@ -26,8 +26,11 @@ html[data-theme="dark"] .redocusaurus h2 + div + div > div + div {
 html[data-theme="dark"] .redocusaurus .menu-content,
 html[data-theme="dark"] .redocusaurus .menu-content label {
   background-color: var(--ifm-background-color) !important;
+<<<<<<< HEAD
 }
 
 .redoc-json code {
   border: none !important;
+=======
+>>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
 }

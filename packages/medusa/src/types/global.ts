@@ -77,6 +77,11 @@ export type externalAuthentication = {
   redirectionUrl: string
 }
 
+export type ConfigurationType = {
+  configModule: ConfigModule
+  configFilePath: string
+  } &  {error: Error | null}
+
 export type ConfigModule = {
   projectConfig: {
     redis_url?: string

@@ -1,9 +1,5 @@
 # Namespace: internal
 
-## Namespaces
-
-- [&quot;/Users/shahednasser/medusa/packages/medusa/dist/types/global&quot;](internal-15.__Users_shahednasser_medusa_packages_medusa_dist_types_global_.md)
-
 ## Classes
 
 - [AdminUpdatePaymentCollectionsReq](../classes/internal-15.AdminUpdatePaymentCollectionsReq.md)

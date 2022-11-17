@@ -181,11 +181,7 @@ describe("/admin/products", () => {
       const api = useApi()
 
       const response = await api
-        .get("/admin/products?type_id[]=test-type", {
-          headers: {
-            Authorization: "Bearer test_token",
-          },
-        })
+        .get("/admin/products?type_id[]=test-type", adminHeaders)
         .catch((err) => {
           console.log(err)
         })

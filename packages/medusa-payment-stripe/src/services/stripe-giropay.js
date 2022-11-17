@@ -21,7 +21,8 @@ class GiropayProviderService extends StripeBase {
         regionService,
         manager,
       },
-      options
+      options,
+      ["giropay"]
     )
   }
 

@@ -228,7 +228,6 @@ describe("Product import batch job", () => {
             handle: collectionHandle1,
           })
         }),
-        // UPDATED PRODUCT
         expect.objectContaining({
           title: "Test product",
           description:

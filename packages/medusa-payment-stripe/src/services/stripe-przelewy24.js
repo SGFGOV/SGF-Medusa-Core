@@ -21,7 +21,8 @@ class Przelewy24ProviderService extends StripeBase {
         regionService,
         manager,
       },
-      options
+      options,
+      ["p24"]
     )
   }
 

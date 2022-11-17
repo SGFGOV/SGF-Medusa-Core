@@ -46,7 +46,7 @@ module.exports = {
           type: "doc",
           id: "usage",
         },
-      ],
+      ]
     },
     {
       type: "category",
@@ -55,12 +55,12 @@ module.exports = {
         {
           type: "doc",
           id: "tutorial/set-up-your-development-environment",
-          label: "Set Up Dev Environment",
+          label: "Set Up Dev Environment"
         },
         {
           type: "doc",
           id: "usage/configurations",
-          label: "Configure Server",
+          label: "Configure Server"
         },
         {
           type: "category",
@@ -95,7 +95,7 @@ module.exports = {
               label: "Server",
               link: {
                 type: "doc",
-                id: "deployments/server/index",
+                id: "deployments/server/index"
               },
               items: [
                 {
@@ -103,7 +103,11 @@ module.exports = {
                   id: "deployments/server/deploying-on-heroku",
                   label: "Deploy on Heroku",
                   customProps: {
+<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739927/Medusa%20Docs/Other/xNvxSkf_l230wq.png'
+=======
+                    image: 'https://i.imgur.com/xNvxSkf.png'
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 },
                 {
@@ -111,7 +115,11 @@ module.exports = {
                   id: "deployments/server/deploying-on-digital-ocean",
                   label: "Deploy on DigitalOcean",
                   customProps: {
+<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739945/Medusa%20Docs/Other/aahqJp4_lbtfdz.png'
+=======
+                    image: 'https://i.imgur.com/aahqJp4.png'
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 },
                 {
@@ -119,6 +127,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-qovery",
                   label: "Deploy on Qovery",
                   customProps: {
+<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739955/Medusa%20Docs/Other/qOvY2dN_vogsxy.png'
                   }
                 },
@@ -131,6 +140,9 @@ module.exports = {
                       light: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-light_fzuyeo.png',
                       dark: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-dark_kkzuwh.png'
                     }
+=======
+                    image: 'https://i.imgur.com/qOvY2dN.png'
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 }
               ]
@@ -140,7 +152,7 @@ module.exports = {
               label: "Admin",
               link: {
                 type: "doc",
-                id: "deployments/admin/index",
+                id: "deployments/admin/index"
               },
               items: [
                 {
@@ -148,17 +160,17 @@ module.exports = {
                   id: "deployments/admin/deploying-on-netlify",
                   label: "Deploy on Netlify",
                   customProps: {
-                    image: "https://i.imgur.com/gCbsCvX.png",
-                  },
+                    image: 'https://i.imgur.com/gCbsCvX.png'
+                  }
                 },
-              ],
+              ]
             },
             {
               type: "category",
               label: "Storefront",
               link: {
                 type: "doc",
-                id: "deployments/storefront/index",
+                id: "deployments/storefront/index"
               },
               items: [
                 {
@@ -166,36 +178,36 @@ module.exports = {
                   id: "deployments/storefront/deploying-gatsby-on-netlify",
                   label: "Deploy Gatsby on Netlify",
                   customProps: {
-                    image: "https://i.imgur.com/gCbsCvX.png",
-                  },
+                    image: 'https://i.imgur.com/gCbsCvX.png'
+                  }
                 },
-              ],
+              ]
             },
           ],
         },
         {
           type: "category",
-          label: "Upgrade Guides",
+          label: 'Upgrade Guides',
           collapsed: true,
           link: {
-            type: "doc",
-            id: "advanced/backend/upgrade-guides/index",
+            type: 'doc',
+            id: 'advanced/backend/upgrade-guides/index'
           },
           items: [
             {
               type: "doc",
               id: "advanced/backend/upgrade-guides/1-3-0",
-              label: "v1.3.0",
+              label: "v1.3.0"
             },
             {
               type: "doc",
               id: "advanced/backend/upgrade-guides/1-3-6",
-              label: "v1.3.6",
+              label: "v1.3.6"
             },
             {
               type: "doc",
               id: "advanced/backend/upgrade-guides/1-3-8",
-              label: "v1.3.8",
+              label: "v1.3.8"
             },
             {
               type: "doc",
@@ -213,7 +225,7 @@ module.exports = {
           type: "doc",
           id: "usage/local-development",
         },
-      ],
+      ]
     },
     {
       type: "category",
@@ -226,7 +238,7 @@ module.exports = {
             {
               type: "doc",
               id: "guides/carts-in-medusa",
-              label: "Implement Cart",
+              label: "Implement Cart"
             },
             {
               type: "doc",
@@ -241,7 +253,7 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/storefront/how-to-implement-checkout-flow",
-              label: "Implement Checkout",
+              label: "Implement Checkout"
             },
             {
               type: "doc",
@@ -262,7 +274,7 @@ module.exports = {
             {
               type: "doc",
               id: "advanced/admin/import-products",
-              label: "Import Products",
+              label: "Import Products"
             },
             {
               type: "doc",
@@ -271,6 +283,14 @@ module.exports = {
             },
             {
               type: "doc",
+<<<<<<< HEAD
+=======
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually"
+            },
+            {
+              type: "doc",
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -284,6 +304,7 @@ module.exports = {
               id: "advanced/admin/use-customergroups-api",
               label: "Use CustomerGroup APIs"
             },
+<<<<<<< HEAD
             {
               type: "doc",
               id: "advanced/admin/manage-discounts",
@@ -291,6 +312,9 @@ module.exports = {
             },
           ]
           ],
+=======
+          ]
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
         },
         {
           type: "doc",
@@ -300,52 +324,47 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/services/create-service",
-          label: "Create a Service",
+          label: "Create a Service"
         },
         {
           type: "doc",
           id: "advanced/backend/subscribers/create-subscriber",
-          label: "Create a Subscriber",
+          label: "Create a Subscriber"
         },
         {
           type: "doc",
           id: "advanced/backend/entities/index",
-          label: "Create an Entity",
+          label: "Create an Entity"
         },
         {
           type: "doc",
           id: "advanced/backend/shipping/add-fulfillment-provider",
-          label: "Create a Fulfillment Provider",
+          label: "Create a Fulfillment Provider"
         },
         {
           type: "doc",
           id: "advanced/backend/payment/how-to-create-payment-provider",
-          label: "Create a Payment Provider",
+          label: "Create a Payment Provider"
         },
         {
           type: "doc",
           id: "advanced/backend/notification/how-to-create-notification-provider",
-          label: "Create a Notification Provider",
+          label: "Create a Notification Provider"
         },
         {
           type: "doc",
           id: "advanced/backend/plugins/create",
-          label: "Create a Plugin",
+          label: "Create a Plugin"
         },
         {
           type: "doc",
           id: "advanced/backend/migrations/index",
-          label: "Create a Migration",
+          label: "Create a Migration"
         },
         {
           type: "doc",
           id: "advanced/backend/feature-flags/toggle",
-          label: "Toggle Feature Flags",
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/feature-flags/toggle",
-          label: "Toggle Feature Flags",
+          label: "Toggle Feature Flags"
         },
         {
           type: "doc",
@@ -355,12 +374,12 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/cron-jobs/create",
-          label: "Create a Cron Job",
+          label: "Create a Cron Job"
         },
         {
           type: "doc",
           id: "advanced/backend/batch-jobs/create",
-          label: "Create Batch Job Strategy",
+          label: "Create Batch Job Strategy"
         },
         {
 <<<<<<< HEAD
@@ -387,8 +406,13 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
-          label: "Override Price Selection",
+          label: "Override Price Selection"
         },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
         {
 <<<<<<< HEAD
           type: "doc",
@@ -433,7 +457,13 @@ module.exports = {
           ],
         },
       ],
+<<<<<<< HEAD
 >>>>>>> ccf687e61 (chore: rebase)
+=======
+=======
+      ]
+>>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
+>>>>>>> 59d936368 (chore: rebase to 1.6.2)
     },
     {
       type: "category",
@@ -442,32 +472,32 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/entities/overview",
-          label: "Entities",
+          label: "Entities"
         },
         {
           type: "doc",
           id: "advanced/backend/services/overview",
-          label: "Services",
+          label: "Services"
         },
         {
           type: "doc",
           id: "advanced/backend/subscribers/overview",
-          label: "Subscribers",
+          label: "Subscribers"
         },
         {
           type: "doc",
           id: "advanced/backend/shipping/overview",
-          label: "Shipping Architecture",
+          label: "Shipping Architecture"
         },
         {
           type: "doc",
           id: "advanced/backend/payment/overview",
-          label: "Payment Architecture",
+          label: "Payment Architecture"
         },
         {
           type: "doc",
           id: "advanced/backend/notification/overview",
-          label: "Notification Architecture",
+          label: "Notification Architecture"
         },
         {
           type: "doc",
@@ -476,34 +506,34 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/plugins/overview",
-          label: "Plugins",
+          label: "Plugins"
         },
         {
           type: "doc",
           id: "advanced/backend/migrations/overview",
-          label: "Migrations",
+          label: "Migrations"
         },
         {
           type: "doc",
           id: "advanced/backend/batch-jobs/index",
-          label: "Batch Jobs",
+          label: "Batch Jobs"
         },
         {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
-          label: "Tax Inclusive Pricing",
+          label: "Tax Inclusive Pricing"
         },
         {
           type: "doc",
-          id: "advanced/backend/price-lists/index",
+          id: "advanced/backend/price-lists/index"
         },
         {
           type: "doc",
-          id: "advanced/backend/price-selection-strategy/index",
+          id: "advanced/backend/price-selection-strategy/index"
         },
         {
           type: "doc",
-          id: "advanced/backend/sales-channels/index",
+          id: "advanced/backend/sales-channels/index"
         },
         {
           type: "doc",
@@ -555,7 +585,7 @@ module.exports = {
                   id: "add-plugins/contentful/customize-contentful",
                   label: "Customize Integration",
                 },
-              ],
+              ]
             },
             {
               type: "doc",
@@ -713,7 +743,7 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/subscribers/events-list",
-          label: "Events Reference",
+          label: "Events Reference"
         },
         {
           type: "ref",
@@ -725,7 +755,7 @@ module.exports = {
           id: "references/services/classes/AuthService",
           label: "Services Reference",
         },
-      ],
+      ]
     },
     {
       type: "doc",
@@ -740,14 +770,14 @@ module.exports = {
   ],
   userGuideSidebar: [
     {
-      type: "autogenerated",
-      dirName: "user-guide", // '.' means the current docs folder
-    },
+      type: 'autogenerated',
+      dirName: 'user-guide', // '.' means the current docs folder
+    }
   ],
   servicesSidebar: [
     {
-      type: "autogenerated",
-      dirName: "references/services/classes", // generate sidebar from the docs folder (or versioned_docs/<version>)
+      type: 'autogenerated',
+      dirName: 'references/services/classes', // generate sidebar from the docs folder (or versioned_docs/<version>)
     },
   ],
   jsClientSidebar: [
@@ -920,7 +950,7 @@ module.exports = {
               id: "references/js-client/classes/AdminVariantsResource",
               label: "variants",
             },
-          ],
+          ]
         },
         {
           type: "doc",
@@ -940,8 +970,8 @@ module.exports = {
               type: "doc",
               id: "references/js-client/classes/LineItemsResource",
               label: "lineItems",
-            },
-          ],
+            }
+          ]
         },
         {
           type: "doc",
@@ -960,14 +990,14 @@ module.exports = {
             {
               type: "doc",
               id: "references/js-client/classes/AddressesResource",
-              label: "addresses",
+              label: "addresses"
             },
             {
               type: "doc",
               id: "references/js-client/classes/PaymentMethodsResource",
-              label: "paymentMethods",
-            },
-          ],
+              label: "paymentMethods"
+            }
+          ]
         },
         {
           type: "doc",
@@ -1002,8 +1032,8 @@ module.exports = {
               type: "doc",
               id: "references/js-client/classes/ProductVariantsResource",
               label: "variants",
-            },
-          ],
+            }
+          ]
         },
         {
           type: "doc",
@@ -1030,13 +1060,13 @@ module.exports = {
           id: "references/js-client/classes/SwapsResource",
           label: "swaps",
         },
-      ],
-    },
+      ]
+    }
   ],
   entitiesSidebar: [
     {
-      type: "autogenerated",
-      dirName: "references/entities/classes", // generate sidebar from the docs folder (or versioned_docs/<version>)
+      type: 'autogenerated',
+      dirName: 'references/entities/classes', // generate sidebar from the docs folder (or versioned_docs/<version>)
     },
   ],
 }

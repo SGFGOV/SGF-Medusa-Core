@@ -31,6 +31,10 @@ const t = async function ({ directory, migrate, seedFile }) {
   }
   const configModule = await configLoader(directory)
 
+  if (configModule.error) {
+    handleConfigError(configModule.error)
+  }
+
   let hostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,

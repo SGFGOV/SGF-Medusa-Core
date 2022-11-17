@@ -18,10 +18,24 @@ export const handleConfigError = (error: Error): void => {
   process.exit(1)
 }
 
+export const handleConfigError = (error: Error): void => {
+  logger.error(`Error in loading config: ${error.message}`)
+  if (error.stack) {
+    logger.error(error.stack)
+  }
+  process.exit(1)
+}
+
+
+
 export default async (rootDirectory: string): Promise<ConfigModule> => {
-  const configuration = getConfigFile(rootDirectory, `medusa-config`) as {
-    configModule: ConfigModule
-    configFilePath: string
+  const configuration = getConfigFile(rootDirectory, `medusa-config`) as ConfigurationType
+  
+
+  
+  
+  if (configuration.error) {
+    handleConfigError(configuration.error)
   }
   const error = undefined
   if (error) {
