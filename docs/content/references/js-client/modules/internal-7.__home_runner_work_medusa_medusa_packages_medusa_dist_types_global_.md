@@ -1,10 +1,14 @@
 # Namespace: "/home/runner/work/medusa/medusa/packages/medusa/dist/types/global"
 
+<<<<<<< HEAD
 <<<<<<< HEAD:docs/content/references/js-client/modules/internal-7.__home_runner_work_medusa_medusa_packages_medusa_dist_types_global_.md
 [internal](internal-7.md)."/home/runner/work/medusa/medusa/packages/medusa/dist/types/global"
 =======
 [internal](internal-15.md)."/Users/shahednasser/medusa/packages/medusa/dist/types/global"
 >>>>>>> c54694323 (chore: rebase):docs/content/references/js-client/modules/internal-15.__Users_shahednasser_medusa_packages_medusa_dist_types_global_.md
+=======
+[internal](internal-7.md)."/home/runner/work/medusa/medusa/packages/medusa/dist/types/global"
+>>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
 
 ## Type Aliases
 
@@ -80,11 +84,15 @@ ___
 
 ### MedusaContainer
 
+<<<<<<< HEAD
 <<<<<<< HEAD:docs/content/references/js-client/modules/internal-7.__home_runner_work_medusa_medusa_packages_medusa_dist_types_global_.md
 Ƭ **MedusaContainer**: `AwilixContainer` & { `registerAdd`: <T\>(`name`: `string`, `registration`: `T`) => [`MedusaContainer`](internal-7.__home_runner_work_medusa_medusa_packages_medusa_dist_types_global_.md#medusacontainer)  }
 =======
 Ƭ **MedusaContainer**: `AwilixContainer` & { `registerAdd`: <T\>(`name`: `string`, `registration`: `T`) => [`MedusaContainer`](internal-15.__Users_shahednasser_medusa_packages_medusa_dist_types_global_.md#medusacontainer)  }
 >>>>>>> c54694323 (chore: rebase):docs/content/references/js-client/modules/internal-15.__Users_shahednasser_medusa_packages_medusa_dist_types_global_.md
+=======
+Ƭ **MedusaContainer**: `AwilixContainer` & { `registerAdd`: <T\>(`name`: `string`, `registration`: `T`) => [`MedusaContainer`](internal-7.__home_runner_work_medusa_medusa_packages_medusa_dist_types_global_.md#medusacontainer)  }
+>>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
 
 #### Defined in
 

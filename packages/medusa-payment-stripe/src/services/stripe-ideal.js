@@ -21,7 +21,8 @@ class IdealProviderService extends StripeBase {
         regionService,
         manager,
       },
-      options
+      options,
+      ["ideal"]
     )
   }
 

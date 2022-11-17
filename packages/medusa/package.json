@@ -1,7 +1,7 @@
 {
   "name": "@sgftech/medusa",
-  "version": "1.5.3-alpha-1",
-  "description": "E-commerce for JAMstack with AWS extensions",
+  "version": "1.6.2-alpha-2",
+  "description": "E-commerce for JAMstack with Core Auth and ,Async Config Loading",
   "main": "dist/index.js",
   "bin": "./cli.js",
   "repository": {
@@ -78,7 +78,6 @@
     "passport-http-bearer": "^1.0.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "passport-saasform": "^0.3.3",
     "pg": "^8.5.1",
     "randomatic": "^3.1.1",
     "redis": "^3.0.2",

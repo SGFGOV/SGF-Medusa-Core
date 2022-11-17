@@ -21,7 +21,8 @@ class BancontactProviderService extends StripeBase {
         regionService,
         manager,
       },
-      options
+      options,
+      ["bancontact"]
     )
   }
 
