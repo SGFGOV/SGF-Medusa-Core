@@ -1,5 +1,6 @@
-import { ConfigModule } from "../types/global"
+import { ConfigModule, ConfigurationType } from "../types/global"
 import { getConfigFile } from "medusa-core-utils/dist"
+import logger from "./logger"
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
@@ -9,11 +10,26 @@ const errorHandler = isProduction
     }
   : console.log
 
-export default async (rootDirectory: string): Promise<ConfigModule> => {
-  const configuration = getConfigFile(rootDirectory, `medusa-config`) as {
-    configModule: ConfigModule
-    configFilePath: string
+export const handleConfigError = (error: Error): void => {
+  logger.error(`Error in loading config: ${error.message}`)
+  if (error.stack) {
+    logger.error(error.stack)
   }
+  process.exit(1)
+}
+
+
+
+export default async (rootDirectory: string): Promise<ConfigModule> => {
+  const configuration = getConfigFile(rootDirectory, `medusa-config`) as ConfigurationType
+  
+
+  
+  
+  if (configuration.error) {
+    handleConfigError(configuration.error)
+  }
+
   const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
     for (const key of Object.keys(obj)) {
       if (typeof obj[key] === "object" && obj[key] !== null) {

@@ -6,6 +6,7 @@ import { sync as existsSync } from "fs-exists-cached"
 import { track } from "medusa-telemetry"
 
 import configLoader from "../loaders/config"
+import { handleConfigError } from "../loaders/config"
 import Logger from "../loaders/logger"
 import loaders from "../loaders"
 
@@ -29,6 +30,10 @@ const t = async function ({ directory, migrate, seedFile }) {
     }
   }
   const configModule = await configLoader(directory)
+
+  if (configModule.error) {
+    handleConfigError(configModule.error)
+  }
 
   let hostConfig = {
     database: configModule.projectConfig.database_database,

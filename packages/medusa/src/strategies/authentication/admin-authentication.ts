@@ -1,8 +1,7 @@
 import passport from "passport"
 import { Strategy as BearerStrategy } from "passport-http-bearer"
 import { Strategy as JWTStrategy } from "passport-jwt"
-import { Strategy as SaasformStrategy } from "passport-saasform"
-import { Strategy as SaasformOidcStrategy } from "passport-saasform"
+import { Strategy as SaasformStrategy } from "@sgftech/passport-saasform"
 
 import { Strategy as LocalStrategy } from "passport-local"
 import { Express, NextFunction, Request, Response } from "express"
