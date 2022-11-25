@@ -23,6 +23,7 @@
 <<<<<<<< HEAD:docs/content/references/js-client/classes/internal-30.PriceSelectionParams.md
   ↳ [`AdminPriceSelectionParams`](internal-30.AdminPriceSelectionParams.md)
 
+<<<<<<< HEAD
 ========
 <<<<<<< HEAD:docs/content/references/js-client/classes/internal-30.PriceSelectionParams.md
 >>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
@@ -40,6 +41,11 @@
   ↳ [`StoreGetProductsPaginationParams`](internal-41.StoreGetProductsPaginationParams.md)
 >>>>>>> c54694323 (chore: rebase):docs/content/references/js-client/classes/internal-40.PriceSelectionParams.md
 >>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
+=======
+  ↳ [`StoreGetVariantsParams`](internal-41.StoreGetVariantsParams.md)
+
+  ↳ [`StoreGetProductsPaginationParams`](internal-42.StoreGetProductsPaginationParams.md)
+>>>>>>> d91e4f760 (chore: upgraded to latest)
 
 ## Properties
 
