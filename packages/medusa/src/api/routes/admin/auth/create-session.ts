@@ -6,7 +6,6 @@ import { MedusaError } from "medusa-core-utils"
 import { EntityManager } from "typeorm"
 import AuthService from "../../../../services/auth"
 import { validator } from "../../../../utils/validator"
-import _ from "lodash"
 
 /**
  * @oas [post] /auth
@@ -78,16 +77,6 @@ import _ from "lodash"
  *  "500":
  *    $ref: "#/components/responses/500_error"
  */
-export class AdminPostAuthReq {
-  @IsEmail()
-  @IsNotEmpty()
-  email: string
-
-  @IsString()
-  @IsNotEmpty()
-  password: string
-}
-
 export default async (req, res) => {
   const {
     projectConfig: { jwt_secret },
@@ -108,27 +97,26 @@ export default async (req, res) => {
       .authenticate(validated.email, validated.password)
   })
 
-  //  let authService = req.scope.resolve("authService") as AuthService
-  let authStrategy = await authService.retrieveAuthenticationStrategy(
-    req,
-    "admin"
-  )
-  // await authStrategy.authenticate(req, res)
   if (result.success && result.user) {
     // Add JWT to cookie
     req.session.jwt = jwt.sign({ userId: result.user.id }, jwt_secret, {
       expiresIn: "24h",
     })
 
-    const strategyResolver = req.scope.resolve(
-      "strategyResolverService"
-    ) as StrategyResolverService
+    const cleanRes = _.omit(result.user, ["password_hash"])
 
-    const authStrategyType = (req.headers["X-medusa-auth-strategy"] ??
-      "core-admin-default-auth") as string
-    if (strategyResolver) {
-      authStrategy = strategyResolver.resolveAuthByType(authStrategyType)
-    }
-    await authStrategy.authenticate(req, res)
+    res.json({ user: cleanRes })
+  } else {
+    res.sendStatus(401)
   }
+}
+
+export class AdminPostAuthReq {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string
+
+  @IsString()
+  @IsNotEmpty()
+  password: string
 }

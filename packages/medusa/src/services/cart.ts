@@ -279,22 +279,7 @@ class CartService extends TransactionBaseService {
       )
     }
 
-    return raw
-  }
-
-  async retrieveWithTotals(
-    cartId: string,
-    options: FindConfig<Cart> = {},
-    totalsConfig: TotalsConfig = {}
-  ): Promise<Cart> {
-    const relations = this.getTotalsRelations(options)
-
-    const cart = await this.retrieveNew(cartId, {
-      ...options,
-      relations,
-    })
-
-    return await this.decorateTotals(cart, totalsConfig)
+    return await this.decorateTotals_(raw, totalsToSelect, totalsConfig)
   }
 
   async retrieveWithTotals(

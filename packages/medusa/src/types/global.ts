@@ -1,5 +1,6 @@
 import { AwilixContainer } from "awilix"
 import { Request } from "express"
+import { MedusaError } from "medusa-core-utils"
 import { LoggerOptions } from "typeorm"
 import { Logger as _Logger } from "winston"
 import { Customer, User } from "../models"

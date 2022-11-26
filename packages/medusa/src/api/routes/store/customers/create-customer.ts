@@ -125,18 +125,12 @@ export default async (req, res) => {
     expiresIn: "30d",
   })
 
-  const authService: AuthService = req.scope.resolve("authService")
-  const authStrategy = await authService.retrieveAuthenticationStrategy(
-    req,
-    "store"
-  )
-
-  req.retrieveConfig = {
+  customer = await customerService.retrieve(customer.id, {
     relations: defaultStoreCustomersRelations,
     select: defaultStoreCustomersFields,
-  }
+  })
 
-  await authStrategy.authenticate(req, res)
+  res.status(200).json({ customer })
 }
 
 export class StorePostCustomersReq {

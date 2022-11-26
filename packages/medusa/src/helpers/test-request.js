@@ -56,53 +56,26 @@ testApp.use((req, res, next) => {
       ...req.session,
       ...JSON.parse(data),
     }
-    const store = container.resolve(storeKey)
-
-    if (container.registrations[name] === undefined) {
-      container.register(name, asArray(store))
-    }
-    store.unshift(registration)
-
-    return container
   }
+  next()
+})
 
-  testApp.set("trust proxy", 1)
-  testApp.use((req, res, next) => {
-    req.session = {}
-    const data = req.get("Cookie")
-    if (data) {
-      req.session = {
-        ...req.session,
-        ...JSON.parse(data),
-      }
-    }
-    next()
-  })
+featureFlagLoader(config)
+servicesLoader({ container, configModule: config })
+strategiesLoader({ container, configModule: config })
+passportLoader({ app: testApp, container, configModule: config })
 
-  servicesLoader({ container, configModule: config })
-  strategiesLoader({ container, configModule: config })
-  await authStrategies({
-    container,
-    configModule: config,
-    app: testApp,
-  })
+testApp.use((req, res, next) => {
+  req.scope = container.createScope()
+  next()
+})
 
-  testApp.use((req, res, next) => {
-    req.scope = container.createScope()
-    next()
-  })
+apiLoader({ container, app: testApp, configModule: config })
 
-  await apiLoader({ container, app: testApp, configModule: config })
-
-  return supertest(testApp)
-}
+const supertestRequest = supertest(testApp)
 
 export async function request(method, url, opts = {}) {
   const { payload, query, headers = {}, flags = [] } = opts
-
-  if (!supertestRequest) {
-    supertestRequest = await loadSupertest()
-  }
 
   flags.forEach((flag) => {
     featureFlagRouter.setFlag(flag.key, true)

@@ -1,6 +1,3 @@
-import { AuthService } from "../../../../services"
-import { Request, Response } from "express"
-
 /**
  * @oas [delete] /auth
  * operationId: "DeleteAuth"
