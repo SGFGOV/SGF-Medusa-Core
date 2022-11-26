@@ -1,5 +1,5 @@
 import { getConfigFile } from "medusa-core-utils"
-import { ConfigModule } from "../types/global"
+import { ConfigModule, ConfigurationType } from "../types/global"
 import logger from "./logger"
 import registerModuleDefinitions from "./module-definitions"
 
@@ -17,15 +17,6 @@ export const handleConfigError = (error: Error): void => {
   }
   process.exit(1)
 }
-
-export const handleConfigError = (error: Error): void => {
-  logger.error(`Error in loading config: ${error.message}`)
-  if (error.stack) {
-    logger.error(error.stack)
-  }
-  process.exit(1)
-}
-
 
 
 export default async (rootDirectory: string): Promise<ConfigModule> => {

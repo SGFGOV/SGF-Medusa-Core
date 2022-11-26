@@ -1,5 +1,3 @@
-import { AuthService } from "../../../../services"
-import { Request, Response } from "express"
 import { IsEmail, IsNotEmpty } from "class-validator"
 import jwt from "jsonwebtoken"
 import { EntityManager } from "typeorm"
@@ -90,10 +88,12 @@ export default async (req, res) => {
     }
   )
 
-  req.retrieveConfig = {
+  const customerService: CustomerService = req.scope.resolve("customerService")
+  const customer = await customerService.retrieve(result.customer?.id || "", {
     relations: ["orders", "orders.items"],
-  }
-  await authStrategy.authenticate(req, res)
+  })
+
+  res.json({ customer })
 }
 
 export class StorePostAuthReq {

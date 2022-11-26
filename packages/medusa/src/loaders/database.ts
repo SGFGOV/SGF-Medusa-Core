@@ -14,10 +14,9 @@ type Options = {
   container: AwilixContainer
 }
 
-export default async ({
-  container,
-  configModule,
-}: Options): Promise<Connection> => {
+export default async (options: Options): Promise<Connection> => {
+
+  const {container,configModule} = options;
   const entities = container.resolve("db_entities")
 
   const isSqlite = configModule.projectConfig.database_type === "sqlite"
@@ -25,6 +24,7 @@ export default async ({
   const cnnManager = getConnectionManager()
   if (cnnManager.has("default") && getConnection().isConnected) {
     await getConnection().close()
+  }
   let hostConfig: DatabaseHostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
