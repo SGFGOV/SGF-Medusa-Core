@@ -14,7 +14,7 @@ displayed_sidebar: jsClientSidebar
 
 #### Defined in
 
-[medusa-js/src/request.ts:23](https://github.com/medusajs/medusa/blob/29135c051/packages/medusa-js/src/request.ts#L23)
+[medusa-js/src/request.ts:18](https://github.com/medusajs/medusa/blob/0b0d50b47/packages/medusa-js/src/request.ts#L18)
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[medusa-js/src/request.ts:22](https://github.com/medusajs/medusa/blob/29135c051/packages/medusa-js/src/request.ts#L22)
+[medusa-js/src/request.ts:17](https://github.com/medusajs/medusa/blob/0b0d50b47/packages/medusa-js/src/request.ts#L17)

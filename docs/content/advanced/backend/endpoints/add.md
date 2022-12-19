@@ -10,7 +10,7 @@ Custom endpoints reside under the `src/api` directory in your Medusa Backend. T
 
 To create a new endpoint, start by creating a new file in `src/api` called `index.ts`. At its basic format, `index.ts` should look something like this:
 
-```ts title=src/api/index.ts
+```ts
 import { Router } from "express"
 
 export default (rootDirectory, pluginOptions) => {
@@ -46,28 +46,14 @@ You can also create endpoints that don't reside under these two prefixes, simila
 
 If you’re adding a storefront or admin endpoint and you want to access these endpoints from the storefront or Medusa admin, you need to pass your endpoints Cross-Origin Resource Origin (CORS) options using the `cors` package.
 
-First, you need to import the necessary utility functions and types from Medusa's packages with the `cors` library:
+First, you need to import your Medusa configurations along with the `cors` library:
 
 ```ts
-import { getConfigFile, parseCorsOrigins } from "medusa-core-utils"
-import { ConfigModule } from "@medusajs/medusa/dist/types/global"
 import cors from "cors"
+import { projectConfig } from "../../medusa-config"
 ```
 
-Next, in the exported function, retrieve the CORS configurations of your server using the utility functions you imported:
-
-```ts
-export default (rootDirectory) => {
-  //...
-
-  const { configModule } = getConfigFile<ConfigModule>(rootDirectory, "medusa-config")
-  const { projectConfig } = configModule
-
-  //....
-}
-```
-
-Then, create an object that will hold the CORS configurations. If it’s a storefront endpoint, pass the `origin` property storefront options:
+Then, create an object that will hold the Cross-Origin Resource Sharing (CORS) configurations. If it’s a storefront endpoint, pass the `origin` property storefront options:
 
 ```ts
 const corsOptions = {
@@ -85,7 +71,7 @@ const corsOptions = {
 }
 ```
 
-Finally, for each route you add, create an `OPTIONS` request and add `cors` as a middleware for the route passing it the CORS option:
+Finally, for each route you add, create an `OPTIONS` request and add `cors` as a middleware for the route:
 
 ```ts
 router.options("/admin/hello", cors(corsOptions))
@@ -100,7 +86,7 @@ router.get("/admin/hello", cors(corsOptions), (req, res) => {
 
 You can add more than one endpoint in `src/api/index.ts`:
 
-```ts title=src/api/index.ts
+```ts
 router.options("/store/hello", cors(storeCorsOptions))
 router.get("/store/hello", cors(storeCorsOptions), (req, res) => {
   res.json({
@@ -122,7 +108,7 @@ Alternatively, you can add multiple files for each endpoint or set of endpoints 
 
 To do that with the previous example, first, create the file `src/api/store.ts` with the following content:
 
-```ts title=src/api/store.ts
+```ts
 import cors from "cors"
 import { projectConfig } from "../../medusa-config"
 
@@ -144,7 +130,7 @@ You export a function that receives an Express router as a parameter and adds th
 
 Next, create the file `src/api/admin.ts` with the following content:
 
-```ts title=src/api/admin.ts
+```ts
 import cors from "cors"
 import { projectConfig } from "../../medusa-config"
 
@@ -166,15 +152,14 @@ Again, you export a function that receives an Express router as a parameter and 
 
 Finally, in `src/api/index.ts` import the two functions at the beginning of the file:
 
-```ts title=src/api/index.ts
-import { Router } from "express"
+```ts
 import storeRoutes from "./store"
 import adminRoutes from "./admin"
 ```
 
 and in the exported function, call each of the functions passing them the Express router:
 
-```ts title=src/api/index.ts
+```ts
 export default () => {
   const router = Router()
 

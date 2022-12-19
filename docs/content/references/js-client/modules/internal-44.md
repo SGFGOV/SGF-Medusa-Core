@@ -2,14 +2,22 @@
 
 ## Classes
 
-- [StoreGetProductTypesParams](../classes/internal-44.StoreGetProductTypesParams.md)
+- [Item](../classes/internal-44.Item.md)
+- [ReturnShipping](../classes/internal-44.ReturnShipping.md)
+- [StorePostReturnsReq](../classes/internal-44.StorePostReturnsReq.md)
 
 ## Type Aliases
 
-### StoreProductTypesListRes
+### StoreReturnsRes
 
-Ƭ **StoreProductTypesListRes**: [`PaginatedResponse`](internal-2.md#paginatedresponse) & { `product_types`: [`ProductType`](../classes/internal.ProductType.md)[]  }
+Ƭ **StoreReturnsRes**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `return` | [`Return`](../classes/internal.Return.md) |
 
 #### Defined in
 
-medusa/dist/api/routes/store/product-types/index.d.ts:9
+medusa/dist/api/routes/store/returns/index.d.ts:4

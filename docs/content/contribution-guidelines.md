@@ -93,88 +93,32 @@ If the admonition does not match any of the mentioned criteria, always default t
 
 If you are adding images to a documentation page, you can host the image on [Imgur](https://imgur.com) for free.
 
-## Code Blocks
+## Code Block Types
 
-### Use Tabs with Code Blocks
+In the Medusa documentation, there are two code block types: code blocks with headers and code blocks without headers.
 
-To use Tabs with Code Blocks, you have to use [Docusaurus's `Tabs` and `TabItem` components](https://docusaurus.io/docs/markdown-features/code-blocks#multi-language-support-code-blocks).
+Code blocks without headers should be used when:
 
-You must also pass to the `Tabs` component the prop `wrapperClassName="code-tabs"` to ensure correct styling.
+- The code block is used inside an Admonition.
+- The content of the code block can't be reported (for example, if the code block contains only a text of the expected output).
 
-For example:
+In all other cases, code blocks with headers should be used.
 
-~~~md
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+### Code Blocks with Headers
 
+By default, all code blocks have headers and no additional actions are required to add the header.
 
-<Tabs groupId="request-type" wrapperClassName="code-tabs">
-<TabItem value="client" label="Medusa JS Client" default>
+### Code Blocks without Headers
 
-```jsx
-medusa.admin.uploads.create(file) //file is an instance of File
-.then(({ uploads }) => {
-  const key = uploads[0].key;
-});
-```
-
-</TabItem>
-<TabItem value="curl" label="cURL">
-
-```bash
-curl -L -X POST '<YOUR_SERVER>/admin/uploads' \
-  -H 'Authorization: Bearer <API_TOKEN>' \
-  -H 'Content-Type: text/csv' \
-  -F 'files=@"<FILE_PATH_1>"'
-```
-
-</TabItem>
-</Tabs>
-~~~
-
-### Add Title to Code Block with Tabs
-
-If you want to add a title to a code block with tabs, add the `codeTitle` prop to the `Tabs` component.
-
-For example:
-
-```md
-<Tabs groupId="request-type" wrapperClassName="code-tabs" codeTitle="/src/services/hello.ts">
-```
-
-### Add Title to Code Block without Tabs
-
-To add a title to a code block without tabs:
+To add a code block without a header, simply add `noHeader` after the beginning backticks of the code block. For example:
 
 ~~~md
-```js title=src/index.ts
-console.log("hello")
+```bash noHeader
+this code block does not have a header
 ```
 ~~~
 
-### Remove Report Button
-
-Some code block don't need a report button. To remove the report button, use the `noReport` metadata.
-
-For example:
-
-~~~md
-```bash noReport
-medusa new my-medusa-store --seed
-```
-~~~
-
-### Remove Copy Button
-
-Some code blocks don't need a copy button. To remove the copy button, use the `noCopy` metadata:
-
-For example:
-
-~~~md
-```bash noCopy
-medusa new my-medusa-store --seed
-```
-~~~
+`noHeader` should be added after the language of the code block (which is `bash` in the above example). If you used `npm2yarn` as well, `noHeader` should be after it.
 
 ## NPM and Yarn Code Blocks
 
@@ -195,6 +139,8 @@ The code snippet must be written using NPM, and the `npm2yarn` plugin will autom
 <!-- vale off -->
 
 Don't use commands in their abbreviated terms. For example, instead of `npm i` use `npm install`.
+
+<!-- vale on -->
 
 ### Run Command
 

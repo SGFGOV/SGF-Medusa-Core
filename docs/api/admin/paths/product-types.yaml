@@ -9,7 +9,7 @@ get:
       description: The number of types to return.
       schema:
         type: integer
-        default: 20
+        default: 10
     - in: query
       name: offset
       description: The number of items to skip before the results.
@@ -113,7 +113,6 @@ get:
       content:
         application/json:
           schema:
-            type: object
             properties:
               product_types:
                 $ref: ../components/schemas/product_type.yaml

@@ -4,7 +4,7 @@ In this document, you’ll learn how tax-inclusive pricing works in Medusa.
 
 :::note
 
-`Tax Inclusive Pricing is currently in beta mode and guarded by a feature flag. To use Tax-Inclusive Pricing either:
+Tax Inclusive Pricing is currently in beta mode and guarded by a feature flag. To use Tax-Inclusive Pricing either:
 
 1. Enable the `MEDUSA_FF_TAX_INCLUSIVE_PRICING` environment variable;
 2. Or enable the `tax_inclusive_pricing` key in the Medusa server's settings.
@@ -58,7 +58,7 @@ The `ShippingMethod` entity also has the `includes_tax` attribute. Its value is 
 
 When a price is tax-inclusive, the tax amount is calculated using the following formula:
 
-```jsx noReport
+```jsx noHeader
 const taxAmount = (taxRate * taxInclusivePrice) / (1 + taxRate)
 ```
 
@@ -110,7 +110,7 @@ Price lists include a list of prices that can be used to override the original p
 
 Each variant’s price in the price list is compared to the variant’s original price using the following condition:
 
-```jsx noReport
+```jsx noHeader
 amount < (1 + taxRate) * calculatedPrice
 ```
 
@@ -120,7 +120,7 @@ Where `amount` is the amount of the variant’s price in the price list, `taxRat
 
 Here is an example of these fields when tax inclusivity is enabled for both the currency and the price list:
 
-```jsx noReport
+```jsx noHeader
 {
   original_price: 110,
   calculated_price: 100,

@@ -12,7 +12,7 @@ If you’re interested in learning what a price selection strategy is and how it
 
 Create a TypeScript or JavaScript file in `src/strategies` of your Medusa server project with a class that extends the `AbstractPriceSelectionStrategy` class:
 
-```typescript title=src/strategies/price.ts
+```typescript
 import { AbstractPriceSelectionStrategy, IPriceSelectionStrategy, PriceSelectionContext, PriceSelectionResult } from "@medusajs/medusa";
 
 import { EntityManager } from "typeorm";
@@ -39,22 +39,14 @@ export default class MyPriceListStrategy extends AbstractPriceSelectionStrategy 
 You can use services or repositories in the strategy by adding them to the constructor and updating the parameters passed to the `MyPriceListStrategy` constructor in `withTransaction`. For example:
 
 ```typescript
-import { 
-  AbstractPriceSelectionStrategy, 
-  CustomerService, 
-  IPriceSelectionStrategy, 
-  PriceSelectionContext, 
-  PriceSelectionResult 
-} from "@medusajs/medusa";
-
 export default class MyPriceListStrategy extends AbstractPriceSelectionStrategy {
-  private customerService: CustomerService
+  private productsService: ProductService
 
   constructor({
-    customerService
+    productsService
   }) {
     super()
-    this.customerService = customerService
+    this.productsService = productsService
   }
 
   withTransaction(manager: EntityManager): IPriceSelectionStrategy {
@@ -63,7 +55,7 @@ export default class MyPriceListStrategy extends AbstractPriceSelectionStrategy 
     }
 
     return new MyPriceListStrategy({
-      customerService: this.customerService
+      productsService: this.productsService
     })
   }
   //...
@@ -80,7 +72,7 @@ This method accepts the variant ID as a first parameter and the [context](./inde
 
 This method must return an object having the following fields:
 
-```typescript noReport
+```typescript noHeader
 {
   originalPrice, //number | null
   calculatedPrice, //number | null

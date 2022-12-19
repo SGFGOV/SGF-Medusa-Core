@@ -2,20 +2,30 @@
 
 ## Classes
 
-- [StorePostOrderEditsOrderEditDecline](../classes/internal-40.StorePostOrderEditsOrderEditDecline.md)
+- [StoreGetVariantsParams](../classes/internal-40.StoreGetVariantsParams.md)
 
 ## Type Aliases
 
-### StoreOrderEditsRes
+### StoreVariantsListRes
 
-Ƭ **StoreOrderEditsRes**: `Object`
+Ƭ **StoreVariantsListRes**: [`PaginatedResponse`](internal-2.md#paginatedresponse) & { `variants`: [`ProductVariant`](../classes/internal.ProductVariant.md)[]  }
+
+#### Defined in
+
+medusa/dist/api/routes/store/variants/index.d.ts:9
+
+___
+
+### StoreVariantsRes
+
+Ƭ **StoreVariantsRes**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `order_edit` | `Omit`<[`OrderEdit`](../classes/internal.OrderEdit.md), ``"internal_note"`` \| ``"created_by"`` \| ``"confirmed_by"`` \| ``"canceled_by"``\> |
+| `variant` | [`ProductVariant`](../classes/internal.ProductVariant.md) |
 
 #### Defined in
 
-medusa/dist/api/routes/store/order-edits/index.d.ts:4
+medusa/dist/api/routes/store/variants/index.d.ts:6

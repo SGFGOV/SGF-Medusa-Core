@@ -1,10 +1,6 @@
 # Class: StorePostSearchReq
 
-<<<<<<< HEAD:docs/content/references/js-client/classes/internal-42.StorePostSearchReq.md
-[internal](../modules/internal-42.md).StorePostSearchReq
-=======
 [internal](../modules/internal-41.md).StorePostSearchReq
->>>>>>> c54694323 (chore: rebase):docs/content/references/js-client/classes/internal-41.StorePostSearchReq.md
 
 ## Properties
 

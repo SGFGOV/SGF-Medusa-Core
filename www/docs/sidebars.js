@@ -23,7 +23,7 @@ module.exports = {
         {
           type: "doc",
           id: "introduction",
-          label: "Introduction",
+          label: "Architecture Overview",
         },
         {
           type: "doc",
@@ -32,14 +32,6 @@ module.exports = {
         },
         {
           type:"doc",
-          id: "quickstart/quick-start-docker",
-        },
-        {
-          type: "doc",
-          id: "quickstart/quick-start-docker",
-        },
-        {
-          type: "doc",
           id: "quickstart/quick-start-docker",
         },
         {
@@ -103,7 +95,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-heroku",
                   label: "Deploy on Heroku",
                   customProps: {
-                    image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739927/Medusa%20Docs/Other/xNvxSkf_l230wq.png'
+                    image: 'https://i.imgur.com/xNvxSkf.png'
                   }
                 },
                 {
@@ -111,7 +103,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-digital-ocean",
                   label: "Deploy on DigitalOcean",
                   customProps: {
-                    image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739945/Medusa%20Docs/Other/aahqJp4_lbtfdz.png'
+                    image: 'https://i.imgur.com/aahqJp4.png'
                   }
                 },
                 {
@@ -119,18 +111,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-qovery",
                   label: "Deploy on Qovery",
                   customProps: {
-                    image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739955/Medusa%20Docs/Other/qOvY2dN_vogsxy.png'
-                  }
-                },
-                {
-                  type: "doc",
-                  id: "deployments/server/deploying-on-railway",
-                  label: "Deploy on Railway",
-                  customProps: {
-                    themedImage: {
-                      light: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-light_fzuyeo.png',
-                      dark: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-dark_kkzuwh.png'
-                    }
+                    image: 'https://i.imgur.com/qOvY2dN.png'
                   }
                 }
               ]
@@ -202,11 +183,6 @@ module.exports = {
               id: "advanced/backend/upgrade-guides/1-6-1",
               label: "v1.6.1"
             },
-            {
-              type: "doc",
-              id: "advanced/backend/upgrade-guides/1-7-0",
-              label: "v1.7.0"
-            },
           ]
         },
         {
@@ -230,23 +206,8 @@ module.exports = {
             },
             {
               type: "doc",
-              id: "advanced/storefront/use-discounts-in-checkout",
-              label: "Use Discounts in Checkout"
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually"
-            },
-            {
-              type: "doc",
               id: "advanced/storefront/how-to-implement-checkout-flow",
               label: "Implement Checkout"
-            },
-            {
-              type: "doc",
-              id: "advanced/storefront/implement-claim-order",
-              label: "Implement Claim Order"
             },
             {
               type: "doc",
@@ -271,6 +232,11 @@ module.exports = {
             },
             {
               type: "doc",
+              id: "advanced/backend/taxes/manual-calculation",
+              label: "Calculate Taxes Manually"
+            },
+            {
+              type: "doc",
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -284,13 +250,7 @@ module.exports = {
               id: "advanced/admin/use-customergroups-api",
               label: "Use CustomerGroup APIs"
             },
-            {
-              type: "doc",
-              id: "advanced/admin/manage-discounts",
-              label: "Use Discount APIs"
-            },
           ]
-          ],
         },
         {
           type: "doc",
@@ -344,11 +304,6 @@ module.exports = {
         },
         {
           type: "doc",
-          id: "advanced/backend/feature-flags/toggle",
-          label: "Toggle Feature Flags"
-        },
-        {
-          type: "doc",
           id: "advanced/backend/cron-jobs/create",
           label: "Create a Cron Job"
         },
@@ -358,106 +313,15 @@ module.exports = {
           label: "Create Batch Job Strategy"
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
-<<<<<<< HEAD
-=======
-          type: "category",
-          label: "Admin",
-          items: [
-            {
-              type: "doc",
-              id: "advanced/admin/import-products",
-              label: "Import Products"
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually"
-            },
-          ]
->>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
-<<<<<<< HEAD
-=======
-=======
-          type: "doc",
-          id: "advanced/backend/batch-jobs/customize-import",
->>>>>>> 957583aa8 (docs: added feature flags docs (#2236))
->>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
         },
         {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
           label: "Override Price Selection"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
-        {
-<<<<<<< HEAD
-          type: "doc",
-          id: "advanced/ecommerce/handle-order-claim-event",
-          label: "Handle Order Claim Event"
-=======
-=======
-
-        {
->>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
-          type: "category",
-          label: "Admin",
-          items: [
-            {
-              type: "doc",
-              id: "advanced/admin/import-products",
-              label: "Import Products",
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually",
-            },
-          ],
-<<<<<<< HEAD
-=======
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
->>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
-        },
-<<<<<<< HEAD
       ]
-=======
-=======
-<<<<<<< HEAD
-=======
->>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
-=======
->>>>>>> 0139047da (build: updated libraries)
-        },
->>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
-        {
-          type: "category",
-          label: "Admin",
-          items: [
-            {
-              type: "doc",
-              id: "advanced/admin/import-products",
-              label: "Import Products",
-            },
-            {
-              type: "doc",
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually",
-            },
-          ],
-        },
-      ],
     },
     {
       type: "category",
@@ -492,10 +356,6 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/notification/overview",
           label: "Notification Architecture"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/discounts/index"
         },
         {
           type: "doc",
@@ -536,11 +396,6 @@ module.exports = {
         {
           type: "doc",
           id: "advanced/backend/dependency-container/index"
-        },
-        {
-          type: "doc",
-          id: "advanced/backend/taxes/inclusive-pricing",
-          label: "Tax Inclusive Pricing"
         },
       ]
     },
@@ -747,11 +602,6 @@ module.exports = {
           label: "Services Reference",
         },
       ]
-    },
-    {
-      type: "doc",
-      id: "contribution-guidelines",
-      label: "Contribution Guidelines",
     },
     {
       type: "doc",
