@@ -8,10 +8,6 @@ import {
   useAdminOrderEditUpdateLineItem,
   useAdminRequestOrderEditConfirmation,
   useAdminOrderEditAddLineItem,
-<<<<<<< HEAD
-=======
-  useAdminCancelOrderEdit,
->>>>>>> c54694323 (chore: rebase)
   useAdminUpdateOrderEdit,
   useAdminOrderEditDeleteLineItem,
 } from "../../../../src/"
