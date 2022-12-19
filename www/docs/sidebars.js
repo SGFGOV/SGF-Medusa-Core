@@ -103,11 +103,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-heroku",
                   label: "Deploy on Heroku",
                   customProps: {
-<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739927/Medusa%20Docs/Other/xNvxSkf_l230wq.png'
-=======
-                    image: 'https://i.imgur.com/xNvxSkf.png'
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 },
                 {
@@ -115,11 +111,7 @@ module.exports = {
                   id: "deployments/server/deploying-on-digital-ocean",
                   label: "Deploy on DigitalOcean",
                   customProps: {
-<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739945/Medusa%20Docs/Other/aahqJp4_lbtfdz.png'
-=======
-                    image: 'https://i.imgur.com/aahqJp4.png'
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 },
                 {
@@ -127,7 +119,6 @@ module.exports = {
                   id: "deployments/server/deploying-on-qovery",
                   label: "Deploy on Qovery",
                   customProps: {
-<<<<<<< HEAD
                     image: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669739955/Medusa%20Docs/Other/qOvY2dN_vogsxy.png'
                   }
                 },
@@ -140,9 +131,6 @@ module.exports = {
                       light: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-light_fzuyeo.png',
                       dark: 'https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-dark_kkzuwh.png'
                     }
-=======
-                    image: 'https://i.imgur.com/qOvY2dN.png'
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
                   }
                 }
               ]
@@ -283,14 +271,6 @@ module.exports = {
             },
             {
               type: "doc",
-<<<<<<< HEAD
-=======
-              id: "advanced/backend/taxes/manual-calculation",
-              label: "Calculate Taxes Manually"
-            },
-            {
-              type: "doc",
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
               id: "advanced/backend/price-lists/use-api",
               label: "Use PriceList APIs"
             },
@@ -304,7 +284,6 @@ module.exports = {
               id: "advanced/admin/use-customergroups-api",
               label: "Use CustomerGroup APIs"
             },
-<<<<<<< HEAD
             {
               type: "doc",
               id: "advanced/admin/manage-discounts",
@@ -312,9 +291,6 @@ module.exports = {
             },
           ]
           ],
-=======
-          ]
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
         },
         {
           type: "doc",
@@ -383,6 +359,10 @@ module.exports = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
           type: "doc",
           id: "advanced/backend/batch-jobs/customize-import",
 <<<<<<< HEAD
@@ -402,12 +382,20 @@ module.exports = {
             },
           ]
 >>>>>>> 853259989 (docs for tax-inclusive pricing (#2159))
+<<<<<<< HEAD
+=======
+=======
+          type: "doc",
+          id: "advanced/backend/batch-jobs/customize-import",
+>>>>>>> 957583aa8 (docs: added feature flags docs (#2236))
+>>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
         },
         {
           type: "doc",
           id: "advanced/backend/price-selection-strategy/override",
           label: "Override Price Selection"
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -419,6 +407,10 @@ module.exports = {
           id: "advanced/ecommerce/handle-order-claim-event",
           label: "Handle Order Claim Event"
 =======
+=======
+
+        {
+>>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
           type: "category",
           label: "Admin",
           items: [
@@ -433,6 +425,7 @@ module.exports = {
               label: "Calculate Taxes Manually",
             },
           ],
+<<<<<<< HEAD
 =======
 >>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
 >>>>>>> 326f2fb61 (docs: added customize import strategy doc (#2253))
@@ -440,6 +433,14 @@ module.exports = {
 <<<<<<< HEAD
       ]
 =======
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> afe4bb71e (docs: added customize import strategy doc (#2253))
+=======
+>>>>>>> 0139047da (build: updated libraries)
+        },
+>>>>>>> 1962bac0928ee78a7670df177ea56493570a5869
         {
           type: "category",
           label: "Admin",
@@ -457,13 +458,6 @@ module.exports = {
           ],
         },
       ],
-<<<<<<< HEAD
->>>>>>> ccf687e61 (chore: rebase)
-=======
-=======
-      ]
->>>>>>> 8329bfa96 (chore: rebase to 1.6.2)
->>>>>>> 59d936368 (chore: rebase to 1.6.2)
     },
     {
       type: "category",
@@ -543,14 +537,11 @@ module.exports = {
           type: "doc",
           id: "advanced/backend/dependency-container/index"
         },
-<<<<<<< HEAD
         {
           type: "doc",
           id: "advanced/backend/taxes/inclusive-pricing",
           label: "Tax Inclusive Pricing"
         },
-=======
->>>>>>> c54694323 (chore: rebase)
       ]
     },
     {
