@@ -28,7 +28,7 @@ import redisLoader from "./redis"
 import repositoriesLoader from "./repositories"
 import searchIndexLoader from "./search-index"
 import servicesLoader from "./services"
-import strategiesLoader, { authStrategies } from "./strategies"
+import strategiesLoader from "./strategies"
 import subscribersLoader from "./subscribers"
 
 type Options = {
@@ -143,14 +143,14 @@ export default async ({
   await expressLoader({ app: expressApp, configModule })
   const exAct = Logger.success(expActivity, "Express intialized") || {}
   track("EXPRESS_INIT_COMPLETED", { duration: exAct.duration })
-
+ /*
   const authStratActivity = Logger.activity("Initializing auth strategies")
   track("STRATEGIES_INIT_STARTED")
   await authStrategies({ container, configModule, app: expressApp })
   const authStratAct =
     Logger.success(authStratActivity, "Auth strategies initialized") || {}
   track("STRATEGIES_INIT_COMPLETED", { duration: authStratAct.duration })
-
+*/
   // Add the registered services to the request scope
   expressApp.use((req: Request, res: Response, next: NextFunction) => {
     container.register({ manager: asValue(getManager()) })

@@ -7230,13 +7230,13 @@ __metadata:
     retry-axios: ^2.6.0
     typescript: ^4.1.3
   peerDependencies:
-    "@medusajs/medusa": ^1.7.0
+    "@medusajs/medusa": "*"
   languageName: unknown
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.7.0
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=e4b17b&locator=root%40workspace%3A."
+  version: 1.7.1-alpha-1
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=ee0ee2&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.5
     "@types/ioredis": ^4.28.10
@@ -7288,7 +7288,7 @@ __metadata:
     typeorm: 0.2.x
   bin:
     medusa: ./cli.js
-  checksum: 2391457ab0b3c4e1e298f43156c2551191354d94ae17725233d71c6d31e3872d76e5e8c3a8f564a375a8c79d6187b4f1f9dc045f0baf3b047f0a4de33b1f5b6e
+  checksum: 8226cfe8605392575d9e0f9013de933450ed04425dc79ea9dd9c96cb541acdfc2fd8f1e339a58ed4d54cbcf256c489f3231f41036500e1dd908b58db3b485194
   languageName: node
   linkType: hard
 

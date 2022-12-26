@@ -317,6 +317,7 @@ function registerApi(
   activityId: string
 ): Express {
   const logger = container.resolve<Logger>("logger")
+  const configModule = container.resolve<ConfigModule>("configModule")
   logger.progress(
     activityId,
     `Registering custom endpoints for ${pluginDetails.name}`
@@ -324,7 +325,7 @@ function registerApi(
   try {
     const routes = require(`${pluginDetails.resolve}/api`).default
     if (routes) {
-      app.use("/", routes(rootDirectory, pluginDetails.options))
+      app.use("/", routes(rootDirectory, pluginDetails.options,configModule))
     }
     return app
   } catch (err) {

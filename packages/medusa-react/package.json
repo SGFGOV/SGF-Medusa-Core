@@ -31,6 +31,9 @@
       "pre-commit": "tsdx lint"
     }
   },
+  "resolutions": {
+    "@medusajs/medusa": "npm:@sgftech/medusa"
+  },
   "name": "medusa-react",
   "author": "Zakaria S. El Asri",
   "module": "dist/medusa-react.esm.js",
@@ -79,9 +82,6 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "react-query": "^3.31.0"
-  },
-  "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa"
   },
   "msw": {
     "workerDirectory": "public"
