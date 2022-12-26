@@ -1,7 +1,6 @@
 export * from "./build-query"
 export * from "./build-regexp-if-valid"
 export * from "./generate-entity-id"
-export * from "./is-defined"
 export * from "./remove-undefined-properties"
 export * from "./set-metadata"
 export * from "./validate-id"

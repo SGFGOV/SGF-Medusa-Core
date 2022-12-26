@@ -16,6 +16,7 @@ const t = async function ({ directory }) {
   //  const migrationDirs = await getMigrations(directory)
   let hostConfig = {
     database: configModule.projectConfig.database_database,
+    schema: configModule.projectConfig.database_schema,
     url: configModule.projectConfig.database_url,
   }
 
@@ -32,6 +33,7 @@ const t = async function ({ directory }) {
       host: configModule.projectConfig.database_host,
       port: configModule.projectConfig.database_port,
       database: configModule.projectConfig.database_database,
+      schema: configModule.projectConfig.database_schema,
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,

@@ -43,14 +43,15 @@ jobs:
       - name: Build all packages
         run: yarn build
 
-      - name: Version staging packages
-        run: yarn version:staging
+      - name: Version packages
+        run: yarn version:next
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Dependencies
         run: yarn install --no-immutable
         
+<<<<<<< HEAD
       - name: Publish staging packages
         run: yarn release:staging
 =======
@@ -61,3 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 >>>>>>> c54694323 (chore: rebase)
+=======
+      - name: Publish packages under next tag
+        run: yarn release:next
+>>>>>>> 726858d847c0152abc1c77799091f15c9910ea00
