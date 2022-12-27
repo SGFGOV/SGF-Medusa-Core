@@ -26,7 +26,7 @@ declare global {
 export type ExtendedRequest<TEntity> = Request & { resource: TEntity }
 
 export type ClassConstructor<T> = {
-  new (...args: unknown[]): T
+  new(...args: unknown[]): T
 }
 
 export type MedusaContainer = AwilixContainer & {
@@ -60,17 +60,19 @@ export type DatabaseTlsOptions = {
 
 export type DatabaseHostConfig =
   | {
-      database?: string
-      password?: string | (() => string) | (() => Promise<string>)
-      port?: number
-      host?: string
-      ssl?: boolean | DatabaseTlsOptions
-      username?: string
-    }
+    database?: string
+    schema?: string
+    password?: string | (() => string) | (() => Promise<string>)
+    port?: number
+    host?: string
+    ssl?: boolean | DatabaseTlsOptions
+    username?: string
+  }
   | {
-      database?: string
-      url?: string
-    }
+    database?: string
+    schema?: string
+    url?: string
+  }
 
 export type externalAuthentication = {
   authMethod: string
@@ -82,7 +84,7 @@ export type externalAuthentication = {
 export type ConfigurationType = {
   configModule: ConfigModule
   configFilePath: string
-  } &  {error: Error | null}
+} & { error: Error | null }
 
 export type ConfigurableModuleDeclaration = {
   resolve?: string
@@ -120,9 +122,9 @@ export type ConfigModule = {
   moduleResolutions?: Record<string, ModuleResolution>
   plugins: (
     | {
-        resolve: string
-        options: Record<string, unknown>
-      }
+      resolve: string
+      options: Record<string, unknown>
+    }
     | string
   )[]
 }
