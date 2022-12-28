@@ -16,7 +16,7 @@ type Options = {
 
 export default async (options: Options): Promise<Connection> => {
 
-  const {container,configModule} = options;
+  const { container, configModule } = options;
   const entities = container.resolve("db_entities")
 
   const isSqlite = configModule.projectConfig.database_type === "sqlite"
@@ -28,6 +28,9 @@ export default async (options: Options): Promise<Connection> => {
   let hostConfig: DatabaseHostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
+    schema: configModule.projectConfig.database_schema,
+    logging: configModule.projectConfig.database_logging
+
   }
 
   if (configModule.projectConfig.database_host) {
@@ -35,6 +38,8 @@ export default async (options: Options): Promise<Connection> => {
       host: configModule.projectConfig.database_host,
       port: configModule.projectConfig.database_port,
       database: configModule.projectConfig.database_database,
+      schema: configModule.projectConfig.database_schema,
+      logging: configModule.projectConfig.database_logging,
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,

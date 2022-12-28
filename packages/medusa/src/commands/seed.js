@@ -39,6 +39,7 @@ const t = async function ({ directory, migrate, seedFile }) {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
     schema: configModule.projectConfig.database_schema,
+    logging: configModule.projectConfig.database_logging,
   }
 
   if (configModule.projectConfig.database_host) {
@@ -47,6 +48,7 @@ const t = async function ({ directory, migrate, seedFile }) {
       port: configModule.projectConfig.database_port,
       database: configModule.projectConfig.database_database,
       schema: configModule.projectConfig.database_schema,
+      logging: configModule.projectConfig.database_logging,
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,

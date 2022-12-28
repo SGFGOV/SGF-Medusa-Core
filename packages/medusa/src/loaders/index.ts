@@ -147,6 +147,7 @@ export default async ({
   const expActivity = Logger.activity(`Initializing express${EOL}`)
   track("EXPRESS_INIT_STARTED")
   await expressLoader({ app: expressApp, configModule })
+  await passportLoader({ app: expressApp, container, configModule })
   const exAct = Logger.success(expActivity, "Express intialized") || {}
   track("EXPRESS_INIT_COMPLETED", { duration: exAct.duration })
  /*

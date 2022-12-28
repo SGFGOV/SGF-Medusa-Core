@@ -62,6 +62,7 @@ export type DatabaseHostConfig =
   | {
     database?: string
     schema?: string
+    logging?: LoggerOptions
     password?: string | (() => string) | (() => Promise<string>)
     port?: number
     host?: string
@@ -71,6 +72,7 @@ export type DatabaseHostConfig =
   | {
     database?: string
     schema?: string
+    logging?: LoggerOptions
     url?: string
   }
 

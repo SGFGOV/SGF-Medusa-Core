@@ -17,6 +17,7 @@ const t = async function ({ directory }) {
   let hostConfig = {
     database: configModule.projectConfig.database_database,
     schema: configModule.projectConfig.database_schema,
+    logging: configModule.projectConfig.database_logging,
     url: configModule.projectConfig.database_url,
   }
 
@@ -34,6 +35,7 @@ const t = async function ({ directory }) {
       port: configModule.projectConfig.database_port,
       database: configModule.projectConfig.database_database,
       schema: configModule.projectConfig.database_schema,
+      logging: configModule.projectConfig.database_logging,
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,
