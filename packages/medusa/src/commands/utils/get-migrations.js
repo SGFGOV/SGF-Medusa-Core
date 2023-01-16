@@ -8,7 +8,6 @@ import logger from "../../loaders/logger"
 import configLoader from "../../loaders/config"
 import { getConfigFile } from "medusa-core-utils"
 import { handleConfigError } from "../../loaders/config"
-import logger from "../../loaders/logger"
 
 function createFileContentHash(path, files) {
   return path + files
@@ -94,7 +93,7 @@ function resolvePlugin(pluginName) {
 
 export default async (directory, featureFlagRouter) => {
   const migrationDirs = []
-  const configModule = await configLoader(directory)
+  const { configModule } = await configLoader(directory)
   /* return value*/
   const plugins = configModule?.plugins
 
@@ -108,10 +107,6 @@ export default async (directory, featureFlagRouter) => {
 
     return details
   })
-
-  if (!plugins) {
-    Logger.warn("Unable to load plugins")
-  }
 
   resolved.push({
     resolve: `${directory}/dist`,
