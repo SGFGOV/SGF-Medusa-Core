@@ -84,6 +84,8 @@ export default class EventBusService {
       this.queue_ = new Bull(`${this.constructor.name}:queue`, opts)
       this.redisClient_ = redisClient
       this.redisSubscriber_ = redisSubscriber
+      this.redisClient_?.setMaxListeners(Infinity)
+      this.redisSubscriber_?.setMaxListeners(Infinity)
       // Register our worker to handle emit calls
       this.queue_.process(this.worker_)
 
