@@ -8,9 +8,9 @@ yarn.lock
 
 /dist
 
-/api
-/services
-/models
-/subscribers
-/loaders
-/__mocks__
+api
+services
+models
+subscribers
+loaders
+__mocks__

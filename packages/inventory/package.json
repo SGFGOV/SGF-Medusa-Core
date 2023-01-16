@@ -28,10 +28,13 @@
     "test:unit": "jest --passWithNoTests"
   },
   "peerDependencies": {
-    "@medusajs/medusa": "1.x.x",
+    "@medusajs/medusa": "*",
     "medusa-interfaces": "1.x.x"
   },
   "dependencies": {
     "typeorm": "^0.2.31"
+  },
+  "resolutions": {
+    "@medusajs/medusa": "npm:@sgftech/medusa"
   }
 }
