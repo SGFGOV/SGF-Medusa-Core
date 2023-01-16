@@ -4,7 +4,7 @@ import { FindParams } from "../../../../types/common"
 /**
  * @oas [get] /payment-collections/{id}
  * operationId: "GetPaymentCollectionsPaymentCollection"
- * summary: "Retrieve an PaymentCollection"
+ * summary: "Get a PaymentCollection"
  * description: "Retrieves a PaymentCollection."
  * x-authenticated: true
  * parameters:
@@ -38,10 +38,7 @@ import { FindParams } from "../../../../types/common"
  *     content:
  *       application/json:
  *         schema:
- *           type: object
- *           properties:
- *             payment_collection:
- *               $ref: "#/components/schemas/PaymentCollection"
+ *           $ref: "#/components/schemas/AdminPaymentCollectionsRes"
  *   "400":
  *     $ref: "#/components/responses/400_error"
  *   "401":

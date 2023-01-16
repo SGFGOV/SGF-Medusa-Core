@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
-import { OrderEditService } from "../../../../services"
 import { EntityManager } from "typeorm"
+import { OrderEditService } from "../../../../services"
 import {
   defaultOrderEditFields,
   defaultOrderEditRelations,
@@ -42,10 +42,7 @@ import { User } from "../../../../models"
  *     content:
  *       application/json:
  *         schema:
- *           type: object
- *           properties:
- *             order_edit:
- *               $ref: "#/components/schemas/OrderEdit"
+ *           $ref: "#/components/schemas/AdminOrderEditsRes"
  *   "400":
  *     $ref: "#/components/responses/400_error"
  *   "401":
@@ -69,7 +66,7 @@ export default async (req: Request, res: Response) => {
   await manager.transaction(async (transactionManager) => {
     await orderEditService
       .withTransaction(transactionManager)
-      .cancel(id, { loggedInUserId: userId })
+      .cancel(id, { canceledBy: userId })
   })
 
   const orderEdit = await orderEditService.retrieve(id, {

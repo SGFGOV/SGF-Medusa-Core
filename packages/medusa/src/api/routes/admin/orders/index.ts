@@ -1,15 +1,10 @@
 import { Router } from "express"
 import "reflect-metadata"
 import { Order } from "../../../.."
-import {
-  DeleteResponse,
-  FindParams,
-  PaginatedResponse,
-} from "../../../../types/common"
+import { FindParams, PaginatedResponse } from "../../../../types/common"
+import { FlagRouter } from "../../../../utils/flag-router"
 import middlewares, { transformQuery } from "../../../middlewares"
 import { AdminGetOrdersParams } from "./list-orders"
-import { FlagRouter } from "../../../../utils/flag-router"
-import SalesChannelFeatureFlag from "../../../../loaders/feature-flags/sales-channels"
 
 const route = Router()
 
@@ -17,9 +12,6 @@ export default (app, featureFlagRouter: FlagRouter) => {
   app.use("/orders", route)
 
   const relations = [...defaultAdminOrdersRelations]
-  if (featureFlagRouter.isFeatureEnabled(SalesChannelFeatureFlag.key)) {
-    relations.push("sales_channel")
-  }
 
   /**
    * List orders
@@ -234,12 +226,35 @@ export default (app, featureFlagRouter: FlagRouter) => {
   return app
 }
 
+/**
+ * @schema AdminOrdersRes
+ * type: object
+ * properties:
+ *   order:
+ *     $ref: "#/components/schemas/Order"
+ */
 export type AdminOrdersRes = {
   order: Order
 }
 
-export type AdminDeleteRes = DeleteResponse
-
+/**
+ * @schema AdminOrdersListRes
+ * type: object
+ * properties:
+ *   orders:
+ *     type: array
+ *     items:
+ *       $ref: "#/components/schemas/Order"
+ *   count:
+ *     type: integer
+ *     description: The total number of items available
+ *   offset:
+ *     type: integer
+ *     description: The number of items skipped before these items
+ *   limit:
+ *     type: integer
+ *     description: The number of items per page
+ */
 export type AdminOrdersListRes = PaginatedResponse & {
   orders: Order[]
 }
@@ -286,6 +301,7 @@ export const defaultAdminOrdersRelations = [
   "swaps.additional_items",
   "swaps.fulfillments",
   "swaps.fulfillments.tracking_links",
+  "sales_channel",
 ]
 
 export const defaultAdminOrdersFields = [
@@ -297,6 +313,7 @@ export const defaultAdminOrdersFields = [
   "cart_id",
   "draft_order_id",
   "customer_id",
+  "sales_channel_id",
   "email",
   "region_id",
   "currency_code",
@@ -330,6 +347,7 @@ export const filterableAdminOrdersFields = [
   "customer_id",
   "email",
   "region_id",
+  "sales_channel_id",
   "currency_code",
   "tax_rate",
   "canceled_at",

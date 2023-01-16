@@ -19,6 +19,7 @@ const t = async function ({ directory }) {
     schema: configModule.projectConfig.database_schema,
     logging: configModule.projectConfig.database_logging,
     url: configModule.projectConfig.database_url,
+    extra: configModule?.projectConfig.database_extra || {},
   }
 
   // const { configModule, error } = getConfigFile(directory, `medusa-config`)
@@ -35,6 +36,7 @@ const t = async function ({ directory }) {
       port: configModule.projectConfig.database_port,
       database: configModule.projectConfig.database_database,
       schema: configModule.projectConfig.database_schema,
+      extra: configModule?.projectConfig.database_extra || {},
       logging: configModule.projectConfig.database_logging,
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
@@ -45,7 +47,7 @@ const t = async function ({ directory }) {
   const connection = await createConnection({
     type: configModule.projectConfig.database_type,
     ...hostConfig,
-    extra: configModule?.projectConfig.database_extra || {},
+    
     migrations: enabledMigrations,
     logging: configModule?.projectConfig.database_logging,
   })

@@ -19,7 +19,7 @@ export const handleConfigError = (error: Error): void => {
 }
 
 
-export default async (rootDirectory: string): Promise<ConfigModule> => {
+export default async (rootDirectory: string): Promise<{configModule:ConfigModule,error:Error|null}> => {
   const configuration = getConfigFile(rootDirectory, `medusa-config`) as ConfigurationType
   
 
@@ -86,15 +86,17 @@ export default async (rootDirectory: string): Promise<ConfigModule> => {
 
   const moduleResolutions = registerModuleDefinitions(configModule)
 
-  return {
+  return {configModule:{
     projectConfig: {
       jwt_secret: jwt_secret ?? "supersecret",
       cookie_secret: cookie_secret ?? "supersecret",
-      ...configModule?.projectConfig,
+      ...(configModule?.projectConfig),
     },
     modules: configModule.modules ?? {},
     moduleResolutions,
     featureFlags: configModule?.featureFlags ?? {},
     plugins: configModule?.plugins ?? [],
-  }
+  },
+error:configuration.error
+}
 }

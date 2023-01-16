@@ -4,7 +4,7 @@ import { OrderEditService } from "../../../../services"
 /**
  * @oas [delete] /order-edits/{id}/changes/{change_id}
  * operationId: "DeleteOrderEditsOrderEditItemChange"
- * summary: "Delete an Order Edit Item Change"
+ * summary: "Delete a Line Item Change"
  * description: "Deletes an Order Edit Item Change"
  * x-authenticated: true
  * parameters:
@@ -37,19 +37,7 @@ import { OrderEditService } from "../../../../services"
  *     content:
  *       application/json:
  *         schema:
- *           type: object
- *           properties:
- *             id:
- *               type: string
- *               description: The ID of the deleted Order Edit Item Change.
- *             object:
- *               type: string
- *               description: The type of the object that was deleted.
- *               format: item_change
- *             deleted:
- *               type: boolean
- *               description: Whether or not the Order Edit Item Change was deleted.
- *               default: true
+ *           $ref: "#/components/schemas/AdminOrderEditItemChangeDeleteRes"
  *   "400":
  *     $ref: "#/components/responses/400_error"
  */

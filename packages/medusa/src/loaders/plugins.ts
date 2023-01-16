@@ -53,6 +53,8 @@ type PluginDetails = {
   version: string
 }
 
+export const isSearchEngineInstalledResolutionKey = "isSearchEngineInstalled"
+
 /**
  * Registers all services in the services directory
  */
@@ -450,6 +452,8 @@ export async function registerServices(
           ),
           [`searchService`]: aliasTo(name),
         })
+
+        container.register(isSearchEngineInstalledResolutionKey, asValue(true))
       } else if (loaded.prototype instanceof AbstractTaxService) {
         container.registerAdd(
           "taxProviders",

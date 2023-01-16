@@ -6,7 +6,7 @@ import { PaymentCollectionService } from "../../../../services"
 /**
  * @oas [post] /payment-collections/{id}
  * operationId: "PostPaymentCollectionsPaymentCollection"
- * summary: "Updates a PaymentCollection"
+ * summary: "Update PaymentCollection"
  * description: "Updates a PaymentCollection."
  * x-authenticated: true
  * parameters:
@@ -49,10 +49,7 @@ import { PaymentCollectionService } from "../../../../services"
  *     content:
  *       application/json:
  *         schema:
- *           type: object
- *           properties:
- *             payment_collection:
- *               $ref: "#/components/schemas/PaymentCollection"
+ *           $ref: "#/components/schemas/AdminPaymentCollectionsRes"
  *   "400":
  *     $ref: "#/components/responses/400_error"
  *   "401":

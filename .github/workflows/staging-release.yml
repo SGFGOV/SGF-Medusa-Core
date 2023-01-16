@@ -52,6 +52,7 @@ jobs:
         run: yarn install --no-immutable
         
 <<<<<<< HEAD
+<<<<<<< HEAD
       - name: Publish staging packages
         run: yarn release:staging
 =======
@@ -66,3 +67,7 @@ jobs:
       - name: Publish packages under next tag
         run: yarn release:next
 >>>>>>> 726858d847c0152abc1c77799091f15c9910ea00
+=======
+      - name: Publish packages under next tag
+        run: yarn release:next
+>>>>>>> 27a29ef24e5ea1ba2bc0be8ecb7dd747d4c7c65b

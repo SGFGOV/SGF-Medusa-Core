@@ -6,8 +6,6 @@ import formatRegistrationName from "../utils/format-registration-name"
 import { isBatchJobStrategy } from "../interfaces"
 import { ConfigModule, MedusaContainer } from "../types/global"
 import { isDefined } from "medusa-core-utils"
-import { Express } from "express"
-import { Config } from "winston/lib/winston/config"
 
 type LoaderOptions = {
   container: MedusaContainer

@@ -11,7 +11,7 @@ import {
 /**
  * @oas [post] /order-edits/{id}/items
  * operationId: "PostOrderEditsEditLineItems"
- * summary: "Add an line item to an order (edit)"
+ * summary: "Add a Line Item"
  * description: "Create an OrderEdit LineItem."
  * parameters:
  *   - (path) id=* {string} The ID of the Order Edit.
@@ -53,10 +53,7 @@ import {
  *     content:
  *       application/json:
  *         schema:
- *           type: object
- *           properties:
- *             order_edit:
- *               $ref: "#/components/schemas/OrderEdit"
+ *           $ref: "#/components/schemas/AdminOrderEditsRes"
  *   "400":
  *     $ref: "#/components/responses/400_error"
  *   "401":
