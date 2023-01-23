@@ -1,5 +1,6 @@
 import cors from "cors"
 import { Router } from "express"
+import { parseCorsOrigins } from "medusa-core-utils"
 import middlewares from "../../middlewares"
 import productTypesRoutes from "../admin/product-types"
 import authRoutes from "./auth"
@@ -9,6 +10,9 @@ import customerRoutes from "./customers"
 import giftCardRoutes from "./gift-cards"
 import orderEditRoutes from "./order-edits"
 import orderRoutes from "./orders"
+import paymentCollectionRoutes from "./payment-collections"
+import productCategoryRoutes from "./product-categories"
+import productTagsRoutes from "./product-tags"
 import productRoutes from "./products"
 import productTypesRoutes from "../admin/product-types"
 import regionRoutes from "./regions"
@@ -17,9 +21,6 @@ import returnRoutes from "./returns"
 import shippingOptionRoutes from "./shipping-options"
 import swapRoutes from "./swaps"
 import variantRoutes from "./variants"
-import paymentCollectionRoutes from "./payment-collections"
-import productCategoryRoutes from "./product-categories"
-import { parseCorsOrigins } from "medusa-core-utils"
 
 const route = Router()
 
@@ -42,6 +43,7 @@ export default (app, container, config) => {
   collectionRoutes(route)
   customerRoutes(route, container)
   productRoutes(route, featureFlagRouter)
+  productTagsRoutes(route)
   productTypesRoutes(route)
   orderRoutes(route)
   orderEditRoutes(route)
