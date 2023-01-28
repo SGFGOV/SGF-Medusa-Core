@@ -1,6 +1,7 @@
 import { Column, ColumnOptions, ColumnType } from "typeorm"
 import path from "path"
 import { getConfigFile } from "medusa-core-utils"
+import { asyncLoadConfig, resolveConfigProperties } from "./async-load-config"
 
 const pgSqliteTypeMapping: { [key: string]: ColumnType } = {
   increment: "rowid",
@@ -16,14 +17,11 @@ const pgSqliteGenerationMapping: {
 }
 
 let dbType: string
-export function resolveDbType(pgSqlType: ColumnType): ColumnType {
+export function resolveDbType(pgSqlType: ColumnType,rootDir?: string , filename?: string ): ColumnType {
   if (!dbType) {
-    const { configModule } = getConfigFile(
-      path.resolve("."),
-      `medusa-config`
-    ) as any
-
-    dbType = configModule?.projectConfig?.database_type || "postgres"
+    asyncLoadConfig(rootDir,filename).then(configModule => {
+      dbType = configModule?.projectConfig?.database_type || "postgres"
+    })
   }
 
   if (dbType === "sqlite" && (pgSqlType as string) in pgSqliteTypeMapping) {
@@ -33,15 +31,13 @@ export function resolveDbType(pgSqlType: ColumnType): ColumnType {
 }
 
 export function resolveDbGenerationStrategy(
-  pgSqlType: "increment" | "uuid" | "rowid"
+  pgSqlType: "increment" | "uuid" | "rowid",rootDir?: string , filename?: string
 ): "increment" | "uuid" | "rowid" {
   if (!dbType) {
-    const { configModule } = getConfigFile(
-      path.resolve("."),
-      `medusa-config`
-    ) as any
+    asyncLoadConfig(rootDir,filename).then(configModule => {
+      dbType = configModule?.projectConfig?.database_type || "postgres"
+    })
 
-    dbType = configModule?.projectConfig?.database_type || "postgres"
   }
 
   if (dbType === "sqlite" && pgSqlType in pgSqliteTypeMapping) {

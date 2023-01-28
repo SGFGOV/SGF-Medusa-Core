@@ -2,6 +2,7 @@ import { getConfigFile } from "medusa-core-utils"
 import { ConfigModule, ConfigurationType } from "../types/global"
 import logger from "./logger"
 import registerModuleDefinitions from "./module-definitions"
+import {resolveConfigProperties} from "../utils/async-load-config"
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
@@ -33,17 +34,7 @@ export default async (rootDirectory: string): Promise<{configModule:ConfigModule
     handleConfigError(error)
   }
 
-  const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
-    for (const key of Object.keys(obj)) {
-      if (typeof obj[key] === "object" && obj[key] !== null) {
-        await resolveConfigProperties(obj[key])
-      }
-      if (typeof obj[key] === "function") {
-        obj[key] = await obj[key]()
-      }
-    }
-    return obj
-  }
+  
   const configModule = await resolveConfigProperties(configuration.configModule)
 
   if (!configModule?.projectConfig?.redis_url) {
