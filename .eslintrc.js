@@ -80,7 +80,7 @@ module.exports = {
       extends: ["plugin:@typescript-eslint/recommended"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "./packages/medusa/tsconfig.json",
+        project: `${__dirname}/packages/medusa/tsconfig.json`,
       },
       rules: {
         "valid-jsdoc": "off",
