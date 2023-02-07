@@ -23,7 +23,7 @@ import {
 } from "../services"
 import { ConfigModule } from "../types/global"
 import { CreateProductInput } from "../types/product"
-import getMigrations from "./utils/get-migrations"
+import getMigrations, { getModuleSharedResources } from "./utils/get-migrations"
 
 type SeedOptions = {
   directory: string
@@ -46,13 +46,13 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
       process.exit(1)
     }
   }
-  const {configModule,error} = await configLoader(directory)
+  const { configModule, error } = await configLoader(directory)
 
   if (error) {
     handleConfigError(error)
   }
 
-  let hostConfig;
+  let hostConfig
 
   if (configModule.projectConfig.database_host) {
     hostConfig = {
@@ -66,9 +66,8 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
       password: configModule.projectConfig.database_password,
       extra: configModule.projectConfig.database_extra || {},
     }
-  }
-  else {
-    hostConfig= {
+  } else {
+    hostConfig = {
       database: configModule.projectConfig.database_database,
       url: configModule.projectConfig.database_url,
       schema: configModule.projectConfig.database_schema,
@@ -80,13 +79,18 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
 
   const dbType = configModule.projectConfig.database_type
   if (migrate && dbType !== "sqlite") {
-    const migrationDirs = await getMigrations(directory, featureFlagRouter)
+    const { coreMigrations } = await getMigrations(directory, featureFlagRouter)
+
+    const { migrations: moduleMigrations } = getModuleSharedResources(
+      configModule,
+      featureFlagRouter
+    )
 
     const connectionOptions = {
       type: configModule.projectConfig.database_type,
       ...hostConfig,
       extra: configModule.projectConfig.database_extra || {},
-      migrations: migrationDirs,
+      migrations: coreMigrations.concat(moduleMigrations as any),
       logging: configModule?.projectConfig.database_logging,
     } as ConnectionOptions
     const connection = await createConnection(connectionOptions)
@@ -110,9 +114,15 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
   const regionService: RegionService = container.resolve("regionService")
   const productService: ProductService = container.resolve("productService")
   /* eslint-disable */
-  const productVariantService: ProductVariantService = container.resolve("productVariantService")
-  const shippingOptionService: ShippingOptionService = container.resolve("shippingOptionService")
-  const shippingProfileService: ShippingProfileService = container.resolve("shippingProfileService")
+  const productVariantService: ProductVariantService = container.resolve(
+    "productVariantService"
+  )
+  const shippingOptionService: ShippingOptionService = container.resolve(
+    "shippingOptionService"
+  )
+  const shippingProfileService: ShippingProfileService = container.resolve(
+    "shippingProfileService"
+  )
   /* eslint-enable */
 
   await manager.transaction(async (tx) => {

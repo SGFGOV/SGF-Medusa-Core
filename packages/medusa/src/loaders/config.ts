@@ -2,7 +2,7 @@ import { getConfigFile } from "medusa-core-utils"
 import { ConfigModule, ConfigurationType } from "../types/global"
 import logger from "./logger"
 import registerModuleDefinitions from "./module-definitions"
-import {resolveConfigProperties} from "../utils/async-load-config"
+import { resolveConfigProperties } from "../utils/async-load-config"
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
@@ -19,13 +19,14 @@ export const handleConfigError = (error: Error): void => {
   process.exit(1)
 }
 
+export default async (
+  rootDirectory: string
+): Promise<{ configModule: ConfigModule; error: Error | null }> => {
+  const configuration = getConfigFile(
+    rootDirectory,
+    `medusa-config`
+  ) as ConfigurationType
 
-export default async (rootDirectory: string): Promise<{configModule:ConfigModule,error:Error|null}> => {
-  const configuration = getConfigFile(rootDirectory, `medusa-config`) as ConfigurationType
-  
-
-  
-  
   if (configuration.error) {
     handleConfigError(configuration.error)
   }
@@ -34,7 +35,6 @@ export default async (rootDirectory: string): Promise<{configModule:ConfigModule
     handleConfigError(error)
   }
 
-  
   const configModule = await resolveConfigProperties(configuration.configModule)
 
   if (!configModule?.projectConfig?.redis_url) {
@@ -77,17 +77,18 @@ export default async (rootDirectory: string): Promise<{configModule:ConfigModule
 
   const moduleResolutions = registerModuleDefinitions(configModule)
 
-  return {configModule:{
-    projectConfig: {
-      jwt_secret: jwt_secret ?? "supersecret",
-      cookie_secret: cookie_secret ?? "supersecret",
-      ...(configModule?.projectConfig),
+  return {
+    configModule: {
+      projectConfig: {
+        jwt_secret: jwt_secret ?? "supersecret",
+        cookie_secret: cookie_secret ?? "supersecret",
+        ...configModule?.projectConfig,
+      },
+      modules: configModule.modules ?? {},
+      moduleResolutions,
+      featureFlags: configModule?.featureFlags ?? {},
+      plugins: configModule?.plugins ?? [],
     },
-    modules: configModule.modules ?? {},
-    moduleResolutions,
-    featureFlags: configModule?.featureFlags ?? {},
-    plugins: configModule?.plugins ?? [],
-  },
-error:configuration.error
-}
+    error: configuration.error,
+  }
 }

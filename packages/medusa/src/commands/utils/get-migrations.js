@@ -3,11 +3,11 @@ import path from "path"
 import fs from "fs"
 import { isString } from "lodash"
 import { sync as existsSync } from "fs-exists-cached"
-import { createRequireFromPath } from "medusa-core-utils"
 import logger from "../../loaders/logger"
 import configLoader from "../../loaders/config"
-import { getConfigFile } from "medusa-core-utils"
+import { getConfigFile, createRequireFromPath } from "medusa-core-utils"
 import { handleConfigError } from "../../loaders/config"
+import registerModuleDefinitions from "../../loaders/module-definitions"
 
 function createFileContentHash(path, files) {
   return path + files
@@ -91,11 +91,45 @@ function resolvePlugin(pluginName) {
   }
 }
 
+export function getInternalModules(configModule) {
+  const modules = []
+
+  const moduleResolutions = registerModuleDefinitions(configModule)
+
+  for (const moduleResolution of Object.values(moduleResolutions)) {
+    if (
+      !moduleResolution.resolutionPath ||
+      moduleResolution.moduleDeclaration.scope !== "internal"
+    ) {
+      continue
+    }
+
+    let loadedModule = null
+    try {
+      loadedModule = require(moduleResolution.moduleDeclaration.resolve).default
+    } catch (error) {
+      console.log("Error loading Module", error)
+      continue
+    }
+
+    modules.push({
+      moduleDeclaration: moduleResolution.moduleDeclaration,
+      loadedModule,
+    })
+  }
+
+  return modules
+}
+
 export default async (directory, featureFlagRouter) => {
-  const migrationDirs = []
-  const { configModule } = await configLoader(directory)
-  /* return value*/
-  const plugins = configModule?.plugins
+  const { configModule, error } = await configLoader(directory)
+  // const { configModule, error } = getConfigFile(directory, `medusa-config`)
+
+  if (error) {
+    handleConfigError(error)
+  }
+
+  const { plugins } = configModule
 
   const resolved = plugins?.map((plugin) => {
     if (isString(plugin)) {
@@ -116,11 +150,12 @@ export default async (directory, featureFlagRouter) => {
     version: createFileContentHash(process.cwd(), `**`),
   })
 
-  const coreMigrations = path.resolve(
+  const migrationDirs = []
+  const corePackageMigrations = path.resolve(
     path.join(__dirname, "..", "..", "migrations")
   )
 
-  migrationDirs.push(path.join(coreMigrations, "*.js"))
+  migrationDirs.push(path.join(corePackageMigrations, "*.js"))
 
   for (const p of resolved) {
     const exists = existsSync(`${p.resolve}/migrations`)
@@ -129,9 +164,15 @@ export default async (directory, featureFlagRouter) => {
     }
   }
 
-  return getEnabledMigrations(migrationDirs, (flag) =>
+  const isFeatureFlagEnabled = (flag) =>
     featureFlagRouter.isFeatureEnabled(flag)
+
+  const coreMigrations = getEnabledMigrations(
+    migrationDirs,
+    isFeatureFlagEnabled
   )
+
+  return { coreMigrations }
 }
 
 export const getEnabledMigrations = (migrationDirs, isFlagEnabled) => {
@@ -151,4 +192,67 @@ export const getEnabledMigrations = (migrationDirs, isFlagEnabled) => {
       return false
     })
     .filter(Boolean)
+}
+
+export const getModuleMigrations = (configModule, isFlagEnabled) => {
+  const loadedModules = getInternalModules(configModule)
+
+  const allModules = []
+
+  for (const loadedModule of loadedModules) {
+    const mod = loadedModule.loadedModule
+
+    const isolatedMigrations = {}
+    const moduleMigrations = (mod.migrations ?? [])
+      .map((migrations) => {
+        const all = []
+        for (const migration of Object.values(migrations)) {
+          // TODO: revisit how Modules export their migration entrypoints up/down
+          if (["up", "down"].includes(migration.name)) {
+            isolatedMigrations[migration.name] = migration
+          } else if (
+            typeof migration.featureFlag === "undefined" ||
+            isFlagEnabled(migration.featureFlag)
+          ) {
+            all.push(migration)
+          }
+        }
+        return all
+      })
+      .flat()
+
+    allModules.push({
+      moduleDeclaration: loadedModule.moduleDeclaration,
+      models: mod.models ?? [],
+      migrations: moduleMigrations,
+      externalMigrations: isolatedMigrations,
+    })
+  }
+
+  return allModules
+}
+
+export const getModuleSharedResources = (configModule, featureFlagsRouter) => {
+  const isFlagEnabled = (flag) =>
+    featureFlagsRouter && featureFlagsRouter.isFeatureEnabled(flag)
+
+  const loadedModules = getModuleMigrations(configModule, isFlagEnabled)
+
+  let migrations = []
+  let models = []
+
+  for (const mod of loadedModules) {
+    if (mod.moduleDeclaration.resources !== "shared") {
+      continue
+    }
+
+    migrations = migrations.concat(mod.migrations)
+
+    models = models.concat(mod.models ?? [])
+  }
+
+  return {
+    models,
+    migrations,
+  }
 }
