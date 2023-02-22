@@ -3,6 +3,7 @@ import { ConfigModule, ConfigurationType } from "../types/global"
 import logger from "./logger"
 import registerModuleDefinitions from "./module-definitions"
 import { resolveConfigProperties } from "../utils/async-load-config"
+import { asyncLoadConfig } from "../utils/async-load-config"
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
@@ -21,8 +22,9 @@ export const handleConfigError = (error: Error): void => {
 
 export default async (
   rootDirectory: string
-): Promise<{ configModule: ConfigModule; error: Error | null }> => {
-  const configuration = getConfigFile(
+): Promise<{ configModule: ConfigModule }> => {
+  const configModule = await asyncLoadConfig(rootDirectory, `medusa-config`)
+  /* const configuration = getConfigFile(
     rootDirectory,
     `medusa-config`
   ) as ConfigurationType
@@ -35,7 +37,7 @@ export default async (
     handleConfigError(error)
   }
 
-  const configModule = await resolveConfigProperties(configuration.configModule)
+  const configModule = await resolveConfigProperties(configuration.configModule)*/
 
   if (!configModule?.projectConfig?.redis_url) {
     console.log(
@@ -89,6 +91,5 @@ export default async (
       featureFlags: configModule?.featureFlags ?? {},
       plugins: configModule?.plugins ?? [],
     },
-    error: configuration.error,
   }
 }

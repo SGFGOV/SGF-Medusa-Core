@@ -1,6 +1,5 @@
 import { createConnection } from "typeorm"
 import featureFlagLoader from "../loaders/feature-flags"
-import configLoader from "../loaders/config"
 import { handleConfigError } from "../loaders/config"
 import configModuleLoader from "../loaders/config"
 import Logger from "../loaders/logger"
@@ -8,7 +7,7 @@ import Logger from "../loaders/logger"
 import getMigrations, { getModuleSharedResources } from "./utils/get-migrations"
 
 const getDataSource = async (directory) => {
-  const { configModule, error } = configModuleLoader(directory)
+  const { configModule, error } = await configModuleLoader(directory)
 
   if (error) {
     handleConfigError(error)

@@ -46,11 +46,7 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
       process.exit(1)
     }
   }
-  const { configModule, error } = await configLoader(directory)
-
-  if (error) {
-    handleConfigError(error)
-  }
+  const { configModule } = await configLoader(directory)
 
   let hostConfig
 
