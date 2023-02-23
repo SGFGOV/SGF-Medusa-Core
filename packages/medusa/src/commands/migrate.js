@@ -37,7 +37,7 @@ const getDataSource = async (directory) => {
 
   const featureFlagRouter = featureFlagLoader(configModule)
 
-  const { coreMigrations } = getMigrations(directory, featureFlagRouter)
+  const { coreMigrations } = await getMigrations(directory, featureFlagRouter)
 
   const { migrations: moduleMigrations } = getModuleSharedResources(
     configModule,
