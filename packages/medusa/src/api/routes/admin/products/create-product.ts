@@ -14,11 +14,12 @@ import {
   ProductService,
   ProductVariantInventoryService,
   ProductVariantService,
+  SalesChannelService,
   ShippingProfileService,
 } from "../../../../services"
 import {
-  ProductSalesChannelReq,
   ProductProductCategoryReq,
+  ProductSalesChannelReq,
   ProductTagReq,
   ProductTypeReq,
 } from "../../../../types/product"
@@ -43,7 +44,7 @@ import { DistributedTransaction } from "../../../../utils/transaction"
 import { Logger } from "../../../../types/global"
 
 /**
- * @oas [post] /products
+ * @oas [post] /admin/products
  * operationId: "PostProducts"
  * summary: "Create a Product"
  * x-authenticated: true
@@ -121,6 +122,10 @@ export default async (req, res) => {
   const inventoryService: IInventoryService | undefined =
     req.scope.resolve("inventoryService")
 
+  const salesChannelService: SalesChannelService = req.scope.resolve(
+    "salesChannelService"
+  )
+
   const entityManager: EntityManager = req.scope.resolve("manager")
 
   const newProduct = await entityManager.transaction(async (manager) => {
@@ -141,6 +146,14 @@ export default async (req, res) => {
       shippingProfile = await shippingProfileService
         .withTransaction(manager)
         .retrieveDefault()
+    }
+
+    // If no sales channel available, set the default one
+    if (!validated?.sales_channels?.length) {
+      const defaultSalesChannel = await salesChannelService
+        .withTransaction(manager)
+        .retrieveDefault()
+      validated.sales_channels = [defaultSalesChannel]
     }
 
     const newProduct = await productService
@@ -362,6 +375,7 @@ class ProductVariantReq {
  *     description: Tags to associate the Product with.
  *     type: array
  *     items:
+ *       type: object
  *       required:
  *         - value
  *       properties:
@@ -375,6 +389,7 @@ class ProductVariantReq {
  *     description: "[EXPERIMENTAL] Sales channels to associate the Product with."
  *     type: array
  *     items:
+ *       type: object
  *       required:
  *         - id
  *       properties:
@@ -395,6 +410,7 @@ class ProductVariantReq {
  *     description: The Options that the Product should have. These define on which properties the Product's Product Variants will differ.
  *     type: array
  *     items:
+ *       type: object
  *       required:
  *         - title
  *       properties:
@@ -405,6 +421,7 @@ class ProductVariantReq {
  *     description: A list of Product Variants to create with the Product.
  *     type: array
  *     items:
+ *       type: object
  *       required:
  *         - title
  *       properties:
@@ -463,6 +480,7 @@ class ProductVariantReq {
  *         prices:
  *           type: array
  *           items:
+ *             type: object
  *             required:
  *               - amount
  *             properties:
@@ -487,6 +505,7 @@ class ProductVariantReq {
  *         options:
  *           type: array
  *           items:
+ *             type: object
  *             required:
  *               - value
  *             properties:

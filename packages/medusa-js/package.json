@@ -1,10 +1,13 @@
 {
   "name": "@medusajs/medusa-js",
-  "version": "1.3.7",
+  "version": "1.3.10",
   "description": "Client for Medusa Commerce Rest API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -51,7 +54,7 @@
     "jest": "^27.4.7",
     "ts-jest": "^27.1.5",
     "tsup": "^6.5.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   },
   "resolutions": {
     "@medusajs/medusa": "@sgftech/medusa"

@@ -1,5 +1,10 @@
 import { flatten, groupBy, map, merge } from "lodash"
-import { EntityMetadata, Repository, SelectQueryBuilder } from "typeorm"
+import {
+  EntityMetadata,
+  ObjectLiteral,
+  Repository,
+  SelectQueryBuilder,
+} from "typeorm"
 import { ExtendedFindConfig } from "../types/common"
 
 // TODO: All the utilities except applyOrdering needs to be re worked depending on the outcome of the product repository
@@ -14,7 +19,7 @@ import { ExtendedFindConfig } from "../types/common"
  * @param select
  * @param customJoinBuilders
  */
-export async function queryEntityWithIds<T>(
+export async function queryEntityWithIds<T extends ObjectLiteral>(
   repository: Repository<T>,
   entityIds: string[],
   groupedRelations: { [toplevel: string]: string[] },
@@ -91,9 +96,9 @@ export async function queryEntityWithIds<T>(
  * @param shouldCount
  * @param customJoinBuilders
  */
-export async function queryEntityWithoutRelations<T>(
+export async function queryEntityWithoutRelations<T extends ObjectLiteral>(
   repository: Repository<T>,
-  optionsWithoutRelations: Omit<ExtendedFindConfig<T, unknown>, "relations">,
+  optionsWithoutRelations: Omit<ExtendedFindConfig<T>, "relations">,
   shouldCount = false,
   customJoinBuilders: ((
     qb: SelectQueryBuilder<T>,
@@ -190,7 +195,7 @@ export function mergeEntitiesWithRelations<T>(
  * @param alias
  * @param shouldJoin In case a join is already applied elsewhere and therefore you want to avoid to re joining the data in that case you can return false for specific relations
  */
-export function applyOrdering<T>({
+export function applyOrdering<T extends ObjectLiteral>({
   repository,
   order,
   qb,

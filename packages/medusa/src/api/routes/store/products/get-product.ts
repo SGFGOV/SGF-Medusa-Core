@@ -1,6 +1,5 @@
 import { IsOptional, IsString } from "class-validator"
 import { defaultStoreProductsRelations } from "."
-import PublishableAPIKeysFeatureFlag from "../../../../loaders/feature-flags/publishable-api-keys"
 import {
   CartService,
   PricingService,
@@ -9,11 +8,10 @@ import {
   RegionService,
 } from "../../../../services"
 import { PriceSelectionParams } from "../../../../types/price-selection"
-import { FlagRouter } from "../../../../utils/flag-router"
 import { cleanResponseData } from "../../../../utils/clean-response-data"
 
 /**
- * @oas [get] /products/{id}
+ * @oas [get] /store/products/{id}
  * operationId: GetProductsProduct
  * summary: Get a Product
  * description: "Retrieves a Product."
@@ -84,16 +82,11 @@ export default async (req, res) => {
   const pricingService: PricingService = req.scope.resolve("pricingService")
   const cartService: CartService = req.scope.resolve("cartService")
   const regionService: RegionService = req.scope.resolve("regionService")
-  const rawProduct = await productService.retrieve(id, {
-    relations: defaultStoreProductsRelations,
-  })
+  const rawProduct = await productService.retrieve(id, req.retrieveConfig)
 
   let sales_channel_id = validated.sales_channel_id
-  const featureFlagRouter: FlagRouter = req.scope.resolve("featureFlagRouter")
-  if (featureFlagRouter.isFeatureEnabled(PublishableAPIKeysFeatureFlag.key)) {
-    if (req.publishableApiKeyScopes?.sales_channel_id.length === 1) {
-      sales_channel_id = req.publishableApiKeyScopes.sales_channel_id[0]
-    }
+  if (req.publishableApiKeyScopes?.sales_channel_ids.length === 1) {
+    sales_channel_id = req.publishableApiKeyScopes.sales_channel_ids[0]
   }
 
   let regionId = validated.region_id

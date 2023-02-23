@@ -20,7 +20,6 @@ import {
   isCartCompletionStrategy,
   isFileService,
   isNotificationService,
-  isPaymentService,
   isPriceSelectionStrategy,
   isSearchService,
   isTaxCalculationStrategy,
@@ -35,7 +34,10 @@ import {
 } from "../types/global"
 import formatRegistrationName from "../utils/format-registration-name"
 import logger from "./logger"
-import AbstractAuthStrategy, { isAuthStrategy } from "../interfaces/authentication-strategy"
+import {
+  registerPaymentProcessorFromClass,
+  registerPaymentServiceFromClass,
+} from "./helpers/plugins"
 
 type Options = {
   rootDirectory: string
@@ -327,7 +329,7 @@ function registerApi(
   try {
     const routes = require(`${pluginDetails.resolve}/api`).default
     if (routes) {
-      app.use("/", routes(rootDirectory, pluginDetails.options,configModule))
+      app.use("/", routes(rootDirectory, pluginDetails.options, configModule))
     }
     return app
   } catch (err) {
@@ -374,22 +376,12 @@ export async function registerServices(
         throw new Error(message)
       }
 
-      if (isPaymentService(loaded.prototype)) {
-        // Register our payment providers to paymentProviders
-        container.registerAdd(
-          "paymentProviders",
-          asFunction((cradle) => new loaded(cradle, pluginDetails.options))
-        )
+      const context = { container, pluginDetails, registrationName: name }
 
-        // Add the service directly to the container in order to make simple
-        // resolution if we already know which payment provider we need to use
-        container.register({
-          [name]: asFunction(
-            (cradle) => new loaded(cradle, pluginDetails.options)
-          ),
-          [`pp_${loaded.identifier}`]: aliasTo(name),
-        })
-      } else if (loaded.prototype instanceof OauthService) {
+      registerPaymentServiceFromClass(loaded, context)
+      registerPaymentProcessorFromClass(loaded, context)
+
+      if (loaded.prototype instanceof OauthService) {
         const appDetails = loaded.getAppDetails(pluginDetails.options)
 
         const oauthService =
@@ -465,22 +457,6 @@ export async function registerServices(
             (cradle) => new loaded(cradle, pluginDetails.options)
           ).singleton(),
           [`tp_${loaded.identifier}`]: aliasTo(name),
-        })
-      } else if (isAuthStrategy(loaded.prototype)) {
-        if (loaded.beforeInit) {
-          await loaded.beforeInit(app, container, pluginDetails.options)
-        }
-
-        container.registerAdd(
-          "authenticationStrategies",
-          asFunction((cradle) => new loaded(cradle, pluginDetails.options))
-        )
-
-        container.register({
-          [name]: asFunction(
-            (cradle) => new loaded(cradle, pluginDetails.options)
-          ).singleton(),
-          [`auth_${loaded.identifier}`]: aliasTo(name),
         })
       } else {
         container.register({
