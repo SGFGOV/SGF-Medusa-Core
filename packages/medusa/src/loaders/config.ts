@@ -78,18 +78,14 @@ export default async (
   }
 
   const moduleResolutions = registerModuleDefinitions(configModule)
+  configModule.projectConfig = {
+    jwt_secret: jwt_secret ?? "supersecret",
+    cookie_secret: cookie_secret ?? "supersecret",
+    ...configModule.projectConfig,
+  }
+  configModule.moduleResolutions = moduleResolutions
 
   return {
-    configModule: {
-      projectConfig: {
-        jwt_secret: jwt_secret ?? "supersecret",
-        cookie_secret: cookie_secret ?? "supersecret",
-        ...configModule?.projectConfig,
-      },
-      modules: configModule.modules ?? {},
-      moduleResolutions,
-      featureFlags: configModule?.featureFlags ?? {},
-      plugins: configModule?.plugins ?? [],
-    },
+    configModule,
   }
 }
