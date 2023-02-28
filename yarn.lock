@@ -6547,9 +6547,10 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.7.8-alpha-4
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=118683&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=934a04&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.8
+    "@medusajs/modules-sdk": "*"
     "@types/ioredis": ^4.28.10
     "@types/lodash": ^4.14.191
     awilix: ^8.0.0
@@ -6599,9 +6600,23 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: 579d5d666fb135f46327b9a583db8e27ec83464d2d5de661b079e78eb3d96a2943e2baaf9cb6913ebd4b639bbc10743740015920305f35486ffd1a1df27b5429
+  checksum: a5857c168a3ae4fd7db9bb46fefb65212017f44f45834299f515b4b1eb08b2ed9d1c037f028fd3c598cfa4a77683bb85ef802596252a38ae1ddf27f09ce3d604
   languageName: node
   linkType: hard
+
+"@medusajs/modules-sdk@*, @medusajs/modules-sdk@workspace:packages/modules-sdk":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/modules-sdk@workspace:packages/modules-sdk"
+  dependencies:
+    awilix: ^8.0.0
+    cross-env: ^5.2.1
+    jest: ^25.5.4
+    medusa-telemetry: ^0.0.16
+    resolve-cwd: ^3.0.0
+    ts-jest: ^25.5.1
+    typescript: ^4.4.4
+  languageName: unknown
+  linkType: soft
 
 "@medusajs/openapi-typescript-codegen@*, @medusajs/openapi-typescript-codegen@workspace:packages/oas/openapi-typescript-codegen":
   version: 0.0.0-use.local
@@ -6645,6 +6660,7 @@ __metadata:
   resolution: "@medusajs/stock-location@workspace:packages/stock-location"
   dependencies:
     "@medusajs/medusa": "*"
+    "@medusajs/modules-sdk": "*"
     cross-env: ^5.2.1
     jest: ^25.5.4
     ts-jest: ^25.5.1
@@ -7951,6 +7967,7 @@ __metadata:
     "@babel/core": ^7.14.3
     "@babel/preset-typescript": ^7.13.0
     "@medusajs/medusa-cli": ^1.3.8
+    "@medusajs/modules-sdk": "*"
     "@types/express": ^4.17.17
     "@types/ioredis": ^4.28.10
     "@types/jest": ^27.5.2

@@ -24,6 +24,9 @@
     "typeorm": "^0.3.11",
     "typescript": "^4.4.4"
   },
+  "dependencies": {
+    "typeorm": "^0.3.11"
+  },
   "scripts": {
     "watch": "tsc --build --watch",
     "prepare": "cross-env NODE_ENV=production yarn run build",
@@ -34,9 +37,6 @@
   "peerDependencies": {
     "@medusajs/medusa": "*",
     "medusa-interfaces": "1.3.4"
-  },
-  "dependencies": {
-    "typeorm": "^0.3.11"
   },
   "resolutions": {
     "@medusajs/medusa": "npm:@sgftech/medusa"

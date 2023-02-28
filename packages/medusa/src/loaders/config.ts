@@ -1,9 +1,7 @@
-import { getConfigFile } from "medusa-core-utils"
 import { ConfigModule, ConfigurationType } from "../types/global"
 import logger from "./logger"
-import registerModuleDefinitions from "./module-definitions"
-import { resolveConfigProperties } from "../utils/async-load-config"
 import { asyncLoadConfig } from "../utils/async-load-config"
+import { registerModules } from "@medusajs/modules-sdk"
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
@@ -77,13 +75,7 @@ export default async (
     )
   }
 
-  const moduleResolutions = registerModuleDefinitions(configModule)
-  configModule.projectConfig = {
-    jwt_secret: jwt_secret ?? "supersecret",
-    cookie_secret: cookie_secret ?? "supersecret",
-    ...configModule.projectConfig,
-  }
-  configModule.moduleResolutions = moduleResolutions
+  const moduleResolutions = registerModules(configModule)
 
   return {
     configModule,
