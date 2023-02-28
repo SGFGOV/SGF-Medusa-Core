@@ -6453,7 +6453,7 @@ __metadata:
     typescript: ^4.4.4
   peerDependencies:
     "@medusajs/medusa": "*"
-    medusa-interfaces: 1.3.4
+    medusa-interfaces: 1.3.6
   languageName: unknown
   linkType: soft
 
@@ -6546,8 +6546,8 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.7.8-alpha-4
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=934a04&locator=root%40workspace%3A."
+  version: 1.7.9-alpha-4
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=515300&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.8
     "@medusajs/modules-sdk": "*"
@@ -6600,7 +6600,7 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: a5857c168a3ae4fd7db9bb46fefb65212017f44f45834299f515b4b1eb08b2ed9d1c037f028fd3c598cfa4a77683bb85ef802596252a38ae1ddf27f09ce3d604
+  checksum: 1cb58a4e5f38a922eb7305f1126e39547330bcdaf690b989d1e4fa672e8d45f254ff0319032a13d82d6077c5457f9a1968492f0ca1d0c98001e608057aa3a379
   languageName: node
   linkType: hard
 
