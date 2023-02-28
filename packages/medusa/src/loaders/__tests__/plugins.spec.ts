@@ -294,7 +294,7 @@ describe("plugins loader", () => {
     it("should load the services from the services directory but only js files", async () => {
       let err
       try {
-        await registerServices(pluginsDetails, container, {} as unknown as Express)
+        await registerServices(pluginsDetails, container, {} as unknown as any)
       } catch (e) {
         err = e
       }
