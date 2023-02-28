@@ -54,7 +54,7 @@ export enum MODULE_RESOURCE_TYPE {
   ISOLATED = "isolated",
 }
 
-/*export type ConfigurableModuleDeclaration = {
+/* export type ConfigurableModuleDeclaration = {
   scope: MODULE_SCOPE.INTERNAL
   resources: MODULE_RESOURCE_TYPE
   resolve?: string
@@ -71,7 +71,7 @@ export enum MODULE_RESOURCE_TYPE {
   }
 */
 
-/*export type ModuleResolution = {
+/* export type ModuleResolution = {
   resolutionPath: string | false
   definition: ModuleDefinition
   options?: Record<string, unknown>
