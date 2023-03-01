@@ -6547,7 +6547,7 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.7.9-alpha-4
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=61856a&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=8d99b6&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.8
     "@medusajs/modules-sdk": "*"
@@ -6600,7 +6600,7 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: 8edc338725029c207024ab40fe57ad35951e491ce16df442c10cde91ba1a7cd791b2e3487d7bbbb500e4ea84641e6f5214b6f9fbc1f764885b7f4a0ce7de05e0
+  checksum: da590c571b5ed5809b6edf2849efcb594253d8f89026bb8ef685f35148f27ef39f749df291123e578ad0a6845e3ccc829f8814652d7615a0564d099f03ad1445
   languageName: node
   linkType: hard
 
