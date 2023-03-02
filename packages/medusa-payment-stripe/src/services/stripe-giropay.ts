@@ -1,7 +1,8 @@
-import StripeBase from "../helpers/stripe-base"
+import StripeBase from "../core/stripe-base"
+import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 
-class Przelewy24ProviderService extends StripeBase {
-  static identifier = "stripe-przelewy24"
+class GiropayProviderService extends StripeBase {
+  static identifier = PaymentProviderKeys.GIROPAY
 
   constructor(
     {
@@ -22,16 +23,16 @@ class Przelewy24ProviderService extends StripeBase {
         manager,
       },
       options,
-      ["p24"]
+      ["giropay"]
     )
   }
 
-  get paymentIntentOptions() {
+  get paymentIntentOptions(): PaymentIntentOptions {
     return {
-      payment_method_types: ["p24"],
+      payment_method_types: ["giropay"],
       capture_method: "automatic",
     }
   }
 }
 
-export default Przelewy24ProviderService
+export default GiropayProviderService

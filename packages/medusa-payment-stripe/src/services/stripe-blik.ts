@@ -1,7 +1,8 @@
-import StripeBase from "../helpers/stripe-base"
+import StripeBase from "../core/stripe-base"
+import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 
-class GiropayProviderService extends StripeBase {
-  static identifier = "stripe-giropay"
+class BlikProviderService extends StripeBase {
+  static identifier = PaymentProviderKeys.BLIK
 
   constructor(
     {
@@ -22,16 +23,16 @@ class GiropayProviderService extends StripeBase {
         manager,
       },
       options,
-      ["giropay"]
+      ["blik"]
     )
   }
 
-  get paymentIntentOptions() {
+  get paymentIntentOptions(): PaymentIntentOptions {
     return {
-      payment_method_types: ["giropay"],
+      payment_method_types: ["blik"],
       capture_method: "automatic",
     }
   }
 }
 
-export default GiropayProviderService
+export default BlikProviderService
