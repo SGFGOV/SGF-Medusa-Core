@@ -6452,7 +6452,8 @@ __metadata:
     typeorm: ^0.3.11
     typescript: ^4.4.4
   peerDependencies:
-    "@medusajs/medusa": 1.7.10
+    "@medusajs/medusa": "*"
+    medusa-interfaces: 1.3.6
     typeorm: ^0.3.11
   languageName: unknown
   linkType: soft
@@ -6546,8 +6547,8 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.7.9-alpha-4
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=8d99b6&locator=root%40workspace%3A."
+  version: 1.7.10-alpha-1
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=cb86ba&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": ^1.3.8
     "@medusajs/modules-sdk": "*"
@@ -6600,7 +6601,7 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: da590c571b5ed5809b6edf2849efcb594253d8f89026bb8ef685f35148f27ef39f749df291123e578ad0a6845e3ccc829f8814652d7615a0564d099f03ad1445
+  checksum: 885de1bbf52fe523dbfcc6706f2c777cc0410c28aebac628e6bb53ad91957ff81b45ef6d44248c9f69787df18ed2733bb5c9ef3f5688de210ab625e27ab1fc5d
   languageName: node
   linkType: hard
 
@@ -8031,21 +8032,6 @@ __metadata:
     medusa: ./cli.js
   languageName: unknown
   linkType: soft
-
-"@sgftech/passport-saasform@npm:^0.0.19":
-  version: 0.0.19
-  resolution: "@sgftech/passport-saasform@npm:0.0.19"
-  dependencies:
-    axios: ^1.1.3
-    cookie: ^0.4.1
-    js-cookie: ^3.0.1
-    node-fetch: ^2.6.1
-    passport: ^0.6.0
-    passport-jwt: ^4.0.0
-    passport-strategy: 1.x.x
-  checksum: d293b36a7e099862d1ea36510eb37ea48ff101fef7dd96790fd69507660f63299397f65c904fe74eee911d494f2a2491230b453c67aac18dfeeb3b7e82489f77
-  languageName: node
-  linkType: hard
 
 "@shopify/network@npm:^1.5.1":
   version: 1.6.4
@@ -12621,17 +12607,6 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.4
   checksum: d106561e761bf48633633073626eafb80289eb7c7c27f9fae4fb796939b6ecd2c9f63b596e3b3d872f7c0bec6b2fb117c58456d387e4ca2da7fc07c795a979c3
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.1.3":
-  version: 1.2.2
-  resolution: "axios@npm:1.2.2"
-  dependencies:
-    follow-redirects: ^1.15.0
-    form-data: ^4.0.0
-    proxy-from-env: ^1.1.0
-  checksum: 2326cb39481853acb4b9e8cca1e5385d65009089bd80b1297297fc93c385873f690bd3e8b295a92e70054e2df371dc65da0264598dab5fc4dfe603cb3b9d7ddc
   languageName: node
   linkType: hard
 
@@ -25014,13 +24989,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-cookie@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "js-cookie@npm:3.0.1"
-  checksum: a7dab91286c49610fb198bcc0d78fbafe9be869cf3cea6f7eaea515abdfdc9d347982fe22316e34666b479a0701119482d46faa3a350a3a3404eb954405edf72
-  languageName: node
-  linkType: hard
-
 "js-levenshtein@npm:^1.1.6":
   version: 1.1.6
   resolution: "js-levenshtein@npm:1.1.6"
@@ -30330,7 +30298,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-jwt@npm:^4.0.0, passport-jwt@npm:^4.0.1":
+"passport-jwt@npm:^4.0.1":
   version: 4.0.1
   resolution: "passport-jwt@npm:4.0.1"
   dependencies:
@@ -30373,17 +30341,6 @@ __metadata:
     passport-strategy: 1.x.x
     pause: 0.0.1
   checksum: aa1a8eb2e991368734ae1e33d354c94a02c5fcd27c4ef25c3c303b4f3df1e05512ac0159e608cedbfc8c544c166735a153124cfa3bd8d48fb01f5ded500f0c5f
-  languageName: node
-  linkType: hard
-
-"passport@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "passport@npm:0.6.0"
-  dependencies:
-    passport-strategy: 1.x.x
-    pause: 0.0.1
-    utils-merge: ^1.0.1
-  checksum: 1d8651a4a1a72b84ea08c498cff9cfc209aebfe18baed4cf93292ded3f8e30a04e30b404fdfce39dfb6aa7247e205f1df43fbfd7bc7c1a67a600884359d46ee6
   languageName: node
   linkType: hard
 
@@ -37995,7 +37952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utils-merge@npm:1.0.1, utils-merge@npm:^1.0.1":
+"utils-merge@npm:1.0.1":
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: 02ba649de1b7ca8854bfe20a82f1dfbdda3fb57a22ab4a8972a63a34553cf7aa51bc9081cf7e001b035b88186d23689d69e71b510e610a09a4c66f68aa95b672
