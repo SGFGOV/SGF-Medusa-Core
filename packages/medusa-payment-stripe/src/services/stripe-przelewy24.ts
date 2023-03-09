@@ -4,27 +4,8 @@ import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 class Przelewy24ProviderService extends StripeBase {
   static identifier = PaymentProviderKeys.PRZELEWY_24
 
-  constructor(
-    {
-      stripeProviderService,
-      customerService,
-      totalsService,
-      regionService,
-      manager,
-    },
-    options
-  ) {
-    super(
-      {
-        stripeProviderService,
-        customerService,
-        totalsService,
-        regionService,
-        manager,
-      },
-      options,
-      ["p24"]
-    )
+  constructor(_, options) {
+    super(_, options)
   }
 
   get paymentIntentOptions(): PaymentIntentOptions {

@@ -4,27 +4,8 @@ import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 class BancontactProviderService extends StripeBase {
   static identifier = PaymentProviderKeys.BAN_CONTACT
 
-  constructor(
-    {
-      stripeProviderService,
-      customerService,
-      totalsService,
-      regionService,
-      manager,
-    },
-    options
-  ) {
-    super(
-      {
-        stripeProviderService,
-        customerService,
-        totalsService,
-        regionService,
-        manager,
-      },
-      options,
-      ["bancontact"]
-    )
+  constructor(_, options) {
+    super(_, options)
   }
 
   get paymentIntentOptions(): PaymentIntentOptions {

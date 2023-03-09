@@ -4,27 +4,8 @@ import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 class GiropayProviderService extends StripeBase {
   static identifier = PaymentProviderKeys.GIROPAY
 
-  constructor(
-    {
-      stripeProviderService,
-      customerService,
-      totalsService,
-      regionService,
-      manager,
-    },
-    options
-  ) {
-    super(
-      {
-        stripeProviderService,
-        customerService,
-        totalsService,
-        regionService,
-        manager,
-      },
-      options,
-      ["giropay"]
-    )
+  constructor(_, options) {
+    super(_, options)
   }
 
   get paymentIntentOptions(): PaymentIntentOptions {

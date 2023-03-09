@@ -4,27 +4,8 @@ import { PaymentIntentOptions, PaymentProviderKeys } from "../types"
 class BlikProviderService extends StripeBase {
   static identifier = PaymentProviderKeys.BLIK
 
-  constructor(
-    {
-      stripeProviderService,
-      customerService,
-      totalsService,
-      regionService,
-      manager,
-    },
-    options
-  ) {
-    super(
-      {
-        stripeProviderService,
-        customerService,
-        totalsService,
-        regionService,
-        manager,
-      },
-      options,
-      ["blik"]
-    )
+  constructor(_, options) {
+    super(_, options)
   }
 
   get paymentIntentOptions(): PaymentIntentOptions {
