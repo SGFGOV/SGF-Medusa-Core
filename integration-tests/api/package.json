@@ -9,7 +9,7 @@
     "build": "babel src -d dist --extensions \".ts,.js\""
   },
   "dependencies": {
-    "@medusajs/medusa": "npm:@sgftech/medusa",
+    "@medusajs/medusa": "*",
     "faker": "^5.5.3",
     "medusa-interfaces": "*",
     "typeorm": "^0.3.11"
@@ -23,6 +23,6 @@
     "jest-environment-node": "26.6.2"
   },
   "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa"
+    "@medusajs/medusa": "../packages/medusa"
   }
 }
