@@ -31,7 +31,8 @@ jobs:
 
       - name: Assert changed
         run: ./scripts/assert-changed-files-actions.sh "packages"
-
+      - name: disable lock as we use local references
+        run: yarn config set -H enableImmutableInstalls false
       - name: Install dependencies
         uses: ./.github/actions/cache-deps
         with:
