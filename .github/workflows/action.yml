@@ -5,6 +5,11 @@ on:
       - "docs/**"
       - "www/**"
       - "packages/admin-ui/**"
+  push:
+    branches:
+      - 'develop'
+      - 'upgrade/**'
+
 
 jobs:
   setup:
