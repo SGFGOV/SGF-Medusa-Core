@@ -2,16 +2,3 @@ dist
 node_modules
 .DS_store
 yarn.lock
-api/
-dist/
-helpers/
-node_modules/
-subscribers/
-services/
-uploads/
-cart.js
-customer.js
-eventbus.js
-stripe-provider.js
-stripe.js
-totals.js

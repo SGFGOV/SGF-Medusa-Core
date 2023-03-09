@@ -20,14 +20,14 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/medusa": "npm:@sgftech/medusa",
+    "@medusajs/medusa": "^1.7.7",
     "@types/stripe": "^8.0.417",
     "cross-env": "^5.2.1",
     "jest": "^25.5.4",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@medusajs/medusa": "*"
+    "@medusajs/medusa": "^1.7.7"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -41,6 +41,6 @@
     "medusa-plugin-payment"
   ],
   "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa"
+    "@medusajs/medusa": "../medusa"
   }
 }
