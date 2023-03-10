@@ -118,19 +118,17 @@ describe("CustomShippingOptionService", () => {
           cart_id: "test-cso-cart",
           shipping_option_id: "test-so",
           price: 30,
-          metadata: undefined,
         },
       ])
 
       expect(customShippingOptionRepository.save).toHaveBeenCalledTimes(1)
       expect(customShippingOptionRepository.save).toHaveBeenCalledWith({
-        id: "test-cso",
         0: {
           cart_id: "test-cso-cart",
           shipping_option_id: "test-so",
           price: 30,
-          metadata: undefined,
         },
+        id: "test-cso",
       })
     })
   })

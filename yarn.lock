@@ -6986,7 +6986,11 @@ __metadata:
     typeorm: ^0.3.11
     typescript: ^4.4.4
   peerDependencies:
+<<<<<<< HEAD
     "@medusajs/medusa": "*"
+=======
+    "@medusajs/medusa": 1.7.12
+>>>>>>> 601d20e7ab293728cd81f0723805841016812120
     medusa-interfaces: 1.3.6
     typeorm: ^0.3.11
   languageName: unknown

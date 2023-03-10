@@ -2083,7 +2083,7 @@ class CartService extends TransactionBaseService {
    * Shipping Option is a possible way to ship an order. Shipping Methods may
    * also have additional details in the data field such as an id for a package
    * shop.
-   * @param cartOrId - the id of the cart to add shipping method to
+   * @param cartOrId - the id or the cart to add shipping method to
    * @param optionId - id of shipping option to add as valid method
    * @param data - the fulmillment data for the method
    * @return the result of the update operation

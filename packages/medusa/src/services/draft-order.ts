@@ -352,7 +352,7 @@ class DraftOrderService extends TransactionBaseService {
             cart_id: createdCart.id,
           }))
 
-          itemsToCreate.push(...toCreate)
+          promises.push(lineItemServiceTx.create(toCreate))
         }
 
         // custom line items can be added to a draft order
