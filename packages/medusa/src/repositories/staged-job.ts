@@ -1,7 +1,7 @@
-import { dataSource } from "../loaders/database"
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity"
+import { dataSource } from "../loaders/database"
 import { StagedJob } from "../models"
-import { rowSqlResultsToEntityTransformer } from "../utils"
+import { rowSqlResultsToEntityTransformer } from "../utils/row-sql-results-to-entity-transformer"
 
 export const StagedJobRepository = dataSource.getRepository(StagedJob).extend({
   async insertBulk(jobToCreates: QueryDeepPartialEntity<StagedJob>[]) {
