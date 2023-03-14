@@ -12,7 +12,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Govind Diwakar<govind.diwakar@sourcegoodfood.com>",
+  "author": "Govind Diwakar",
+  "files": [
+    "dist",
+    "oas"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.14.3",
