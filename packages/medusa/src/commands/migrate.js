@@ -4,7 +4,11 @@ import { handleConfigError } from "../loaders/config"
 import configModuleLoader from "../loaders/config"
 import Logger from "../loaders/logger"
 import databaseLoader from "../loaders/database"
-import getMigrations, { getModuleSharedResources } from "./utils/get-migrations"
+import getMigrations, {
+  getModuleSharedResources,
+  revertIsolatedModulesMigration,
+  runIsolatedModulesMigration,
+} from "./utils/get-migrations"
 
 const getDataSource = async (directory) => {
   const { configModule, error } = await configModuleLoader(directory)
@@ -64,16 +68,19 @@ const main = async function ({ directory }) {
   args.shift()
   args.shift()
 
+  const configModule = configModuleLoader(directory)
   const dataSource = await getDataSource(directory)
 
   if (args[0] === "run") {
     await dataSource.runMigrations()
     await dataSource.destroy()
+    await runIsolatedModulesMigration(configModule)
     Logger.info("Migrations completed.")
     process.exit()
   } else if (args[0] === "revert") {
     await dataSource.undoLastMigration({ transaction: "all" })
     await dataSource.destroy()
+    await revertIsolatedModulesMigration(configModule)
     Logger.info("Migrations reverted.")
     process.exit()
   } else if (args[0] === "show") {

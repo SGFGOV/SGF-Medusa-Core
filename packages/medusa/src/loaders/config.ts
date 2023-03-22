@@ -75,8 +75,6 @@ export default async (
     )
   }
 
-  const moduleResolutions = registerModules(configModule)
-
   return {
     configModule,
   }

@@ -3,7 +3,7 @@ import fs from "fs"
 import { sync as existsSync } from "fs-exists-cached"
 import { track } from "medusa-telemetry"
 import path from "path"
-import { ConnectionOptions, createConnection } from "typeorm"
+import { DataSource, DataSourceOptions } from "typeorm"
 
 import configLoader from "../loaders/config"
 import loaders from "../loaders"
@@ -86,13 +86,16 @@ const seed = async function ({ directory, migrate, seedFile }: SeedOptions) {
       type: configModule.projectConfig.database_type,
       ...hostConfig,
       extra: configModule.projectConfig.database_extra || {},
-      migrations: coreMigrations.concat(moduleMigrations as any),
-      logging: configModule?.projectConfig.database_logging,
-    } as ConnectionOptions
-    const connection = await createConnection(connectionOptions)
+      migrations: coreMigrations.concat(moduleMigrations),
+      logging: true,
+    } as DataSourceOptions
 
+    const connection = new DataSource(connectionOptions)
+
+    await connection.initialize()
     await connection.runMigrations()
-    await connection.close()
+    await connection.destroy()
+
     Logger.info("Migrations completed.")
   }
 
