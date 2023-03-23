@@ -5,9 +5,9 @@ import {
   TreeRepository,
 } from "typeorm"
 import { AwilixContainer } from "awilix"
-import { ConfigModule, DatabaseHostConfig } from "../types/global"
+import { ConfigModule } from "../types/global"
 import "../utils/naming-strategy"
-
+import { DatabaseHostConfig } from "@medusajs/types"
 type Options = {
   configModule: ConfigModule
   container: AwilixContainer

@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusa",
-  "version": "1.7.14-alpha-3",
+  "version": "1.7.15-alpha-3",
   "description": "E-commerce for JAMstack with AWS extensions",
   "main": "dist/index.js",
   "bin": "./cli.js",

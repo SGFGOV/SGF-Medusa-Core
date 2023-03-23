@@ -1,6 +1,6 @@
 import {
-    ExternalModuleDeclaration,
-    InternalModuleDeclaration
+  ExternalModuleDeclaration,
+  InternalModuleDeclaration,
 } from "@medusajs/modules-sdk"
 import { LoggerOptions } from "typeorm"
 
@@ -13,6 +13,41 @@ type SessionOptions = {
   ttl?: number
 }
 
+export type DatabaseTlsOptions = {
+  ca: string | undefined
+  rejectUnauthorized: boolean | undefined
+}
+
+export type DatabaseHostConfig =
+  | {
+      database?: string
+      schema?: string
+      logging?: LoggerOptions
+      password?: string | (() => string) | (() => Promise<string>)
+      port?: number
+      host?: string
+      ssl?: boolean | DatabaseTlsOptions
+      username?: string
+    }
+  | {
+      database?: string
+      schema?: string
+      logging?: LoggerOptions
+      url?: string
+    }
+
+export type externalAuthentication = {
+  authMethod: string
+  externaAuthServerUrl: string
+  signUpUrl: string
+  redirectionUrl: string
+}
+
+export type ConfigurationType = {
+  configModule: ConfigModule
+  configFilePath: string
+} & { error: Error | null }
+
 export type ConfigModule = {
   projectConfig: {
     redis_url?: string
@@ -22,6 +57,11 @@ export type ConfigModule = {
     jwt_secret?: string
     cookie_secret?: string
 
+    database_host?: string
+    database_port?: number
+    database_ssl?: DatabaseTlsOptions
+    database_username?: string
+    database_password?: string | (() => string) | (() => Promise<string>)
     database_url?: string
     database_type: string
     database_database?: string
@@ -33,6 +73,8 @@ export type ConfigModule = {
     }
     store_cors?: string
     admin_cors?: string
+    externalAuth?: externalAuthentication
+    secureKeys?: { [key: string]: string }
   }
   featureFlags: Record<string, boolean | string>
   modules?: Record<
