@@ -1,13 +1,9 @@
-import {
-  ExternalModuleDeclaration,
-  InternalModuleDeclaration,
-} from "@medusajs/modules-sdk"
+import { CommonTypes } from "@medusajs/types"
 import { Request } from "express"
 import { MedusaContainer as coreMedusaContainer } from "medusa-core-utils"
 import { LoggerOptions } from "typeorm"
 import { Logger as _Logger } from "winston"
 import { Customer, User } from "../models"
-import { EmitOptions } from "../services/event-bus"
 import { FindConfig, RequestQueryFields } from "./common"
 
 declare global {
@@ -192,3 +188,4 @@ export type ConfigModule = {
     | string
   )[]
 }
+export type ConfigModule = CommonTypes.ConfigModule
