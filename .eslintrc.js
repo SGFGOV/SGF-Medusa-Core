@@ -131,7 +131,7 @@ module.exports = {
         },
         ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
         sourceType: "module", // Allows for the use of imports
-        project: "./packages/admin-ui/ui/tsconfig.json",
+        project: `${__dirname}/packages/admin-ui/ui/tsconfig.json`,
       },
       env: {
         browser: true,
@@ -159,14 +159,14 @@ module.exports = {
       files: ["packages/admin-ui/lib/**/*.ts"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "./packages/admin-ui/tsconfig.json",
+        project: `${__dirname}/packages/admin-ui/tsconfig.json`,
       },
     },
     {
       files: ["packages/admin/**/*.ts"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "./packages/admin/tsconfig.json",
+        project: `${__dirname}//packages/admin/tsconfig.json`,
       },
     },
   ],

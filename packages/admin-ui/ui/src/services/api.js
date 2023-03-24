@@ -47,6 +47,14 @@ export default {
     },
   },
   auth: {
+    saasformSession() {
+      const path = `/admin/auth/saasform`
+      return medusaRequest("GET", path)
+    },
+    saasformSessionCb() {
+      const path = `/admin/auth/saasform/cb`
+      return medusaRequest("GET", path)
+    },
     session() {
       const path = `/admin/auth`
       return medusaRequest("GET", path)
