@@ -1,6 +1,6 @@
 {
-  "name": "@medusajs/admin",
-  "version": "0.0.1",
+  "name": "@sgftech/admin",
+  "version": "0.0.5",
   "bin": {
     "medusa-admin": "./bin/medusa-admin.js"
   },
@@ -42,6 +42,9 @@
   "devDependencies": {
     "@types/express": "^4.17.13",
     "typescript": "^4.9.3"
+  },
+  "resolutions": {
+    "@medusajs/medusa": "npm:@sgftech/medusa"
   },
   "packageManager": "yarn@3.2.1"
 }

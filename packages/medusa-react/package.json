@@ -33,7 +33,7 @@
   "resolutions": {
     "@medusajs/medusa": "npm:@sgftech/medusa"
   },
-  "name": "medusa-react",
+  "name": "@sgftech/medusa-react",
   "author": "Zakaria S. El Asri",
   "devDependencies": {
     "@babel/core": "^7.16.0",

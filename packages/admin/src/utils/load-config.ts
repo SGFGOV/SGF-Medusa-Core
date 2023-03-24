@@ -7,7 +7,7 @@ export const loadConfig = () => {
     "medusa-config"
   )
 
-  const plugin = configModule.plugins.find(
+  const plugin = configModule.plugins?.find(
     (p) =>
       (typeof p === "string" && p === "@medusajs/admin") ||
       (typeof p === "object" && p.resolve === "@medusajs/admin")
@@ -15,12 +15,14 @@ export const loadConfig = () => {
 
   let defaultConfig: PluginOptions = {
     serve: true,
-    autoRebuild: false,
+    autoRebuild: true,
     path: "app",
+    outDir:"build"
   }
 
-  if (typeof plugin !== "string") {
+  if (plugin && typeof plugin !== "string") {
     const { options } = plugin as { options: PluginOptions }
+    if(options)
     defaultConfig = {
       serve: options.serve ?? defaultConfig.serve,
       autoRebuild: options.autoRebuild ?? defaultConfig.autoRebuild,
