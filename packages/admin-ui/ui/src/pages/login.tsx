@@ -48,24 +48,24 @@ const LoginPage = () => {
     setResetPassword(true)
   }
   if(!MEDUSA_USER_LOGIN){
-  return (
-    <PublicLayout>
-      <SEO title="Login" />
+    return (
+      <PublicLayout>
+        <SEO title="Login" />
 
-      {resetPassword ? (
-        <ResetTokenCard goBack={showLogin} />
-      ) : (
-        <LoginCard toResetPassword={showResetPassword} />
-      )}
-    </PublicLayout>
-  )
-      }
-      else{ 
-  return (
-    <PublicLayout>
-      <>Please wait redirecting to the user login page</>
-    </PublicLayout>)
-      }
+        {resetPassword ? (
+          <ResetTokenCard goBack={showLogin} />
+        ) : (
+          <LoginCard toResetPassword={showResetPassword} />
+        )}
+      </PublicLayout>
+    )
+  }
+  else{ 
+    return (
+      <PublicLayout>
+        <>Please wait redirecting to the user login page</>
+      </PublicLayout>)
+  }
 }
 
 export default LoginPage
