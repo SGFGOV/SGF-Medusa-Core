@@ -50,7 +50,7 @@ const getTmpDirectory = async () => {
   /**
    * RUNNER_TEMP: GitHub action, the path to a temporary directory on the runner.
    */
-  const tmpDir = process.env["RUNNER_TEMP"] ?? `/tmp/${os.tmpdir()}`
+  const tmpDir = process.env["RUNNER_TEMP"] ?? os.tmpdir()
   return await fs.mkdtemp(tmpDir)
 }
 

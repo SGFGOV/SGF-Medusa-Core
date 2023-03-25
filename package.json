@@ -99,7 +99,8 @@
   "resolutions": {
     "@medusajs/medusa": "./packages/medusa",
     "@redocly/cli/react": "^17.0.1",
-    "@redocly/cli/react-dom": "^17.0.1"
+    "@redocly/cli/react-dom": "^17.0.1",
+    "@medusajs/types": "./packages/types"
   },
   "packageManager": "yarn@3.2.1",
   "version": "0.0.3"
