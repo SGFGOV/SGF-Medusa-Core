@@ -1,4 +1,5 @@
 import { join } from "path"
+import { isPromise, resolveConfigModule } from "./async-load-helper"
 
 /**
  * Attempts to resolve the config file in a given root directory.
@@ -18,6 +19,12 @@ function getConfigFile<TConfig = unknown>(
   try {
     configFilePath = require.resolve(configPath)
     configModule = require(configFilePath)
+    if (isPromise(configModule)) {
+      resolveConfigModule({ configModule }).then((config) => {
+        Object.assign(configModule, config)
+        return config
+      })
+    }
   } catch (e) {
     err = e
   }

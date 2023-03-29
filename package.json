@@ -100,7 +100,8 @@
     "@medusajs/medusa": "./packages/medusa",
     "@redocly/cli/react": "^17.0.1",
     "@redocly/cli/react-dom": "^17.0.1",
-    "@medusajs/types": "./packages/types"
+    "@medusajs/types": "./packages/types",
+    "@medusajs/utils": "./packages/utils"
   },
   "packageManager": "yarn@3.2.1",
   "version": "0.0.3"
