@@ -81,6 +81,7 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       parserOptions: {
         project: [
+<<<<<<< HEAD
           `${__dirname}/packages/medusa/tsconfig.json`,
           `${__dirname}/packages/medusa-payment-stripe/tsconfig.spec.json`,
           `${__dirname}/packages/event-bus-local/tsconfig.spec.json`,
@@ -92,6 +93,21 @@ module.exports = {
           `${__dirname}/packages/stock-location/tsconfig.spec.json`,
           `${__dirname}/packages/cache-redis/tsconfig.spec.json`,
           `${__dirname}/packages/cache-inmemory/tsconfig.spec.json`,
+=======
+          "./packages/medusa/tsconfig.json",
+          "./packages/medusa-payment-stripe/tsconfig.spec.json",
+          "./packages/medusa-payment-paypal/tsconfig.spec.json",
+          "./packages/admin-ui/tsconfig.json",
+          "./packages/event-bus-local/tsconfig.spec.json",
+          "./packages/event-bus-redis/tsconfig.spec.json",
+          "./packages/medusa-plugin-meilisearch/tsconfig.spec.json",
+          "./packages/medusa-plugin-algolia/tsconfig.spec.json",
+          "./packages/admin-ui/tsconfig.json",
+          "./packages/inventory/tsconfig.spec.json",
+          "./packages/stock-location/tsconfig.spec.json",
+          "./packages/cache-redis/tsconfig.spec.json",
+          "./packages/cache-inmemory/tsconfig.spec.json",
+>>>>>>> 8ddb3952c045e6c05c8d0f6922f0d4ba30cf3bd4
         ],
       },
       rules: {

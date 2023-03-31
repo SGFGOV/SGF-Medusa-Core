@@ -15,8 +15,6 @@ import clsx from "clsx"
 import { sum } from "lodash"
 import { useAdminStockLocations } from "medusa-react"
 import { useFeatureFlag } from "../../../../../providers/feature-flag-provider"
-// import { InventoryLevelDTO, StockLocationDTO } from "@medusajs/medusa"
-
 
 export type VariantStockFormType = {
   manage_inventory?: boolean
@@ -108,15 +106,17 @@ const VariantStockForm = ({ form }: Props) => {
             placeholder="SUN-G, JK1234..."
             {...register(path("sku"))}
           />
-          <InputField
-            label="Quantity in stock"
-            type="number"
-            placeholder="100..."
-            errors={errors}
-            {...register(path("inventory_quantity"), {
-              valueAsNumber: true,
-            })}
-          />
+          {!stockLocationEnabled && (
+            <InputField
+              label="Quantity in stock"
+              type="number"
+              placeholder="100..."
+              errors={errors}
+              {...register(path("inventory_quantity"), {
+                valueAsNumber: true,
+              })}
+            />
+          )}
           <InputField
             label="EAN (Barcode)"
             placeholder="123456789102..."
