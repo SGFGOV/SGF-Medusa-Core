@@ -1,5 +1,33 @@
 # Change Log
 
+## 1.8.0-rc.4
+
+### Minor Changes
+
+- [#3554](https://github.com/medusajs/medusa/pull/3554) [`5fd74b38a`](https://github.com/medusajs/medusa/commit/5fd74b38ae1b4f7dced191983b78db83f7b1f71b) Thanks [@pKorsholm](https://github.com/pKorsholm)! - feat(medusa): remove reservations if cart completion fails after reservation creation
+
+- [#3544](https://github.com/medusajs/medusa/pull/3544) [`5e405be02`](https://github.com/medusajs/medusa/commit/5e405be02cc94779222dc3d930e747027496d918) Thanks [@pKorsholm](https://github.com/pKorsholm)! - feat(medusa): remove reservations for all old line items when an order edit is accepted
+
+- [#3591](https://github.com/medusajs/medusa/pull/3591) [`a7e3f2d34`](https://github.com/medusajs/medusa/commit/a7e3f2d343c4059ba83022ec5c09f8101b251297) Thanks [@pKorsholm](https://github.com/pKorsholm)! - feat(admin-ui): move customs and shipping into manage inventory modal
+
+### Patch Changes
+
+- [#3624](https://github.com/medusajs/medusa/pull/3624) [`999aeb116`](https://github.com/medusajs/medusa/commit/999aeb116c4742e5b5e0d80793af23f7727276f0) Thanks [@pKorsholm](https://github.com/pKorsholm)! - fix(medusa): Fix hanging inventory item migration script
+
+## 1.8.0-rc.3
+
+### Minor Changes
+
+- [#3552](https://github.com/medusajs/medusa/pull/3552) [`0695ff642`](https://github.com/medusajs/medusa/commit/0695ff642b5836e7c28d40118aafe7a769023d5a) Thanks [@pKorsholm](https://github.com/pKorsholm)! - fix(medusa): remove limit of the number of levels to list when joining levels
+
+### Patch Changes
+
+- [#3622](https://github.com/medusajs/medusa/pull/3622) [`693015fde`](https://github.com/medusajs/medusa/commit/693015fde3218d67fb9c07eebeaea9950bf3f1f1) Thanks [@olivermrbl](https://github.com/olivermrbl)! - chore(medusa): EOL causing logging to hang
+
+- Updated dependencies [[`cd54c7dca`](https://github.com/medusajs/medusa/commit/cd54c7dca9f7444dd2bfa91b4e3e3359dc6658cf), [`55e94d0b4`](https://github.com/medusajs/medusa/commit/55e94d0b45776776639d3970d4264b8f5c5385dd)]:
+  - @medusajs/medusa-cli@1.3.9-rc.1
+  - @medusajs/modules-sdk@0.1.0-rc.3
+
 ## 1.8.0-rc.2
 
 ### Patch Changes
