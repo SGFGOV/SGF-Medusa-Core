@@ -1,6 +1,6 @@
 {
-  "name": "@sgftech/medusa-types",
-  "version": "0.0.2-rc.3",
+  "name": "@medusajs/types",
+  "version": "1.8.0",
   "description": "Medusa Types definition",
   "main": "dist/index.js",
   "repository": {
