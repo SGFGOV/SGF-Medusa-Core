@@ -387,7 +387,7 @@ export async function registerServices(
           [`${name}Oauth`]: asFunction(
             (cradle) => new loaded(cradle, pluginDetails.options),
             {
-              lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+              lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
             }
           ),
         })
@@ -396,7 +396,7 @@ export async function registerServices(
         container.registerAdd(
           "fulfillmentProviders",
           asFunction((cradle) => new loaded(cradle, pluginDetails.options), {
-            lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+            lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
           })
         )
 
@@ -415,7 +415,7 @@ export async function registerServices(
         container.registerAdd(
           "notificationProviders",
           asFunction((cradle) => new loaded(cradle, pluginDetails.options), {
-            lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+            lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
           })
         )
 
@@ -440,7 +440,7 @@ export async function registerServices(
           [name]: asFunction(
             (cradle) => new loaded(cradle, pluginDetails.options),
             {
-              lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+              lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
             }
           ),
           [`fileService`]: aliasTo(name),
@@ -452,7 +452,7 @@ export async function registerServices(
           [name]: asFunction(
             (cradle) => new loaded(cradle, pluginDetails.options),
             {
-              lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+              lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
             }
           ),
           [`searchService`]: aliasTo(name),
@@ -463,7 +463,7 @@ export async function registerServices(
         container.registerAdd(
           "taxProviders",
           asFunction((cradle) => new loaded(cradle, pluginDetails.options), {
-            lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+            lifetime: loaded.LIFE_TIME || Lifetime.SINGLETON,
           })
         )
 
@@ -481,7 +481,7 @@ export async function registerServices(
           [name]: asFunction(
             (cradle) => new loaded(cradle, pluginDetails.options),
             {
-              lifetime: loaded.LIFE_TIME || Lifetime.TRANSIENT,
+              lifetime: loaded.LIFE_TIME || Lifetime.SCOPED,
             }
           ),
         })
