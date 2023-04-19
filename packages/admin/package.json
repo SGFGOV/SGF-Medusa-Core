@@ -45,7 +45,7 @@
   },
   "resolutions": {
     "@medusajs/medusa": "npm:@sgftech/medusa",
-    "@medusajs/admin-ui":"npm:@sgftech/admin-ui"
+    "@medusajs/admin-ui": "npm:@sgftech/admin-ui"
   },
   "packageManager": "yarn@3.2.1"
 }

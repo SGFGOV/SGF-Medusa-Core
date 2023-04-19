@@ -94,6 +94,6 @@
   },
   "packageManager": "yarn@3.2.1",
   "resolutions": {
-    "@medusajs/medusa-js":"@sgftech/medusa-js"
+    "@medusajs/medusa-js": "@sgftech/medusa-js"
   }
 }
