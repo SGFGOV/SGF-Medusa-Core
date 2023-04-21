@@ -97,6 +97,15 @@ module.exports = {
       className: "homepage-sidebar-item",
     },
     {
+      type: "doc",
+      id: "storefront/roadmap",
+      label: "Build a Storefront",
+      customProps: {
+        sidebar_icon: "building-storefront",
+      },
+      className: "homepage-sidebar-item",
+    },
+    {
       type: "html",
       value: "SDKs",
       customProps: {
@@ -198,6 +207,18 @@ module.exports = {
                   light:
                     "https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-light_fzuyeo.png",
                   dark: "https://res.cloudinary.com/dza7lstvk/image/upload/v1669741520/Medusa%20Docs/Other/railway-dark_kkzuwh.png",
+                },
+              },
+            },
+            {
+              type: "doc",
+              id: "deployments/server/deploying-on-microtica",
+              label: "Deploy on Microtica",
+              customProps: {
+                themedImage: {
+                  light:
+                    "https://res.cloudinary.com/dza7lstvk/image/upload/v1681296578/Medusa%20Docs/Other/aF4ZuDS_t11rcu.png",
+                  dark: "https://res.cloudinary.com/dza7lstvk/image/upload/v1681296612/Medusa%20Docs/Other/Lg7NHQk_qo6oax.png",
                 },
               },
             },
@@ -568,25 +589,14 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/products/products",
           label: "Products",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "doc",
           id: "modules/products/categories",
           label: "Categories",
-        },
-        {
-          type: "link",
-          href: "#",
-          label: "Collections",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "html",
@@ -596,12 +606,9 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/products/admin/manage-products",
           label: "Admin: Manage Products",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "doc",
@@ -609,38 +616,19 @@ module.exports = {
           label: "Admin: Manage Categories",
         },
         {
-          type: "link",
-          href: "#",
-          label: "Admin: Manage Collections",
-          customProps: {
-            sidebar_is_soon: true,
-          },
-        },
-        {
           type: "doc",
           id: "modules/products/admin/import-products",
           label: "Admin: Import Products",
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/products/storefront/show-products",
           label: "Storefront: Show Products",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "doc",
-          id: "modules/products/store/use-categories",
+          id: "modules/products/storefront/use-categories",
           label: "Storefront: Use Categories",
-        },
-        {
-          type: "link",
-          href: "#",
-          label: "Storefront: Show Collections",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
       ],
     },

@@ -48,34 +48,47 @@ export type ConfigurationType = {
   configFilePath: string
 } & { error: Error | null }
 
-export type ConfigModule = {
-  projectConfig: {
-    redis_url?: string
 
-    session_options?: SessionOptions
+export type HttpCompressionOptions = {
+  enabled?: boolean
+  level?: number
+  memLevel?: number
+  threshold?: number | string
+}
 
-    jwt_secret?: string
-    cookie_secret?: string
+export type ProjectConfigOptions = {
+  redis_url?: string
+
+  session_options?: SessionOptions
+
+  jwt_secret?: string
+  cookie_secret?: string
+
+  database_url?: string
+  database_type: string
+  database_database?: string
+  database_schema?: string
+  database_logging: LoggerOptions
 
     database_host?: string
     database_port?: number
     database_ssl?: DatabaseTlsOptions
     database_username?: string
     database_password?: string | (() => string) | (() => Promise<string>)
-    database_url?: string
-    database_type: string
-    database_database?: string
-    database_schema?: string
-    database_logging: LoggerOptions
 
-    database_extra?: Record<string, unknown> & {
-      ssl: { rejectUnauthorized: false }
-    }
-    store_cors?: string
-    admin_cors?: string
     externalAuth?: externalAuthentication
     secureKeys?: { [key: string]: string }
+  http_compression?: HttpCompressionOptions
+
+  database_extra?: Record<string, unknown> & {
+    ssl: { rejectUnauthorized: false }
   }
+  store_cors?: string
+  admin_cors?: string
+}
+
+export type ConfigModule = {
+  projectConfig: ProjectConfigOptions
   featureFlags: Record<string, boolean | string>
   modules?: Record<
     string,
