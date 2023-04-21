@@ -44,8 +44,8 @@
     "typescript": "^4.9.3"
   },
   "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa",
-    "@medusajs/admin-ui": "npm:@sgftech/admin-ui"
+    "@medusajs/medusa": "@npm:@sgftech/medusa",
+    "@medusajs/admin-ui": "@npm:@sgftech/admin-ui"
   },
   "packageManager": "yarn@3.2.1"
 }

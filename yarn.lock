@@ -7203,7 +7203,7 @@ __metadata:
 
 "@medusajs/medusa-js@file:../medusa-js::locator=%40sgftech%2Fmedusa-react%40workspace%3Apackages%2Fmedusa-react":
   version: 2.0.2
-  resolution: "@medusajs/medusa-js@file:../medusa-js#../medusa-js::hash=8596fe&locator=%40sgftech%2Fmedusa-react%40workspace%3Apackages%2Fmedusa-react"
+  resolution: "@medusajs/medusa-js@file:../medusa-js#../medusa-js::hash=a9b420&locator=%40sgftech%2Fmedusa-react%40workspace%3Apackages%2Fmedusa-react"
   dependencies:
     "@medusajs/medusa": "*"
     axios: 0.26.1
@@ -7213,7 +7213,7 @@ __metadata:
     uuid: ^9.0.0
   peerDependencies:
     "@medusajs/medusa": "*"
-  checksum: 1c37fad40059c150a831e33237438d03f6d5be3ac0737d292b113a5c6387a6c6077cb6d7a7cf7049acf4b060322a7c9f71e76d88973d92cb7148a032b2fc9fd8
+  checksum: f69e4db019691160dfd7ceee07ad013eea7787a845d092a33775e184ff757016cec96e6bc5232e35cbc9e3c40395accf02479fb1e0c06413480ad6fa0632f4fa
   languageName: node
   linkType: hard
 
@@ -7258,11 +7258,11 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.8.3
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=7bef95&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=787208&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.10
     "@medusajs/modules-sdk": 1.8.2
-    "@medusajs/utils": 1.8.1
+    "@medusajs/utils": "@npm:@sgftech/medusajs-utils"
     "@types/ioredis": ^4.28.10
     "@types/lodash": ^4.14.191
     awilix: ^8.0.0
@@ -7315,7 +7315,7 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: b07da6f73411d7b724807af74c6147e5277f9e8637712e304069244aaf9d35bd458d46b8ed838a4369845e395fd8f4d022adfb393ddcbe285bd045e6c01025a9
+  checksum: 9d919d18e391dfd3bd3a0ed88196b470f03987d8e941030247239502abd731b0fe91d7529276acb7f532f1caa7d3ffe7d9d06ad905c24abc0f10e517ede074ab
   languageName: node
   linkType: hard
 
@@ -7400,8 +7400,8 @@ __metadata:
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
   version: 1.8.2
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=1b5773&locator=root%40workspace%3A."
-  checksum: f5374ddc1c503ff5cba8acf998e9ca0f6644581afc5a1a751be5ae813f97e13a05f4291205e819e9be8eb9129a101b041cb1f622ddace5d67651c4f288bef295
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=e9b879&locator=root%40workspace%3A."
+  checksum: 6a6f2052df94735b891ed9a846e230ae93fc6d88ee224d5ad86885f5cc46c7c0bf6b6d0be8229f1d6005e5722280b3d34461e3543eb083ddc5bb99dc8337f94b
   languageName: node
   linkType: hard
 
@@ -7419,14 +7419,14 @@ __metadata:
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
   version: 1.8.1
-  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=e0994e&locator=root%40workspace%3A."
+  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=6421e5&locator=root%40workspace%3A."
   dependencies:
     awilix: ^8.0.0
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
     typeorm: ^0.3.14
     ulid: ^2.3.0
-  checksum: a3aa9f06f84b57ee2f050642d9b8bb04607521fe49b5b15a4601a756bd17d7f3a07698876bd051aa5bd50e0cd0a227781c47d2254d7028615dbdf0beff214d1c
+  checksum: 81cf8fce2c4883135c920555a507bfb9a31da5a083b7f203a326d9af2c97ddb5e41dca4da04973f44d514af0bb0b415c1cc94ac1de3955039a8f0e316554d82f
   languageName: node
   linkType: hard
 
@@ -9567,7 +9567,7 @@ __metadata:
     "@medusajs/medusa-cli": 1.3.10
     "@medusajs/modules-sdk": 1.8.2
     "@medusajs/types": 1.8.2
-    "@medusajs/utils": 1.8.1
+    "@medusajs/utils": "@npm:@sgftech/medusajs-utils"
     "@types/express": ^4.17.17
     "@types/ioredis": ^4.28.10
     "@types/jsonwebtoken": ^8.5.9

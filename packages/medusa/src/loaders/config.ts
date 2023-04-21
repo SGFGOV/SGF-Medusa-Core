@@ -1,7 +1,7 @@
 import { ConfigModule } from "../types/global"
 import logger from "./logger"
 import { asyncLoadConfig } from "../utils/async-load-config"
-import { registerModules } from "@medusajs/modules-sdk"
+
 
 const isProduction = ["production", "prod"].includes(process.env.NODE_ENV || "")
 
