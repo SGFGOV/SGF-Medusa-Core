@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/admin",
+  "name": "@sgftech/admin",
   "version": "2.0.2",
   "bin": {
     "medusa-admin": "./bin/medusa-admin.js"

@@ -7045,28 +7045,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/admin@workspace:packages/admin":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/admin@workspace:packages/admin"
-  dependencies:
-    "@medusajs/admin-ui": 1.8.2
-    "@types/express": ^4.17.13
-    commander: ^10.0.0
-    dotenv: ^16.0.3
-    express: ^4.17.1
-    fs-extra: ^11.1.0
-    medusa-core-utils: 1.2.0
-    ora: 5.4.0
-    picocolors: ^1.0.0
-    ts-dedent: ^2.2.0
-    typescript: ^4.9.3
-  peerDependencies:
-    "@medusajs/medusa": 1.8.2
-  bin:
-    medusa-admin: ./bin/medusa-admin.js
-  languageName: unknown
-  linkType: soft
-
 "@medusajs/cache-inmemory@1.8.2, @medusajs/cache-inmemory@workspace:packages/cache-inmemory":
   version: 0.0.0-use.local
   resolution: "@medusajs/cache-inmemory@workspace:packages/cache-inmemory"
@@ -7257,12 +7235,12 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.8.3
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=787208&locator=root%40workspace%3A."
+  version: 1.8.4-alpha4
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=227bb8&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.10
     "@medusajs/modules-sdk": 1.8.2
-    "@medusajs/utils": "@npm:@sgftech/medusajs-utils"
+    "@medusajs/utils": "npm:@sgftech/medusajs-utils"
     "@types/ioredis": ^4.28.10
     "@types/lodash": ^4.14.191
     awilix: ^8.0.0
@@ -7310,12 +7288,12 @@ __metadata:
     uuid: ^9.0.0
     winston: ^3.8.2
   peerDependencies:
-    "@medusajs/types": 1.8.2
+    "@medusajs/types": "*"
     medusa-interfaces: 1.3.7
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: 9d919d18e391dfd3bd3a0ed88196b470f03987d8e941030247239502abd731b0fe91d7529276acb7f532f1caa7d3ffe7d9d06ad905c24abc0f10e517ede074ab
+  checksum: f02405d4dbd1c028e7647c2a66ab4f93ed2bdafde0ac1741377ece059ce24fd43233f0d6fd51034361cc1ff10c4fc91c56bc7c6b69d642a3ace0a139780f920a
   languageName: node
   linkType: hard
 
@@ -7400,22 +7378,10 @@ __metadata:
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
   version: 1.8.2
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=e9b879&locator=root%40workspace%3A."
-  checksum: 6a6f2052df94735b891ed9a846e230ae93fc6d88ee224d5ad86885f5cc46c7c0bf6b6d0be8229f1d6005e5722280b3d34461e3543eb083ddc5bb99dc8337f94b
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=ad1ca4&locator=root%40workspace%3A."
+  checksum: a5e45838fdb1dcb37817232e91e551645308699ff02b9d8b1ba422ca89fa195ba95f860d50e2472882766526feb5b55a36df10616d7d21e5eb66faa660be2d34
   languageName: node
   linkType: hard
-
-"@medusajs/types@workspace:packages/types":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/types@workspace:packages/types"
-  dependencies:
-    awilix: ^8.0.0
-    cross-env: ^5.2.1
-    typeorm: ^0.3.14
-    typescript: ^4.4.4
-    winston: ^3.8.2
-  languageName: unknown
-  linkType: soft
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
   version: 1.8.1
@@ -9469,6 +9435,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sgftech/admin@workspace:packages/admin":
+  version: 0.0.0-use.local
+  resolution: "@sgftech/admin@workspace:packages/admin"
+  dependencies:
+    "@medusajs/admin-ui": 1.8.2
+    "@types/express": ^4.17.13
+    commander: ^10.0.0
+    dotenv: ^16.0.3
+    express: ^4.17.1
+    fs-extra: ^11.1.0
+    medusa-core-utils: 1.2.0
+    ora: 5.4.0
+    picocolors: ^1.0.0
+    ts-dedent: ^2.2.0
+    typescript: ^4.9.3
+  peerDependencies:
+    "@medusajs/medusa": 1.8.2
+  bin:
+    medusa-admin: ./bin/medusa-admin.js
+  languageName: unknown
+  linkType: soft
+
 "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3":
   version: 0.0.0-use.local
   resolution: "@sgftech/medusa-file-s3@workspace:packages/medusa-file-s3"
@@ -9566,8 +9554,8 @@ __metadata:
   dependencies:
     "@medusajs/medusa-cli": 1.3.10
     "@medusajs/modules-sdk": 1.8.2
-    "@medusajs/types": 1.8.2
-    "@medusajs/utils": "@npm:@sgftech/medusajs-utils"
+    "@medusajs/types": "npm:@sgftech/medusajs-types"
+    "@medusajs/utils": "npm:@sgftech/medusajs-utils"
     "@types/express": ^4.17.17
     "@types/ioredis": ^4.28.10
     "@types/jsonwebtoken": ^8.5.9
@@ -9624,11 +9612,23 @@ __metadata:
     uuid: ^9.0.0
     winston: ^3.8.2
   peerDependencies:
-    "@medusajs/types": 1.8.2
+    "@medusajs/types": "*"
     medusa-interfaces: 1.3.7
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
+  languageName: unknown
+  linkType: soft
+
+"@sgftech/medusajs-types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@sgftech/medusajs-types@workspace:packages/types"
+  dependencies:
+    awilix: ^8.0.0
+    cross-env: ^5.2.1
+    typeorm: ^0.3.14
+    typescript: ^4.4.4
+    winston: ^3.8.2
   languageName: unknown
   linkType: soft
 

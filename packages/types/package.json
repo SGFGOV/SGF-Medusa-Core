@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/types",
+  "name": "@sgftech/medusajs-types",
   "version": "1.8.2",
   "description": "Medusa Types definition",
   "main": "dist/index.js",
