@@ -1132,7 +1132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.12.1, @babel/cli@npm:^7.14.3, @babel/cli@npm:^7.15.4, @babel/cli@npm:^7.16.0, @babel/cli@npm:^7.7.5":
+"@babel/cli@npm:^7.12.1, @babel/cli@npm:^7.14.3, @babel/cli@npm:^7.15.4, @babel/cli@npm:^7.7.5":
   version: 7.18.6
   resolution: "@babel/cli@npm:7.18.6"
   dependencies:
@@ -1938,7 +1938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/node@npm:^7.12.6, @babel/node@npm:^7.15.4, @babel/node@npm:^7.16.0, @babel/node@npm:^7.7.4":
+"@babel/node@npm:^7.12.6, @babel/node@npm:^7.15.4, @babel/node@npm:^7.7.4":
   version: 7.18.6
   resolution: "@babel/node@npm:7.18.6"
   dependencies:
@@ -2087,7 +2087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.10.4, @babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.14.0, @babel/plugin-proposal-class-properties@npm:^7.14.5, @babel/plugin-proposal-class-properties@npm:^7.16.0, @babel/plugin-proposal-class-properties@npm:^7.18.6, @babel/plugin-proposal-class-properties@npm:^7.7.4":
+"@babel/plugin-proposal-class-properties@npm:^7.0.0, @babel/plugin-proposal-class-properties@npm:^7.10.4, @babel/plugin-proposal-class-properties@npm:^7.12.1, @babel/plugin-proposal-class-properties@npm:^7.14.0, @babel/plugin-proposal-class-properties@npm:^7.14.5, @babel/plugin-proposal-class-properties@npm:^7.18.6, @babel/plugin-proposal-class-properties@npm:^7.7.4":
   version: 7.18.6
   resolution: "@babel/plugin-proposal-class-properties@npm:7.18.6"
   dependencies:
@@ -2723,7 +2723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-classes@npm:^7.0.0, @babel/plugin-transform-classes@npm:^7.10.4, @babel/plugin-transform-classes@npm:^7.12.1, @babel/plugin-transform-classes@npm:^7.15.4, @babel/plugin-transform-classes@npm:^7.16.0, @babel/plugin-transform-classes@npm:^7.18.6, @babel/plugin-transform-classes@npm:^7.9.5":
+"@babel/plugin-transform-classes@npm:^7.0.0, @babel/plugin-transform-classes@npm:^7.10.4, @babel/plugin-transform-classes@npm:^7.12.1, @babel/plugin-transform-classes@npm:^7.15.4, @babel/plugin-transform-classes@npm:^7.18.6, @babel/plugin-transform-classes@npm:^7.9.5":
   version: 7.18.8
   resolution: "@babel/plugin-transform-classes@npm:7.18.8"
   dependencies:
@@ -2911,7 +2911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-instanceof@npm:^7.10.4, @babel/plugin-transform-instanceof@npm:^7.12.1, @babel/plugin-transform-instanceof@npm:^7.12.13, @babel/plugin-transform-instanceof@npm:^7.14.5, @babel/plugin-transform-instanceof@npm:^7.16.0, @babel/plugin-transform-instanceof@npm:^7.8.3":
+"@babel/plugin-transform-instanceof@npm:^7.10.4, @babel/plugin-transform-instanceof@npm:^7.12.1, @babel/plugin-transform-instanceof@npm:^7.12.13, @babel/plugin-transform-instanceof@npm:^7.14.5, @babel/plugin-transform-instanceof@npm:^7.8.3":
   version: 7.18.6
   resolution: "@babel/plugin-transform-instanceof@npm:7.18.6"
   dependencies:
@@ -3247,7 +3247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-runtime@npm:^7.11.5, @babel/plugin-transform-runtime@npm:^7.12.1, @babel/plugin-transform-runtime@npm:^7.15.0, @babel/plugin-transform-runtime@npm:^7.16.4, @babel/plugin-transform-runtime@npm:^7.7.6":
+"@babel/plugin-transform-runtime@npm:^7.11.5, @babel/plugin-transform-runtime@npm:^7.12.1, @babel/plugin-transform-runtime@npm:^7.15.0, @babel/plugin-transform-runtime@npm:^7.7.6":
   version: 7.18.6
   resolution: "@babel/plugin-transform-runtime@npm:7.18.6"
   dependencies:
@@ -3494,7 +3494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.11.5, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.7, @babel/preset-env@npm:^7.15.4, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.16.4, @babel/preset-env@npm:^7.7.5":
+"@babel/preset-env@npm:^7.11.5, @babel/preset-env@npm:^7.12.11, @babel/preset-env@npm:^7.12.7, @babel/preset-env@npm:^7.15.4, @babel/preset-env@npm:^7.15.6, @babel/preset-env@npm:^7.7.5":
   version: 7.18.6
   resolution: "@babel/preset-env@npm:7.18.6"
   dependencies:
@@ -3721,7 +3721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.11.5, @babel/register@npm:^7.12.1, @babel/register@npm:^7.15.3, @babel/register@npm:^7.16.0, @babel/register@npm:^7.18.6, @babel/register@npm:^7.7.4":
+"@babel/register@npm:^7.11.5, @babel/register@npm:^7.12.1, @babel/register@npm:^7.15.3, @babel/register@npm:^7.18.6, @babel/register@npm:^7.7.4":
   version: 7.18.6
   resolution: "@babel/register@npm:7.18.6"
   dependencies:
@@ -3768,7 +3768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2, @babel/runtime@npm:^7.9.6":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2, @babel/runtime@npm:^7.9.6":
   version: 7.18.6
   resolution: "@babel/runtime@npm:7.18.6"
   dependencies:
@@ -7236,7 +7236,7 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.8.4-alpha4
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=227bb8&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=55612b&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.10
     "@medusajs/modules-sdk": 1.8.2
@@ -7293,7 +7293,7 @@ __metadata:
     typeorm: ^0.3.11
   bin:
     medusa: ./cli.js
-  checksum: f02405d4dbd1c028e7647c2a66ab4f93ed2bdafde0ac1741377ece059ce24fd43233f0d6fd51034361cc1ff10c4fc91c56bc7c6b69d642a3ace0a139780f920a
+  checksum: 0836d496654dd93eb795780eaec7e03a97509c214e7afd7a22fd8ab624d018d80869dfa23308fdeb6293b773095421feaac9cf796a3e712cb968babea47a624e
   languageName: node
   linkType: hard
 
@@ -7378,21 +7378,21 @@ __metadata:
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
   version: 1.8.2
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=ad1ca4&locator=root%40workspace%3A."
-  checksum: a5e45838fdb1dcb37817232e91e551645308699ff02b9d8b1ba422ca89fa195ba95f860d50e2472882766526feb5b55a36df10616d7d21e5eb66faa660be2d34
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=436012&locator=root%40workspace%3A."
+  checksum: b495ec49c5fdb9830430c3234207ba462c041e8ec86e2edeb4e099bde339756cabd32e52d05a5fc0a04950880f2f4daf33588d600bd1a25cf6c65a11dc6bd828
   languageName: node
   linkType: hard
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
-  version: 1.8.1
-  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=6421e5&locator=root%40workspace%3A."
+  version: 1.8.2
+  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=b31efb&locator=root%40workspace%3A."
   dependencies:
     awilix: ^8.0.0
     class-transformer: ^0.5.1
     class-validator: ^0.13.2
     typeorm: ^0.3.14
     ulid: ^2.3.0
-  checksum: 81cf8fce2c4883135c920555a507bfb9a31da5a083b7f203a326d9af2c97ddb5e41dca4da04973f44d514af0bb0b415c1cc94ac1de3955039a8f0e316554d82f
+  checksum: 93ebc01e4d8809738f01e091be6c7ae22ba5395ec5d3154749778b101d574595c96b4b30ba3273d69e6de04b8fe78a4d9ef87b5a7b6d729e5eeff3335f467beb
   languageName: node
   linkType: hard
 
@@ -9463,25 +9463,17 @@ __metadata:
   dependencies:
     "@aws-sdk/client-sts": ^3.183.0
     "@aws-sdk/credential-provider-node": ^3.183.0
-    "@babel/cli": ^7.7.5
-    "@babel/core": ^7.7.5
-    "@babel/node": ^7.7.4
-    "@babel/plugin-proposal-class-properties": ^7.7.4
     "@babel/plugin-transform-classes": ^7.15.4
-    "@babel/plugin-transform-instanceof": ^7.8.3
-    "@babel/plugin-transform-runtime": ^7.7.6
-    "@babel/preset-env": ^7.7.5
-    "@babel/register": ^7.7.4
-    "@babel/runtime": ^7.9.6
+    "@medusajs/medusa": 1.8.0-rc.6
     aws-sdk: ^2.983.0
     body-parser: ^1.19.0
-    client-sessions: ^0.8.0
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.4
     medusa-core-utils: ^1.2.0
     medusa-interfaces: ^1.3.7
     medusa-test-utils: ^1.1.40
+    typescript: ^4.9.5
   peerDependencies:
     medusa-interfaces: 1.3.7
   languageName: unknown
@@ -15443,7 +15435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1043.0, aws-sdk@npm:^2.710.0, aws-sdk@npm:^2.983.0":
+"aws-sdk@npm:^2.710.0, aws-sdk@npm:^2.983.0":
   version: 2.1172.0
   resolution: "aws-sdk@npm:2.1172.0"
   dependencies:
@@ -30661,25 +30653,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "medusa-file-minio@workspace:packages/medusa-file-minio"
   dependencies:
-    "@babel/cli": ^7.16.0
-    "@babel/core": ^7.16.0
-    "@babel/node": ^7.16.0
-    "@babel/plugin-proposal-class-properties": ^7.16.0
-    "@babel/plugin-transform-classes": ^7.16.0
-    "@babel/plugin-transform-instanceof": ^7.16.0
-    "@babel/plugin-transform-runtime": ^7.16.4
-    "@babel/preset-env": ^7.16.4
-    "@babel/register": ^7.16.0
-    "@babel/runtime": ^7.16.3
-    aws-sdk: ^2.1043.0
+    "@medusajs/medusa": 1.8.0-rc.6
+    aws-sdk: ^2.983.0
     body-parser: ^1.19.0
-    client-sessions: ^0.8.0
     cross-env: ^5.2.1
     express: ^4.17.1
     jest: ^25.5.4
     medusa-core-utils: ^1.2.0
-    medusa-interfaces: ^1.3.7
     medusa-test-utils: ^1.1.40
+    typescript: ^4.9.5
   peerDependencies:
     medusa-interfaces: 1.3.7
   languageName: unknown
@@ -31130,7 +31112,7 @@ __metadata:
     cross-env: ^5.2.1
     jest: ^25.5.4
     lodash: ^4.17.21
-    meilisearch: ^0.31.1
+    meilisearch: ^0.32.3
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -31386,12 +31368,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"meilisearch@npm:^0.31.1":
-  version: 0.31.1
-  resolution: "meilisearch@npm:0.31.1"
+"meilisearch@npm:^0.32.3":
+  version: 0.32.3
+  resolution: "meilisearch@npm:0.32.3"
   dependencies:
     cross-fetch: ^3.1.5
-  checksum: 142f3c401b56723f28376d1e323eeb9bdffecfbf880d239f38c8950663dc97c3f82cd2ef1af0b5e91cb013f63b7fa0628d63980036a1db351a27101097666237
+  checksum: 5f6553812b864c3933edd69ce09a65381680c6fdca8f672b2d15a04abdaf9c2acbb76a7b35cc25edc5111af19265f8043e50b52262dc78384e49cf8a895710ce
   languageName: node
   linkType: hard
 
