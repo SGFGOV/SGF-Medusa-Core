@@ -76,6 +76,12 @@ export type ProjectConfigOptions = {
     database_username?: string
     database_password?: string | (() => string) | (() => Promise<string>)
 
+
+    database_poolSize?:number;
+    database_maxQueryExecutionTime ?: number;
+    database_logNotifications?:boolean;
+    database_connectTimeoutMS?:number;
+
     externalAuth?: externalAuthentication
     secureKeys?: { [key: string]: string }
   http_compression?: HttpCompressionOptions

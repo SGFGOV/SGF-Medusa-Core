@@ -21,6 +21,7 @@ import SalesChannels from "../domain/sales-channels"
 import Settings from "../domain/settings"
 import { AnalyticsProvider } from "../providers/analytics-provider"
 import ProductCategories from "../domain/product-categories"
+import Cms from "../domain/cms"
 
 const IndexPage = () => {
   const navigate = useNavigate()
@@ -43,6 +44,7 @@ const DashboardRoutes = () => {
           <Routes>
             <Route path="oauth/:app_name" element={<Oauth />} />
             <Route path="products/*" element={<ProductsRoute />} />
+            <Route path="cms/*" element={<Cms />} />
             <Route
               path="product-categories/*"
               element={<ProductCategories />}

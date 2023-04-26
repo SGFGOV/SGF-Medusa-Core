@@ -726,4 +726,17 @@ export default {
       return medusaRequest("DELETE", path)
     },
   },
+
+  strapi: {
+    login() {
+      const path = `/strapi/admin/login`
+      return medusaRequest("GET", path)
+    },
+
+    logout() {
+      const path = `/strapi/admin/login`
+      return medusaRequest("DELETE", path)
+    },
+  },
+
 }

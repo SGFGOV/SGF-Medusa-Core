@@ -7,7 +7,8 @@ import {
 import { AwilixContainer } from "awilix"
 import { ConfigModule } from "../types/global"
 import "../utils/naming-strategy"
-import { DatabaseHostConfig } from "@medusajs/types"
+import { DatabaseHostConfig } from "@medusajs/types/dist"
+
 type Options = {
   configModule: ConfigModule
   container: AwilixContainer
@@ -58,12 +59,14 @@ export default async ({
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,
-    }
+      }
   }
 
   dataSource = new DataSource({
     type: configModule.projectConfig.database_type,
     ...hostConfig,
+    
+    
     extra: configModule.projectConfig.database_extra || {},
     schema: configModule.projectConfig.database_schema,
     entities,
@@ -71,6 +74,12 @@ export default async ({
     logging:
       customOptions?.logging ??
       (configModule.projectConfig.database_logging || false),
+
+      poolSize: configModule.projectConfig.database_poolSize || 100 ,
+      maxQueryExecutionTime: configModule.projectConfig.database_maxQueryExecutionTime ||1e3,
+      logNotifications:configModule.projectConfig.database_logNotifications||true,
+      connectTimeoutMS:configModule.projectConfig.database_connectTimeoutMS||60e3,
+      
   } as DataSourceOptions)
 
   await dataSource.initialize()
