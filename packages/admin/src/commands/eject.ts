@@ -63,6 +63,7 @@ export default async function eject({
         define: {
             __BASE__: JSON.stringify("/"),
             __MEDUSA_BACKEND_URL__: JSON.stringify("http://localhost:9000"),
+            __STRAPI_URL__: JSON.stringify("http://localhost:1337"),
         },
     })
   `

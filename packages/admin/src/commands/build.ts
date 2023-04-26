@@ -12,6 +12,7 @@ type BuildArgs = {
   backend?: string
   include?: string[]
   includeDist?: string
+  strapi?:string
 }
 
 let ENV_FILE_NAME = ""
@@ -38,7 +39,7 @@ try {
 }
 
 export default async function build(args: BuildArgs) {
-  const { deployment, outDir: outDirArg, backend, include, includeDist } = args
+  const { deployment, outDir: outDirArg, backend, include, includeDist,strapi } = args
 
   let config: AdminBuildConfig = {}
 
@@ -49,6 +50,7 @@ export default async function build(args: BuildArgs) {
       },
       globals: {
         backend: backend || process.env.MEDUSA_BACKEND_URL,
+        strapi: strapi || process.env.STRAPI_URL,
       },
     }
   } else {

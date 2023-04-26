@@ -17,6 +17,29 @@ class AdminAuthResource extends BaseResource {
   }
 
   /**
+   * @description Retrieves an authenticated session
+   * Usually used to check if authenticated session is alive.
+   * @param customHeaders
+   * @return {ResponsePromise<AdminAuthRes>}
+   */
+  getSgfSession(
+    customHeaders: Record<string, any> = {}
+  ): ResponsePromise<AdminAuthRes> {
+    const path = `/admin/auth/saasform`
+    return this.client.request("GET", path, undefined, {}, customHeaders)
+  }
+
+  /**
+   * @description Removes saasform authentication session
+   * @return {ResponsePromise<void>}
+   */
+  deleteSgfSession(customHeaders: Record<string, any> = {}): ResponsePromise<void> {
+    const path = `/admin/auth/saasform`
+    return this.client.request("DELETE", path, {}, {}, customHeaders)
+  }
+
+
+  /**
    * @description destroys an authenticated session
    * @param customHeaders
    * @return {ResponsePromise<void>}

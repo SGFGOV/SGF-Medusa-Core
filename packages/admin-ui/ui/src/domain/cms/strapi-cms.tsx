@@ -1,9 +1,10 @@
 import { useState } from "react"
-import api from "../../../../../../../SGF-MedusaAdmin/src/services/api"
-import { strapiUrl } from "../../../../../../../SGF-MedusaAdmin/src/services/config"
+
+import { STRAPI_URL as strapiUrl } from "../../constants/medusa-backend-url"
+import api from "../../services/api"
 const authenticatedStrapiUrl = `${strapiUrl}/strapi-plugin-sso/medusa`
 
-const StrapiCms = ({ reload }) => {
+const StrapiCms = ({ reload }:{reload:any}) => {
   const [strapiFrameState, setStrapiFrameState] = useState<string>(
     reload ? "true" : "false"
   )

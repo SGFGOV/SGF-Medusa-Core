@@ -27,6 +27,7 @@ class AuthResource extends BaseResource {
     return this.client.request("DELETE", path, {}, {}, customHeaders)
   }
 
+  
   /**
    * @description Retrieves an authenticated session
    * Usually used to check if authenticated session is alive.
@@ -37,6 +38,18 @@ class AuthResource extends BaseResource {
     const path = `/store/auth`
     return this.client.request("GET", path, undefined, {}, customHeaders)
   }
+
+   /**
+   * @description Retrieves an authenticated session
+   * Usually used to check if authenticated session is alive.
+   * @param customHeaders
+   * @return {ResponsePromise<StoreAuthRes>}
+   */
+   getSgfSession(customHeaders: Record<string, any> = {}): ResponsePromise<StoreAuthRes> {
+    const path = `/store/auth/saasform`
+    return this.client.request("GET", path, undefined, {}, customHeaders)
+  }
+
 
   /**
    * @description Check if email exists

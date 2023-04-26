@@ -11,6 +11,7 @@ export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
 
   const globalReplacements = () => {
     let backend = undefined
+    let strapi = undefined
 
     if (globals.backend) {
       try {
@@ -24,10 +25,23 @@ export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
       }
     }
 
+    if (globals.strapi) {
+      try {
+        // Test if the backend is a valid URL
+        new URL(globals.strapi)
+        strapi = globals.strapi
+      } catch (_e) {
+        throw new Error(
+          `The provided backend URL is not valid: ${globals.backend}. Please provide a valid URL (e.g. https://my-medusa-server.com).`
+        )
+      }
+    }
+
     const global = {}
 
     global["__BASE__"] = JSON.stringify(globals.base ? `/${globals.base}` : "/")
     global["__MEDUSA_BACKEND_URL__"] = JSON.stringify(backend ? backend : "/")
+    global["__STRAPI_URL__"] = JSON.stringify(strapi?strapi:"")
 
     return global
   }

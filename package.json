@@ -105,7 +105,8 @@
     "@medusajs/medusa-js": "./packages/medusa-js",
     "medusa-react": "./packages/medusa-react",
     "@medusajs/types": "./packages/types",
-    "@medusajs/utils": "./packages/utils"
+    "@medusajs/utils": "./packages/utils",
+    "@medusajs/admin-ui": "./packages/admin-ui"
   },
   "packageManager": "yarn@3.2.1",
   "version": "0.0.3"

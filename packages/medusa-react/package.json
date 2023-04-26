@@ -1,5 +1,5 @@
 {
-  "version": "5.0.2",
+  "version": "5.0.3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -64,10 +64,10 @@
     "tsup": "^6.5.0"
   },
   "dependencies": {
-    "@medusajs/medusa-js": "../medusa-js"
+    "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   },
   "resolution": {
-    "@medusajs/medusa-js": "../medusa-js"
+    "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   },
   "msw": {
     "workerDirectory": "public"
