@@ -34,7 +34,7 @@
     "@medusajs/medusa": "npm:@sgftech/medusa"
   },
   "name": "@sgftech/medusa-react",
-  "author": "Zakaria S. El Asri",
+  "author": "Govind Diwakar",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@medusajs/medusa": "1.8.2",

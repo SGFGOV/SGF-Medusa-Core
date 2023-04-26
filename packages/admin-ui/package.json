@@ -49,7 +49,7 @@
     "copy-to-clipboard": "^3.3.1",
     "emoji-picker-react": "^4.4.3",
     "framer-motion": "^9.1.6",
-    "medusa-react": "5.0.2",
+    "medusa-react": "npm:@sgftech/medusa-react@latest",
     "moment": "^2.29.4",
     "pluralize": "^8.0.0",
     "postcss": "^8.4.21",
@@ -94,6 +94,7 @@
   },
   "packageManager": "yarn@3.2.1",
   "resolutions": {
-    "@medusajs/medusa-js": "@sgftech/medusa-js"
+    "@medusajs/medusa-js": "npm:@sgftech/medusa-js",
+    "medusa-react": "npm:@sgftech/medusa-react"
   }
 }
