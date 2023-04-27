@@ -4,7 +4,7 @@ import { STRAPI_URL as strapiUrl } from "../../constants/medusa-backend-url"
 import api from "../../services/api"
 const authenticatedStrapiUrl = `${strapiUrl}/strapi-plugin-sso/medusa`
 
-const StrapiCms = ({ reload }:{reload:any}) => {
+const StrapiCms = ({ reload }:{reload:boolean}) => {
   const [strapiFrameState, setStrapiFrameState] = useState<string>(
     reload ? "true" : "false"
   )

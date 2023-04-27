@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@medusajs/modules-sdk": "1.8.3",
-    "@medusajs/utils": "1.8.2",
+    "@medusajs/utils": "npm:@sgftech/medusajs-utils@1.8.2",
     "awilix": "^8.0.0",
     "bullmq": "^3.5.6",
     "ioredis": "^5.2.5"
