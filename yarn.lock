@@ -6988,8 +6988,8 @@ __metadata:
   linkType: hard
 
 "@medusajs/admin-ui@file:./packages/admin-ui::locator=root%40workspace%3A.":
-  version: 1.8.3
-  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=31048c&locator=root%40workspace%3A."
+  version: 1.8.4
+  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=e0f5f5&locator=root%40workspace%3A."
   dependencies:
     "@hookform/error-message": ^2.0.1
     "@radix-ui/react-accordion": ^1.0.1
@@ -7041,7 +7041,7 @@ __metadata:
     tailwindcss-radix: ^2.7.0
     type-fest: ^3.6.0
     vite: ^4.1.4
-  checksum: 46907a467cd21d2eab214c22a22aa7789e7ae9f7d34a5b732c87a6e43e8a58ba6a0c2737feb354dd3c0824599cad22466b9b27a16fb963d48b810e7d13a81281
+  checksum: 3ce4292bdcec7c08a8e82334df0c4d67dbf9c6cd9434f630296b6e264d52c229af30495116a87046435a2fc510f7a55891aa0c492fd51280b4939290b99e4902
   languageName: node
   linkType: hard
 
@@ -7096,24 +7096,6 @@ __metadata:
     "@medusajs/utils": 1.8.1
     cross-env: ^5.2.1
     jest: ^25.5.2
-    ts-jest: ^25.5.1
-    typescript: ^4.4.4
-  languageName: unknown
-  linkType: soft
-
-"@medusajs/event-bus-redis@workspace:packages/event-bus-redis":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/event-bus-redis@workspace:packages/event-bus-redis"
-  dependencies:
-    "@medusajs/modules-sdk": 1.8.2
-    "@medusajs/types": 1.8.2
-    "@medusajs/utils": 1.8.1
-    awilix: ^8.0.0
-    bullmq: ^3.5.6
-    cross-env: ^5.2.1
-    ioredis: ^5.2.5
-    jest: ^25.5.2
-    medusa-test-utils: ^1.1.40
     ts-jest: ^25.5.1
     typescript: ^4.4.4
   languageName: unknown
@@ -7181,7 +7163,7 @@ __metadata:
 
 "@medusajs/medusa-js@file:./packages/medusa-js::locator=root%40workspace%3A.":
   version: 2.0.7
-  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=21885f&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=76df2e&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa": "*"
     axios: 0.26.1
@@ -7191,7 +7173,7 @@ __metadata:
     uuid: ^9.0.0
   peerDependencies:
     "@medusajs/medusa": "*"
-  checksum: e011a2e09ddec5a8f796b762ba559161715ebda9b80ffc42a7fbe2a6320619aec5c55693dc92ac84a82479f02a54ac58d1f8458b6fcc31d7efce521ec3ae0a5b
+  checksum: 36010d59b91cf7749f9e1f58f92ff21c7cd4e488aaefc670092c865e010210b3cda9b5e3b7f1e5a2b3dedf8b2b691a4278e5a1dd14e09b58c9c746c011bc73ee
   languageName: node
   linkType: hard
 
@@ -9440,6 +9422,23 @@ __metadata:
     "@medusajs/medusa": 1.8.2
   bin:
     medusa-admin: ./bin/medusa-admin.js
+  languageName: unknown
+  linkType: soft
+
+"@sgftech/event-bus-redis@workspace:packages/event-bus-redis":
+  version: 0.0.0-use.local
+  resolution: "@sgftech/event-bus-redis@workspace:packages/event-bus-redis"
+  dependencies:
+    "@medusajs/modules-sdk": 1.8.2
+    "@medusajs/types": 1.8.2
+    awilix: ^8.0.0
+    bullmq: ^3.5.6
+    cross-env: ^5.2.1
+    ioredis: ^5.2.5
+    jest: ^25.5.2
+    medusa-test-utils: ^1.1.40
+    ts-jest: ^25.5.1
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -31269,7 +31268,7 @@ __metadata:
 
 "medusa-react@file:./packages/medusa-react::locator=root%40workspace%3A.":
   version: 5.0.3
-  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=5d761e&locator=root%40workspace%3A."
+  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=85f8d4&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   peerDependencies:
@@ -31277,7 +31276,7 @@ __metadata:
     "@tanstack/react-query": ">=4.22.0"
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: c4557d7e81276ea1300712f7bc9218220766a7512b32cd1d27fddfd0a989506754940fe0fa6c6bc98b40a535dab7ebb98b5fbbd23b112ca2ff2dbcc8efb2f2e0
+  checksum: 3dc1373b70eb59cd5d3321143ee775647f9541e077288653d819f5a7bf9d3c3a56819001325e0156efce6c61066038ba8444364315930877c6ec6ea69da999eb
   languageName: node
   linkType: hard
 

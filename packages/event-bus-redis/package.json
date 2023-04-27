@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/event-bus-redis",
+  "name": "@sgftech/event-bus-redis",
   "version": "1.8.2",
   "description": "Redis Event Bus Module for Medusa",
   "main": "dist/index.js",
@@ -32,9 +32,11 @@
   },
   "dependencies": {
     "@medusajs/modules-sdk": "1.8.2",
-    "@medusajs/utils": "1.8.1",
     "awilix": "^8.0.0",
     "bullmq": "^3.5.6",
     "ioredis": "^5.2.5"
+  },
+  "resolutions": {
+    "medusajs/utils": "npm:@sgftech/medusajs-utils@1.8.2"
   }
 }
