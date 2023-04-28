@@ -13,6 +13,7 @@ type BuildArgs = {
   include?: string[]
   includeDist?: string
   strapi?:string
+  login?:string
 }
 
 let ENV_FILE_NAME = ""
@@ -39,7 +40,7 @@ try {
 }
 
 export default async function build(args: BuildArgs) {
-  const { deployment, outDir: outDirArg, backend, include, includeDist,strapi } = args
+  const { deployment, outDir: outDirArg, backend, include, includeDist,strapi,login } = args
 
   let config: AdminBuildConfig = {}
 
@@ -51,10 +52,11 @@ export default async function build(args: BuildArgs) {
       globals: {
         backend: backend || process.env.MEDUSA_BACKEND_URL,
         strapi: strapi || process.env.STRAPI_URL,
+        login: login || process.env.LOGIN_URL,
       },
     }
   } else {
-    const { path, outDir } = loadConfig()
+    const { path, outDir } = await loadConfig()
 
     try {
       validatePath(path)
@@ -68,6 +70,8 @@ export default async function build(args: BuildArgs) {
       },
       globals: {
         base: path,
+        strapi: strapi || process.env.STRAPI_URL,
+        login: login || process.env.LOGIN_URL,
       },
     }
   }

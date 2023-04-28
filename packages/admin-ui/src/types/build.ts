@@ -4,6 +4,7 @@ type GlobalsConfig = {
   base?: string
   backend?: string
   strapi?: string
+  login?: string
 }
 
 type BuildConfig = {

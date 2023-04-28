@@ -27,6 +27,19 @@ export type PluginOptions = {
    * @default false
    */
   autoRebuild?: boolean
+
+
+  /**
+   * url to the strapi path
+   * @default http://localhost:1337
+   */
+  strapiUrl?: string
+
+    /**
+   * url to the login server path
+   * @default http://localhost:7001
+   */
+    loginUrl?: string
 }
 
 type PluginObject = {

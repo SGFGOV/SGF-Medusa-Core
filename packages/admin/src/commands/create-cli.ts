@@ -25,6 +25,17 @@ export async function createCli(): Promise<Command> {
     "Path to where the files specified in the include option should be placed. Relative to the root of the build directory."
   )
 
+  buildCommand.option(
+    "-s, --strapi <url>",
+    "Strapi URL (default http://localhost:1337)"
+  )
+
+  buildCommand.option(
+    "-l, --login <url>",
+    "Login URL (default http://localhost:7001)"
+  )
+
+
   buildCommand.action(build)
 
   const devCommand = program.command("dev")
@@ -34,6 +45,16 @@ export async function createCli(): Promise<Command> {
     "-b, --backend <url>",
     "Backend URL (default http://localhost:9000)"
   )
+  devCommand.option(
+    "-s, --strapi <url>",
+    "Strapi URL (default http://localhost:1337)"
+  )
+
+  devCommand.option(
+    "-l, --login <url>",
+    "Login URL (default http://localhost:7001)"
+  )
+
   devCommand.action(dev)
 
   const deployCommand = program.command("eject")
@@ -41,6 +62,16 @@ export async function createCli(): Promise<Command> {
     "Eject the admin dashboard source code to a custom directory"
   )
   deployCommand.option("-o, --out-dir <path>", "Output directory")
+  deployCommand.option(
+    "-s, --strapi <url>",
+    "Strapi URL (default http://localhost:1337)"
+  )
+
+  deployCommand.option(
+    "-l, --login <url>",
+    "Login URL (default http://localhost:7001)"
+  )
+
   deployCommand.action(eject)
 
   return program

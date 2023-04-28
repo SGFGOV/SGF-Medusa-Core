@@ -2,6 +2,7 @@ import { useAdminStore } from "medusa-react"
 import React, { useState } from "react"
 
 import { useFeatureFlag } from "../../../providers/feature-flag-provider"
+import BookIcon from "../../fundamentals/icons/book-icon"
 import BuildingsIcon from "../../fundamentals/icons/buildings-icon"
 import CartIcon from "../../fundamentals/icons/cart-icon"
 import CashIcon from "../../fundamentals/icons/cash-icon"
@@ -64,6 +65,14 @@ const Sidebar: React.FC = () => {
             text={"Products"}
             triggerHandler={triggerHandler}
           />
+          
+          <SidebarMenuItem
+            pageLink={"/a/cms"}
+            icon={<BookIcon size={ICON_SIZE} />}
+            text={"Store Ext."}
+            triggerHandler={triggerHandler}
+          />
+          
           {isFeatureEnabled("product_categories") && (
             <SidebarMenuItem
               pageLink={"/a/product-categories"}

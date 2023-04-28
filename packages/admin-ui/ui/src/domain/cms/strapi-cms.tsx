@@ -8,7 +8,7 @@ const StrapiCms = ({ reload }:{reload:boolean}) => {
   const [strapiFrameState, setStrapiFrameState] = useState<string>(
     reload ? "true" : "false"
   )
-  // setStrapiFrameState("")
+  
   api.auth.session().then(async (session) => {
     if (session) {
       await api.strapi.login()

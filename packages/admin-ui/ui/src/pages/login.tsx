@@ -5,6 +5,7 @@ import LoginCard from "../components/organisms/login-card"
 import ResetTokenCard from "../components/organisms/reset-token-card"
 import SEO from "../components/seo"
 import PublicLayout from "../components/templates/login-layout"
+import { LOGIN_URL } from "../constants/medusa-backend-url"
 
 const LoginPage = () => {
   const [resetPassword, setResetPassword] = useState(false)
@@ -48,4 +49,32 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+
+
+
+// import clsx from "clsx"
+
+
+export const RedirectedLoginPage = () => {
+
+  const { user } = useAdminGetSession()
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (user) {
+      navigate("/")
+    }
+  }, [user, navigate])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      window.location.replace(LOGIN_URL)
+    }, 3000)
+
+    return () => clearTimeout(timeout)
+  }, [])
+  return <>Please wait redirecting to the user login page</>
+}
+
+
+export default LOGIN_URL?RedirectedLoginPage:LoginPage
+

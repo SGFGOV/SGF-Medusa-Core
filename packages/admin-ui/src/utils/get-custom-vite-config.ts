@@ -4,6 +4,9 @@ import { BuildOptions, InlineConfig } from "vite"
 import { AdminBuildConfig } from "../types"
 import { formatBase } from "./format-base"
 
+
+
+
 export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
   const { globals = {}, build = {} } = config
 
@@ -12,6 +15,7 @@ export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
   const globalReplacements = () => {
     let backend = undefined
     let strapi = undefined
+    let login = undefined
 
     if (globals.backend) {
       try {
@@ -32,7 +36,19 @@ export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
         strapi = globals.strapi
       } catch (_e) {
         throw new Error(
-          `The provided backend URL is not valid: ${globals.backend}. Please provide a valid URL (e.g. https://my-medusa-server.com).`
+          `The provided backend URL is not valid: ${globals.strapi}. Please provide a valid URL (e.g. https://my-strapi-server.com).`
+        )
+      }
+    }
+
+    if (globals.login) {
+      try {
+        // Test if the backend is a valid URL
+        new URL(globals.login)
+        login = globals.login
+      } catch (_e) {
+        throw new Error(
+          `The provided backend URL is not valid: ${globals.login}. Please provide a valid URL (e.g. https://my-login-server.com).`
         )
       }
     }
@@ -42,6 +58,7 @@ export const getCustomViteConfig = (config: AdminBuildConfig): InlineConfig => {
     global["__BASE__"] = JSON.stringify(globals.base ? `/${globals.base}` : "/")
     global["__MEDUSA_BACKEND_URL__"] = JSON.stringify(backend ? backend : "/")
     global["__STRAPI_URL__"] = JSON.stringify(strapi?strapi:"")
+    global["__LOGIN_URL__"] = JSON.stringify(login?login:"")
 
     return global
   }

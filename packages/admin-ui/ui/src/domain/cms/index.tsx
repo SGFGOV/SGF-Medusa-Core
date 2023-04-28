@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom"
 const Cms = () => {
   return (
     <Routes>
-      <Route path="/" element={<StrapiCms reload={false} />} />
+      <Route index  element={<StrapiCms reload={false} />} />
     </Routes>
   )
 }
