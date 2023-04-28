@@ -28,11 +28,7 @@ export const useAdminDeleteSession = (
   const queryClient = useQueryClient()
 
   return useMutation(
-    () => 
-    {return client.admin.auth.deleteSgfSession().then(()=>{
-     return client.admin.auth.deleteSession()
-    })},
-    
+    () => client.admin.auth.deleteSession(),
     buildOptions(queryClient, adminAuthKeys.details(), options)
   )
 }

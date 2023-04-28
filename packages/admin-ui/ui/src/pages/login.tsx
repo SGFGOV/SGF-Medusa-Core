@@ -57,13 +57,13 @@ const LoginPage = () => {
 
 export const RedirectedLoginPage = () => {
 
-  const { user } = useAdminGetSession()
+  const { user,isLoading } = useAdminGetSession()
   const navigate = useNavigate()
   useEffect(() => {
     if (user) {
       navigate("/")
     }
-  }, [user, navigate])
+  }, [user, navigate,isLoading])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -71,7 +71,7 @@ export const RedirectedLoginPage = () => {
     }, 3000)
 
     return () => clearTimeout(timeout)
-  }, [])
+  },[])
   return <>Please wait redirecting to the user login page</>
 }
 
