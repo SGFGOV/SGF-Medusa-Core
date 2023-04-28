@@ -19,7 +19,7 @@ export default defineConfig({
   define: {
     __BASE__: JSON.stringify("/"),
     __MEDUSA_BACKEND_URL__: JSON.stringify("http://localhost:9000"),
-    __STRIPE_URL:JSON.stringify("https://localhost:1337")
+    __STRAPI_URL:JSON.stringify("https://localhost:1337")
   },
   build: {
     outDir: "preview",

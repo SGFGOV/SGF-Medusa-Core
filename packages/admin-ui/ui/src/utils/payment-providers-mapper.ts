@@ -1,6 +1,10 @@
 import { Option } from "../types/shared"
 
 const providerDescriptors: { [providerKey: string]: Option } = {
+  "razorpay": {
+    label: "Razorpay India",
+    value: "razorpay",
+  },
   stripe: {
     label: "Stripe",
     value: "stripe",
@@ -53,6 +57,7 @@ const providerDescriptors: { [providerKey: string]: Option } = {
     label: "PayPal via Adyen",
     value: "paypal-adyen",
   },
+
   "ideal-adyen": {
     label: "iDEAL via Adyen",
     value: "ideal-adyen",
