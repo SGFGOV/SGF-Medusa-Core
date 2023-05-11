@@ -686,6 +686,11 @@ module.exports = {
         },
         {
           type: "doc",
+          id: "modules/carts-and-checkout/backend/cart-completion-strategy",
+          label: "Backend: Override Cart Completion",
+        },
+        {
+          type: "doc",
           id: "modules/carts-and-checkout/storefront/implement-cart",
           label: "Storefront: Implement Cart",
         },
@@ -789,36 +794,24 @@ module.exports = {
           label: "Admin: Manage Claims",
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/orders/admin/manage-draft-orders",
           label: "Admin: Manage Draft Orders",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
-          type: "link",
-          href: "#",
-          label: "Storefront: Manage Customer Orders",
-          customProps: {
-            sidebar_is_soon: true,
-          },
+          type: "doc",
+          id: "modules/orders/storefront/retrieve-order-details",
+          label: "Storefront: Retrieve Order Details",
         },
         {
-          type: "link",
-          href: "#",
-          label: "Storefront: Create a Swap",
-          customProps: {
-            sidebar_is_soon: true,
-          },
-        },
-        {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/orders/storefront/create-return",
           label: "Storefront: Create a Return",
-          customProps: {
-            sidebar_is_soon: true,
-          },
+        },
+        {
+          type: "doc",
+          id: "modules/orders/storefront/create-swap",
+          label: "Storefront: Create a Swap",
         },
         {
           type: "doc",
@@ -942,36 +935,24 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/taxes/backend/create-tax-provider",
           label: "Backend: Create Tax Provider",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/taxes/backend/tax-calculation-strategy",
+          label: "Backend: Override Tax Calculation",
+        },
+        {
+          type: "doc",
+          id: "modules/taxes/admin/manage-tax-settings",
           label: "Admin: Manage Taxes",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/taxes/admin/manage-tax-rates",
           label: "Admin: Manage Tax Rates",
-          customProps: {
-            sidebar_is_soon: true,
-          },
-        },
-        {
-          type: "link",
-          href: "#",
-          label: "Admin: Manage Tax Overrides",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "doc",
@@ -1192,20 +1173,9 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
-          label: "Users",
-          customProps: {
-            sidebar_is_soon: true,
-          },
-        },
-        {
-          type: "link",
-          href: "#",
-          label: "Invites",
-          customProps: {
-            sidebar_is_soon: true,
-          },
+          type: "doc",
+          id: "modules/users/users",
+          label: "Users and Invites",
         },
         {
           type: "html",
@@ -1215,36 +1185,24 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/users/backend/send-invite",
           label: "Backend: Send Invite",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
-          type: "link",
-          href: "#",
-          label: "Admin: Manage Profile",
-          customProps: {
-            sidebar_is_soon: true,
-          },
+          type: "doc",
+          id: "modules/users/admin/manage-profile",
+          label: "Admin: Implement Profiles",
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/users/admin/manage-users",
           label: "Admin: Manage Users",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/users/admin/manage-invites",
           label: "Admin: Manage Invites",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
       ],
     },
@@ -1442,34 +1400,6 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Modules",
-          items: [
-            {
-              type: "doc",
-              id: "development/modules/overview",
-              label: "Overview",
-            },
-            {
-              type: "html",
-              value: "How-to",
-              customProps: {
-                sidebar_is_group_divider: true,
-              },
-            },
-            {
-              type: "doc",
-              id: "development/modules/create",
-              label: "Create a Module",
-            },
-            {
-              type: "doc",
-              id: "development/modules/publish",
-              label: "Publish a Module",
-            },
-          ],
-        },
-        {
-          type: "category",
           label: "Events",
           items: [
             {
@@ -1525,6 +1455,29 @@ module.exports = {
         },
         {
           type: "category",
+          label: "Loaders",
+          items: [
+            {
+              type: "doc",
+              id: "development/loaders/overview",
+              label: "Overview",
+            },
+            {
+              type: "html",
+              value: "How-to",
+              customProps: {
+                sidebar_is_group_divider: true,
+              },
+            },
+            {
+              type: "doc",
+              id: "development/loaders/create",
+              label: "Create a Loader",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Scheduled Jobs",
           items: [
             {
@@ -1543,6 +1496,34 @@ module.exports = {
               type: "doc",
               id: "development/scheduled-jobs/create",
               label: "Create a Scheduled Job",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Modules",
+          items: [
+            {
+              type: "doc",
+              id: "development/modules/overview",
+              label: "Overview",
+            },
+            {
+              type: "html",
+              value: "How-to",
+              customProps: {
+                sidebar_is_group_divider: true,
+              },
+            },
+            {
+              type: "doc",
+              id: "development/modules/create",
+              label: "Create a Module",
+            },
+            {
+              type: "doc",
+              id: "development/modules/publish",
+              label: "Publish a Module",
             },
           ],
         },
@@ -1571,34 +1552,6 @@ module.exports = {
               type: "doc",
               id: "development/plugins/publish",
               label: "Publish a Plugin",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Publishable API Keys",
-          items: [
-            {
-              type: "doc",
-              id: "development/publishable-api-keys/index",
-              label: "Overview",
-            },
-            {
-              type: "html",
-              value: "How-to",
-              customProps: {
-                sidebar_is_group_divider: true,
-              },
-            },
-            {
-              type: "doc",
-              id: "development/publishable-api-keys/admin/manage-publishable-api-keys",
-              label: "Admin: Manage Publishable API Keys",
-            },
-            {
-              type: "doc",
-              id: "development/publishable-api-keys/storefront/use-in-requests",
-              label: "Storefront: Use in Requests",
             },
           ],
         },
@@ -1654,6 +1607,34 @@ module.exports = {
         },
         {
           type: "category",
+          label: "Publishable API Keys",
+          items: [
+            {
+              type: "doc",
+              id: "development/publishable-api-keys/index",
+              label: "Overview",
+            },
+            {
+              type: "html",
+              value: "How-to",
+              customProps: {
+                sidebar_is_group_divider: true,
+              },
+            },
+            {
+              type: "doc",
+              id: "development/publishable-api-keys/admin/manage-publishable-api-keys",
+              label: "Admin: Manage Publishable API Keys",
+            },
+            {
+              type: "doc",
+              id: "development/publishable-api-keys/storefront/use-in-requests",
+              label: "Storefront: Use in Requests",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Notifications",
           items: [
             {
@@ -1692,12 +1673,32 @@ module.exports = {
               },
             },
             {
-              type: "link",
-              href: "#",
+              type: "doc",
+              id: "development/file-service/create-file-service",
               label: "Create a File Service",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Search Service",
+          items: [
+            {
+              type: "doc",
+              id: "development/search/overview",
+              label: "Overview",
+            },
+            {
+              type: "html",
+              value: "How-to",
               customProps: {
-                sidebar_is_soon: true,
+                sidebar_is_group_divider: true,
               },
+            },
+            {
+              type: "doc",
+              id: "development/search/create",
+              label: "Create a Search Service",
             },
           ],
         },
@@ -1746,20 +1747,9 @@ module.exports = {
               },
             },
             {
-              type: "link",
-              href: "#",
-              label: "Create a Strategy",
-              customProps: {
-                sidebar_is_soon: true,
-              },
-            },
-            {
-              type: "link",
-              href: "#",
+              type: "doc",
+              id: "development/strategies/override-strategy",
               label: "Override a Strategy",
-              customProps: {
-                sidebar_is_soon: true,
-              },
             },
           ],
         },
