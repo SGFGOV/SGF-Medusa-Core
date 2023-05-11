@@ -1,5 +1,5 @@
 {
-  "version": "7.0.5",
+  "version": "7.0.6",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -37,7 +37,7 @@
   "author": "Govind Diwakar",
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@medusajs/medusa": "1.10.0",
+    "@medusajs/medusa": "1.10.1",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/addons": "^6.3.12",

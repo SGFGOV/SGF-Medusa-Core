@@ -2,7 +2,7 @@
   "name": "@sgftech/admin-ui",
   "author": "Govind Diwakar",
   "license": "MIT",
-  "version": "1.8.13",
+  "version": "1.8.14",
   "repository": {
     "type": "git",
     "url": "https://github.com/medusajs/medusa.git",
@@ -79,8 +79,8 @@
     "vite": "^4.1.4"
   },
   "devDependencies": {
-    "@medusajs/medusa": "1.10.0",
-    "@medusajs/types": "1.8.4",
+    "@medusajs/medusa": "1.10.1",
+    "@medusajs/types": "1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
