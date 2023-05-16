@@ -3795,6 +3795,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.21.0":
+  version: 7.21.5
+  resolution: "@babel/runtime@npm:7.21.5"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: c704c36bf1c7f948b1d404e3ad3b00897f6dbaf8bb9455b0a78f96ed0e2f24599f89fd3950a277566be6694ab8814a47bec743e98dd7c7f57e9f0fedc6c6c32f
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.12.13, @babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -6989,7 +6998,7 @@ __metadata:
 
 "@medusajs/admin-ui@file:./packages/admin-ui::locator=root%40workspace%3A.":
   version: 1.8.14
-  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=8920f4&locator=root%40workspace%3A."
+  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=b8cad7&locator=root%40workspace%3A."
   dependencies:
     "@hookform/error-message": ^2.0.1
     "@radix-ui/react-accordion": ^1.0.1
@@ -7041,7 +7050,7 @@ __metadata:
     tailwindcss-radix: ^2.7.0
     type-fest: ^3.6.0
     vite: ^4.1.4
-  checksum: 2ecbe21d3eef22708b07bd35d0197a3bc1c50b764201abb7a1353119b841f8d3dfb45f37798fdedf76e71a594d45d62d8dafb087fc91a9fa6e5318483f5a0c78
+  checksum: 5a15e899a6e1a1dbf7816e60ff24ad14667f59a80df2669aabb7d73ad1eaeff6c6acee2b5433e15afb4ddeb2b221a47d443d66c1694a8d29724f9a95e52554c1
   languageName: node
   linkType: hard
 
@@ -7112,7 +7121,7 @@ __metadata:
     cross-env: ^5.2.1
     jest: ^25.5.4
     ts-jest: ^25.5.1
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
     typescript: ^4.4.4
   languageName: unknown
   linkType: soft
@@ -7163,7 +7172,7 @@ __metadata:
 
 "@medusajs/medusa-js@file:./packages/medusa-js::locator=root%40workspace%3A.":
   version: 4.0.1
-  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=7826e2&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=621925&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa": "*"
     axios: 0.26.1
@@ -7173,7 +7182,7 @@ __metadata:
     uuid: ^9.0.0
   peerDependencies:
     "@medusajs/medusa": "*"
-  checksum: 2cdb579280d6a77f8a2b78b92c290b0ae4ff9e6a5016413d10de274615422cd6823fac96734df5ff9debb112f5097759f6bf5bd5a51de6e11441f560e8690936
+  checksum: 6f32c296a762773d197e5fd59114500808ce5fed7652884371b86b5253aa6ed20d99f146afd789044ea61c0045863fedb8e9e89580f5b1844dfaa5230582782a
   languageName: node
   linkType: hard
 
@@ -7204,7 +7213,7 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.10.1-alpha1
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=6933a4&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=3ffbdf&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.13
     "@medusajs/modules-sdk": 1.8.5
@@ -7261,7 +7270,7 @@ __metadata:
     typeorm: "*"
   bin:
     medusa: ./cli.js
-  checksum: c75b39341300ef50cf791cfce73167d09e9489506023df08ba5022022596da4a568b7f57200fa6c292bc1926a4fe4cdb1a872544ff70bcb0b8617c93cd03a54c
+  checksum: 60b39b3f36f0ff2371b24ab2128129affea68d8c563471b2bf83d2af2484cab19778edfbb85eb460a1c4eab0e427f112d9a49b05f7cb6f5be7a9df9f3e1810ff
   languageName: node
   linkType: hard
 
@@ -7339,28 +7348,28 @@ __metadata:
     cross-env: ^5.2.1
     jest: ^25.5.4
     ts-jest: ^25.5.1
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
     typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
   version: 1.9.2
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=0a8e14&locator=root%40workspace%3A."
-  checksum: 537913cb59cb691151f1b1fce49141a7657e23d20f58ed7cf989501d384625a1b1fc4351b22a5ff36be9d2f31dfe5b95476f6814ff62794303c3e377ca5f5426
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=17305a&locator=root%40workspace%3A."
+  checksum: dd0dbd61435fb8be591810dda1eefa875f382d7f255115b57ccd3a89e7445ad93c6391143ed0db3ca4ca948654689b0678f305f228116673b5dffdea48014160
   languageName: node
   linkType: hard
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
   version: 1.9.2
-  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=1caa7f&locator=root%40workspace%3A."
+  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=bb1853&locator=root%40workspace%3A."
   dependencies:
     awilix: ^8.0.0
     class-transformer: ^0.5.1
     class-validator: ^0.14.0
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
     ulid: ^2.3.0
-  checksum: 55ca4ff81fc9da84589b3394ad78f85bb66546fdf2dff45ddb9d6a2f294ebc4265cc5f4dbb1771a479ce71702f038c0698fed546039faec2eb4dec722c539fce
+  checksum: 5765b6097effb4af3982f98dc516b17d187befab7d128d93159e21c2bc6067cd4b498bfbde52cd4a590c4a78b69db8d8c2b0e299b73f89d3ed741895e6e23a3a
   languageName: node
   linkType: hard
 
@@ -9431,7 +9440,7 @@ __metadata:
   dependencies:
     "@medusajs/modules-sdk": 1.8.5
     "@medusajs/types": 1.8.5
-    "@medusajs/utils": "npm:@sgftech/medusajs-utils@1.8.3"
+    "@medusajs/utils": "npm:@sgftech/medusajs-utils"
     awilix: ^8.0.0
     bullmq: ^3.5.6
     cross-env: ^5.2.1
@@ -9604,7 +9613,7 @@ __metadata:
   dependencies:
     awilix: ^8.0.0
     cross-env: ^5.2.1
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
     typescript: ^4.4.4
     winston: ^3.8.2
   languageName: unknown
@@ -9622,7 +9631,7 @@ __metadata:
     cross-env: ^5.2.1
     jest: ^25.5.4
     ts-jest: ^25.5.1
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
     typescript: ^4.4.4
     ulid: ^2.3.0
   languageName: unknown
@@ -19165,6 +19174,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.29.3":
+  version: 2.30.0
+  resolution: "date-fns@npm:2.30.0"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+  checksum: e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
+  languageName: node
+  linkType: hard
+
 "dayjs@npm:1.10.4":
   version: 1.10.4
   resolution: "dayjs@npm:1.10.4"
@@ -25235,7 +25253,7 @@ __metadata:
     jest: ^26.6.3
     jest-environment-node: 26.6.2
     medusa-interfaces: 1.3.7
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
   languageName: unknown
   linkType: soft
 
@@ -25256,7 +25274,7 @@ __metadata:
     medusa-fulfillment-webshipper: 1.3.9
     medusa-interfaces: 1.3.7
     medusa-plugin-sendgrid: 1.3.9
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
   languageName: unknown
   linkType: soft
 
@@ -25272,7 +25290,7 @@ __metadata:
     jest: ^26.6.3
     jest-environment-node: 26.6.2
     medusa-interfaces: 1.3.7
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
   languageName: unknown
   linkType: soft
 
@@ -31252,7 +31270,7 @@ __metadata:
 
 "medusa-react@file:./packages/medusa-react::locator=root%40workspace%3A.":
   version: 7.0.6
-  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=c7898f&locator=root%40workspace%3A."
+  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=3b9799&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   peerDependencies:
@@ -31260,7 +31278,7 @@ __metadata:
     "@tanstack/react-query": ^4.22.0
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: dd038749372691867e84a0e2cdf5367b0683c96ce320a2c3d5a2663bba6898bafc0a74ca9a3ed82d84428d23ea685a0286104b4c3f8c27e9389cb51df92bcdb2
+  checksum: fd128130088cbbc6bfb2a278da2ef5a41d2965eb12135b3a6b8ebc8b1df0b8939c3fd8df7a79f16b555de6fbcb20a786d2dc16aa009f6a44c5d27d071bf7b136
   languageName: node
   linkType: hard
 
@@ -37890,7 +37908,7 @@ __metadata:
     typedoc-plugin-markdown: ^3.13.4
     typedoc-plugin-merge-modules: ^4.0.1
     typedoc-plugin-reference-excluder: ^1.0.0
-    typeorm: "npm:@medusajs/typeorm@0.3.16-next.0"
+    typeorm: ^0.3.16
   languageName: unknown
   linkType: soft
 
@@ -41500,15 +41518,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typeorm@npm:@medusajs/typeorm@0.3.16-next.0":
-  version: 0.3.16-next.0
-  resolution: "@medusajs/typeorm@npm:0.3.16-next.0"
+"typeorm@npm:^0.3.16":
+  version: 0.3.16
+  resolution: "typeorm@npm:0.3.16"
   dependencies:
     "@sqltools/formatter": ^1.2.5
     app-root-path: ^3.1.0
     buffer: ^6.0.3
     chalk: ^4.1.2
     cli-highlight: ^2.1.11
+    date-fns: ^2.29.3
     debug: ^4.3.4
     dotenv: ^16.0.3
     glob: ^8.1.0
@@ -41575,7 +41594,7 @@ __metadata:
     typeorm: cli.js
     typeorm-ts-node-commonjs: cli-ts-node-commonjs.js
     typeorm-ts-node-esm: cli-ts-node-esm.js
-  checksum: b81794a0bc5ca3195f6a57ad313bd85b2b8f6a0a8dcb00ac42c3594f908b89fcd51f9b10ea62c836504d7196e6330a4b67602b90ea6485bc956ed4dace665737
+  checksum: 60cfe1426ae5dd2ad80bbdaac84db500ff01054b363a268cdd31c220990114e4d8d91567147f4a75d92d19ea09579195d8df68f113183f9dc7762c61848c4bb3
   languageName: node
   linkType: hard
 
