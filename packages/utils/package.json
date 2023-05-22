@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusajs-utils",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "Medusa utilities functions shared by Medusa core and Modules",
   "main": "dist/index.js",
   "repository": {

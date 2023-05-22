@@ -49,7 +49,6 @@ export type ConfigurationType = {
   configFilePath: string
 } & { error: Error | null }
 
-
 export type HttpCompressionOptions = {
   enabled?: boolean
   level?: number
@@ -67,25 +66,26 @@ export type ProjectConfigOptions = {
   cookie_secret?: string
 
   database_url?: string
-  database_type: string
   database_database?: string
   database_schema?: string
   database_logging: LoggerOptions
 
-    database_host?: string
-    database_port?: number
-    database_ssl?: DatabaseTlsOptions
-    database_username?: string
-    database_password?: string | (() => string) | (() => Promise<string>)
+  database_host?: string
+  database_port?: number
+  database_ssl?: DatabaseTlsOptions
+  database_username?: string
+  database_password?: string | (() => string) | (() => Promise<string>)
 
+  database_poolSize?: number
+  database_maxQueryExecutionTime?: number
+  database_logNotifications?: boolean
+  database_connectTimeoutMS?: number
 
-    database_poolSize?:number;
-    database_maxQueryExecutionTime ?: number;
-    database_logNotifications?:boolean;
-    database_connectTimeoutMS?:number;
+  externalAuth?: externalAuthentication
+  secureKeys?: { [key: string]: string }
+  // @deprecated - only postgres is supported, so this config has no effect
+  database_type?: string
 
-    externalAuth?: externalAuthentication
-    secureKeys?: { [key: string]: string }
   http_compression?: HttpCompressionOptions
 
   database_extra?: Record<string, unknown> & {

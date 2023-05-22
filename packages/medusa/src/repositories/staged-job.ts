@@ -13,9 +13,14 @@ export const StagedJobRepository = dataSource.getRepository(StagedJob).extend({
       const rawStagedJobs = await queryBuilder.execute()
       return rawStagedJobs.generatedMaps.map((d) => this.create(d))
     }
-
+    /** temporary work around  */
     const rawStagedJobs = await queryBuilder.returning("*").execute()
-    return rawStagedJobs.generatedMaps.map((d) => this.create(d))
+    return await Promise.all(
+      rawStagedJobs.generatedMaps.map(async (d) => {
+        this.create(d)
+        return await this.save(d)
+      })
+    )
   },
 })
 

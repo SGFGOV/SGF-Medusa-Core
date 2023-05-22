@@ -40,8 +40,6 @@ export default async ({
 }: Options): Promise<DataSource> => {
   const entities = container.resolve("db_entities")
 
-  const isSqlite = configModule.projectConfig.database_type === "sqlite"
-
   let hostConfig: DatabaseHostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
@@ -59,14 +57,13 @@ export default async ({
       ssl: configModule.projectConfig.database_ssl,
       username: configModule.projectConfig.database_username,
       password: configModule.projectConfig.database_password,
-      }
+    }
   }
 
   dataSource = new DataSource({
     type: configModule.projectConfig.database_type,
     ...hostConfig,
-    
-    
+
     extra: configModule.projectConfig.database_extra || {},
     schema: configModule.projectConfig.database_schema,
     entities,
@@ -75,19 +72,42 @@ export default async ({
       customOptions?.logging ??
       (configModule.projectConfig.database_logging || false),
 
-      poolSize: configModule.projectConfig.database_poolSize || 100 ,
-      maxQueryExecutionTime: configModule.projectConfig.database_maxQueryExecutionTime ||1e3,
-      logNotifications:configModule.projectConfig.database_logNotifications||true,
-      connectTimeoutMS:configModule.projectConfig.database_connectTimeoutMS||60e3,
-      
+    poolSize: configModule.projectConfig.database_poolSize || 100,
+    maxQueryExecutionTime:
+      configModule.projectConfig.database_maxQueryExecutionTime || 1e3,
+    logNotifications:
+      configModule.projectConfig.database_logNotifications || true,
+    connectTimeoutMS:
+      configModule.projectConfig.database_connectTimeoutMS || 60e3,
   } as DataSourceOptions)
 
-  await dataSource.initialize()
+  try {
+    await dataSource.initialize()
+  } catch (err) {
+    // database name does not exist
+    if (err.code === "3D000") {
+      throw new Error(
+        `Specified database does not exist. Please create it and try again.\n${err.message}`
+      )
+    }
 
-  if (isSqlite) {
-    await dataSource.query(`PRAGMA foreign_keys = OFF`)
-    await dataSource.synchronize()
-    await dataSource.query(`PRAGMA foreign_keys = ON`)
+    throw err
+  }
+
+  // If migrations are not included in the config, we assume you are attempting to start the server
+  // Therefore, throw if the database is not migrated
+  if (!dataSource.migrations?.length) {
+    try {
+      await dataSource.query(`select * from migrations`)
+    } catch (err) {
+      if (err.code === "42P01") {
+        throw new Error(
+          `Migrations missing. Please run 'medusa migrations run' and try again.`
+        )
+      }
+
+      throw err
+    }
   }
 
   return dataSource
