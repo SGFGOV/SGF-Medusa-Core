@@ -43,19 +43,21 @@ class StagedJobService extends TransactionBaseService {
   }
 
   async create(data: EventBusTypes.EmitData[] | EventBusTypes.EmitData) {
-      const stagedJobRepo = this.activeManager_.withRepository(this.stagedJobRepository_)
+    const stagedJobRepo = this.activeManager_.withRepository(
+      this.stagedJobRepository_
+    )
 
-      const data_ = Array.isArray(data) ? data : [data]
+    const data_ = Array.isArray(data) ? data : [data]
 
-      const stagedJobs = data_.map((job) =>
-        stagedJobRepo.create({
-          event_name: job.eventName,
-          data: job.data,
-          options: job.options,
-        } as DeepPartial<StagedJob>)
-      ) as QueryDeepPartialEntity<StagedJob>[]
+    const stagedJobs = data_.map((job) =>
+      stagedJobRepo.create({
+        event_name: job.eventName,
+        data: job.data,
+        options: job.options,
+      } as DeepPartial<StagedJob>)
+    ) as QueryDeepPartialEntity<StagedJob>[]
 
-      return await stagedJobRepo.insertBulk(stagedJobs)
+    return await stagedJobRepo.insertBulk(stagedJobs)
   }
 }
 
