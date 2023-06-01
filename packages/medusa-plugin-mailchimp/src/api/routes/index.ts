@@ -11,11 +11,13 @@ import {
 
 const router = Router()
 
-export default (app: Router, rootDirectory) => {
-  const config = configLoader(rootDirectory)
+export default async (app: Router, rootDirectory) => {
+  const config = await configLoader(rootDirectory)
 
   const corsOptions = {
-    origin: parseCorsOrigins(config.projectConfig.store_cors || ""),
+    origin: parseCorsOrigins(
+      config.configModule.projectConfig.store_cors || ""
+    ),
     credentials: true,
   }
 

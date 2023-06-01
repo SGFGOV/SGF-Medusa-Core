@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/admin",
-  "version": "5.0.2",
+  "version": "6.0.1",
   "bin": {
     "medusa-admin": "./bin/medusa-admin.js"
   },
@@ -26,7 +26,7 @@
     "directory": "packages/admin"
   },
   "dependencies": {
-    "@medusajs/admin-ui": "npm:@sgftech/admin-ui",
+    "@medusajs/admin-ui": "*",
     "commander": "^10.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
