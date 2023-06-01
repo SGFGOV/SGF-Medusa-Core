@@ -6978,8 +6978,8 @@ __metadata:
   linkType: hard
 
 "@medusajs/admin-ui@file:./packages/admin-ui::locator=root%40workspace%3A.":
-  version: 1.8.15
-  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=e66e4b&locator=root%40workspace%3A."
+  version: 1.8.16
+  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=235c3b&locator=root%40workspace%3A."
   dependencies:
     "@hookform/error-message": ^2.0.1
     "@radix-ui/react-accordion": ^1.0.1
@@ -6988,6 +6988,7 @@ __metadata:
     "@radix-ui/react-dialog": ^1.0.2
     "@radix-ui/react-dropdown-menu": ^2.0.2
     "@radix-ui/react-popover": ^1.0.3
+    "@radix-ui/react-portal": ^1.0.2
     "@radix-ui/react-radio-group": ^1.1.1
     "@radix-ui/react-select": ^1.2.0
     "@radix-ui/react-switch": ^1.0.1
@@ -7031,7 +7032,7 @@ __metadata:
     tailwindcss-radix: ^2.7.0
     type-fest: ^3.6.0
     vite: ^4.1.4
-  checksum: 51c4b02b6eb2e395908a37bb68ad4b7f09ba6625b3b727212a2e395ed2e9df07b025615ffa778e3c859b22c2795e2e37aef5e6444ce983bd47e6b3bafa62ee34
+  checksum: bbab84027bb5746eeb3fb464ed292d45742d685575d3ad835ac30ac234cd3d1423aca20b27f30a828572f3457beeff0de6ab609185ec43a5ef72ebacf3867331
   languageName: node
   linkType: hard
 
@@ -7151,8 +7152,8 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa-js@file:./packages/medusa-js::locator=root%40workspace%3A.":
-  version: 5.0.2
-  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=65860c&locator=root%40workspace%3A."
+  version: 5.0.3
+  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=696c45&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa": "*"
     axios: 0.26.1
@@ -7162,7 +7163,7 @@ __metadata:
     uuid: ^9.0.0
   peerDependencies:
     "@medusajs/medusa": "*"
-  checksum: dc10efce04ff7235c49b6910ce3eb4f82c022d660c29f41f64817bd651c77ef4108846258f6c360fbdc48cc36b5c458fb2682196fcbf27319bfa61d83e00e747
+  checksum: c3005dc94f0b8f66006a2c36777def5c3abed592e3e1d879811fd1111a9599abb707978c94a765fe55cdffb1ce9418bfe78c7ac21aac54f278ade0a28482162b
   languageName: node
   linkType: hard
 
@@ -7192,8 +7193,8 @@ __metadata:
   linkType: soft
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
-  version: 1.11.1-alpha1
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=285a7f&locator=root%40workspace%3A."
+  version: 1.11.1-alpha3
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=a2336a&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.14
     "@medusajs/modules-sdk": 1.8.6
@@ -7229,7 +7230,7 @@ __metadata:
     morgan: ^1.9.1
     multer: ^1.4.5-lts.1
     node-schedule: ^2.1.1
-    papaparse: ^5.3.2
+    papaparse: 5.3.2
     passport: ^0.6.0
     passport-google-oidc: ^0.1.0
     passport-http-bearer: ^1.0.1
@@ -7250,7 +7251,7 @@ __metadata:
     typeorm: "*"
   bin:
     medusa: ./cli.js
-  checksum: 2a957ff91ff80b6ec67e51664688e96656c5376b7c5d7cd648b063e69bb2cc2885e381860a25f1dc04221c3332042494ba5593d25b4724730fa2a4c9bc32072c
+  checksum: 2990ed1f4aa7b8184a3fe5103bc7a008b68b1096739240c59d240d244aa73b708c8b1e7f7540a568bb3b397263a7c4618a1ecf57ebcb0cf93bd2f92cab2420ab
   languageName: node
   linkType: hard
 
@@ -7334,22 +7335,19 @@ __metadata:
   linkType: soft
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
-  version: 1.9.3
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=180a05&locator=root%40workspace%3A."
-  checksum: e3c74f84e1bdee95f1a46dd64edff078147f651f6cb942425089e9c9ce16f7fda3c24df2063b26f1e29dbbd9bcc5b2fc0e66f0add0420d62be77c9869a968e9a
+  version: 1.9.4
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=cddf48&locator=root%40workspace%3A."
+  checksum: 02e1f825d469c1e14f833954268886d9c33a7e703ac87a906ed391379a1509cf2c1d93727112d03be76622d9bd6cf482ad1b054e8295ed9a6a767fe04f2e8a11
   languageName: node
   linkType: hard
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
-  version: 1.9.3
-  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=d67367&locator=root%40workspace%3A."
+  version: 1.9.4
+  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=ade940&locator=root%40workspace%3A."
   dependencies:
     awilix: ^8.0.0
-    class-transformer: ^0.5.1
-    class-validator: ^0.14.0
-    typeorm: ^0.3.16
     ulid: ^2.3.0
-  checksum: bd1d00e1e3b717b88f644c417ca9ddabe67a93f45fac987affce01383273387410567927f71b7862b392b30a76069c639108a72b52f7cfe34feb1e476920ea66
+  checksum: 5853e8c589f8215b3a492f079246cee5cd2e72ecb716f6d157ed8bf499dd936776602b5972c886c1976eda46f6da5703b3df6df3f3f68e0b894abba97a954650
   languageName: node
   linkType: hard
 
@@ -8653,6 +8651,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-portal@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@radix-ui/react-portal@npm:1.0.2"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-primitive": 1.0.2
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 2397b9a3fe5e1f7b4982e0995fb088f77221754e42ebf5aa52374794ed7d35048ec530cc486927e65b1975fdb5f5caa1d8d2f87e8aa15004dfa011511fe8c606
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-presence@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/react-presence@npm:1.0.0"
@@ -8677,6 +8688,19 @@ __metadata:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
   checksum: b0fbf329849b3db03cf87f04c8ad44b927264bba6c3ea943a694662c4f0a2dc29a637c6e1e3b91fdfe0f95d743d3eca92ce99a23333b2c993b9013ec45ad8680
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-primitive@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@radix-ui/react-primitive@npm:1.0.2"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-slot": 1.0.1
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: bc9dc28568a9d4e0343363e62428fc13685667e470a663a69413a23145264f7a114de9d45c1ce33e6ccdeb7ae5bbfdbc198ee4b2505cd71da8f8d470c4f88d68
   languageName: node
   linkType: hard
 
@@ -9336,6 +9360,7 @@ __metadata:
     "@radix-ui/react-dialog": ^1.0.2
     "@radix-ui/react-dropdown-menu": ^2.0.2
     "@radix-ui/react-popover": ^1.0.3
+    "@radix-ui/react-portal": ^1.0.2
     "@radix-ui/react-radio-group": ^1.1.1
     "@radix-ui/react-select": ^1.2.0
     "@radix-ui/react-switch": ^1.0.1
@@ -9528,6 +9553,7 @@ __metadata:
     "@types/jsonwebtoken": ^8.5.9
     "@types/lodash": ^4.14.191
     "@types/multer": ^1.4.7
+    "@types/papaparse": ^5.3.7
     awilix: ^8.0.0
     body-parser: ^1.19.0
     boxen: ^5.0.1
@@ -9560,7 +9586,7 @@ __metadata:
     morgan: ^1.9.1
     multer: ^1.4.5-lts.1
     node-schedule: ^2.1.1
-    papaparse: ^5.3.2
+    papaparse: 5.3.2
     passport: ^0.6.0
     passport-google-oidc: ^0.1.0
     passport-http-bearer: ^1.0.1
@@ -9606,12 +9632,9 @@ __metadata:
     "@medusajs/types": 1.8.6
     "@types/express": ^4.17.17
     awilix: ^8.0.0
-    class-transformer: ^0.5.1
-    class-validator: ^0.14.0
     cross-env: ^5.2.1
     jest: ^25.5.4
     ts-jest: ^25.5.1
-    typeorm: ^0.3.16
     typescript: ^4.4.4
     ulid: ^2.3.0
   languageName: unknown
@@ -13035,6 +13058,15 @@ __metadata:
   version: 4.1.4
   resolution: "@types/npmlog@npm:4.1.4"
   checksum: 5670c38db51f2c4a5da05657920d7597bf9da00615920b42a001fde9011f05ab1e8ec8cbc671abb47915028e3e0ace5c3d981c23684c202a00bf518f16ece01d
+  languageName: node
+  linkType: hard
+
+"@types/papaparse@npm:^5.3.7":
+  version: 5.3.7
+  resolution: "@types/papaparse@npm:5.3.7"
+  dependencies:
+    "@types/node": "*"
+  checksum: fd234e7872aa7ed86c539583e7b4bac387f3efe55c5f403c590712e7125dfe73f7f0a84e646d5d222bf7e36b4c6213a85a0ae4406db9006a5b9a1b6bc03b6e50
   languageName: node
   linkType: hard
 
@@ -30581,6 +30613,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"medusa-file-local@workspace:packages/medusa-file-local":
+  version: 0.0.0-use.local
+  resolution: "medusa-file-local@workspace:packages/medusa-file-local"
+  dependencies:
+    "@medusajs/medusa": 1.10.1
+    cross-env: ^5.2.1
+    jest: ^25.5.4
+    typescript: ^4.9.5
+  peerDependencies:
+    medusa-interfaces: 1.3.7
+  languageName: unknown
+  linkType: soft
+
 "medusa-file-minio@workspace:packages/medusa-file-minio":
   version: 0.0.0-use.local
   resolution: "medusa-file-minio@workspace:packages/medusa-file-minio"
@@ -31008,16 +31053,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "medusa-plugin-mailchimp@workspace:packages/medusa-plugin-mailchimp"
   dependencies:
-    "@babel/cli": ^7.7.5
-    "@babel/core": ^7.7.5
-    "@babel/node": ^7.7.4
-    "@babel/plugin-proposal-class-properties": ^7.7.4
-    "@babel/plugin-transform-classes": ^7.9.5
-    "@babel/plugin-transform-instanceof": ^7.8.3
-    "@babel/plugin-transform-runtime": ^7.7.6
-    "@babel/preset-env": ^7.7.5
-    "@babel/register": ^7.7.4
-    "@babel/runtime": ^7.9.6
+    "@medusajs/medusa": 1.10.0
+    "@types/express": ^4.17.17
     body-parser: ^1.19.0
     client-sessions: ^0.8.0
     cors: ^2.8.5
@@ -31026,10 +31063,10 @@ __metadata:
     jest: ^25.5.4
     mailchimp-api-v3: ^1.14.0
     medusa-core-utils: ^1.2.0
-    medusa-interfaces: ^1.3.7
     medusa-test-utils: ^1.1.40
+    typescript: ^4.4.4
   peerDependencies:
-    medusa-interfaces: 1.3.7
+    "@medusajs/medusa": 1.10.0
   languageName: unknown
   linkType: soft
 
@@ -31214,8 +31251,8 @@ __metadata:
   linkType: soft
 
 "medusa-react@file:./packages/medusa-react::locator=root%40workspace%3A.":
-  version: 8.0.1
-  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=175bc3&locator=root%40workspace%3A."
+  version: 8.0.2
+  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=ef2ee4&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   peerDependencies:
@@ -31223,7 +31260,7 @@ __metadata:
     "@tanstack/react-query": ^4.22.0
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: 9294daedbbf19aed1caebe0afbf5937580f06d39124d6d5a8380e5553a66d7538caf747f61d5ce321b8d3003fb65af5f9d97765a682a65de6c8176b70f540058
+  checksum: bf76a43c008667fae980b95669151e65bec043444c163f88a386d807f2a2a7d2f0877d59825b5e5273e5b549e4062c47d93d99a2a6ab59a65d531c93b9ea8c13
   languageName: node
   linkType: hard
 
@@ -33705,7 +33742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"papaparse@npm:^5.3.2":
+"papaparse@npm:5.3.2":
   version: 5.3.2
   resolution: "papaparse@npm:5.3.2"
   checksum: fdc50cae03fdf94fa2b78da86fe18fa53ca36753ccd6619ca7f738df097cdd2cbf572a9c048a72c05118db7cf0ccb25d574f39a720c5e1a8d8c6903b0fd30765
