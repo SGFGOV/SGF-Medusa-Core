@@ -58,6 +58,7 @@ export type HttpCompressionOptions = {
 
 export type ProjectConfigOptions = {
   redis_url?: string
+  redis_prefix?: string
   redis_options?: RedisOptions
 
   session_options?: SessionOptions
