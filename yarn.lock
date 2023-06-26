@@ -7229,7 +7229,7 @@ __metadata:
 
 "@medusajs/admin-ui@file:./packages/admin-ui::locator=root%40workspace%3A.":
   version: 1.8.18
-  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=9f1cd5&locator=root%40workspace%3A."
+  resolution: "@medusajs/admin-ui@file:./packages/admin-ui#./packages/admin-ui::hash=f63208&locator=root%40workspace%3A."
   dependencies:
     "@hookform/error-message": ^2.0.1
     "@radix-ui/react-accordion": ^1.0.1
@@ -7284,7 +7284,7 @@ __metadata:
     vite: ^4.1.4
   peerDependencies:
     "@medusajs/medusa": ^1.12.0
-  checksum: 8c8f8cc35a50941966c50c03924c676b44a1b055386b34493f1744a05ca83a609f6cd88d6c140089f7db3bb52262d3a6f521d3e294bbc808c6f4354bf196344e
+  checksum: ddb3c7927edaff3c6b5d9217ba820f938620b228d2cf8afc6c7fca0a5416c22465d257750f8fcd34cad729c09ce598366554feaf748eea379765afb1db311e64
   languageName: node
   linkType: hard
 
@@ -7420,7 +7420,7 @@ __metadata:
 
 "@medusajs/medusa-js@file:./packages/medusa-js::locator=root%40workspace%3A.":
   version: 6.0.2
-  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=09b4da&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa-js@file:./packages/medusa-js#./packages/medusa-js::hash=bd115e&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa": "*"
     axios: 0.26.1
@@ -7431,7 +7431,7 @@ __metadata:
     uuid: ^9.0.0
   peerDependencies:
     "@medusajs/medusa": "*"
-  checksum: 247d6186056912401ac72e360b64bd1836354bdee7d327ad4fb8dea83b041e2ca57b9904fff39d3ff3956f4e3799e3bfbda62b682e30b5e43069302941183d9b
+  checksum: 12397ad948ca50e0762596393026b7f0d2ac2817f2ee0f6fb01b683720a1669b9c30e6ed3aab3a40b9e805d09ad6b732a66aa5df131e0ec4bed68ae20763eb4f
   languageName: node
   linkType: hard
 
@@ -7465,7 +7465,7 @@ __metadata:
 
 "@medusajs/medusa@file:./packages/medusa::locator=root%40workspace%3A.":
   version: 1.12.1-alpha2
-  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=62ec33&locator=root%40workspace%3A."
+  resolution: "@medusajs/medusa@file:./packages/medusa#./packages/medusa::hash=e415b8&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-cli": 1.3.15
     "@medusajs/modules-sdk": 1.8.7
@@ -7523,7 +7523,7 @@ __metadata:
     typeorm: ^0.3.16
   bin:
     medusa: ./cli.js
-  checksum: f6a3c14c4ced83eaecfd7d405917b87c4be6c524f4f25c86d60dc13fb243109e6148641529e86d1542e00c0c6facc4b6bf1865a21420133595f1e3270e625e47
+  checksum: 4ff7268a5cdaac8dd433ada9eb057a0aa05f626442be6f8bfb3d7f82c2d1be0704b4cbb6765a074d2b2fc6116a5c90350ad8c13aeb784f3913f03800cec15224
   languageName: node
   linkType: hard
 
@@ -7636,19 +7636,19 @@ __metadata:
 
 "@medusajs/types@file:./packages/types::locator=root%40workspace%3A.":
   version: 1.9.6
-  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=cddb92&locator=root%40workspace%3A."
-  checksum: a331b722a51212d4450ac7873257ca86abfc40998cfa2cf69d9dd5e391335f44228e63700592c3656e01897f8947d872165401e87cf69b95c7469e00ba9e9cfc
+  resolution: "@medusajs/types@file:./packages/types#./packages/types::hash=a71f82&locator=root%40workspace%3A."
+  checksum: 055c1bf8052e6ef7eabae515c610689363402abf5fe465d78a9f878984ec46c7228387301881040c8d8224f2fcb07fc80cda3c89111c97ba04e2616c6dc15c2f
   languageName: node
   linkType: hard
 
 "@medusajs/utils@file:./packages/utils::locator=root%40workspace%3A.":
-  version: 1.9.6
-  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=e2e2a4&locator=root%40workspace%3A."
+  version: 1.9.7
+  resolution: "@medusajs/utils@file:./packages/utils#./packages/utils::hash=063bc4&locator=root%40workspace%3A."
   dependencies:
     awilix: ^8.0.1
     glob: ^7.1.6
     ulid: ^2.3.0
-  checksum: 405d98b0d99c0df2b7e66efad809ceb7721aefb82b8ea2593dea1b8602abccdf2c434c621cba609be864034f632a125c188c140980f1351c516b1d2c01030061
+  checksum: 6a1a9ee3beb25a3f6203119b5ca1504049886ea0107d238e7789e4583b7c6c80774691d08ae2804177b72da4916ed19e460a65081a9c4fe8810facedb3af0912
   languageName: node
   linkType: hard
 
@@ -32561,7 +32561,7 @@ __metadata:
 
 "medusa-react@file:./packages/medusa-react::locator=root%40workspace%3A.":
   version: 9.0.2
-  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=14b658&locator=root%40workspace%3A."
+  resolution: "medusa-react@file:./packages/medusa-react#./packages/medusa-react::hash=926452&locator=root%40workspace%3A."
   dependencies:
     "@medusajs/medusa-js": "*"
   peerDependencies:
@@ -32569,7 +32569,7 @@ __metadata:
     "@tanstack/react-query": ^4.22.0
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: a7b416ba6f23841ebd24ece43acdcf3bc50c77396b0e73d75a8226448df3b2e01c12615660d25bfd8eb7c6e7b02e412d8249091faeca24d34821aa71eeb4289e
+  checksum: 1e2412dbce04f06ebcf8eae304d23e7f712393b25e1c63fecc02224285a6c3315cfa98951eff9cf0def365f71ad79ca125fad5140551eddd20c80e937e98741d
   languageName: node
   linkType: hard
 
