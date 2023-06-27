@@ -164,7 +164,7 @@ export async function queryEntityWithoutRelations<T extends ObjectLiteral>({
   let entities: T[]
   let count = 0
   if (shouldCount) {
-    const result = await qb.getManyAndCount()
+    const result = await Promise.all([qb.getMany(), qb.getCount()])
     entities = result[0]
     count = result[1]
   } else {
