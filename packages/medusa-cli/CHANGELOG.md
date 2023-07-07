@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.17
+
+### Patch Changes
+
+- [`6f1fa244f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/6f1fa244fa47d4ecdaa7363483bd7da555dbbf32) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa-cli): Cleanup plugin setup + include Logger type update which is used across multiple packages
+
 ## 1.3.16
 
 ### Patch Changes

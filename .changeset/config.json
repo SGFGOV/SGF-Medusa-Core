@@ -1,11 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "@sgftech/medusa" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "SGFGOV/SGF-Medusa-Core" }],
   "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
-  "baseBranch": "sgf/develop",
+  "baseBranch": "sgf/upgrade",
   "updateInternalDependencies": "patch",
   "ignore": ["integration-tests-api", "integration-tests-plugins", "integration-tests-repositories"],
   "snapshot": {

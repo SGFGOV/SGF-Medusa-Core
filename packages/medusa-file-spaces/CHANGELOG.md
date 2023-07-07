@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.8
+
+### Patch Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
+
 ## 1.3.7
 
 ### Patch Changes

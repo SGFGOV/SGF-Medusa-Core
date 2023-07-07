@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.0.32
+
+### Patch Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Avoid dev cli auth
+
+- [`5a4580b6a`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/5a4580b6a8c305b7803c8d929843ca1f39677404) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa-dev-cli): Cleanup plugin setup
+
 ## 0.0.31
 
 ### Patch Changes

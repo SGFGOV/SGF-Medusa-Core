@@ -1,6 +1,6 @@
 {
   "name": "medusa-plugin-algolia",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "Algolia search plugin for Medusa",
   "repository": {
     "type": "git",

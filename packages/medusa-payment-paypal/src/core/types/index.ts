@@ -1,4 +1,4 @@
-import { Logger } from "@medusajs/medusa"
+import { Logger } from "@medusajs/types"
 import { PaypalOptions } from "../../types"
 
 export type PaypalSdkOptions = PaypalOptions & {

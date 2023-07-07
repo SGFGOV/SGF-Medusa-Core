@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.4
+
+### Patch Changes
+
+- [`627bdb689`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/627bdb689f26282ba49a185bfc5182a7c1e734dd) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(gatsby-source-medusa): Cleanup plugin setup
+
 ## 0.1.3
 
 ### Patch Changes

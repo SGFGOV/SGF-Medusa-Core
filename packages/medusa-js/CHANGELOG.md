@@ -1,5 +1,25 @@
 # Change Log
 
+## 6.0.6
+
+### Patch Changes
+
+- update to latest medusa
+
+## 6.0.5
+
+### Patch Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Feat(medusa, medusa-js, @sgftech/medusa-react): add resources to discount condition by batch
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Adds the use of price selection strategy to retrieving variants in the admin API. This moves the responsibility of tax calculations from the frontend (admin) to the backend.
+
+- [`fe25c8a91`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/fe25c8a91f4462c9ac5a15594fa71155df48c1eb) Thanks [@pevey](https://github.com/pevey)! - feat(@sgftech/medusa-react,medusa-js): Allow custom headers
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Support batch remove resources on discount condition
+
 ## 6.0.1
 
 ### Patch Changes
@@ -22,7 +42,8 @@
 - Updated dependencies [[`a66646233`](https://github.com/medusajs/medusa/commit/a666462333d20821a3e50e3fbc65bc8a511c726f), [`9518efcca`](https://github.com/medusajs/medusa/commit/9518efccae1961d9b3cd1e85148e293a3744eedb), [`a86f0e815`](https://github.com/medusajs/medusa/commit/a86f0e815a9e75d7d562fbe516c5bb7e0ab1f6ee), [`cdbac2c84`](https://github.com/medusajs/medusa/commit/cdbac2c8403a3c15c0e11993f6b7dab268fa5c08), [`26963acc0`](https://github.com/medusajs/medusa/commit/26963acc0a5caa1bca97cfe4cbcee113a8d75b84)]:
   - @medusajs/medusa@1.11.0
 
->>>>>>> e303e0920ab532ec9e0591e856c283535929fe5c
+> > > > > > > e303e0920ab532ec9e0591e856c283535929fe5c
+
 ## 4.0.1
 
 ### Patch Changes
@@ -219,7 +240,8 @@
 - Updated dependencies [[`1817b810f`](https://github.com/medusajs/medusa/commit/1817b810fc8563a08119b74b86ec0587d9e443a1), [`28bec599a`](https://github.com/medusajs/medusa/commit/28bec599ae34d29b626b1dc36f762fc0b2fe8f17), [`3f44abe01`](https://github.com/medusajs/medusa/commit/3f44abe01a7807adf0e807811d4bc52b713cd6b5), [`8ed4eab73`](https://github.com/medusajs/medusa/commit/8ed4eab73a2b067e19da5a1c8498cbff7125ea8d), [`645e0d0ec`](https://github.com/medusajs/medusa/commit/645e0d0ec5e2e49048887c62db662427c8a39cdf), [`47d075351`](https://github.com/medusajs/medusa/commit/47d075351fa4fdeaf32d48f2bd7e72943a293d9b), [`32b038fc3`](https://github.com/medusajs/medusa/commit/32b038fc3fb5f8fab09a7d23f881847c7ae02c0c), [`3d200c41f`](https://github.com/medusajs/medusa/commit/3d200c41f953c3c979a1586f6425a2fbdf159e7e), [`16716f5a4`](https://github.com/medusajs/medusa/commit/16716f5a4f94cb6bc1dcea278d1789da760f2767), [`71fa60892`](https://github.com/medusajs/medusa/commit/71fa60892cd7c00dd9cb8c222a1794ad6577fc1b), [`cc10c20f3`](https://github.com/medusajs/medusa/commit/cc10c20f356d4fe98336d879f8c9523bb63e9e48), [`eda26f6e8`](https://github.com/medusajs/medusa/commit/eda26f6e818a56672cdcce1d794c307c5490f956), [`077e4d960`](https://github.com/medusajs/medusa/commit/077e4d960687a909fd254cd69f4dd5b3e0bad204), [`f3ced106a`](https://github.com/medusajs/medusa/commit/f3ced106ad24fe21f099e10bee5666e1f65a9fc7), [`baeacd1cc`](https://github.com/medusajs/medusa/commit/baeacd1cc52c548eef6896fd83e606c858cf2165), [`e4af96853`](https://github.com/medusajs/medusa/commit/e4af9685313077ece7e3fb7bd27053108cd9d5f8), [`cac81749e`](https://github.com/medusajs/medusa/commit/cac81749eaa06b3b00ac5494591c96a0fcd7bf57), [`4a50786fb`](https://github.com/medusajs/medusa/commit/4a50786fbc78b36147f1f45d77c55dc0a582caba), [`c07ffb616`](https://github.com/medusajs/medusa/commit/c07ffb61658b0cdbff00461d1fa267c6be2d1967), [`8ba0addea`](https://github.com/medusajs/medusa/commit/8ba0addea3997c27efe4a50733b02a31e02f55e5), [`b9680b641`](https://github.com/medusajs/medusa/commit/b9680b641f2984eddbc1f49a37c050499fbaff69)]:
   - @medusajs/medusa@1.7.3
 
->>>>>>> 27a29ef24e5ea1ba2bc0be8ecb7dd747d4c7c65b
+> > > > > > > 27a29ef24e5ea1ba2bc0be8ecb7dd747d4c7c65b
+
 ## 1.3.5
 
 ### Patch Changes

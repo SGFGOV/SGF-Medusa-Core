@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusa",
-  "version": "1.12.1-alpha3",
+  "version": "1.13.1",
   "description": "E-commerce for JAMstack with AWS extensions",
   "main": "dist/index.js",
   "bin": "./cli.js",
@@ -47,7 +47,7 @@
     "typeorm": "^0.3.16"
   },
   "dependencies": {
-    "@medusajs/medusa-cli": "1.3.16",
+    "@medusajs/medusa-cli": "1.3.17",
     "@medusajs/modules-sdk": "1.8.8",
     "@medusajs/utils": "*",
     "@types/ioredis": "^4.28.10",

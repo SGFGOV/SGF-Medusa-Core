@@ -1,5 +1,25 @@
 # Change Log
 
+## 9.0.4
+
+### Patch Changes
+
+- update to latest medusa
+
+## 9.0.3
+
+### Patch Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Feat(medusa, medusa-js, @sgftech/medusa-react): add resources to discount condition by batch
+
+- [`fe25c8a91`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/fe25c8a91f4462c9ac5a15594fa71155df48c1eb) Thanks [@pevey](https://github.com/pevey)! - feat(@sgftech/medusa-react,medusa-js): Allow custom headers
+
+- [`417debfe7`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/417debfe7db6edd6722929fe0f905a63548a0c9e) Thanks [@josetr](https://github.com/josetr)! - fix(@sgftech/medusa-react): fix wrong admin reservations query key
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Support batch remove resources on discount condition
+
 ## 9.0.1
 
 ### Patch Changes

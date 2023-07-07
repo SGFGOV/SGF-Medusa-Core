@@ -1,5 +1,64 @@
 # Change Log
 
+## 1.13.1
+
+### Patch Changes
+
+- update to latest medusa
+
+## 1.13.0
+
+### Minor Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - fix(medusa): Idempotency workStage used within transaction
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Align columns between product import/export, re visit the way the columns are defined and treated
+
+### Patch Changes
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Changes type to type_id for the list products endpoints in both the Store and Admin API.
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Allow to filter collections by discount condition id
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - fix(medusa): Select config should be undefined if length === 0
+
+- [`85eb12883`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/85eb12883e0571d494687e7a7e2f310c878f721d) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(medusa): Improve error messaging in plugin loader
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Feat(medusa, medusa-js, @sgftech/medusa-react): add resources to discount condition by batch
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Adds the use of price selection strategy to retrieving variants in the admin API. This moves the responsibility of tax calculations from the frontend (admin) to the backend.
+
+- [`9dcdc0041`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/9dcdc0041a2b08cc0723343dd8d9127d9977b086) Thanks [@adrien2p](https://github.com/adrien2p)! - fix(medusa, utils): fix the way selects are consumed alongside the relations
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Product import - allow null product type
+
+- [`01245ac89`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/01245ac89e13b687ac346c35168f9f28014e613d) Thanks [@adrien2p](https://github.com/adrien2p)! - feat(medusa): Allow to register extended validators seemlesly
+
+- [`6f1fa244f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/6f1fa244fa47d4ecdaa7363483bd7da555dbbf32) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa-cli): Cleanup plugin setup + include Logger type update which is used across multiple packages
+
+- [`bdd9c5a7e`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/bdd9c5a7e9a9b1a6b4d1e2dcf22f67540494fedc) Thanks [@adrien2p](https://github.com/adrien2p)! - fix(medusa): model loader with customizations
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Allow to query product types by discount condition id
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Allow to query product tags by condition id
+
+- [`9760d4a96`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/9760d4a96c27f6f89a8c3f3b6e73b17547f97f2a) Thanks [@riqwan](https://github.com/riqwan)! - feat(medusa, utils): improve devx for core entity customizations
+
+- [`0d02ce55e`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/0d02ce55e04fcb10c6cb7ed0a18d84bf3073aae9) Thanks [@adrien2p](https://github.com/adrien2p)! - chore: update awilix to v8
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Support batch remove resources on discount condition
+
+- [`7bf7d2ade`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/7bf7d2adef53b80230a36c22e639b471e501e52e) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(medusa): Concurrently get the items and count instead of sequentially
+
+- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Filter product list by discount condition id
+
+- [`0e9bb3895`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/0e9bb38950d66a0f7c4333066ea45c958e0c0104) - Allow regular expression in CORS configuration
+
+- Updated dependencies [[`6f1fa244f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/6f1fa244fa47d4ecdaa7363483bd7da555dbbf32)]:
+  - @medusajs/medusa-cli@1.3.17
+
 ## 1.12.1
 
 ### Patch Changes

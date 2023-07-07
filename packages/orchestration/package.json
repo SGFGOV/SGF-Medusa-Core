@@ -1,6 +1,6 @@
 {
   "name": "@medusajs/orchestration",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Medusa utilities to orchestrate modules",
   "main": "dist/index.js",
   "repository": {
