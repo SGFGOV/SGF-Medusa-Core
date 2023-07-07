@@ -33,10 +33,20 @@ export type ClassConstructor<T> = {
 
 export type MedusaContainer = coreMedusaContainer
 
-export type Logger = _Logger & {
-  progress: (activityId: string, msg: string) => void
-  info: (msg: string) => void
-  warn: (msg: string) => void
+export type Logger = {
+  panic: (data) => void
+  shouldLog: (level: string) => void
+  setLogLevel: (level: string) => void
+  unsetLogLevel: () => void
+  activity: (message: string, config?) => void
+  progress: (activityId, message) => void
+  error: (messageOrError, error?) => void
+  failure: (activityId, message) => void
+  success: (activityId, message) => void
+  debug: (message) => void
+  info: (message) => void
+  warn: (message) => void
+  log: (...args) => void
 }
 
 export enum MODULE_SCOPE {
