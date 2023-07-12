@@ -79,7 +79,6 @@ const Sidebar: React.FC = () => {
               icon={<SwatchIcon size={ICON_SIZE} />}
               text={"Categories"}
               triggerHandler={triggerHandler}
-              isNew
             />
           )}
           <SidebarMenuItem
@@ -94,7 +93,6 @@ const Sidebar: React.FC = () => {
               icon={<BuildingsIcon size={ICON_SIZE} />}
               triggerHandler={triggerHandler}
               text={"Inventory"}
-              isNew
             />
           )}
           <SidebarMenuItem

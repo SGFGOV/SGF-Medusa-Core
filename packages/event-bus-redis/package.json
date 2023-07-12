@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/event-bus-redis",
-  "version": "1.8.10",
+  "version": "1.8.11",
   "description": "Redis Event Bus Module for Medusa",
   "main": "dist/index.js",
   "files": [
@@ -17,7 +17,7 @@
   "author": "Medusa",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/types": "^1.8.8",
+    "@medusajs/types": "^1.8.10",
     "cross-env": "^5.2.1",
     "jest": "^25.5.2",
     "medusa-test-utils": "^1.1.40",
