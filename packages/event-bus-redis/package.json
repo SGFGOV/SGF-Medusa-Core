@@ -31,13 +31,10 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@medusajs/modules-sdk": "1.8.8",
+    "@medusajs/modules-sdk": "1.9.0",
     "@medusajs/utils": "*",
     "awilix": "^8.0.0",
     "bullmq": "^3.5.6",
     "ioredis": "^5.2.5"
-  },
-  "resolutions": {
-    "medusajs/utils": "npm:@sgftech/medusajs-utils"
   }
 }

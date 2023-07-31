@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
+- [#4540](https://github.com/medusajs/medusa/pull/4540) [`950a58169`](https://github.com/medusajs/medusa/commit/950a5816909b2038a5bee5d8e6912290e5c7c53b) Thanks [@pKorsholm](https://github.com/pKorsholm)! - fix(medusa-file-minio): default getUploadDescriptor to private
 
 ## 1.2.1
 
