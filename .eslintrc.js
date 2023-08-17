@@ -94,6 +94,7 @@ module.exports = {
           `${__dirname}/packages/cache-redis/tsconfig.spec.json`,
           `${__dirname}/packages/cache-inmemory/tsconfig.spec.json`,
           `${__dirname}/packages/create-medusa-app/tsconfig.json`,
+          `${__dirname}/packages/product/tsconfig.json`,
         ],
       },
       rules: {

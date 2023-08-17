@@ -118,12 +118,9 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.1
         with:
-          node-version: "16"
+          node-version: "16.10.0"
           cache: "yarn"
-      
-      - name: disable lock as we use local references
-        run: yarn config set -H enableImmutableInstalls false
-      
+
       - name: Install dependencies
         uses: ./.github/actions/cache-deps
         with:

@@ -6,10 +6,19 @@ import { initDb, useDb } from "../../../../environment-helpers/use-db"
 import adminSeeder from "../../../../helpers/admin-seeder"
 import productSeeder from "../../../../helpers/product-seeder"
 
+<<<<<<< HEAD
 import { simpleSalesChannelFactory } from "../../../../factories"
 import { AxiosInstance } from "axios"
 
 jest.setTimeout(50000)
+=======
+import { Modules, ModulesDefinition } from "@medusajs/modules-sdk"
+import { Workflows } from "@medusajs/workflows"
+import { AxiosInstance } from "axios"
+import { simpleSalesChannelFactory } from "../../../../factories"
+
+jest.setTimeout(5000000)
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 
 const adminHeaders = {
   headers: {
@@ -21,11 +30,21 @@ describe("/admin/products", () => {
   let medusaProcess
   let dbConnection
   let express
+<<<<<<< HEAD
+=======
+  let medusaContainer
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 
   beforeAll(async () => {
     const cwd = path.resolve(path.join(__dirname, "..", "..", ".."))
     dbConnection = await initDb({ cwd } as any)
+<<<<<<< HEAD
     const { app, port } = await bootstrapApp({ cwd })
+=======
+    const { app, port, container } = await bootstrapApp({ cwd })
+    medusaContainer = container
+
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
     setPort(port)
     express = app.listen(port, () => {
       process.send?.(port)
@@ -39,6 +58,27 @@ describe("/admin/products", () => {
     medusaProcess.kill()
   })
 
+<<<<<<< HEAD
+=======
+  it("Should have loaded the product module", function () {
+    const productRegistrationName =
+      ModulesDefinition[Modules.PRODUCT].registrationName
+    expect(
+      medusaContainer.hasRegistration(productRegistrationName)
+    ).toBeTruthy()
+  })
+
+  it("Should have enabled workflows feature flag", function () {
+    const flagRouter = medusaContainer.resolve("featureFlagRouter")
+
+    const workflowsFlag = flagRouter.isFeatureEnabled({
+      workflows: Workflows.CreateProducts,
+    })
+
+    expect(workflowsFlag).toBe(true)
+  })
+
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
   describe("POST /admin/products", () => {
     beforeEach(async () => {
       await productSeeder(dbConnection)

@@ -1,6 +1,7 @@
 # @medusajs/utils
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 1.9.11
 
 ### Patch Changes
@@ -17,6 +18,16 @@
 
 - [`9760d4a96`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/9760d4a96c27f6f89a8c3f3b6e73b17547f97f2a) Thanks [@riqwan](https://github.com/riqwan)! - feat(medusa, utils): improve devx for core entity customizations
 =======
+=======
+## 1.9.5
+
+### Patch Changes
+
+- [#4701](https://github.com/medusajs/medusa/pull/4701) [`5c60aad17`](https://github.com/medusajs/medusa/commit/5c60aad177a99574ffff5ebdc02ce9dc86ef9af9) Thanks [@olivermrbl](https://github.com/olivermrbl)! - feat(medusa, utils): Allow object feature flags
+
+- [#4631](https://github.com/medusajs/medusa/pull/4631) [`4073b7313`](https://github.com/medusajs/medusa/commit/4073b73130c874dc7d2240726224a01b7b19b1a1) Thanks [@adrien2p](https://github.com/adrien2p)! - feat(product): Move mikro orm utils to the utils package
+
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 ## 1.9.4
 
 ### Patch Changes
@@ -29,7 +40,10 @@
 
 - [#4535](https://github.com/medusajs/medusa/pull/4535) [`131477faf`](https://github.com/medusajs/medusa/commit/131477faf0409c49d4aacf26ea591e33b2fa22fd) Thanks [@riqwan](https://github.com/riqwan)! - feat(product,types,utils): Add tags, types, categories, collection and options CRUD to product module services
 
+<<<<<<< HEAD
 >>>>>>> c8ef0c6d259188f36c3de51a875c68f8d1dabd3e
+=======
+>>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 ## 1.9.2
 
 ### Patch Changes

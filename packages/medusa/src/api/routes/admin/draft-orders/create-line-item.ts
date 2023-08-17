@@ -46,7 +46,7 @@ import { cleanResponseData } from "../../../../utils/clean-response-data"
  *   - lang: Shell
  *     label: cURL
  *     source: |
- *       curl -X POST 'https://medusa-url.com/admin/draft-orders/{id}/line-items' \
+ *       curl -X POST '{backend_url}/admin/draft-orders/{id}/line-items' \
  *       -H 'Authorization: Bearer {api_token}' \
  *       -H 'Content-Type: application/json' \
  *       --data-raw '{
@@ -129,6 +129,7 @@ export default async (req, res) => {
         allow_discounts: false,
         unit_price: validated.unit_price || 0,
         quantity: validated.quantity,
+        metadata: validated.metadata,
       })
     }
 

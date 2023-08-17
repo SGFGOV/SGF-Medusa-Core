@@ -140,6 +140,9 @@ export abstract class AbstractBaseRepository<T = any>
   extends AbstractBase
   implements DAL.RepositoryService<T>
 {
+  async update(data: unknown[], context?: Context | undefined): Promise<T[]> {
+    throw new Error("Method not implemented.")
+  }
   abstract find(options?: DAL.FindOptions<T>, context?: Context)
 
   abstract findAndCount(
@@ -156,7 +159,7 @@ export abstract class AbstractBaseRepository<T = any>
     ids: string[],
     @MedusaContext()
     { transactionManager: manager }: Context = {}
-  ): Promise<T[]> {
+  ): Promise<[T[], Record<string, unknown[]>]> {
     const entities = await this.find({ where: { id: { $in: ids } } as any })
     const date = new Date()
 
