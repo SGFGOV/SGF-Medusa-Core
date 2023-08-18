@@ -30,9 +30,6 @@
     "react": "^16.8 || ^17.0 || ^18.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0"
   },
-  "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa"
-  },
   "name": "@sgftech/medusa-react",
   "author": "Govind Diwakar",
   "devDependencies": {
@@ -67,6 +64,7 @@
     "@medusajs/medusa-js": "*"
   },
   "resolution": {
+    "@medusajs/medusa": "npm:@sgftech/medusa",
     "@medusajs/medusa-js": "npm:@sgftech/medusa-js"
   },
   "msw": {

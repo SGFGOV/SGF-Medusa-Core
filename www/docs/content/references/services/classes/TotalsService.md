@@ -28,11 +28,7 @@ TransactionBaseService.constructor
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:112](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L112)
-=======
 [medusa/src/services/totals.ts:112](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L112)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ## Properties
 
@@ -46,11 +42,7 @@ TransactionBaseService.\_\_configModule\_\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:14](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L14)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:14](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L14)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -64,11 +56,7 @@ TransactionBaseService.\_\_container\_\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:13](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L13)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:13](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L13)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -82,11 +70,7 @@ TransactionBaseService.\_\_moduleDeclaration\_\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:15](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L15)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:15](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L15)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -96,11 +80,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:110](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L110)
-=======
 [medusa/src/services/totals.ts:110](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L110)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -114,11 +94,7 @@ TransactionBaseService.manager\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:5](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L5)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:5](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L5)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -128,11 +104,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:108](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L108)
-=======
 [medusa/src/services/totals.ts:108](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L108)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -142,11 +114,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:109](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L109)
-=======
 [medusa/src/services/totals.ts:109](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L109)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -156,11 +124,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:107](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L107)
-=======
 [medusa/src/services/totals.ts:107](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L107)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -174,11 +138,7 @@ TransactionBaseService.transactionManager\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:6](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L6)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:6](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L6)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ## Accessors
 
@@ -196,11 +156,7 @@ TransactionBaseService.activeManager\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:8](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L8)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:8](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L8)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ## Methods
 
@@ -239,11 +195,7 @@ TransactionBaseService.atomicPhase\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:56](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L56)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:56](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L56)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -271,11 +223,7 @@ triples of lineitem, variant and applied discount
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:626](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L626)
-=======
 [medusa/src/services/totals.ts:626](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L626)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -304,11 +252,7 @@ array of triples of lineitem, variant and applied discount
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:668](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L668)
-=======
 [medusa/src/services/totals.ts:668](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L668)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -339,11 +283,7 @@ the allocation map for the line items in the cart or order.
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:435](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L435)
-=======
 [medusa/src/services/totals.ts:435](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L435)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -368,11 +308,7 @@ the tax calculation context
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:1027](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L1027)
-=======
 [medusa/src/services/totals.ts:1027](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L1027)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -397,11 +333,7 @@ the total discounts amount
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:1005](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L1005)
-=======
 [medusa/src/services/totals.ts:1005](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L1005)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -427,11 +359,7 @@ the gift card amount applied to the cart or order
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:974](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L974)
-=======
 [medusa/src/services/totals.ts:974](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L974)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -456,11 +384,7 @@ the gift card amount applied to the cart or order
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:957](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L957)
-=======
 [medusa/src/services/totals.ts:957](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L957)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -489,11 +413,7 @@ the allocations that the discount has on the items in the cart or
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:719](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L719)
-=======
 [medusa/src/services/totals.ts:719](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L719)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -513,11 +433,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:696](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L696)
-=======
 [medusa/src/services/totals.ts:696](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L696)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -538,11 +454,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:681](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L681)
-=======
 [medusa/src/services/totals.ts:681](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L681)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -567,11 +479,7 @@ the line item refund amount.
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:504](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L504)
-=======
 [medusa/src/services/totals.ts:504](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L504)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -598,11 +506,7 @@ the line item total
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:930](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L930)
-=======
 [medusa/src/services/totals.ts:930](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L930)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -630,11 +534,7 @@ the breakdown of the line item totals
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:775](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L775)
-=======
 [medusa/src/services/totals.ts:775](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L775)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -658,11 +558,7 @@ the total paid amount
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:157](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L157)
-=======
 [medusa/src/services/totals.ts:157](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L157)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -689,11 +585,7 @@ the calculated subtotal
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:583](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L583)
-=======
 [medusa/src/services/totals.ts:583](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L583)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -717,11 +609,7 @@ the total refunded amount for an order.
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:489](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L489)
-=======
 [medusa/src/services/totals.ts:489](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L489)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -748,11 +636,7 @@ An object that breaks down the totals for the shipping method
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:191](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L191)
-=======
 [medusa/src/services/totals.ts:191](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L191)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -776,11 +660,7 @@ shipping total
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:319](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L319)
-=======
 [medusa/src/services/totals.ts:319](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L319)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -805,11 +685,7 @@ the calculated subtotal
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:283](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L283)
-=======
 [medusa/src/services/totals.ts:283](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L283)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -834,11 +710,7 @@ the swap total
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:172](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L172)
-=======
 [medusa/src/services/totals.ts:172](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L172)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -864,11 +736,7 @@ tax total
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:346](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L346)
-=======
 [medusa/src/services/totals.ts:346](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L346)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -893,11 +761,7 @@ the calculated subtotal
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:134](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L134)
-=======
 [medusa/src/services/totals.ts:134](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L134)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -921,11 +785,7 @@ the rounded value
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/services/totals.ts:1057](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/services/totals.ts#L1057)
-=======
 [medusa/src/services/totals.ts:1057](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/services/totals.ts#L1057)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -949,11 +809,7 @@ TransactionBaseService.shouldRetryTransaction\_
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:37](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L37)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:37](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L37)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
 
 ___
 
@@ -977,8 +833,4 @@ TransactionBaseService.withTransaction
 
 #### Defined in
 
-<<<<<<< HEAD:docs/content/references/services/classes/TotalsService.md
-[medusa/src/interfaces/transaction-base-service.ts:20](https://github.com/medusajs/medusa/blob/95c538c67/packages/medusa/src/interfaces/transaction-base-service.ts#L20)
-=======
 [medusa/src/interfaces/transaction-base-service.ts:20](https://github.com/medusajs/medusa/blob/755f9cf30/packages/medusa/src/interfaces/transaction-base-service.ts#L20)
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca:www/docs/content/references/services/classes/TotalsService.md
