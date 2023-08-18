@@ -1,8 +1,4 @@
 import {
-  CreateProductVariantInput,
-  ProductVariantPricesCreateReq,
-} from "../../../../types/product-variant"
-import {
   IsArray,
   IsBoolean,
   IsEnum,
@@ -46,6 +42,7 @@ import { ProductStatus } from "../../../../models"
 import { Logger } from "../../../../types/global"
 import { validator } from "../../../../utils"
 import { FeatureFlagDecorators } from "../../../../utils/feature-flag-decorators"
+import { defaultAdminProductFields, defaultAdminProductRelations } from "."
 
 /**
  * @oas [post] /admin/products

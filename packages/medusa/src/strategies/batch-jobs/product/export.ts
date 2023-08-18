@@ -14,29 +14,16 @@ import { FindProductConfig } from "../../../types/product"
 import { csvCellContentFormatter } from "../../../utils"
 import { prepareListQuery } from "../../../utils/get-query-config"
 import {
-<<<<<<< HEAD
   DynamicProductExportDescriptor,
   ProductExportBatchJob,
   ProductExportBatchJobContext,
   ProductExportInjectedDependencies,
   ProductExportPriceData,
-} from "./types/index"
-import { FindProductConfig } from "../../../types/product"
-import { FlagRouter } from "../../../utils/flag-router"
-import SalesChannelFeatureFlag from "../../../loaders/feature-flags/sales-channels"
-import { csvCellContentFormatter } from "../../../utils"
-=======
-    DynamicProductExportDescriptor,
-    ProductExportBatchJob,
-    ProductExportBatchJobContext,
-    ProductExportInjectedDependencies,
-    ProductExportPriceData,
 } from "./types"
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 import {
-    productCategoriesColumnsDefinition,
-    productColumnsDefinition,
-    productSalesChannelColumnsDefinition,
+  productCategoriesColumnsDefinition,
+  productColumnsDefinition,
+  productSalesChannelColumnsDefinition,
 } from "./types/columns-definition"
 
 export default class ProductExportStrategy extends AbstractBatchJobStrategy {

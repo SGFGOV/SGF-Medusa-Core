@@ -1,24 +1,13 @@
 # @medusajs/utils
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-## 1.9.11
+## 1.9.6
 
 ### Patch Changes
 
-- update to latest medusa
+- [#4626](https://github.com/medusajs/medusa/pull/4626) [`3f3a84262`](https://github.com/medusajs/medusa/commit/3f3a84262ce9cbd911923278a54e301fbe9a4634) Thanks [@adrien2p](https://github.com/adrien2p)! - [WIP] feat(types, product, utils, medusa): Include shared connection for modules
 
-## 1.9.10
+- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
 
-### Patch Changes
-
-- [`499c3478c`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/499c3478c910c8b922a15cc6f4d9fbad122a347f) Thanks [@carlos-r-l-rodrigues](https://github.com/carlos-r-l-rodrigues)! - feat: Remote Joiner
-
-- [`9dcdc0041`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/9dcdc0041a2b08cc0723343dd8d9127d9977b086) Thanks [@adrien2p](https://github.com/adrien2p)! - fix(medusa, utils): fix the way selects are consumed alongside the relations
-
-- [`9760d4a96`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/9760d4a96c27f6f89a8c3f3b6e73b17547f97f2a) Thanks [@riqwan](https://github.com/riqwan)! - feat(medusa, utils): improve devx for core entity customizations
-=======
-=======
 ## 1.9.5
 
 ### Patch Changes
@@ -27,7 +16,7 @@
 
 - [#4631](https://github.com/medusajs/medusa/pull/4631) [`4073b7313`](https://github.com/medusajs/medusa/commit/4073b73130c874dc7d2240726224a01b7b19b1a1) Thanks [@adrien2p](https://github.com/adrien2p)! - feat(product): Move mikro orm utils to the utils package
 
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
+
 ## 1.9.4
 
 ### Patch Changes
@@ -40,10 +29,6 @@
 
 - [#4535](https://github.com/medusajs/medusa/pull/4535) [`131477faf`](https://github.com/medusajs/medusa/commit/131477faf0409c49d4aacf26ea591e33b2fa22fd) Thanks [@riqwan](https://github.com/riqwan)! - feat(product,types,utils): Add tags, types, categories, collection and options CRUD to product module services
 
-<<<<<<< HEAD
->>>>>>> c8ef0c6d259188f36c3de51a875c68f8d1dabd3e
-=======
->>>>>>> 9cc0bc6c9dff3e87f501dadc9eb77aaeea8029ca
 ## 1.9.2
 
 ### Patch Changes

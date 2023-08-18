@@ -84,11 +84,13 @@ module.exports = {
           `${__dirname}/packages/medusa/tsconfig.json`,
           `${__dirname}/packages/medusa-payment-stripe/tsconfig.spec.json`,
           `${__dirname}/packages/medusa-payment-paypal/tsconfig.spec.json`,
+          `${__dirname}/packages/admin/tsconfig.json`,
+          `${__dirname}/packages/admin-ui/tsconfig.json`,
+          `${__dirname}/packages/admin-ui/tsconfig.spec.json`,
           `${__dirname}/packages/event-bus-local/tsconfig.spec.json`,
           `${__dirname}/packages/event-bus-redis/tsconfig.spec.json`,
           `${__dirname}/packages/medusa-plugin-meilisearch/tsconfig.spec.json`,
           `${__dirname}/packages/medusa-plugin-algolia/tsconfig.spec.json`,
-          `${__dirname}/packages/admin-ui/tsconfig.json`,
           `${__dirname}/packages/inventory/tsconfig.spec.json`,
           `${__dirname}/packages/stock-location/tsconfig.spec.json`,
           `${__dirname}/packages/cache-redis/tsconfig.spec.json`,
@@ -140,6 +142,9 @@ module.exports = {
         sourceType: "module", // Allows for the use of imports
         project: "./packages/admin-ui/ui/tsconfig.json",
       },
+      globals: {
+        __BASE__: "readonly",
+      },
       env: {
         browser: true,
       },
@@ -174,6 +179,48 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       parserOptions: {
         project: "./packages/admin/tsconfig.json",
+      },
+    },
+    {
+      files: [
+        "packages/medusa-payment-stripe/src/admin/**/*.ts",
+        "packages/medusa-payment-stripe/src/admin/**/*.tsx",
+      ],
+      plugins: ["unused-imports"],
+      extends: [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+      ],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+        sourceType: "module", // Allows for the use of imports
+        project: "./packages/medusa-payment-stripe/tsconfig.admin.json",
+      },
+      env: {
+        browser: true,
+      },
+      rules: {
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "new-cap": "off",
+        "require-jsdoc": "off",
+        "valid-jsdoc": "off",
+        "no-unused-expressions": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "warn",
+          {
+            vars: "all",
+            varsIgnorePattern: "^_",
+            args: "after-used",
+            argsIgnorePattern: "^_",
+          },
+        ],
       },
     },
   ],

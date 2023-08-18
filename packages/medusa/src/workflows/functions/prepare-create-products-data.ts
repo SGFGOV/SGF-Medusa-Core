@@ -1,8 +1,8 @@
 import { MedusaContainer, ProductTypes } from "@medusajs/types"
 import { EntityManager } from "typeorm"
 import { SalesChannelService, ShippingProfileService } from "../../services"
-import { kebabCase } from "@medusajs/utils"
-import { FlagRouter } from "../../utils/flag-router"
+import { FlagRouter, kebabCase } from "@medusajs/utils"
+
 import SalesChannelFeatureFlag from "../../loaders/feature-flags/sales-channels"
 import { SalesChannel, ShippingProfileType } from "../../models"
 import { ProductVariantPricesCreateReq } from "../../types/product-variant"

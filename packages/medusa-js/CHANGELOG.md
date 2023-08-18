@@ -1,24 +1,13 @@
 # Change Log
 
-## 6.0.6
+## 6.0.3
 
 ### Patch Changes
 
-- update to latest medusa
+- [#4747](https://github.com/medusajs/medusa/pull/4747) [`9469063f6`](https://github.com/medusajs/medusa/commit/9469063f643180002ede7a8e94c6de53d2770d04) Thanks [@olivermrbl](https://github.com/olivermrbl)! - fix(medusa-js): return type of collection hook + export
 
-## 6.0.5
+- [#4761](https://github.com/medusajs/medusa/pull/4761) [`f1a05f472`](https://github.com/medusajs/medusa/commit/f1a05f4725dcc45150f014769562bd3dfbc0f1f8) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - feat(admin, admin-ui, medusa, medusa-js, medusa-react, stripe-plugin): Support admin extensions
 
-### Patch Changes
-
-- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Add protected uploads to fileservices
-
-- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Feat(medusa, medusa-js, @sgftech/medusa-react): add resources to discount condition by batch
-
-- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - Adds the use of price selection strategy to retrieving variants in the admin API. This moves the responsibility of tax calculations from the frontend (admin) to the backend.
-
-- [`fe25c8a91`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/fe25c8a91f4462c9ac5a15594fa71155df48c1eb) Thanks [@pevey](https://github.com/pevey)! - feat(@sgftech/medusa-react,medusa-js): Allow custom headers
-
-- [`162e2379f`](https://github.com/SGFGOV/SGF-Medusa-Core/commit/162e2379f8f134d0883fcfda7cca6011ce132c19) - feat(medusa): Support batch remove resources on discount condition
 ## 6.0.2
 
 ### Patch Changes
