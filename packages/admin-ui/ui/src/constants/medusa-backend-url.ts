@@ -1,10 +1,10 @@
 export const MEDUSA_BACKEND_URL =
-  __MEDUSA_BACKEND_URL__ || "http://localhost:9000"
+  process.env.MEDUSA_BACKEND_URL || "http://localhost:9000"
 
 
   export const STRAPI_URL =
-  __STRAPI_URL__ || "http://localhost:1337"
+  process.env.STRAPI_URL||__STRAPI_URL__ || "http://localhost:1337"
 
 
   export const LOGIN_URL = 
-  __LOGIN_URL__ || "http://localhost:7001"
+  process.env.LOGIN_URL||__LOGIN_URL__ || "http://localhost:7001"

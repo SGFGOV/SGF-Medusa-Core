@@ -21,12 +21,10 @@ export const useAdminGetSession = (
   const { client } = useMedusa()
   const { data, ...rest } = useQuery(
     adminAuthKeys.details(),
-    () => 
-    {
-      return client.admin.auth.getSgfSession().then(()=>{
-      return client.admin.auth.getSession()
-    })
-
+    () => {
+      return client.admin.auth.getSgfSession().then(() => {
+        return client.admin.auth.getSession()
+      })
     },
     options
   )

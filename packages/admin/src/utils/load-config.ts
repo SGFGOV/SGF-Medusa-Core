@@ -1,15 +1,12 @@
+import type { ConfigModule } from "@medusajs/medusa"
 import { getConfigFile } from "medusa-core-utils"
-import {asyncLoadConfig} from "@medusajs/medusa/dist/utils/async-load-config"
-import { ConfigModule, PluginOptions } from "../types"
+import { PluginOptions } from "../types"
 
-export const loadConfig =  async () => {
-  
-  const configModule = await asyncLoadConfig( process.cwd(),
-  "medusa-config")
-  /*const { configModule } = getConfigFile<ConfigModule>(
+export const loadConfig = (isDev?: boolean): PluginOptions | null => {
+  const { configModule } = getConfigFile<ConfigModule>(
     process.cwd(),
     "medusa-config"
-  )*/
+  )
 
   const plugin = configModule.plugins?.find(
     (p) =>
@@ -17,27 +14,49 @@ export const loadConfig =  async () => {
       (typeof p === "object" && p.resolve === "@sgftech/admin")
   )
 
-  let defaultConfig: PluginOptions = {
-    serve: true,
-    autoRebuild: true,
-    path: "app",
-    outDir:"build",
-    strapiUrl:"http://localhost:1337",
-    loginUrl: "http://localhost:7001"
+  if (!plugin) {
+    return null
   }
 
-  if (plugin && typeof plugin !== "string") {
-    const { options } = plugin as { options: PluginOptions }
-    if(options)
-    defaultConfig = {
-      serve: options.serve ?? defaultConfig.serve,
-      autoRebuild: options.autoRebuild ?? defaultConfig.autoRebuild,
-      path: options.path ?? defaultConfig.path,
-      outDir: options.outDir ?? defaultConfig.outDir,
-      strapiUrl: options.strapiUrl?? defaultConfig.strapiUrl,
-      loginUrl: options.loginUrl?? defaultConfig.loginUrl,
+  let config: PluginOptions = {
+    serve: true,
+    autoRebuild: false,
+    path: isDev ? "/" : "/app",
+    outDir: "build",
+    backend: isDev ? "http://localhost:9000" : "/",
+    develop: {
+      open: true,
+      port: 7001,
+    },
+    cmsUrl: isDev?"http://localhost:1337":"/",
+    loginUrl: isDev?"http://localhost:7001":"/",
+  }
+
+  if (typeof plugin !== "string") {
+    const options = (plugin as { options: PluginOptions }).options ?? {}
+
+    const serve = options.serve !== undefined ? options.serve : config.serve
+
+    const serverUrl = serve
+      ? config.backend
+      : options.backend
+      ? options.backend
+      : "/"
+
+    config = {
+      serve,
+      autoRebuild: options.autoRebuild ?? config.autoRebuild,
+      path: options.path ?? config.path,
+      outDir: options.outDir ?? config.outDir,
+      backend: serverUrl,
+      cmsUrl: options.cmsUrl || process.env.STRAPI_URL,
+      loginUrl: options.loginUrl || process.env.LOGIN_URL,
+      develop: {
+        open: options.develop?.open ?? config.develop.open,
+        port: options.develop?.port ?? config.develop.port,
+      },
     }
   }
 
-  return defaultConfig
+  return config
 }

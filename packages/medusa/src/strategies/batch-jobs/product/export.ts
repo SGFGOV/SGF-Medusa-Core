@@ -2,11 +2,16 @@ import { EntityManager } from "typeorm"
 
 import { humanizeAmount } from "medusa-core-utils"
 
+import { FlagRouter } from "@medusajs/utils"
+import { defaultAdminProductRelations } from "../../../api"
 import { AbstractBatchJobStrategy, IFileService } from "../../../interfaces"
+import ProductCategoryFeatureFlag from "../../../loaders/feature-flags/product-categories"
+import SalesChannelFeatureFlag from "../../../loaders/feature-flags/sales-channels"
 import { Product, ProductVariant } from "../../../models"
 import { BatchJobService, ProductService } from "../../../services"
 import { BatchJobStatus, CreateBatchJobInput } from "../../../types/batch-job"
-import { defaultAdminProductRelations } from "../../../api"
+import { FindProductConfig } from "../../../types/product"
+import { csvCellContentFormatter } from "../../../utils"
 import { prepareListQuery } from "../../../utils/get-query-config"
 import {
   DynamicProductExportDescriptor,
@@ -14,17 +19,12 @@ import {
   ProductExportBatchJobContext,
   ProductExportInjectedDependencies,
   ProductExportPriceData,
-} from "./types/index"
-import { FindProductConfig } from "../../../types/product"
-import { FlagRouter } from "../../../utils/flag-router"
-import SalesChannelFeatureFlag from "../../../loaders/feature-flags/sales-channels"
-import { csvCellContentFormatter } from "../../../utils"
+} from "./types"
 import {
   productCategoriesColumnsDefinition,
   productColumnsDefinition,
   productSalesChannelColumnsDefinition,
 } from "./types/columns-definition"
-import ProductCategoryFeatureFlag from "../../../loaders/feature-flags/product-categories"
 
 export default class ProductExportStrategy extends AbstractBatchJobStrategy {
   public static identifier = "product-export-strategy"

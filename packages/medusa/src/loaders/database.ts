@@ -44,7 +44,7 @@ export default async ({
   let hostConfig: DatabaseHostConfig = {
     database: configModule.projectConfig.database_database,
     url: configModule.projectConfig.database_url,
-    schema: configModule.projectConfig.database_schema,
+    schema: configModule.projectConfig.database_schema || "public",
     logging: configModule.projectConfig.database_logging,
   }
 

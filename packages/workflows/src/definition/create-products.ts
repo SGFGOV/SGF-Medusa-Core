@@ -3,13 +3,17 @@ import {
   TransactionStepsDefinition,
   WorkflowManager,
 } from "@medusajs/orchestration"
-import {
+/* import {
   createProducts as createProductsHandler,
   removeProducts,
-} from "../handlers"
+} from "../handlers"*/
 import { exportWorkflow, pipe } from "../helper"
 
 import { ProductTypes } from "@medusajs/types"
+import {
+  removeProducts,
+  createProducts as createProductsHandler,
+} from "../handlers/product"
 
 enum Actions {
   createProducts = "createProducts",
